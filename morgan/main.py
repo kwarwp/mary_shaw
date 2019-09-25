@@ -1,7 +1,7 @@
 # mary_shaw.morgan.main.py
 # http://supygirls.python.pythonanywhere.com/
 from _spy.vitollino.main import Cena
-IMAGE_DO_TEMPLO = "https://i.imgur.com/rY28mtM.jpg"
+IMAGEM_DO_TEMPLO = "https://i.imgur.com/rY28mtM.jpg"
 
 """
     Jogo do Tesouro Inca
