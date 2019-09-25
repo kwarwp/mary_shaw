@@ -15,3 +15,10 @@
     python
 NameError: name 'python' is not defined
 '''},
+{'date': 'Wed Sep 25 2019 12:07:24.246 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 24
+  pass
+  ^
+IndentationError: unexpected indent
+'''},
