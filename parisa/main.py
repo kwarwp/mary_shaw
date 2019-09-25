@@ -15,7 +15,7 @@ class JogoTesouroInca:
     def inicia(self):
         """ Inicia a construção do Jogo """
         self.cena_do_templo = "Templo do Tesouro Inca"
-        print("Descrição:",self.cena_do_templo)
+        print("Descrição:",self.cena_do_templo,__name__)
         
 if __name__ == "__main__":
     jogo = JogoTesouroInca() 
