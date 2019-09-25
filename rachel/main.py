@@ -6,6 +6,7 @@
 """
 
 #from adda.main import JogoTesouroInca as JogoMarilia
+# Documentação de estilo PEP 8
 from _spy.vitollino.main import Cena
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/TyH3QTV.jpg"
 
