@@ -1,5 +1,5 @@
 # mary_shaw.tracy.main.py
-from ada.main import JogoTesouroInca as JogoMarilia
+from adda.main import JogoTesouroInca as JogoMarilia
 """
     Tesouro Inca
 """
