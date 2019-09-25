@@ -20,7 +20,7 @@ class JogoTesouroInca:
         
     def inicia(self):
         """ Inicia a construção do Jogo """
-        print("Descrição:", self.cena_do_templo, __name__)
+        pass
         
         
 if __name__ == "__main__":
