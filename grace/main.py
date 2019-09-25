@@ -4,7 +4,7 @@
 """
 __author__ = "Andre"
 
-class jogoTesouroInca:
+class JogoTesouroInca:
     """ Representa o jogo principal """
     def inicia(self):
         """ Inicia a construção do jogo """
@@ -14,3 +14,4 @@ class jogoTesouroInca:
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
     outro_jogo = JogoTesouroInca()
+    
