@@ -1,5 +1,6 @@
- mary_shaw.anastasia.main.py
+# mary_shaw.anastasia.main.py
 
+ 
 """
     Jogo do Tesouro Inca
      
