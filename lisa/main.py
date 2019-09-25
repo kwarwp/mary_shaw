@@ -15,14 +15,15 @@ class JogoTesouroInca:
     """ Representa o Jogo principal """
 #define o comportamento inicial
 #self = comportamento do objeto
-    def _init__(self):
-    """ Constroi a Cena"""
-    self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
+    def __init__(self):
+        """Constroi a Cena"""
+        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
+
 
     def inicia(self):
-        self.cena_do_templo = "Templo do Tesouro Inca"
-        print("Descrição:", self.cena_do_templo)
-        pass 
+        #self.cena_do_templo = "Templo do Tesouro Inca"
+        #print("Descrição:", self.cena_do_templo)
+        self.cena_do_templo.vai() 
 #pass = não faça nada 
 
 if __name__ == "__main__":
