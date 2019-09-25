@@ -8,14 +8,16 @@
 
 """
 
-from _spy.vitollino.main import Cena  #biblioteca gráfica
+from _spy.vitollino.main import Cena  #importa módulo da biblioteca gráfica
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/8puEH1k.jpg"   #constante em python é com letra maiúscula 
 
 __author__ = "Fernanda Prazeres (fprazeres@dcc.ufrj.br)"  
 #camelcase (nome com letra maiúscula e minúscula) ("letra de camelo") = só se usa em nome de classe
 
+
 class JogoTesouroInca: #define classe
-    """ Representa o Jogo principal """ #documentação = string apos 2 pontos, pode ser executado. 
+    """ Representa o Jogo principal """ #documentação = string após 2 pontos, pode ser executado. 
+    
     def __init__(self):   #classe tem um atributo 
         "Constroi a cena "
         self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO) # atributo
