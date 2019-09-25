@@ -4,7 +4,7 @@
 """
 __author__ = "Victor Azevedo (victorvaacs@gmail.com)"
 #PEP 8 diz que a primeira parte é a documentação
-from spy.vitollino.main import Cena
+from _spy.vitollino.main import Cena
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/hgBdcTi.jpg"
 #constantes em python são escritas em CAPSLOCK por isso IMAGEM_DO_TEMPLO é escrita assim pq ela é uma constante
 
@@ -15,9 +15,16 @@ class JogoTesouroInca:
     """ Representa o Jogo principal """
 #define o comportamento inicial
 #self = comportamento do objeto
+    def _init__(self):
+    """ Constroi a Cena"""
+    self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
+
     def inicia(self):
         self.cena_do_templo = "Templo do Tesouro Inca"
         print("Descrição:", self.cena_do_templo)
+        pass 
+#pass = não faça nada 
+
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
     jogo.inicia()
