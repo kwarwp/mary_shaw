@@ -1,16 +1,18 @@
 # mary_shaw.kathryn.main.py
-
 """
+    Tesouro Inca
 """
+__author__ = "Pablo LV"
 
-___author___ = "Pablo LV"
 
 class JogoTesouroInca:
-    """    """
+    """ Representa o Jogo principal """
     def inicia(self):
-        self.cena_do_templo = "Templo de tesouro Inca"
-        print("Description",self.cena_do_templo)
-
-if __name__ == "main":
+        """ Inicia a construção do Jogo """
+        self.cena_do_templo = "Templo do tesouro Inca"
+        print("Descrição:", self.cena_do_templo)
+        
+        
+if __name__ == "__main__":
     jogo = JogoTesouroInca()
-    jogo.inicia()
+    outro_jogo = JogoTesouroInca()
