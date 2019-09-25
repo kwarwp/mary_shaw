@@ -4,7 +4,7 @@
     Tesouro Inca
 """
 from _spy.vitollino.main import Cena
-IMAGEM_DO_TEMPLO = "https://i.imgur.com/hYLSAKf.jpg"
+IMAGEM_DO_TEMPLO = "https://i.imgur.com/zsytFm2.jpg"
 
 __author__ = "Carlo"
 
