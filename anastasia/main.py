@@ -1,10 +1,10 @@
  mary_shaw.anastasia.main.py
-__author__ = "Claudia L R Motta (claudiam@nce.ufrj.br)"
 
 """
     Jogo do Tesouro Inca
      
 """     
+__author__ = "Claudia L R Motta (claudiam@nce.ufrj.br)"
 
 
 
@@ -19,6 +19,7 @@ class JogoTesouroInca:
 if __name__ == "__main__": 
     jogo = JogoTesouroInca()
     outro_jogo = JogoTesouroInca()
+    jogo.inicia()
     
 
     
