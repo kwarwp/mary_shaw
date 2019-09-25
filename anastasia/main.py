@@ -1,6 +1,6 @@
 # mary_shaw.anastasia.main.py
 from _spy.vitollino.main import Cena
- 
+IMAGEM_DO_TEMPLO = "https://i.imgur.com/VGAHhzQ.jpg"  
 """
     Jogo do Tesouro Inca
      
