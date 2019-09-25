@@ -18,7 +18,7 @@ class JogoTesouroInca:
         
     def inicia(self):
         """ Inicia a construção do Jogo """
-        pass
+        self.cena_do_templo.vai()
         
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
