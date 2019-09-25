@@ -12,3 +12,6 @@ class JogoTesouroInca:
        self.cena_do_templo = "Templo do tesouro Inca"
        print("Descrição:",self.cena_do_templo)
    
+if __name__ == "__main__":
+   jogo = jogoTesouroInca()
+   outro_Jogo = jogoTesouroInca()
