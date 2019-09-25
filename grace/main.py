@@ -14,4 +14,5 @@ class JogoTesouroInca:
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
     outro_jogo = JogoTesouroInca()
+    jogo.inicia()
     
