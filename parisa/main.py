@@ -6,8 +6,16 @@
 
 """
 __author__ = "Fernanda Prazeres (fprazeres@dcc.ufrj.br)"  
+#camelcase (nome com letra maiúscula e minúscula) = só se usa em nome de classe
+
+
+
 
 class JogoTesouroInca:
-    """ Representa
+    """ Representa o Jogo principal """ #documentação = string apos 2 pontos, pode ser executado. 
+    def inicia(self):
+        """ Inicia a construção do Jogo """
+        self.cena_do_templo = "Templo do Tesouro Inca"
+        print("Descrição:",self.cena_do_templo)
     
 
