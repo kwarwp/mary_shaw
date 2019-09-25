@@ -18,7 +18,7 @@ class JogoTesouroInca:
         self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
         
     def inicia(self):
-        ."""Inicia a construção do Jogo"""
+        """Inicia a construção do Jogo"""
          self.cena_do_templo.vai()       
         
 if __name__ == "__main__": 
