@@ -6,3 +6,10 @@
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Wed Sep 25 2019 11:45:39.267 GMt-0300 (hora estándar de Brasilia) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 11
+  self.cena_do_templo = "Templo de tesouro Inca"
+  ^
+IndentationError: expected an indented block
+'''},
