@@ -1,4 +1,7 @@
 # mary_shaw.rachel.main.py
+
+from adda.main.py import JogoTesouroInca as JogoMarilia
+
 """
     Jogo do Tesouro Inca
      
@@ -16,5 +19,6 @@ class JogoTesouroInca:
         
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
-    outro_jogo = JogoTesouroInca()
+    outro_jogo = JogoMarilia()
     jogo.inicia()
+    outro_jogo.inicia()
