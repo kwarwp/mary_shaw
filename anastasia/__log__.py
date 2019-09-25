@@ -20,3 +20,10 @@ IndentationError: unexpected indent
    ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Sep 25 2019 12:11:18.36 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 22
+  self.cena_do_templo.vai()       
+  ^
+IndentationError: unexpected indent
+'''},
