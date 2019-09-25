@@ -1,5 +1,5 @@
 # mary_shaw.anastasia.main.py
-
+from _spy.vitollino.main import Cena
  
 """
     Jogo do Tesouro Inca
