@@ -7,6 +7,10 @@
      Jogo do Tesouro Inca
 
 """
+
+from _spy.vitollino.main import Cena  #biblioteca gráfica
+IMAGEM_DO_TEMPLO = "https://i.imgur.com/8puEH1k.jpg"   #constante em python é com letra maiúscula 
+
 __author__ = "Fernanda Prazeres (fprazeres@dcc.ufrj.br)"  
 #camelcase (nome com letra maiúscula e minúscula) ("letra de camelo") = só se usa em nome de classe
 
