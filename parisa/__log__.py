@@ -15,3 +15,10 @@
     outro_jogo = JogoCarlo()
 NameError: name 'JogoCarlo' is not defined
 '''},
+{'date': 'Wed Sep 25 2019 12:09:24.84 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 21
+  self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO) # esse é o atributo
+  ^
+IndentationError: unexpected indent
+'''},
