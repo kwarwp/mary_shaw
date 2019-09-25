@@ -22,7 +22,12 @@ class JogoTesouroInca:
 
     def inicia(self):
         """ Inicia a construção do Jogo """
-        pass
+        self.cena_do_templo.vai()
+          
+          
+          #self.cena_do_templo = "Templo do Tesouro Inca"
+       # print("Descrição:",self.cena_do_templo,__name__)
+        
         #PASS = comando que passa e não lê onde não tem comando, logo não dá erro.
         
 if __name__ == "__main__":
