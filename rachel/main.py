@@ -1,3 +1,3 @@
 # mary_shaw.rachel.main.py
 
-#Já está em uso
+__author__ = "Andre R Vieira (arvieira@labnet.nce.ufrj.br)"
