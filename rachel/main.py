@@ -1,3 +1,13 @@
 # mary_shaw.rachel.main.py
+"""
+    Jogo do Tesouro Inca
+     
+"""
+__author__ = "Andre R Vieira"
 
-__author__ = "Andre R Vieira (arvieira@labnet.nce.ufrj.br)"
+
+
+class JogoTesouroInca:
+    """ Representa o Jogo principal """
+    def inicia(self):
+        self.cena_do_templo = "Templo do tesouro Inca"
