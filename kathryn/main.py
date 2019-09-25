@@ -1,12 +1,14 @@
 # mary_shaw.kathryn.main.py
 # from adda.main import JogoTesouroInca as JogoMarilia
 """
-    Tesouro Inca
+ Tesouro Inca
 """
 from _spy.vitollino.main import Cena
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/hYLSAKf.jpg"
 
+
 __author__ = "Pablo LV"
+
 
 
 class JogoTesouroInca:
@@ -18,10 +20,9 @@ class JogoTesouroInca:
     def inicia(self):
         """ Inicia a construção do Jogo """
         pass
-        
+
+
         
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
     jogo.inicia()
-    
-    
