@@ -1,6 +1,7 @@
 # mary_shaw.parisa.main.py
 #site: http://supygirls.pythonanywhere.com/
-#from roxanne.main import JogoTesouroInca as JogoCarlo
+
+#Módulos em python: from roxanne.main import JogoTesouroInca as JogoCarlo
 
 """
      Jogo do Tesouro Inca
@@ -20,6 +21,7 @@ if __name__ == "__main__":
     jogo = JogoTesouroInca() 
     outro_jogo = JogoTesouroInca()
     jogo.inicia()
+    
     
     
     
