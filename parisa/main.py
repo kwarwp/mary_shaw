@@ -18,7 +18,7 @@ class JogoTesouroInca:
     """ Representa o Jogo principal """ #documentação = string apos 2 pontos, pode ser executado. 
     def __init__(self):   #classe tem um atributo 
         "Constroi a cena "
-         self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO) # esse é o atributo
+        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO) # esse é o atributo
 
     def inicia(self):
         """ Inicia a construção do Jogo """
