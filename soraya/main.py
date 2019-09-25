@@ -5,8 +5,15 @@
 
 __author__ = "Sávyo V Morais (savyo.morais@labnet.nce.ufrj.br)"
 
+from _spy.vitollino.main import Cena
+IMAGEM_DO_TEMPLO = "https://i.imgur.com/i3RQJUF.jpg"
+
 class JogoTesouroInca:
     """ Representa o Jogo principal """
+    def __init__(self):
+        """ Constroi a cena """
+        
+        
     def inicia(self):
         """ Inicia a construção do Jogo """
         self.cena_do_templo  = "Templo do Tesouro Inca"
