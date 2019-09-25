@@ -1,9 +1,8 @@
 # mary_shaw.tracy.main.py
-# mary_shaw.roxanne.main.py
 """
     Tesouro Inca
 """
-__author__ = "Carlo"
+__author__ = "Lorena"
 
 
 class JogoTesouroInca:
@@ -12,3 +11,6 @@ class JogoTesouroInca:
         """ Inicia a construção do Jogo """
         self.cena_do_templo = "Templo do tesouro Inca"
         print("Descrição:", self.cena_do_templo)
+        
+if __name__ == "__main__":
+    jogo = 
