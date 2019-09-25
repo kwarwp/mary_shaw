@@ -16,6 +16,10 @@ __author__ = "Fernanda Prazeres (fprazeres@dcc.ufrj.br)"
 
 class JogoTesouroInca:
     """ Representa o Jogo principal """ #documentação = string apos 2 pontos, pode ser executado. 
+    def __init__(self):
+        "Constroi a cena "
+         self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
+
     def inicia(self):
         """ Inicia a construção do Jogo """
         self.cena_do_templo = "Templo do Tesouro Inca"
