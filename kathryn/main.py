@@ -10,10 +10,3 @@ class JogoTesouroInca:
    def inicial(self):
    self.cena_do_templo = "Templo de tesouro Inca"
    print("Description",self.cena_do_templo)
-   
-   
-   
-   
-   
-   
-   
