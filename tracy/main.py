@@ -1,4 +1,5 @@
 # mary_shaw.tracy.main.py
+from ada.main import JogoTesouroInca as JogoMarilia
 """
     Tesouro Inca
 """
@@ -14,5 +15,6 @@ class JogoTesouroInca:
         
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
-    outro_jogo = JogoTesouroInca()
+    outro_jogo = JogoMarilia()
     jogo.inicia()
+    outro_jogo.incia()
