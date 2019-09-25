@@ -6,12 +6,13 @@
 __author__ = "Carlos Augusto T. Alves"
 
 class JogoTesouroInca:
-   """ Representa o jogo principal """
-   def inicia(self):
-       """ Inicia a construção do jogo"""
-       self.cena_do_templo = "Templo do tesouro Inca"
-       print("Descrição:",self.cena_do_templo)
-   
+    """ Representa o jogo principal """
+    def inicia(self):
+        """ Inicia a construção do jogo"""
+        self.cena_do_templo = "Templo do tesouro Inca"
+        print("Descrição:",self.cena_do_templo)
+
 if __name__ == "__main__":
-   jogo = jogoTesouroInca()
-   outro_Jogo = jogoTesouroInca()
+    jogo = jogoTesouroInca()
+    outro_Jogo = jogoTesouroInca()
+    jogo.inicia()
