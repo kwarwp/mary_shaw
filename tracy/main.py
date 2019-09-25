@@ -2,7 +2,7 @@
 """
     Tesouro Inca
 """
-__author__ = "Lorena"
+__author__ = "Lorena P Grion"
 
 
 class JogoTesouroInca:
