@@ -1,6 +1,6 @@
 # mary_shaw.rachel.main.py
 
-from adda.main.py import JogoTesouroInca as JogoMarilia
+from adda.main import JogoTesouroInca as JogoMarilia
 
 """
     Jogo do Tesouro Inca
