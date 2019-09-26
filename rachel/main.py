@@ -81,10 +81,23 @@ class JogoTesouroInca:
     def inicia(self):
         """ Inicia a construção do Jogo """
         self.cena_do_templo.vai()
+        # Quando um método está vazio e eu quero deixar ele para 
+        # implementar depois, o Python irá reclamar porque não pode
+        # existir métodos que não façam nada. Para resolver esse 
+        # problema, eu utilizo a palavra "pass" como a abaixo.
+        # pass
         
-        
+
+# Com a classe definda, agora preciso realmente instanciar objetos 
+# dela e chamar os métodos desejados, como em uma main do Java.
+# Nesse moomento, a melhor prática para se realizar isso é com a 
+# statement abaixo, utilizando o if para testar se o nome do código
+# é o main. Lá em cima definimos mary_shaw.rachel.main.py, o que 
+# indica que esse código se chama main.
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
     jogo.inicia()
+    # O trecho abaixo é para ser usado com a importação do código 
+    # de outro aluno.
     #outro_jogo = JogoMarilia()
     #outro_jogo.inicia()
