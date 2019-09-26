@@ -54,7 +54,15 @@ class JogoTesouroInca:
     # A identação pelo PEP 8 após um ":" é de 4 espaços e não 
     # de um tab. Prestar atenção nisso, senão o compilador 
     # reclama e deixa marcado de vermelho.
+    # A primeira linha de código depois do ":", segundo o PEP 8
+    # deve ser a documentação da funcionalidade daquela classe
+    # ou método.
     """ Representa o Jogo principal """
+    # No Python, o __init__ representa o construtor da classe.
+    # Nesse caso, foi passado o self, que representa a instância 
+    # da classe que está sendo criada. Eu poderia passar cls, o 
+    # que indica que a classe em si está sendo passada no 
+    # argumento.
     def __init__(self):
         """ Constroi a cena """
         self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
