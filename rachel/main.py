@@ -40,10 +40,20 @@ from _spy.vitollino.main import Cena
 # underline
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/TyH3QTV.jpg"
 
+# A variável __author__ é interna e aqui contém informações
+# acerca do autor do código.
 __author__ = "Andre R Vieira"
 
 
+# Entre as classes, o PEP 8 indica que deve ter 2 linhas em
+# branco, como as acima. Além disso, nomes de classes usam 
+# a camel case, como no Java. Observe que somente nomes de 
+# classe utilizam tal formato, métodos, atributos, variáveis,
+# constantes etc, utilizam outros formatos.
 class JogoTesouroInca:
+    # A identação pelo PEP 8 após um ":" é de 4 espaços e não 
+    # de um tab. Prestar atenção nisso, senão o compilador 
+    # reclama e deixa marcado de vermelho.
     """ Representa o Jogo principal """
     def __init__(self):
         """ Constroi a cena """
