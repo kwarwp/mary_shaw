@@ -65,8 +65,19 @@ class JogoTesouroInca:
     # argumento.
     def __init__(self):
         """ Constroi a cena """
+        # Aqui eu crio uma variável na minha instância, da classe
+        # JogoTesouroInca, a qual recepciona um objeto da classe
+        # Cena criado pelo construtor com a passagem da URL do 
+        # imgur.
+        # Observe que a classe se chama Cena justamente porque 
+        # demos esse apelido a ela na importação lá em cima.
         self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
         
+    # Aqui vamos criar um método para a classe que também receberá
+    # como argumento a instância em si da classe. Essa instância que
+    # possui a variável com a instância da classe Cena. A partir dai
+    # vamos chamar o método vai dessa instância que irá exibir a 
+    # imagem do templo.
     def inicia(self):
         """ Inicia a construção do Jogo """
         self.cena_do_templo.vai()
