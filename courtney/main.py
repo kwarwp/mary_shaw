@@ -12,6 +12,7 @@ MUMIA = "https://i.imgur.com/YGV3CPB.jpg"
 COBRA = "https://i.imgur.com/IeC0gBj.jpg"
 TESOURO = "https://i.imgur.com/xkBdHCE.jpg"
 TURQUESA = "https://i.imgur.com/8WDBJM3.png" # DI["TURQUESA"]
+MINHAMUMIA = "https://i.imgur.com/GlvQM3x.jpg"
 
 TUMBA = [COBRA, MUMIA] + [TESOURO]*3
 
