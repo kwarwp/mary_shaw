@@ -18,6 +18,10 @@ TURQUESA = "https://i.imgur.com/8WDBJM3.png" # DI["TURQUESA"]
 
 TUMBA = [COBRA, MUMIA] + [TESOURO]*3
 
+class PedrasPreciosas():
+    """ Um Conjunto de pedras que se organizam por valor """
+    def __init__(self):
+        """ Inicia com tesouro """
 
 class Jogador():
     """ Um explorador em busca de tesouros """
