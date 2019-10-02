@@ -68,6 +68,6 @@ if __name__ == "__main__":
     jogo = JogoTesouroInca()
     #jogo.inicia()
     #print(JogoTesouroInca,JogoTesouroInca(), JogoTesouroInca().cena_dotemplo())
-    print(help(PedrasPreciosas.aumenta)
+    print(help(PedrasPreciosas.aumenta))
 
     
