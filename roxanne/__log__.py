@@ -63,3 +63,10 @@ RuntimeError: too much recursion
   module '$exec_1849' line 37
     jogo = JogoTesouroInca()
 '''},
+{'date': 'Wed Oct 02 2019 06:00:45.392 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module _spy.vitollino.main line 354
+  item_img = html.IMG(Id=nome_item, src=item, width=30, height="30px" style=ESTYLE)
+                                                                       ^
+SyntaxError: invalid syntax
+'''},
