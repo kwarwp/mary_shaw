@@ -19,10 +19,12 @@ class JogoTesouroInca:
         
     def inicia(self):
         """ Inicia a construção do Jogo """
-        pass
 
+
+class
 
         
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
     jogo.inicia()
+    print(JogoTesouroInca.JogoTesouroInca())
