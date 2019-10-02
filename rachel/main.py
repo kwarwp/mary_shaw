@@ -34,7 +34,7 @@
 # a parte gráfica do Python. Aqui, será utilizada para exibir
 # o fundo com a imagem do templo.
 from _spy.vitollino.main import Cena, INVENTARIO, Elemento
-from elemento.main import Elemento
+#from elemento.main import Elemento
 from random import choice
 
 # A variável __author__ é interna e aqui contém informações
@@ -111,8 +111,24 @@ class Tesouros(Cena):
         """ Inicia a camara contendo umas pedras
             :param quantas_pedras: numero de pedras nesta câmara
         """
+        # Posso definir uma classe dentro de outra classe
+        # Aqui queremos criar uma próxima câmara que não é uma Cena,
+        # mas que irá se fingir de cena. Isso se chama Duck Typing, ou seja,
+        # se a classe faz tudo como uma outra, o python a reconhece como 
+        # essa outra.
+        # Nesse caso, a ProximaCamara irá se fingir de Cena e terá de ter 
+        # o método vai também.
+        # Eu defino o método vai da minha classe e o python a aceitará como
+        # uma Cena. No método eu sorteio um próximo tesouro e chamo o vai do tesouro,
+        # não preciso nem mesmo chamar o __init__.
+        # Observe que o __init__ do Tesouros tem na direita a chamada do construtor 
+        # da próxima cena
+        class ProximaCamara:
+            def vai(self):
+                Tesouros(choice(range(1,5))).vai()
+            
         self.tesouro = quantas_pedras
-        super().__init__(TESOURO)
+        super().__init__(TESOURO, direita=ProximaCamara())
         self.pedras = [Elemento(
              TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in range(self.tesouro)]
 
