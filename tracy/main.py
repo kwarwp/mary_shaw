@@ -15,7 +15,7 @@ TESOURO = "https://i.imgur.com/xkBdHCE.jpg"
 FOGO = "https://i.imgur.com/LGlVkUM.png"
 ARANHA = "https://i.imgur.com/DMAU5DF.gif"
 PEDREIRA = "https://i.imgur.com/4JPWbQg.png"
-TURQUESA = "https://i.imgur.com/8WDBJM3.png" # DI["TURQUESA"]
+TURQUESAS = "https://i.imgur.com/8WDBJM3.png"
 ACAMPAMENTO = "https://i.imgur.com/BoPPjLb.jpg"
 
 TUMBA = [COBRA, MUMIA] + [TESOURO]*3
@@ -47,42 +47,52 @@ class Jogador():
         """ Inicia com tesouro """
 
 
-class Tesouros():
-    """ camaras secretas contendo tesouros """
+class Tesouros(Cena):
+    """ Camaras secretas contendo tesouros """
     def __init__(self, quantas_pedras=4):
-        """ Inicia a camara contendo umas pedras 
-        :param int quantas_pedras: numero de pedras nesta camara
+        """ Inicia a camara contendo umas pedras
+            :param int quantas_pedras: numero de pedras nesta camara
         """
-        self.tumba = [Cena]
         self.tesouro = quantas_pedras
         super().__init__(cena)
-        #self.pedra = Elemento(TURQUESA, x=50, y=250 w=40, h=40, cena=self)
-        self.pedras = [Elemento( TURQUESA, x=50+50*pedra, y=250 w=40, h=40, cena=self) for pedra in range(self.tesouro)]
+        #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
+        self.pedras = [Elemento(
+             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
+             range(self.tesouro)]
+
 
 class Tumba():
     """ Um complexo de camaras secretas sob o templo """
     def __init__(self):
         """ Inicia o complexo de camaras """
-        self.tumba = [Tesouro(pedras) for pedras in range(4)]
+        self.tumba = [Tesouro(pedras+1) for pedras in range(4)]
         self.inicial = choice(self.tumba)
 
+
 class Acampamento(Cena):
-    """ Acampamento é um lugar seguro e quentinho para admirar os seus ganhos """
+    """ Um lugar seguro e quentinho para admirar seus ganhos """
     def __init__(self, cena):
-        """ Cria a cena de um acampmanto com tesouro vazio """
+        """ Cria a cena de um acampamento com tesouros """
         self.tesouro = 4
         super().__init__(cena)
-        #self.pedra = Elemento(TURQUESA, x=50, y=250 w=40, h=40, cena=self)
-        self.pedras = [Elemento(TURQUESA, x=50+50*pedra, y=250 w=40, h=40, cena=self) for pedra in range(self.tesouro)]
+        #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
+        self.pedras = [Elemento(
+             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
+             range(self.tesouro)]
+
+    def ganho(self, valor):
+        """ aumenta o tesouro com um valor de pedras """
+        self.tesouro += valor
+
 
 class JogoTesouroInca:
     """ Representa o Jogo principal """
     def __init__(self):
         """ Constroi a cena"""
-        #self.acampamento = Cena(ACAMPAMENTO)
         self.acampamento = Acampamento(ACAMPAMENTO)
-        self.tumba = Tumba
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, self.acampamento, direita=self.tumba.inicial)
+        self.tumba = Tumba()
+        self.cena_do_templo = Cena(
+        IMAGEM_DO_TEMPLO, self.acampamento, direita=self.tumba.inicial)
         self.acampamento.direita = self.cena_do_templo
         
     def inicia(self):
@@ -93,5 +103,4 @@ class JogoTesouroInca:
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
     jogo.inicia()
-    #print(help(JogoTesouroInca.inicia, JogoTesouroInca.inicia())
-    #print(help(Cena))
+    #print(JogoTesouroInca,JogoTesouroInca())
