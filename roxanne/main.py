@@ -80,6 +80,7 @@ class JogoTesouroInca:
     """ Representa o Jogo principal """
     def __init__(self):
         """ Constroi a cena"""
+        INVENTARIO.inicia()
         self.acampamento = Acampamento(ACAMPAMENTO)
         self.eu = Jogador()
         self.tumba = Tumba(self.acampamento, self.eu)
