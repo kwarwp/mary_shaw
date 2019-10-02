@@ -1,19 +1,43 @@
-# mary_shaw.Tracy.main.py
+# mary_shaw.roxanne.main.py
 # from adda.main import JogoTesouroInca as JogoMarilia
 """
     Tesouro Inca
 """
-from _spy.vitollino.main import Cena
-IMAGEM_DO_TEMPLO = "https://i.imgur.com/zsytFm2.jpg"
+from _spy.vitollino.main import Cena, INVENTARIO, Elemento
+from random import choice
 
-__author__ = "Carlo"
+__author__ = "Lorena"
+IMAGEM_DO_TEMPLO = "https://i.imgur.com/hYLSAKf.jpg"
+MUMIA = "https://i.imgur.com/a9ePBx5.png"
+COBRA = "https://i.imgur.com/T9EwoOc.png"
+TESOURO = "https://i.imgur.com/xkBdHCE.jpg"
+FOGO = "https://i.imgur.com/LGlVkUM.png"
+ARANHA = "https://i.imgur.com/DMAU5DF.gif"
+PEDREIRA = "https://i.imgur.com/4JPWbQg.png"
+TURQUESA = "https://i.imgur.com/8WDBJM3.png" # DI["TURQUESA"]
+
+TUMBA = [COBRA, MUMIA] + [TESOURO]*3
+
+
+class Jogador():
+    """ Um explorador em busca de tesouros """
+    def __init__(self):
+        """ Inicia com tesouro """
+
+
+class Tumba():
+    """ Um complexo de camaras secretas sob o templo """
+    def __init__(self):
+        """ Inicia o complexo de camaras """
 
 
 class JogoTesouroInca:
     """ Representa o Jogo principal """
     def __init__(self):
         """ Constroi a cena"""
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
+        camara = Camara(jogador=Jogador())
+        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, direita=camara)
+        camara.direita = Camara(COBRA, Jogador())
         
     def inicia(self):
         """ Inicia a construção do Jogo """
@@ -23,3 +47,4 @@ class JogoTesouroInca:
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
     jogo.inicia()
+    #print(help(JogoTesouroInca.inicia))
