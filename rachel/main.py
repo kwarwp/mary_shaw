@@ -44,6 +44,23 @@ IMAGEM_DO_TEMPLO = "https://i.imgur.com/TyH3QTV.jpg"
 # acerca do autor do código.
 __author__ = "Andre R Vieira"
 
+class PedrasPreciosas:
+    """ Um conjunto de pedras que se organizam por valor """
+    # Quando eu quero descrever parâmetros de métodos de classes, eu 
+    # faço esse formato com : que está abaixo. Observe que isso é lido
+    # e interpretado pleo python
+    def __init__(self, valor):
+        """ Inicia com valor equivalente de turquesas
+            :param valor: valor do tesouro em número de turquesas. 
+        """
+        # Os 3 pontinhos funciona semelhante ao pass para implementação futura
+        ...
+        
+    def aumenta(self, valor):
+        """ Aumenta o tesouro com valor equivalente de turquesas
+            :param valor: valor a acrescentar ao tesouro em número de turquesas
+        """
+        
 
 class Jogador:
     """ Um explorador em busca de tesouros """
