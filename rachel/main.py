@@ -91,23 +91,24 @@ class Acampamento(Cena):
         super().__init__(cena)
         self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
         
-    def ganho(self, valor):
-        """ Aumenta o tesouro com valor equivalente de turquesas
-            :param valor: valor a acrescentar ao tesouro em número de turquesas
-        """
-        self.tesouro += valor
-        
         
 
 class Jogador():
     """ Um explorador em busca de tesouros """
     def __init__(self):
         """ Inicia com tesouro """
+        self.tesouro = 0
+    def ganho(self, valor):
+        """ Aumenta o tesouro com valor equivalente de turquesas
+            :param valor: valor a acrescentar ao tesouro em número de turquesas
+        """
+        self.tesouro += valor
+
 
 
 class Tesouros(Cena):
     """ Camaras secretas contendo tesouros """
-    def __init__(self, quantas_pedras=4):
+    def __init__(self, quantas_pedras=4, acampamento=None):
         """ Inicia a camara contendo umas pedras
             :param quantas_pedras: numero de pedras nesta câmara
         """
@@ -125,19 +126,19 @@ class Tesouros(Cena):
         # da próxima cena
         class ProximaCamara:
             def vai(self):
-                Tesouros(choice(range(1,5))).vai()
+                Tesouros(choice(range(1,5)), acampamento).vai()
             
         self.tesouro = quantas_pedras
-        super().__init__(TESOURO, direita=ProximaCamara())
+        super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         self.pedras = [Elemento(
              TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in range(self.tesouro)]
 
 
 class Tumba():
     """ Um complexo de camaras secretas sob o templo """
-    def __init__(self):
+    def __init__(self, acampamento):
         """ Inicia o complexo de camaras """
-        self.tumba = [Tesouros(pedras+1) for pedras in range(4)]
+        self.tumba = [Tesouros(pedras+1, acampamento) for pedras in range(4)]
         self.inicial = choice(self.tumba)
 
 
@@ -174,10 +175,9 @@ class JogoTesouroInca:
         # Observe que a classe se chama Cena justamente porque 
         # demos esse apelido a ela na importação lá em cima.
         self.acampamento = Acampamento(ACAMPAMENTO)
-        self.tumba = Tumba()
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, self.acampamento, self.tumba.inicial)
+        self.tumba = Tumba(self.acampamento)
+        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, esquerda=self.acampamento, direita=self.tumba.inicial)
         self.acampamento.direita = self.cena_do_templo
-        self.tumba.inicial.esquerda = self.cena_do_templo
         
         
     # Aqui vamos criar um método para a classe que também receberá
