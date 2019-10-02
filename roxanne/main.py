@@ -31,7 +31,7 @@ class Tesouros(Cena):
             :param int quantas_pedras: numero de pedras nesta camara
         """
         self.tesouro = quantas_pedras
-        super().__init__(cena)
+        super().__init__(TESOURO)
         #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
         self.pedras = [Elemento(
              TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
@@ -42,7 +42,7 @@ class Tumba():
     """ Um complexo de camaras secretas sob o templo """
     def __init__(self):
         """ Inicia o complexo de camaras """
-        self.tumba = [Tesouro(pedras+1) for pedras in range(4)]
+        self.tumba = [Tesouros(pedras+1) for pedras in range(4)]
         self.inicial = choice(self.tumba)
 
 
