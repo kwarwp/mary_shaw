@@ -86,6 +86,15 @@ class JogoTesouroInca:
         # existir métodos que não façam nada. Para resolver esse 
         # problema, eu utilizo a palavra "pass" como a abaixo.
         # pass
+
+
+
+class Jogador:
+class Tumba:
+class Acampamento:
+class Camara:
+class Gemas:
+
         
 
 # Com a classe definda, agora preciso realmente instanciar objetos 
