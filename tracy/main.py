@@ -20,9 +20,18 @@ TUMBA = [COBRA, MUMIA] + [TESOURO]*3
 
 class PedrasPreciosas():
     """ Um Conjunto de pedras que se organizam por valor """
-    def __init__(self):
-        """ Inicia com tesouro """
-
+    def __init__(self, valor):
+        """ Inicia com valor equivalente de turquesas 
+            :param valor: valor do tesouro em número de Turquesas.        
+        """
+        ...
+        
+    def aumenta(self, valor):
+        """ Aumenta o tesouro com valor equivalente de turquesas 
+            :param valor: valor  a acrescentar ao tesouro em número de Turquesas.        
+        """        
+        ...
+        
 class Jogador():
     """ Um explorador em busca de tesouros """
     def __init__(self):
