@@ -38,11 +38,12 @@ class Acampamento(Cena):
     """ Acampamento é um lugar seguro e quentinho para admirar os seus ganhos """
     def __init__(self, cena):
         """ Cria a cena de um acampmanto com tesouro vazio """
-        self.tesouro = 0
+        self.tesouro = 4
         super().__init__(cena)
-        self.pedra = Elemento(TURQUESA, x=50, y=250 w=40, h=40, cena=self)
-        
-    def ganoho(self, valor):
+        #self.pedra = Elemento(TURQUESA, x=50, y=250 w=40, h=40, cena=self)
+        self.pedras = [Elemento( TURQUESA, x=50+50*pedra, y=250 w=40, h=40, cena=self) for pedra in range(self.tesouro)]
+
+    def ganho(self, valor):
         """ Aumenta o tesouro com valor equivalente de turquesas 
             :param valor: valor a acrescentar ao tesouro em número de Turquesas.        
         """   
@@ -54,10 +55,23 @@ class Jogador():
         """ Inicia com tesouro """
 
 
+class Tesouros():
+    """ camaras secretas contendo tesouros """
+    def __init__(self, quantas_pedras=4):
+        """ Inicia a camara contendo umas pedras 
+        :param int quantas_pedras: numero de pedras nesta camara
+        """
+        self.tumba = [Cena]
+        self.tesouro = quantas_pedras
+        super().__init__(cena)
+        #self.pedra = Elemento(TURQUESA, x=50, y=250 w=40, h=40, cena=self)
+        self.pedras = [Elemento( TURQUESA, x=50+50*pedra, y=250 w=40, h=40, cena=self) for pedra in range(self.tesouro)]
+
 class Tumba():
     """ Um complexo de camaras secretas sob o templo """
     def __init__(self):
         """ Inicia o complexo de camaras """
+        self.tumba = [Tesouro(pedras) for pedras in range(4)]
 
 
 class JogoTesouroInca:
@@ -66,7 +80,8 @@ class JogoTesouroInca:
         """ Constroi a cena"""
         #self.acampamento = Cena(ACAMPAMENTO)
         self.acampamento = Acampamento(ACAMPAMENTO)
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, self.acampamento)
+        self.tumba = Tumba
+        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, self.acampamento, direita=self.tumba.inicial)
         self.acampamento.direita = self.cena_do_templo
         
     def inicia(self):
