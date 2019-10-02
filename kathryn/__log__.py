@@ -34,3 +34,10 @@ SyntaxError: invalid syntax
               ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 02 2019 10:16:12.711 GMt-0300 (hora estándar de Brasilia) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 24
+  class
+        ^
+SyntaxError: invalid syntax
+'''},
