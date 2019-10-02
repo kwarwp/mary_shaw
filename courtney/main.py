@@ -61,6 +61,12 @@ class Tumba():
     def __ini__(self):
         """Inicia com tesouro"""
         
+class PedrasPreciosas:        
+      """Um conjunto de pedras que se organizam por valor"""
+    def __ini__(self,valor):
+        """Inicia com valor equivalente de turquesas
+           :param valor: valor do tesouro em número de turquesas.
+        """
         
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
