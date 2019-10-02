@@ -36,6 +36,9 @@ class Acampamento(Cena):
         """ Cria a cena de um acampamento com tesouros """
         self.tesouro = 0
         super().__init__(cena)
+    def ganho(self, valor):
+        """ aumenta o tesouro com um valor de pedras """
+        self.tesouro += valor
 
 
 class JogoTesouroInca:
