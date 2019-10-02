@@ -34,8 +34,9 @@ class Tesouros(Cena):
             :param int quantas_pedras: numero de pedras nesta camara
         """
         
-        #class ProximaCamara:
-        #   def vai(self):
+        class ProximaCamara:
+            def vai(self):
+                Tesouro(choise(range(1,5))).vai()
 
 
         self.tesouro = quantas_pedras
