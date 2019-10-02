@@ -6,7 +6,8 @@
 """     
 from _spy.vitollino.main import Cena
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/6RL5A3g.jpg" 
-IMAGEM_DE_MUMIA = 
+IMAGEM_DE_MUMIA = "https://i.imgur.com/SoMZVzD.jpg"
+IMAGEM_DE_
 
 __author__ = "Claudia L R Motta (claudiam@nce.ufrj.br)"
 
