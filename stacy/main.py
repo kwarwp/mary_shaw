@@ -32,6 +32,7 @@ class Tumba():
         """ Inicia o complexo de camaras """
 
 
+#http://supygirls.pythonanywhere.com/supygirls/gamer/mary_shaw/stacy
 class Acampamento(Cena):
     """ Um lugar seguro e quentinho para admirar seus ganhos """
     def __init__(self, cena):
