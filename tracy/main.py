@@ -15,7 +15,7 @@ TESOURO = "https://i.imgur.com/xkBdHCE.jpg"
 FOGO = "https://i.imgur.com/LGlVkUM.png"
 ARANHA = "https://i.imgur.com/DMAU5DF.gif"
 PEDREIRA = "https://i.imgur.com/4JPWbQg.png"
-TURQUESAS = "https://i.imgur.com/8WDBJM3.png"
+TURQUESA = "https://i.imgur.com/8WDBJM3.png"
 ACAMPAMENTO = "https://i.imgur.com/BoPPjLb.jpg"
 
 TUMBA = [COBRA, MUMIA] + [TESOURO]*3
