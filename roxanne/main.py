@@ -30,8 +30,11 @@ class Tesouros(Cena):
         """ Inicia a camara contendo umas pedras
             :param int quantas_pedras: numero de pedras nesta camara
         """
+        class ProximaCamara:
+            def vai(self):
+                Tesouros(choice(range(1,5))).vai()
         self.tesouro = quantas_pedras
-        super().__init__(TESOURO)
+        super().__init__(TESOURO, direita=ProximaCamara())
         #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
         self.pedras = [Elemento(
              TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
