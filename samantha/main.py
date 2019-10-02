@@ -1,6 +1,5 @@
 # mary_shaw.samantha.main.py
-# Paulo_Freitas
-# mary_shaw.roxanne.main.py
+
 # from adda.main import JogoTesouroInca as JogoMarilia
 """
     Tesouro Inca
@@ -38,6 +37,8 @@ class Acampamento(Cena):
         """ Cria a cena de um acampamento com tesouros """
         self.tesouro = 0
         super().__init__(cena)
+        self.pedra = Elemento(TURQUESA, cena=self)
+        
     def ganho(self, valor):
         """ aumenta o tesouro com um valor de pedras """
         self.tesouro += valor
