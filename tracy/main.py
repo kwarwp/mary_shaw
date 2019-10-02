@@ -28,10 +28,9 @@ class PedrasPreciosas():
         
     def aumenta(self, valor):
         """ Aumenta o tesouro com valor equivalente de turquesas 
-            :param valor: valor  a acrescentar ao tesouro em número de Turquesas.        
+            :param valor: valor a acrescentar ao tesouro em número de Turquesas.        
         """        
-        ...
-        
+
 class Jogador():
     """ Um explorador em busca de tesouros """
     def __init__(self):
@@ -56,6 +55,6 @@ class JogoTesouroInca:
         
         
 if __name__ == "__main__":
-    jogo = JogoTesouroInca()
-    jogo.inicia()
-    #print(help(JogoTesouroInca.inicia, JogoTesouroInca.inicia())
+jogo = JogoTesouroInca()
+jogo.inicia()
+#print(help(JogoTesouroInca.inicia, JogoTesouroInca.inicia())
