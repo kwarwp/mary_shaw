@@ -48,3 +48,10 @@ AttributeError: 'JogoTesouroInca' object has no attribute 'incia'
     outro_jogo = JogoMarilia()
 NameError: name 'JogoMarilia' is not defined
 '''},
+{'date': 'Wed Oct 02 2019 10:16:34.96 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 50
+  print(help(JogoTesouroInca.inicia, JogoTesouroInca.inicia())
+       ^
+SyntaxError: Unbalanced bracket (
+'''},
