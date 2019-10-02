@@ -15,8 +15,18 @@ TURQUESA = "https://i.imgur.com/8WDBJM3.png" # DI["TURQUESA"]
 
 TUMBA = [COBRA, MUMIA] + [TESOURO]*3
 
+
 class Jogador():
-    
+    """ Um explorador em busca de tesouros """
+    def __init__(self):
+        """ Inicia com tesouro """
+
+
+class Tumba():
+    """ Um complexo de camaras secretas sob o templo """
+    def __init__(self):
+        """ Inicia o complexo de camaras """
+
 
 class JogoTesouroInca:
     """ Representa o Jogo principal """
