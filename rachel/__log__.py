@@ -82,3 +82,7 @@ SyntaxError: invalid syntax
 'error': '''
 Exception: <TypeError: $B.imported[_mod_name] is null>
 '''},
+{'date': 'Wed Oct 02 2019 11:43:00.106 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+Exception: <TypeError: $B.imported[_mod_name] is null>
+'''},
