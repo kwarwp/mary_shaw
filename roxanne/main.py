@@ -13,6 +13,7 @@ MUMIA = "https://i.imgur.com/YGV3CPB.jpg"
 COBRA = "https://i.imgur.com/IeC0gBj.jpg"
 TESOURO = "https://i.imgur.com/xkBdHCE.jpg"
 TURQUESA = "https://i.imgur.com/8WDBJM3.png" # DI["TURQUESA"]
+ACAMPAMENTO = "https://i.imgur.com/dmSDeDF.jpg"
 
 TUMBA = [COBRA, MUMIA] + [TESOURO]*3
 
@@ -29,11 +30,21 @@ class Tumba():
         """ Inicia o complexo de camaras """
 
 
+class Acampamento(Cena):
+    """ Um lugar seguro e quentinho para admirar seus ganhos """
+    def __init__(self, cena):
+        """ Cria a cena de um acampamento com tesouros """
+        self.tesouro = 0
+        super().__init__(cena)
+
+
 class JogoTesouroInca:
     """ Representa o Jogo principal """
     def __init__(self):
         """ Constroi a cena"""
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
+        self.acampamento = Acampamento(ACAMPAMENTO)
+        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, self.acampamento)
+        self.acampamento.direita = self.cena_do_templo
         
     def inicia(self):
         """ Inicia a construção do Jogo """
