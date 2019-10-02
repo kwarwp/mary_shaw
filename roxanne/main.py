@@ -35,8 +35,9 @@ class Acampamento(Cena):
     def __init__(self, cena):
         """ Cria a cena de um acampamento com tesouros """
         self.tesouro = 0
-        self.pedra = Elemento(TURQUESA, cena=self)
         super().__init__(cena)
+        self.pedra = Elemento(TURQUESA, cena=self)
+
     def ganho(self, valor):
         """ aumenta o tesouro com um valor de pedras """
         self.tesouro += valor
