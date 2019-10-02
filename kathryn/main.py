@@ -35,6 +35,7 @@ class Tesouros(Cena):
         """
         
         #class ProximaCamara:
+        #   def vai(self):
 
 
         self.tesouro = quantas_pedras
