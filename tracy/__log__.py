@@ -62,3 +62,10 @@ SyntaxError: Unbalanced bracket (
        ^
 SyntaxError: Unbalanced bracket (
 '''},
+{'date': 'Wed Oct 02 2019 10:18:01.491 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 50
+  "print(help(JogoTesouroInca.inicia, JogoTesouroInca.inicia())
+                                                               ^
+SyntaxError: EOL while scanning string literal
+'''},
