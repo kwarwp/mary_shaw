@@ -8,6 +8,13 @@ from _spy.vitollino.main import Cena
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/hgBdcTi.jpg"
 #constantes em python são escritas em CAPSLOCK por isso IMAGEM_DO_TEMPLO é escrita assim pq ela é uma constante
 
+#tem que entender a class e a instancia
+#class é um processo para fazer algo - 
+
+class Jogador:
+    """ Um explorador em busca de tesouros """
+    def __init__(self):
+        """ Inicia com tesouro """
 
 class JogoTesouroInca:
 #kamelcase só usa em classes
