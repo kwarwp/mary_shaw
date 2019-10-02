@@ -34,3 +34,10 @@ IndentationError: unexpected indent
   ^
 IndentationError: unexpected indent
 '''},
+{'date': 'Wed Oct 02 2019 11:21:21.865 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 70
+  print(help(PedrasPreciosas.aumenta)
+       ^
+SyntaxError: Unbalanced bracket (
+'''},
