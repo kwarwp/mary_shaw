@@ -78,3 +78,7 @@ NameError: name 'Elemento' is not defined
                                                            ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 02 2019 11:42:43.756 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+Exception: <TypeError: $B.imported[_mod_name] is null>
+'''},
