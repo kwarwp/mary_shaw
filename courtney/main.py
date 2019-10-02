@@ -3,7 +3,7 @@
 """
     Tesouro Inca
 """
-from _spy.vitollino.main import Cena, INVENTARIO, Elemento
+from _spy.vitollino.main import Cena, INVENTARIO
 from elemento.main import Elemento
 from random import choice
 
@@ -22,19 +22,30 @@ class Jogador():
     """ Um explorador em busca de tesouros """
     def __init__(self):
         """ Inicia com tesouro """
+        self.tesouro = 0
+    
+    def ganho(self, valor):
+        """ Aumenta o tesouro com valor equivalente de turquesas 
+            :param valor: valor a acrescentar ao tesouro em número de Turquesas.        
+        """   
+        self.tesouro += valor
+        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(valor)]
+
 
 
 class Tesouros(Cena):
     """ Camaras secretas contendo tesouros """
-    def __init__(self, quantas_pedras=4):
+    def __init__(self, quantas_pedras=4, acampamento=None, eu=None):
         """ Inicia a camara contendo umas pedras
             :param int quantas_pedras: numero de pedras nesta camara
         """
         class ProximaCamara:
             def vai(self):
-                Tesouros(choice(range(1,5))).vai()
+                pedras_na_camara = choice(range(1,5))
+                Tesouros(pedras_na_camara, acampamento, eu).vai()
+                eu.ganho(pedras_na_camara)
         self.tesouro = quantas_pedras
-        super().__init__(TESOURO, direita=ProximaCamara())
+        super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
         self.pedras = [Elemento(
              TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
@@ -43,9 +54,9 @@ class Tesouros(Cena):
 
 class Tumba():
     """ Um complexo de camaras secretas sob o templo """
-    def __init__(self):
+    def __init__(self, acampamento, eu):
         """ Inicia o complexo de camaras """
-        self.tumba = [Tesouros(pedras+1) for pedras in range(4)]
+        self.tumba = [Tesouros(pedras+1, acampamento, eu) for pedras in range(4)]
         self.inicial = choice(self.tumba)
 
 
@@ -69,8 +80,10 @@ class JogoTesouroInca:
     """ Representa o Jogo principal """
     def __init__(self):
         """ Constroi a cena"""
+        INVENTARIO.inicia()
         self.acampamento = Acampamento(ACAMPAMENTO)
-        self.tumba = Tumba()
+        self.eu = Jogador()
+        self.tumba = Tumba(self.acampamento, self.eu)
         self.cena_do_templo = Cena(
         IMAGEM_DO_TEMPLO, self.acampamento, direita=self.tumba.inicial)
         self.acampamento.direita = self.cena_do_templo
