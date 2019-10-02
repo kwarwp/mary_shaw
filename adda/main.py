@@ -24,6 +24,59 @@ OURO = "https://i.imgur.com/ZtBckCi.png"
 TUMBA = [COBRA, MUMIA] + [TESOURO]*3
 
 
+class Jogador():
+    """ Um explorador em busca de tesouros """
+    def __init__(self):
+        """ Inicia com tesouro """
+        self.tesouro = 0 
+        
+        
+    def ganho(self, valor):
+        """ aumenta o tesouro com valor equivalente de turquesas
+           :param valor: valor acrescentar ao tesouro em número de turnos
+        """
+        self.tesouro += valor
+        INVENTARIO.bota("turquesa", TURQUESA)
+
+
+class Tesouros(Cena):
+    """ Camaras secretas contendo tesouros """
+    def __init__(self, quantas_pedras=4):
+        """ Inicia a camara contendo umas pedras
+            :param int quantas_pedras: numero de pedras nesta camara
+        """
+        class ProximaCamara:
+             def vai(self):
+                Tesouro(choice(range)(1,4))).vai()
+        self.tesouro = quantas_pedras
+        super().__init__(TESOURO, direito=proxima_camara)
+        self.pedras = [Elemento(
+             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
+             range(self.tesouro)]
+             
+class Tumba():
+     """ Um complexo de camaras secretas sob o templo """
+    def __init__(self, acampamento):
+        """ Inicia o complexo de camaras """
+        self.tumba = [Tesouros(pedras+1, acampamento) for pedras in range(4)]
+        self.inicial = choice(self.tumba)
+
+
+class Acampamento(Cena):
+    """ um lugar seguro e quentinho para admirar seus ganhos """
+    def __init__(self, cena):
+        """ Inicia com tesouro vazio """
+        self.tesouro = 0
+        super().__init__(cena)
+        self.pedra = Elemento(TURQUESA, cena=self)
+        
+    def ganho(self, valor):
+        """ aumenta o tesouro com valor equivalente de turquesas
+           :param valor: valor acrescentar ao tesouro em número de turnos
+        """
+        self.tesouro += valor
+
+
 class PedrasPreciosas:
     """ Um conjunto de pedras que se organizam por valor """
     def __init__(self, valor):
@@ -38,33 +91,8 @@ class PedrasPreciosas:
         """
         ...
         
-class Acampamento(Cena):
-    """ um lugar seguro e quentinho para admirar seus ganhos """
-    def __init__(self, cena):
-        """ Inicia com tesouro vazio """
-        self.tesouro = 0
-        super().__init__(cena)
-        self.pedra = Elemento(TURQUESA, cena=self)
         
-    def ganho(self, valor):
-        """ aumenta o tesouro com valor equivalente de turquesas
-           :param valor: valor acrescentar ao tesouro em número de turnos
-        """
-        self.tesouro += valor
-           
-class Jogador():
-    """ Um explorador em busca de tesouros """
-    def __init__(self):
-        """ Inicia com tesouro """
-        
-        
-class Tumba():
-    """ Um complexo de camaras secretas sob o templo """
-    def __init__(self):
-        """ Inicia o complexo de camaras """
-
-
-#camel case só se usa em nome de classe
+   #camel case só se usa em nome de classe
 class JogoTesouroInca:
     """ Representa o Jogo principal """
     def __init__(self):
