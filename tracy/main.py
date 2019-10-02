@@ -34,14 +34,6 @@ class PedrasPreciosas():
         """   
         ...
         
-class Acampamento(Cena):
-    """ Acampamento é um lugar seguro e quentinho para admirar os seus ganhos """
-    def __init__(self, cena):
-        """ Cria a cena de um acampmanto com tesouro vazio """
-        self.tesouro = 4
-        super().__init__(cena)
-        #self.pedra = Elemento(TURQUESA, x=50, y=250 w=40, h=40, cena=self)
-        self.pedras = [Elemento( TURQUESA, x=50+50*pedra, y=250 w=40, h=40, cena=self) for pedra in range(self.tesouro)]
 
     def ganho(self, valor):
         """ Aumenta o tesouro com valor equivalente de turquesas 
@@ -72,7 +64,16 @@ class Tumba():
     def __init__(self):
         """ Inicia o complexo de camaras """
         self.tumba = [Tesouro(pedras) for pedras in range(4)]
+        self.inicial = choice(self.tumba)
 
+class Acampamento(Cena):
+    """ Acampamento é um lugar seguro e quentinho para admirar os seus ganhos """
+    def __init__(self, cena):
+        """ Cria a cena de um acampmanto com tesouro vazio """
+        self.tesouro = 4
+        super().__init__(cena)
+        #self.pedra = Elemento(TURQUESA, x=50, y=250 w=40, h=40, cena=self)
+        self.pedras = [Elemento(TURQUESA, x=50+50*pedra, y=250 w=40, h=40, cena=self) for pedra in range(self.tesouro)]
 
 class JogoTesouroInca:
     """ Representa o Jogo principal """
