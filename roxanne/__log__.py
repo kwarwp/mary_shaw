@@ -57,3 +57,9 @@ TypeError: __init__() missing 1 positional argument: jogador
     super().__init__(MUMIA, jogador, direita=ProximaCamara())
 TypeError: __init__() missing 1 positional argument: jogador
 '''},
+{'date': 'Wed Oct 02 2019 05:09:51.78 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+RuntimeError: too much recursion
+  module '$exec_1849' line 37
+    jogo = JogoTesouroInca()
+'''},
