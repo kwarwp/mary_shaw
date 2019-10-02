@@ -34,20 +34,25 @@
 # a parte gráfica do Python. Aqui, será utilizada para exibir
 # o fundo com a imagem do templo.
 from _spy.vitollino.main import Cena, INVENTARIO, Elemento
-
-# A definição do nome de constantes, segundo o PEP8 é feita
-# com letras maiúsculas, sendo as palavras separadas por 
-# underline
-IMAGEM_DO_TEMPLO = "https://i.imgur.com/TyH3QTV.jpg"
-MUMIA = "https://i.imgur.com/YGV3CPB.jpg"
-COBRA = "https://i.imgur.com/IeC0gBj.jpg"
-TESOURO = "https://i.imgur.com/xkBdHCE.jpg"
-TURQUESA = "https://i.imgur.com/8WDBJM3.png"
-ACAMPAMENTO = "https://i.imgur.com/dmSDeDF.jpg"
+from elemento.main import Elemento
+from random import choice
 
 # A variável __author__ é interna e aqui contém informações
 # acerca do autor do código.
 __author__ = "Andre R Vieira"
+
+# A definição do nome de constantes, segundo o PEP8 é feita
+# com letras maiúsculas, sendo as palavras separadas por 
+# underline
+IMAGEM_DO_TEMPLO = "https://i.imgur.com/hYLSAKf.jpg"
+MUMIA = "https://i.imgur.com/YGV3CPB.jpg"
+COBRA = "https://i.imgur.com/IeC0gBj.jpg"
+TESOURO = "https://i.imgur.com/xkBdHCE.jpg"
+TURQUESA = "https://i.imgur.com/8WDBJM3.png" # DI["TURQUESA"]
+ACAMPAMENTO = "https://i.imgur.com/dmSDeDF.jpg"
+
+TUMBA = [COBRA, MUMIA] + [TESOURO]*3
+
 
 class PedrasPreciosas:
     """ Um conjunto de pedras que se organizam por valor """
@@ -84,7 +89,7 @@ class Acampamento(Cena):
         # chamo o construtor da super classe com o statement abaixo.
         # Isso fará com que o Python chame o __init__ da super classe.
         super().__init__(cena)
-        self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40 cena=self)
+        self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
         
     def ganho(self, valor):
         """ Aumenta o tesouro com valor equivalente de turquesas
@@ -100,11 +105,24 @@ class Jogador():
         """ Inicia com tesouro """
 
 
+class Tesouros(Cena):
+    """ Camaras secretas contendo tesouros """
+    def __init__(self, quantas_pedras=4):
+        """ Inicia a camara contendo umas pedras
+            :param quantas_pedras: numero de pedras nesta câmara
+        """
+        self.tesouro = quantas_pedras
+        super().__init__(TESOURO)
+        self.pedras = [Elemento(
+             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in range(self.tesouro)]
+
 
 class Tumba():
     """ Um complexo de camaras secretas sob o templo """
     def __init__(self):
         """ Inicia o complexo de camaras """
+        self.tumba = [Tesouros(pedras+1) for pedras in range(4)]
+        self.inicial = choice(self.tumba)
 
 
 # Entre as classes, o PEP 8 indica que deve ter 2 linhas em
@@ -140,8 +158,10 @@ class JogoTesouroInca:
         # Observe que a classe se chama Cena justamente porque 
         # demos esse apelido a ela na importação lá em cima.
         self.acampamento = Acampamento(ACAMPAMENTO)
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, self.acampamento)
+        self.tumba = Tumba()
+        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, self.acampamento, self.tumba.inicial)
         self.acampamento.direita = self.cena_do_templo
+        self.tumba.inicial.esquerda = self.cena_do_templo
         
         
     # Aqui vamos criar um método para a classe que também receberá
