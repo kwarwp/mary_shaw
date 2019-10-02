@@ -39,6 +39,11 @@ from _spy.vitollino.main import Cena
 # com letras maiúsculas, sendo as palavras separadas por 
 # underline
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/TyH3QTV.jpg"
+MUMIA = "https://i.imgur.com/YGV3CPB.jpg"
+COBRA = "https://i.imgur.com/IeC0gBj.jpg"
+TESOURO = "https://i.imgur.com/xkBdHCE.jpg"
+TURQUESA = "https://i.imgur.com/8WDBJM3.png"
+ACAMPAMENTO = "https://i.imgur.com/dmSDeDF.jpg"
 
 # A variável __author__ é interna e aqui contém informações
 # acerca do autor do código.
@@ -66,11 +71,34 @@ class PedrasPreciosas:
             :param valor: valor a acrescentar ao tesouro em número de turquesas
         """
         
+        
+        
+# Os parênteses depois do nome da classe indica que está herda daquela,
+# ou seja, Acampamento herda de Cena
+class Acampamento(Cena):
+    """ Um lugar seguro e quentinho para admirar os seus ganhos """
+    def __init__(self, cena):
+        """ Inicia com tesouro vazio """
+        self.tesouro = 0
+        # Após executar tudo que preciso para a minha classe herdeira, eu 
+        # chamo o construtor da super classe com o statement abaixo.
+        # Isso fará com que o Python chame o __init__ da super classe.
+        super().__init__(cena)
+        
+    def ganho(self, valor):
+        """ Aumenta o tesouro com valor equivalente de turquesas
+            :param valor: valor a acrescentar ao tesouro em número de turquesas
+        """
+        self.tesouro += valor
+        
+        
 
-class Jogador:
+class Jogador():
     """ Um explorador em busca de tesouros """
     def __init__(self):
         """ Inicia com tesouro """
+
+
 
 class Tumba():
     """ Um complexo de camaras secretas sob o templo """
@@ -110,7 +138,10 @@ class JogoTesouroInca:
         # imgur.
         # Observe que a classe se chama Cena justamente porque 
         # demos esse apelido a ela na importação lá em cima.
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
+        self.acampamento = Acampamento(ACAMPAMENTO)
+        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, self.acampamento)
+        self.acampamento.direita = self.cena_do_templo
+        
         
     # Aqui vamos criar um método para a classe que também receberá
     # como argumento a instância em si da classe. Essa instância que
@@ -135,11 +166,16 @@ class JogoTesouroInca:
 # é o main. Lá em cima definimos mary_shaw.rachel.main.py, o que 
 # indica que esse código se chama main.
 if __name__ == "__main__":
-    #jogo = JogoTesouroInca()
-    #jogo.inicia()
+    jogo = JogoTesouroInca()
+    jogo.inicia()
     # O trecho abaixo é para ser usado com a importação do código 
     # de outro aluno.
     #outro_jogo = JogoMarilia()
     #outro_jogo.inicia()
-    print(help(PedrasPreciosas))
-    print(help(PedrasPreciosas.aumenta))
+    
+    # Toda aquela documentação criada com os """ será utilizada para
+    # gerar um help utilizando a função help() nativa do Python, como 
+    # exemplificado nas duas linhas abaixo.
+    #print(help(PedrasPreciosas))
+    #print(help(PedrasPreciosas.aumenta))
+    #print(help(Cena))
