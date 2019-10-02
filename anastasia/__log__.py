@@ -48,3 +48,10 @@ SyntaxError: Unbalanced bracket (
        ^
 SyntaxError: Unbalanced bracket (
 '''},
+{'date': 'Wed Oct 02 2019 11:22:50.401 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 71
+  print(help(PedrasPreciosas.aumenta)
+       ^
+SyntaxError: Unbalanced bracket (
+'''},
