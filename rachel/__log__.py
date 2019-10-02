@@ -154,3 +154,7 @@ Exception: <TypeError: $B.imported[_mod_name] is null>
     self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
 TypeError: 'module' object is not callable
 '''},
+{'date': 'Wed Oct 02 2019 12:22:30.337 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+Exception: <TypeError: $B.imported[_mod_name] is null>
+'''},
