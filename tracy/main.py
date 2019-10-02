@@ -42,7 +42,7 @@ class Acampamento(Cena):
         super().__init__(cena)
         
         
-    def __init__(self, valor):
+    def ganoho(self, valor):
         """ Aumenta o tesouro com valor equivalente de turquesas 
             :param valor: valor a acrescentar ao tesouro em número de Turquesas.        
         """   
