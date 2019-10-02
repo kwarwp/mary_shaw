@@ -94,3 +94,10 @@ NameError: name 'Camara' is not defined
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Wed Oct 02 2019 10:48:00.717 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 58
+  jogo = JogoTesouroInca()
+  ^
+IndentationError: expected an indented block
+'''},
