@@ -57,8 +57,8 @@ class Tesouros(Cena):
              range(self.tesouro)]
              
 class Tumba():
-     """ Um complexo de camaras secretas sob o templo """
-    def __init__(self, acampamento):
+    """ Um complexo de camaras secretas sob o templo """
+     def __init__(self, acampamento):
         """ Inicia o complexo de camaras """
         self.tumba = [Tesouros(pedras+1, acampamento) for pedras in range(4)]
         self.inicial = choice(self.tumba)
