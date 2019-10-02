@@ -87,3 +87,10 @@ SyntaxError: EOL while scanning string literal
     camara = Camara(jogador=Jogador())
 NameError: name 'Camara' is not defined
 '''},
+{'date': 'Wed Oct 02 2019 10:47:32.124 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 58
+  jogo = JogoTesouroInca()
+  ^
+IndentationError: expected an indented block
+'''},
