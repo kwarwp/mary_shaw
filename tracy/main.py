@@ -56,5 +56,6 @@ class JogoTesouroInca:
         
 if __name__ == "__main__":
 jogo = JogoTesouroInca()
-jogo.inicia()
+#jogo.inicia()
 #print(help(JogoTesouroInca.inicia, JogoTesouroInca.inicia())
+print(help(PedrasPreciosas))
