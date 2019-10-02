@@ -5,6 +5,7 @@
      
 """  
 from _spy.vitollino.main import Cena, INVENTARIO, Elemento
+from elemento.main import Elemento
 from random import choice
 
 __author__ = "Claudia L R Motta (claudiam@nce.ufrj.br)"
