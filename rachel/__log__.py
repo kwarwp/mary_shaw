@@ -71,3 +71,10 @@ NameError: name 'Elemento' is not defined
     self.pedra = Elemento(TURQUESA, cena=self)
 NameError: name 'Elemento' is not defined
 '''},
+{'date': 'Wed Oct 02 2019 11:22:30.228 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 87
+  self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40 cena=self)
+                                                           ^
+SyntaxError: invalid syntax
+'''},
