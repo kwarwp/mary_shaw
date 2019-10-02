@@ -45,6 +45,17 @@ IMAGEM_DO_TEMPLO = "https://i.imgur.com/TyH3QTV.jpg"
 __author__ = "Andre R Vieira"
 
 
+class Jogador:
+    """ Um explorador em busca de tesouros """
+    def __init__(self):
+        """ Inicia com tesouro """
+
+class Tumba():
+    """ Um complexo de camaras secretas sob o templo """
+    def __init__(self):
+        """ Inicia o complexo de camaras """
+
+
 # Entre as classes, o PEP 8 indica que deve ter 2 linhas em
 # branco, como as acima. Além disso, nomes de classes usam 
 # a camel case, como no Java. Observe que somente nomes de 
@@ -58,11 +69,17 @@ class JogoTesouroInca:
     # deve ser a documentação da funcionalidade daquela classe
     # ou método.
     """ Representa o Jogo principal """
-    # No Python, o __init__ representa o construtor da classe.
+    # No Python, o __init__ representa uma espécie de construtor da classe.
     # Nesse caso, foi passado o self, que representa a instância 
     # da classe que está sendo criada. Eu poderia passar cls, o 
     # que indica que a classe em si está sendo passada no 
     # argumento.
+    # A diferença do __init__ para o construtor é que no Python não 
+    # se tem um construtor definido no código, este será feito implicitamente
+    # quando se chama a classe. O __init__ é a função executada quando
+    # uma classe criada, semelhante a um onCreate do java. Observe que
+    # o construtor teria que alocar espaços na memória etc, o que 
+    # o init não faz
     def __init__(self):
         """ Constroi a cena """
         # Aqui eu crio uma variável na minha instância, da classe
@@ -86,14 +103,6 @@ class JogoTesouroInca:
         # existir métodos que não façam nada. Para resolver esse 
         # problema, eu utilizo a palavra "pass" como a abaixo.
         # pass
-
-
-
-class Jogador:
-class Tumba:
-class Acampamento:
-class Camara:
-class Gemas:
 
         
 
