@@ -84,6 +84,7 @@ class Acampamento(Cena):
         # chamo o construtor da super classe com o statement abaixo.
         # Isso fará com que o Python chame o __init__ da super classe.
         super().__init__(cena)
+        self.pedra = Elemento(TURQUESA, cena=self)
         
     def ganho(self, valor):
         """ Aumenta o tesouro com valor equivalente de turquesas
