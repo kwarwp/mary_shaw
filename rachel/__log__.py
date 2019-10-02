@@ -182,3 +182,7 @@ TypeError: 'module' object is not callable
 'error': '''
 Exception: <TypeError: $B.imported[_mod_name] is null>
 '''},
+{'date': 'Wed Oct 02 2019 12:36:01.763 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+Exception: <TypeError: $B.imported[_mod_name] is null>
+'''},
