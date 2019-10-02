@@ -1,3 +1,5 @@
+#http://www.dontpad.com/hortencia/python_aula2_02_10
+
 # mary_shaw.stacy.main.py
 
 # mary_shaw.roxanne.main.py
@@ -32,7 +34,7 @@ class Tumba():
         """ Inicia o complexo de camaras """
 
 
-#http://supygirls.pythonanywhere.com/supygirls/gamer/mary_shaw/stacy
+
 class Acampamento(Cena):
     """ Um lugar seguro e quentinho para admirar seus ganhos """
     def __init__(self, cena):
