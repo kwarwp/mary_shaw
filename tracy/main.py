@@ -40,7 +40,7 @@ class Acampamento(Cena):
         """ Cria a cena de um acampmanto com tesouro vazio """
         self.tesouro = 0
         super().__init__(cena)
-        
+        self.pedra = Elemento(TURQUESA, cena=self)
         
     def ganoho(self, valor):
         """ Aumenta o tesouro com valor equivalente de turquesas 
