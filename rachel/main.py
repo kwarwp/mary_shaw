@@ -142,3 +142,4 @@ if __name__ == "__main__":
     #outro_jogo = JogoMarilia()
     #outro_jogo.inicia()
     print(help(PedrasPreciosas))
+    print(help(PedrasPreciosas.aumenta))
