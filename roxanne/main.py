@@ -42,7 +42,7 @@ class Tesouros(Cena):
         class ProximaCamara:
             def vai(self):
                 pedras_na_camara = choice(range(1,5))
-                Tesouros(pedras_na_camara, acampamento, eu).vai()
+                Tesouros(0, acampamento, eu).vai()
                 eu.ganho(pedras_na_camara)
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
