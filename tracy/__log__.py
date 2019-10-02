@@ -255,3 +255,10 @@ SyntaxError: invalid syntax
                                                            ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 02 2019 11:52:21.849 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 59
+  self.pedras = [Elemento(TURQUESAS, x=50+50*pedra, y=250 w=40, h=40, cena=self) for pedra in range(self.tesouro)]
+                                                           ^
+SyntaxError: invalid syntax
+'''},
