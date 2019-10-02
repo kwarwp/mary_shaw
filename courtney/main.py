@@ -51,6 +51,16 @@ class JogoTesouroInca:
         """ Inicia a construção do Jogo """
         self.cena_do_templo.vai()
         
+class Jogador():
+    """Um eplorador em busca de tesouros"""
+    def __ini__(self):
+        """Inicia com tesouro"""
+        
+class Tumba():
+    """Um complexo de camaras secretas sob o templo"""
+    def __ini__(self):
+        """Inicia com tesouro"""
+        
         
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
