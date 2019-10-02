@@ -130,3 +130,7 @@ TypeError: __init__() missing 1 positional argument: acampamento
     self.tumba = Tumba(acampamento)
 NameError: name 'acampamento' is not defined
 '''},
+{'date': 'Wed Oct 02 2019 12:21:52.391 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+Exception: <TypeError: $B.imported[_mod_name] is null>
+'''},
