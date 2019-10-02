@@ -103,12 +103,13 @@ class Jogador():
             :param valor: valor a acrescentar ao tesouro em número de turquesas
         """
         self.tesouro += valor
+        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(valor)]
 
 
 
 class Tesouros(Cena):
     """ Camaras secretas contendo tesouros """
-    def __init__(self, quantas_pedras=4, acampamento=None):
+    def __init__(self, quantas_pedras=4, acampamento=None, eu=None):
         """ Inicia a camara contendo umas pedras
             :param quantas_pedras: numero de pedras nesta câmara
         """
@@ -126,7 +127,10 @@ class Tesouros(Cena):
         # da próxima cena
         class ProximaCamara:
             def vai(self):
-                Tesouros(choice(range(1,5)), acampamento).vai()
+                pedras_na_camara = choice(range(1,5))
+                # Ele já entra na câmara e remove as pedras, por isso o zero abaixo
+                Tesouros(0, acampamento, eu).vai()
+                eu.ganho(pedras_na_camara)
             
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
@@ -136,9 +140,9 @@ class Tesouros(Cena):
 
 class Tumba():
     """ Um complexo de camaras secretas sob o templo """
-    def __init__(self, acampamento):
+    def __init__(self, acampamento, eu):
         """ Inicia o complexo de camaras """
-        self.tumba = [Tesouros(pedras+1, acampamento) for pedras in range(4)]
+        self.tumba = [Tesouros(pedras+1, acampamento, eu) for pedras in range(4)]
         self.inicial = choice(self.tumba)
 
 
@@ -174,8 +178,10 @@ class JogoTesouroInca:
         # imgur.
         # Observe que a classe se chama Cena justamente porque 
         # demos esse apelido a ela na importação lá em cima.
+        INVENTARIO.inicia()
         self.acampamento = Acampamento(ACAMPAMENTO)
-        self.tumba = Tumba(self.acampamento)
+        self.eu = Jogador()
+        self.tumba = Tumba(self.acampamento, self.eu)
         self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, esquerda=self.acampamento, direita=self.tumba.inicial)
         self.acampamento.direita = self.cena_do_templo
         
