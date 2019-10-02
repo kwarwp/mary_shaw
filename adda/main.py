@@ -9,7 +9,7 @@ from random import choice
 
 __author__= "Marilia Campos Galvao"
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/hYLSAKf.jpg"
-ACAMPAMENTO = "http
+ACAMPAMENTO = "https://i.imgur.com/BYbVL1h.png"
 MUMIA = "https://i.imgur.com/7zpjq5n.jpg"
 COBRA = "https://i.imgur.com/oedLlYp.png"
 ARANHA = "https://i.imgur.com/4fLlUgc.png"
