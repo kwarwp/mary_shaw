@@ -67,7 +67,7 @@ class JogoTesouroInca:
     def __init__(self):
         """ Constroi a cena"""
         self.acampamento = Acampamento(ACAMPAMENTO)
-        self.tumba = Tumba
+        self.tumba = Tumba()
         self.cena_do_templo = Cena(
         IMAGEM_DO_TEMPLO, self.acampamento, direita=self.tumba.inicial)
         self.acampamento.direita = self.cena_do_templo
@@ -80,4 +80,4 @@ class JogoTesouroInca:
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
     jogo.inicia()
-    print(JogoTesouroInca,JogoTesouroInca())
+    #print(JogoTesouroInca,JogoTesouroInca())
