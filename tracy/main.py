@@ -35,9 +35,7 @@ class JogoTesouroInca:
     """ Representa o Jogo principal """
     def __init__(self):
         """ Constroi a cena"""
-        camara = Camara(jogador=Jogador())
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, direita=camara)
-        camara.direita = Camara(COBRA, Jogador())
+        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
         
     def inicia(self):
         """ Inicia a construção do Jogo """
@@ -47,4 +45,4 @@ class JogoTesouroInca:
 if __name__ == "__main__":
     jogo = JogoTesouroInca()
     jogo.inicia()
-    """print(help(JogoTesouroInca.inicia, JogoTesouroInca.inicia())
+    #print(help(JogoTesouroInca.inicia, JogoTesouroInca.inicia())
