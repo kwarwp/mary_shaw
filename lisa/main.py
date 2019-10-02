@@ -16,6 +16,27 @@ class Jogador:
     def __init__(self):
         """ Inicia com tesouro """
 
+class PedrasPreciosas:
+    """ Um conjunto de pedras que se organizam por valor """
+    def __init__(self, valor):
+        """ Inicia com valor equivalante de turquesas
+        :param valor: valor do tesouro em números de turquesas.
+        """
+        ...
+    
+    def aumenta(self, valor)
+        """ aumenta o tesouro com valor equivalente de turquesas 
+          :param valor: valor a acrescentar ao tesouro em número de turquesas
+        """ 
+
+class Acampamento(Cena)
+    """ Um lugar seguro para adimirar os ganhos """
+    def __init__(self, cena)
+      """ Inicia com tesouro vazio """ 
+    self.tesouro = 0
+      
+class 
+
 class JogoTesouroInca:
 #kamelcase só usa em classes
 #ver documento PEP 8
