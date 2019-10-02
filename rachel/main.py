@@ -54,6 +54,11 @@ class PedrasPreciosas:
             :param valor: valor do tesouro em número de turquesas. 
         """
         # Os 3 pontinhos funciona semelhante ao pass para implementação futura
+        # Semelhante ao TODO do java
+        #
+        # A diferença entre o pass e os ...
+        # O pass indica que não terá mais nada naquele local, ou seja, é definitivo
+        # Já os ... é como o TODO, é temporário e será implementado algo posteriormente
         ...
         
     def aumenta(self, valor):
@@ -130,9 +135,10 @@ class JogoTesouroInca:
 # é o main. Lá em cima definimos mary_shaw.rachel.main.py, o que 
 # indica que esse código se chama main.
 if __name__ == "__main__":
-    jogo = JogoTesouroInca()
-    jogo.inicia()
+    #jogo = JogoTesouroInca()
+    #jogo.inicia()
     # O trecho abaixo é para ser usado com a importação do código 
     # de outro aluno.
     #outro_jogo = JogoMarilia()
     #outro_jogo.inicia()
+    print(help(PedrasPreciosas))
