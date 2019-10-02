@@ -199,3 +199,10 @@ AttributeError: 'Acampamento' object has no attribute 'nome'
     self.scorer = dict(ponto=1, valor=cena.nome, carta=tit or img, casa=self.xy, move=None)
 AttributeError: 'Acampamento' object has no attribute 'nome'
 '''},
+{'date': 'Wed Oct 02 2019 11:22:03.310 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 43
+  self.pedra = Elemento(TURQUESA, x=50, y=250 w=40, h=40, cena=self)
+                                               ^
+SyntaxError: invalid syntax
+'''},
