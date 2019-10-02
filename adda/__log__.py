@@ -13,3 +13,10 @@ SyntaxError: invalid syntax
   ^
 IndentationError: unexpected indent
 '''},
+{'date': 'Wed Oct 02 2019 12:30:24.631 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 61
+  def __init__(self, acampamento):
+  ^
+IndentationError: unexpected indent
+'''},
