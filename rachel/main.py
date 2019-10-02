@@ -33,7 +33,7 @@
 # A classe vitollino foi feita pelo professor e trabalha com 
 # a parte gráfica do Python. Aqui, será utilizada para exibir
 # o fundo com a imagem do templo.
-from _spy.vitollino.main import Cena
+from _spy.vitollino.main import Cena, INVENTARIO, Elemento
 
 # A definição do nome de constantes, segundo o PEP8 é feita
 # com letras maiúsculas, sendo as palavras separadas por 
@@ -84,7 +84,7 @@ class Acampamento(Cena):
         # chamo o construtor da super classe com o statement abaixo.
         # Isso fará com que o Python chame o __init__ da super classe.
         super().__init__(cena)
-        self.pedra = Elemento(TURQUESA, cena=self)
+        self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40 cena=self)
         
     def ganho(self, valor):
         """ Aumenta o tesouro com valor equivalente de turquesas
