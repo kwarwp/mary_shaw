@@ -33,8 +33,8 @@
 # A classe vitollino foi feita pelo professor e trabalha com 
 # a parte gráfica do Python. Aqui, será utilizada para exibir
 # o fundo com a imagem do templo.
-from _spy.vitollino.main import Cena, INVENTARIO, Elemento
-#from elemento.main import Elemento
+from _spy.vitollino.main import Cena, INVENTARIO
+from elemento.main import Elemento
 from random import choice
 
 # A variável __author__ é interna e aqui contém informações
@@ -54,45 +54,29 @@ ACAMPAMENTO = "https://i.imgur.com/dmSDeDF.jpg"
 TUMBA = [COBRA, MUMIA] + [TESOURO]*3
 
 
-class PedrasPreciosas:
-    """ Um conjunto de pedras que se organizam por valor """
+#class PedrasPreciosas:
+#    """ Um conjunto de pedras que se organizam por valor """
     # Quando eu quero descrever parâmetros de métodos de classes, eu 
     # faço esse formato com : que está abaixo. Observe que isso é lido
     # e interpretado pleo python
-    def __init__(self, valor):
-        """ Inicia com valor equivalente de turquesas
-            :param valor: valor do tesouro em número de turquesas. 
-        """
+#    def __init__(self, valor):
+#        """ Inicia com valor equivalente de turquesas
+#            :param valor: valor do tesouro em número de turquesas. 
+#        """
         # Os 3 pontinhos funciona semelhante ao pass para implementação futura
         # Semelhante ao TODO do java
         #
         # A diferença entre o pass e os ...
         # O pass indica que não terá mais nada naquele local, ou seja, é definitivo
         # Já os ... é como o TODO, é temporário e será implementado algo posteriormente
-        ...
+#        ...
         
-    def aumenta(self, valor):
-        """ Aumenta o tesouro com valor equivalente de turquesas
-            :param valor: valor a acrescentar ao tesouro em número de turquesas
-        """
-        
-        
-        
-# Os parênteses depois do nome da classe indica que está herda daquela,
-# ou seja, Acampamento herda de Cena
-class Acampamento(Cena):
-    """ Um lugar seguro e quentinho para admirar os seus ganhos """
-    def __init__(self, cena):
-        """ Inicia com tesouro vazio """
-        self.tesouro = 0
-        # Após executar tudo que preciso para a minha classe herdeira, eu 
-        # chamo o construtor da super classe com o statement abaixo.
-        # Isso fará com que o Python chame o __init__ da super classe.
-        super().__init__(cena)
-        self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
+#    def aumenta(self, valor):
+#        """ Aumenta o tesouro com valor equivalente de turquesas
+#            :param valor: valor a acrescentar ao tesouro em número de turquesas
+#        """
         
         
-
 class Jogador():
     """ Um explorador em busca de tesouros """
     def __init__(self):
@@ -104,8 +88,7 @@ class Jogador():
         """
         self.tesouro += valor
         [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(valor)]
-
-
+        
 
 class Tesouros(Cena):
     """ Camaras secretas contendo tesouros """
@@ -135,7 +118,8 @@ class Tesouros(Cena):
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         self.pedras = [Elemento(
-             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in range(self.tesouro)]
+             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
+             range(self.tesouro)]
 
 
 class Tumba():
@@ -144,6 +128,27 @@ class Tumba():
         """ Inicia o complexo de camaras """
         self.tumba = [Tesouros(pedras+1, acampamento, eu) for pedras in range(4)]
         self.inicial = choice(self.tumba)
+
+
+# Os parênteses depois do nome da classe indica que está herda daquela,
+# ou seja, Acampamento herda de Cena
+class Acampamento(Cena):
+    """ Um lugar seguro e quentinho para admirar os seus ganhos """
+    def __init__(self, cena):
+        """ Cria a cena de um acampamento com tesouros """
+        self.tesouro = 4
+        # Após executar tudo que preciso para a minha classe herdeira, eu 
+        # chamo o construtor da super classe com o statement abaixo.
+        # Isso fará com que o Python chame o __init__ da super classe.
+        super().__init__(cena)
+        #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
+        self.pedras = [Elemento(
+             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
+             range(self.tesouro)]
+             
+    def ganho(self, valor):
+        """ aumenta o tesouro com um valor de pedras """
+        self.tesouro += valor
 
 
 # Entre as classes, o PEP 8 indica que deve ter 2 linhas em
@@ -182,7 +187,8 @@ class JogoTesouroInca:
         self.acampamento = Acampamento(ACAMPAMENTO)
         self.eu = Jogador()
         self.tumba = Tumba(self.acampamento, self.eu)
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO, esquerda=self.acampamento, direita=self.tumba.inicial)
+        self.cena_do_templo = Cena(
+        IMAGEM_DO_TEMPLO, self.acampamento, direita=self.tumba.inicial)
         self.acampamento.direita = self.cena_do_templo
         
         
