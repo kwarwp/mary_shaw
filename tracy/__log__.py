@@ -575,3 +575,10 @@ NameError: name 'Cenario' is not defined
     self.cenario = Cenario(IMAGEM_DO_TEMPLO, IMAGEM_DO_TEMPLO2, IMAGEM_DO_TEMPLO3, IMAGEM_DO_TEMPLO4)
 NameError: name 'Cenario' is not defined
 '''},
+{'date': 'Tue Oct 08 2019 00:26:55.592 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 104
+  """As câmaras que serão descobertas"""
+  ^
+IndentationError: expected an indented block
+'''},
