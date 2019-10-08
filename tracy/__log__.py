@@ -924,3 +924,10 @@ NameError: name 'Cenarios' is not defined
     self.cenario = [Cenarios(CENARIO+1, x=50, y=250, w=40, h=40, cena=self)  for cenario in
 NameError: name 'Cenarios' is not defined
 '''},
+{'date': 'Tue Oct 08 2019 15:21:07.794 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 89
+  class Acampamento(Cena):
+  ^
+IndentationError: expected an indented block
+'''},
