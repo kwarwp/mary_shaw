@@ -582,3 +582,10 @@ NameError: name 'Cenario' is not defined
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Tue Oct 08 2019 00:27:05.389 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 104
+  self.cenario = Cenario(IMAGEM_DO_TEMPLO, IMAGEM_DO_TEMPLO2, IMAGEM_DO_TEMPLO3, IMAGEM_DO_TEMPLO4)
+  ^
+IndentationError: expected an indented block
+'''},
