@@ -596,3 +596,10 @@ IndentationError: expected an indented block
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Tue Oct 08 2019 00:36:02.871 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 110
+  self.cenarios = [Elemento(
+                                                                                               ^
+SyntaxError: invalid syntax
+'''},
