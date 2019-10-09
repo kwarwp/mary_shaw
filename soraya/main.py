@@ -7,7 +7,8 @@ from _spy.vitollino.main import Cena, INVENTARIO
 from elemento.main import Elemento
 from random import choice
 
-__author__ = "Carlo"
+__author__ = "Savyo V Morais <savyo.morais@labnet.nce.ufrj.br"
+
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/hYLSAKf.jpg"
 MUMIA = "https://i.imgur.com/YGV3CPB.jpg"
 COBRA = "https://i.imgur.com/IeC0gBj.jpg"
