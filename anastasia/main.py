@@ -1,5 +1,5 @@
-# mary_shaw.roxanne.main.py
-# from adda.main import JogoTesouroInca as JogoMarilia
+# mary_shaw.anastasia.main.py
+
 """
     Tesouro Inca
 """
