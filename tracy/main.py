@@ -9,6 +9,7 @@ from random import choice
 
 __author__ = "Lorena"
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/hYLSAKf.jpg"
+IMAGEM_DO_TEMPLO2 = "https://i.imgur.com/TZHHss8.jpg"
 MUMIA = "https://i.imgur.com/a9ePBx5.png"
 COBRA = "https://i.imgur.com/T9EwoOc.png"
 TESOURO = "https://i.imgur.com/xkBdHCE.jpg"
