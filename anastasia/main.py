@@ -64,8 +64,8 @@ class Tesouros(Cena):
                 Texto(camara, 
                       "Você encontra um tesouro!",
                       foi=self.pega_tesouro).vai()
-            def pega_tesouro(self, ):         
-                eu.ganho(pedras_na_camara)
+            def pega_tesouro(self):         
+                eu.ganho(self.pedras)
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         self.pedras = PedrasPreciosas(quantas_pedras=self.tesouro)
