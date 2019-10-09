@@ -158,6 +158,7 @@ class Tesouros(Cena):
                 
             def pega_tesouro(self):
                 eu.ganho(self.pedras)
+                
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         
@@ -181,6 +182,10 @@ class Tesouros(Cena):
         # PedrasPreciosas(quantas_pedras=self.tesouro).representa(self)
         # mas isso poderia ficar complicado para entender depois e eu não sei se p
         # precisarei utilizar a variável self.pedras mais adiante no código.
+        
+    def esvaziar_camara(self):
+        self.tesouro = 0
+        self.pedras
 
 
 class Tumba():
