@@ -13,6 +13,8 @@ MUMIA = "https://i.imgur.com/YGV3CPB.jpg"
 COBRA = "https://i.imgur.com/IeC0gBj.jpg"
 TESOURO = "https://i.imgur.com/xkBdHCE.jpg"
 TURQUESA = "https://i.imgur.com/8WDBJM3.png" # DI["TURQUESA"]
+OBSIDIANA = "https://i.imgur.com/84kWpjt.png"
+OURO = "https://i.imgur.com/50TXu9B.png"
 ACAMPAMENTO = "https://i.imgur.com/dmSDeDF.jpg"
 
 TUMBA = [COBRA, MUMIA] + [TESOURO]*3
@@ -58,9 +60,20 @@ class PedrasPreciosas:
 
         # = VIEW =
         self.limbo_onde_as_pedras_desaparecem = Cena()
-        self.pedras_especificas = [Elemento(
-             TURQUESA, x=50+50*pedra, y=250, w=40, h=40) for pedra in
-             range(self.tesouro_contabil)]
+        
+        self.pedras_ouro = [Elemento(
+             OURO, x=50+50*pedra, y=250, w=40, h=40) for pedra in
+             range(self.tipos_de_pedras["ouro"])]
+        self.origem = 50 + 50 * tipos_de_pedras["ouro"]
+        
+        self.pedras_obsidiana = [Elemento(
+             OBSIDIANA, x=self.origem+50*pedra, y=250, w=40, h=40) for pedra in
+             range(self.tipos_de_pedras["obsidiana"])]
+        self.origem = self.origem + 50 * tipos_de_pedras["obsidiana"]
+        
+        self.pedras_turquesa = [Elemento(
+             TURQUESA, x=self.origem+50*pedra, y=250, w=40, h=40) for pedra in
+             range(self.tipos_de_pedras["turquesa"])]
         # = VIEW =
         
     # = MODEL = 
