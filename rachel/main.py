@@ -33,7 +33,7 @@ class Jogador():
             :param valor: valor a acrescentar ao tesouro em número de Turquesas.        
         """   
         self.tesouro += valor
-        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(self.tesouro['turquesa'])]
+        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(self.tesouro)]
 
     def desiste(self):
         """
