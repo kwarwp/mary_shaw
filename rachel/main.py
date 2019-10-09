@@ -146,11 +146,18 @@ class Tesouros(Cena):
         """
         class ProximaCamara:
             def vai(self):
-                pedras_na_camara = choice(range(1,5))
+                # Atribuição múltipla
+                # Em Python posso fazer atribuições múltiplas, ou seja, eu coloco várias na
+                # mesma linha e tudo vai sendo atribuído em cascata.
+                self.pedras = pedras_na_camara = choice(range(1,5))
                 camara = Tesouros(pedras_na_camara, acampamento, eu)
                 camara.vai()
+                # Aparece a imagem com o texto e quando vc dispensa ela, ele chama o método
+                # pega_tesouro.
                 Texto(camara, "Você encontra um tesouro!", foi=self.pega_tesouro).vai()
-                eu.ganho(pedras_na_camara)
+                
+            def pega_tesouro(self):
+                eu.ganho(self.pedras)
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         
