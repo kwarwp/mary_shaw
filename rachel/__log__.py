@@ -524,3 +524,27 @@ AttributeError: 'PedrasPreciosas' object has no attribute 'nome'
     self.scorer = dict(ponto=1, valor=cena.nome, carta=tit or img, casa=self.xy, move=None)
 AttributeError: 'PedrasPreciosas' object has no attribute 'nome'
 '''},
+{'date': 'Wed Oct 09 2019 18:07:34.436 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 168
+    jogo = JogoTesouroInca()
+  module <module> line 157
+    self.tumba = Tumba(self.acampamento, self.eu)
+  module <module> line 130
+    self.tumba = [Tesouros(pedras+1, acampamento, eu) for pedras in range(4)]
+  module <module> line 118
+    self.pedras = PedrasPreciosas(quantas_pedras=self.tesouro)
+  module <module> line 54
+    self.tipos_de_pedras = cambio_de_pedras(quantas_pedras)
+NameError: name 'cambio_de_pedras' is not defined
+'''},
