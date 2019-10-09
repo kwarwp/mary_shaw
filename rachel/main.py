@@ -122,7 +122,7 @@ class Tesouros(Cena):
         """
         class ProximaCamara:
             def vai(self):
-                self.pedras = pedras_na_camara = choice(range(1,5))
+                self.pedras = pedras_na_camara = choice(range(1,20))
                 self.c = camara = Tesouros(pedras_na_camara, acampamento, eu)
                 camara.vai()
                 Texto(camara, 
