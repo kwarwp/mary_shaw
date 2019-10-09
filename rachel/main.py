@@ -125,7 +125,7 @@ class PedrasPreciosas:
         # = VIEW =
         self.pedras_especificas = [Elemento(
              TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
-             range(self.tesouro)]
+             range(self.tesouro_contabil)]
         # = VIEW =
         
     # = CONTROLLER = 
@@ -147,7 +147,8 @@ class Tesouros(Cena):
         class ProximaCamara:
             def vai(self):
                 pedras_na_camara = choice(range(1,5))
-                Tesouros(pedras_na_camara, acampamento, eu).vai()
+                camara = Tesouros(pedras_na_camara, acampamento, eu).vai()
+                Texto(camara, "Você encontra um tesouro!").vai()
                 eu.ganho(pedras_na_camara)
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
@@ -159,7 +160,7 @@ class Tesouros(Cena):
         #self.pedras = [Elemento(
              #TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
              #range(self.tesouro)]
-        self.pedras = PredasPreciosas(quantas_pedras=self.tesouro)
+        self.pedras = PedrasPreciosas(quantas_pedras=self.tesouro)
         
         # A classe Tesouro herda de Cena, ou seja, ela é uma cena também, pq mostra a
         # carta da câmara com as pedras em cima. Nesse caso, preciso chamar o método
