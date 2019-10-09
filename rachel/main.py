@@ -64,12 +64,12 @@ class PedrasPreciosas:
         self.pedras_ouro = [Elemento(
              OURO, x=50+50*pedra, y=250, w=40, h=40) for pedra in
              range(self.tipos_de_pedras['ouro'])]
-        self.origem = 50 + 50 * tipos_de_pedras['ouro']
+        self.origem = 50 + 50 * self.tipos_de_pedras['ouro']
         
         self.pedras_obsidiana = [Elemento(
              OBSIDIANA, x=self.origem+50*pedra, y=250, w=40, h=40) for pedra in
              range(self.tipos_de_pedras['obsidiana'])]
-        self.origem = self.origem + 50 * tipos_de_pedras['obsidiana']
+        self.origem = self.origem + 50 * self.tipos_de_pedras['obsidiana']
         
         self.pedras_turquesa = [Elemento(
              TURQUESA, x=self.origem+50*pedra, y=250, w=40, h=40) for pedra in
@@ -78,6 +78,8 @@ class PedrasPreciosas:
         
     # = MODEL = 
     def cambio_de_pedras(self, quantidade):
+        print(quantidade)
+        
         tipos_de_pedras = {
              'ouro' : 0,
              'obsidiana' : 0,
@@ -89,13 +91,16 @@ class PedrasPreciosas:
         tipos_de_pedras['obsidiana'] = int(quantidade / 5)
         tipos_de_pedras['turquesa'] = int(quantidade % 5)
         
+        
+        print(tipos_de_pedras)
+        
         return tipos_de_pedras
     # = MODEL = 
     
     # = CONTROLLER = 
     def representa(self, local):
         """ Apresenta as pedras organizadas em um local """
-        for pedra in self.pedras_especificas:
+        for pedra in self.pedras_turquesa:
             pedra.entra(local)
             
     def some(self):
