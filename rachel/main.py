@@ -63,31 +63,31 @@ class PedrasPreciosas:
         
         self.pedras_ouro = [Elemento(
              OURO, x=50+50*pedra, y=250, w=40, h=40) for pedra in
-             range(self.tipos_de_pedras["ouro"])]
-        self.origem = 50 + 50 * tipos_de_pedras["ouro"]
+             range(self.tipos_de_pedras['ouro'])]
+        self.origem = 50 + 50 * tipos_de_pedras['ouro']
         
         self.pedras_obsidiana = [Elemento(
              OBSIDIANA, x=self.origem+50*pedra, y=250, w=40, h=40) for pedra in
-             range(self.tipos_de_pedras["obsidiana"])]
-        self.origem = self.origem + 50 * tipos_de_pedras["obsidiana"]
+             range(self.tipos_de_pedras['obsidiana'])]
+        self.origem = self.origem + 50 * tipos_de_pedras['obsidiana']
         
         self.pedras_turquesa = [Elemento(
              TURQUESA, x=self.origem+50*pedra, y=250, w=40, h=40) for pedra in
-             range(self.tipos_de_pedras["turquesa"])]
+             range(self.tipos_de_pedras['turquesa'])]
         # = VIEW =
         
     # = MODEL = 
     def cambio_de_pedras(self, quantidade):
         tipos_de_pedras = {
-             "ouro" : 0,
-             "obsidiana" : 0,
-             "turquesa" : 0
+             'ouro' : 0,
+             'obsidiana' : 0,
+             'turquesa' : 0
         }
         
-        tipos_de_pedras["ouro"] = int(quantidade / 10)
+        tipos_de_pedras['ouro'] = int(quantidade / 10)
         quantidade = quantidade % 10
-        tipos_de_pedras["obsidiana"] = int(quantidade / 5)
-        tipos_de_pedras["turquesa"] = int(quantidade % 5)
+        tipos_de_pedras['obsidiana'] = int(quantidade / 5)
+        tipos_de_pedras['turquesa'] = int(quantidade % 5)
         
         return tipos_de_pedras
     # = MODEL = 
