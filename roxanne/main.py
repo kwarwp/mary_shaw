@@ -21,7 +21,9 @@ TUMBA = [COBRA, MUMIA] + [TESOURO]*3
 class Jogador():
     """ Um explorador em busca de tesouros """
     def __init__(self):
-        """ Inicia com tesouro """
+        """ Inicia com tesouro , com acampamento
+            :param acampamento: o acampamento do jogador
+        """
         self.tesouro = 0
     
     def ganho(self, valor):
@@ -30,6 +32,9 @@ class Jogador():
         """   
         self.tesouro += valor
         [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(valor)]
+
+    def desiste(self):
+        """ Remove as pedras do inventario e coloca na cabana """
 
 
 class PedrasPreciosas:
