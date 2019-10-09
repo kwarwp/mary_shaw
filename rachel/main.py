@@ -45,6 +45,20 @@
 # Paradigma MVC:
 # É uma forma de se organizar o código que acaba por criar cópias de códigos
 # em 3 locais diferentes, mas possibilita uma melhor manutenção do código.
+# Camadas = Model, View, Controller
+# Nesse modelo, separamos as classes de modelos de dados, as classes que irão
+# mexer com a apresentação preciosa e as classes que controlam todo o funcionamento
+# do sistema. Nesse momento, posso ter uma classe de PedrasPreciosas para 
+# cuidar da modelagem dos dados das pedras, uma para cuidar da apresentação das
+# pedras na tela e uma terceira para cuidar do funcionamento das pedras, ou seja, 
+# cuidar das trocas automáticas das pedras de menor valor para as de maior 
+# valor.
+#
+# Observe que isso possibilita que eu consiga separar o desenvolvimento das três
+# classes, posso inclusive ter uma equipe de fronted, ou seja, só de apresentação
+# dos elementos, posso ter uma equipe de backend para cuidar do funcionamento e 
+# posso ter uma equipe de banco de dados para modelar os dados e tratá-los. Tudo
+# isso funcionaria com APIs entre as três camadas.
 
 """
     Tesouro Inca
