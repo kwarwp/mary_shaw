@@ -89,10 +89,8 @@ class Tesouros(Cena):
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
-        self.pedras = [Elemento(
-             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
-             range(self.tesouro)]
-
+        self.pedras = PedrasPreciosas(quantas_pedras = self.tesouro)
+        self.pedras.representa(self) #self porque o tesouro está representando ele mesmo
 
 class Tumba():
     """ Um complexo de camaras secretas sob o templo """
