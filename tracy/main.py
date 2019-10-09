@@ -96,6 +96,7 @@ class Tesouros(Cena):
                       foi=self.pega_tesouro).vai()
             def pega_tesouro(self):
                 eu.ganho(self.pedras)
+                self.pedras = 0
                 self.c.esvazia_camara()
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
