@@ -33,7 +33,10 @@ class Jogador():
             :param valor: valor a acrescentar ao tesouro em número de Turquesas.        
         """   
         self.tesouro += valor
-        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(valor)]
+        self.tesouro += PedrasPreciosas().cambio_de_pedras(self.tesouro)
+        [INVENTARIO.bota("ouro", OURO) for _ in range(tesouro['ouro'])]
+        [INVENTARIO.bota("obsidiana", OBSIDIANA) for _ in range(tesouro['obsidiana'])]
+        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(tesouro['turquesa'])]
 
     def desiste(self):
         """
@@ -109,7 +112,11 @@ class PedrasPreciosas:
             
     def some(self):
         """ Desaparece com as pedras organizadas em um local """
-        for pedra in self.pedras_especificas:
+        for pedra in self.pedras_ouro:
+            pedra.entra(self.limbo_onde_as_pedras_desaparecem)
+        for pedra in self.pedras_obsidiana:
+            pedra.entra(self.limbo_onde_as_pedras_desaparecem)
+        for pedra in self.pedras_turquesa:
             pedra.entra(self.limbo_onde_as_pedras_desaparecem)
     # = CONTROLLER = 
 
