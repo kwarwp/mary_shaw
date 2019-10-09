@@ -55,6 +55,27 @@ class Jogador():
         self.tesouro += valor
         [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(valor)]
         
+class PedrasPreciosas:
+    """ Pedras que integram o tesouro """
+    def __init__(self, quantas_pedras=4, acampamento=None, eu=None):
+        """ Inicia a coleção de pedras com uma quantidade
+            :param int quantas_pedras: numero de pedras nesta camara
+        """
+        class ProximaCamara:
+            def vai(self):
+                pedras_na_camara = choice(range(1,5))
+                Tesouros(pedras_na_camara, acampamento, eu).vai()
+                eu.ganho(pedras_na_camara)
+        self.tesouro = quantas_pedras
+        super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
+        #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
+        self.pedras = [Elemento(
+             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
+             range(self.tesouro)]
+
+
+
+        
 class Tesouros(Cena):
     """ Camaras secretas contendo tesouros """
     def __init__(self, quantas_pedras=4, acampamento=None, eu=None):
