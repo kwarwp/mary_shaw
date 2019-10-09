@@ -51,6 +51,7 @@ class PedrasPreciosas:
         """ Inicia aa coleção de padras com uma quantidade
             :param int quantas_pedras: numero de pedras neste tesouro
         """
+        self.tipos_de_pedras = cambio_de_pedras(quantas_pedras)
         
         # = MODEL = 
         self.tesouro_contabil = quantas_pedras
@@ -63,6 +64,22 @@ class PedrasPreciosas:
              range(self.tesouro_contabil)]
         # = VIEW =
         
+    # = MODEL = 
+    def cambio_de_pedras(self, quantidade):
+        tipos_de_pedras = {
+             "ouro" : 0,
+             "obsidiana" : 0,
+             "turquesa" : 0
+        }
+        
+        tipos_de_pedras["ouro"] = quantidade / 10
+        quantidade = quantidade % 10
+        tipos_de_pedras["obsidiana"] = quantidade / 5
+        tipos_de_pedras["turquesa"] = quantidade % 5
+        
+        return tipos_de_pedras
+    # = MODEL = 
+    
     # = CONTROLLER = 
     def representa(self, local):
         """ Apresenta as pedras organizadas em um local """
