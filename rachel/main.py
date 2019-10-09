@@ -40,6 +40,11 @@
 # A orientação objeto com as refatorações perde um pouco de desempenho na 
 # execução, no entanto se ganha tempo no desenvolvimento do código e 
 # manutenção do mesmo.
+#
+#
+# Paradigma MVC:
+# É uma forma de se organizar o código que acaba por criar cópias de códigos
+# em 3 locais diferentes, mas possibilita uma melhor manutenção do código.
 
 """
     Tesouro Inca
