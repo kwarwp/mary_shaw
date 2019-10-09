@@ -106,7 +106,7 @@ class Jogador():
 # que ainda não existia.
 class PedrasPreciosas:
     """ Pedras que integram o tesouro """
-    def __init__(self, quantas_pedras=4, acampamento=None, eu=None):
+    def __init__(self, quantas_pedras=4):
         """ Inicia a camara contendo umas pedras
             :param int quantas_pedras: numero de pedras nesta camara
         """
@@ -159,7 +159,7 @@ class Tesouros(Cena):
                 # Em Python posso fazer atribuições múltiplas, ou seja, eu coloco várias na
                 # mesma linha e tudo vai sendo atribuído em cascata.
                 self.pedras = pedras_na_camara = choice(range(1,5))
-                camara = Tesouros(pedras_na_camara, acampamento, eu)
+                self.c = camara = Tesouros(pedras_na_camara, acampamento, eu)
                 camara.vai()
                 # Aparece a imagem com o texto e quando vc dispensa ela, ele chama o método
                 # pega_tesouro.
@@ -167,6 +167,8 @@ class Tesouros(Cena):
                 
             def pega_tesouro(self):
                 eu.ganho(self.pedras)
+                self.pedras = 0
+                self.c.esvazia_camara()
                 
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
