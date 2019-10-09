@@ -51,10 +51,9 @@ class PedrasPreciosas:
         """ Inicia aa coleção de padras com uma quantidade
             :param int quantas_pedras: numero de pedras neste tesouro
         """
-        self.tipos_de_pedras = cambio_de_pedras(quantas_pedras)
-        
         # = MODEL = 
         self.tesouro_contabil = quantas_pedras
+        self.tipos_de_pedras = self.cambio_de_pedras(quantas_pedras)
         # = MODEL = 
 
         # = VIEW =
