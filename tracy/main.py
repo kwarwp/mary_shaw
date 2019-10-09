@@ -58,7 +58,7 @@ class Jogador():
 
 class PedrasPreciosas:
     """ Pedras que integram o tesouro"""
-    def __init__(self, quantas_pedras=4):
+    def __init__(self, quantas_pedras=0):
         """ Inicia aa coleção de padras com uma quantidade
             :param int quantas_pedras: numero de pedras neste tesouro
         """
@@ -82,7 +82,7 @@ class PedrasPreciosas:
 
 class Tesouros(Cena):
     """ Camaras secretas contendo tesouros """
-    def __init__(self, quantas_pedras=4, acampamento=None, eu=None):
+    def __init__(self, quantas_pedras=0, acampamento=None, eu=None):
         """ Inicia a camara contendo umas pedras
             :param int quantas_pedras: numero de pedras nesta camara
         """
