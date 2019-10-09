@@ -43,7 +43,7 @@ class PedrasPreciosas:
         # = VISTA = MOdelo visual de como apresentar o tesouro
         self.pedras_especificas = [Elemento(
              TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
-             range(self.tesouro)]
+             range(self.tesouro_contabil)]
              
     def representa(self, local):
         """Aprsenta as pedras organizadas em um local """
