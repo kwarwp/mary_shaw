@@ -931,3 +931,10 @@ NameError: name 'Cenarios' is not defined
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Wed Oct 09 2019 11:40:31.414 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 75
+  pedra.entra(local)
+  ^
+IndentationError: expected an indented block
+'''},
