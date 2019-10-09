@@ -2,7 +2,8 @@
 #Aula03
 
 
-# Refatoração: É quando você mexe em toda a estrutura do programa, mas 
+# Refatoração: 
+# É quando você mexe em toda a estrutura do programa, mas 
 # a funcionalidade dele não muda. Isso geralmente é feito quando vc 
 # precisa colocar novas funcionalidades no programa e o código atual
 # não comporta tal adição. Nesse momento, tenho que repensar toda a
@@ -23,7 +24,16 @@
 # Modelagem e programação estão intrínsecamente relacionados de modo que
 # um pode fazer com que eu tenha que alterar o outro durante suas
 # produções.
-
+#
+# MontyPython - Capítulo Bycicle Repair Man
+# Mostra um modelo de refatoração que foi seguido pelo Python.
+# 
+# ClassExtraction:
+# É um modelo de refatoração realizado pelas próprias IDEs, que utiliza
+# uma inteligência artificial para extrair uma classe de dentro da outra.
+# Observe que tudo é feito automaticamente pela IDE, retirando a classe, 
+# arrumando os parâmetros e retirando os ctrl+C e ctrl+V que vc utilizou 
+# pelo código
 
 """
     Tesouro Inca
