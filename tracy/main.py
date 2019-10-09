@@ -56,6 +56,29 @@ class Jogador():
         [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(valor)]
 
 
+class PedrasPreciosas:
+    """ Pedras que integram o tesouro"""
+    def __init__(self, quantas_pedras=4):
+        """ Inicia aa coleção de padras com uma quantidade
+            :param int quantas_pedras: numero de pedras neste tesouro
+        """
+        # = MODELO Conceitual = 
+        self.tesouro_contabil = quantas_pedras
+        # = VISTA = Modelo visual de como apresentar o tesouro
+        self.limbo_onde_as_pedras_desaparecem = Cena()
+        self.pedras_especificas = [Elemento(
+             TURQUESA, x=50+50*pedra, y=250, w=40, h=40) for pedra in
+             range(self.tesouro_contabil)]
+             
+    def representa(self, local):
+        """ Apresenta as pedras organizadas em um local """
+        for pedra in self.pedras_especificas:
+            pedra.entra(local)
+             
+    def some(self):
+        """ Desaparece com as pedras organizadas em um local """
+        for pedra in self.pedras_especificas:
+            pedra.entra(self.limbo_onde_as_pedras_desaparecem)
 
 class Tesouros(Cena):
     """ Camaras secretas contendo tesouros """
@@ -66,14 +89,20 @@ class Tesouros(Cena):
         class ProximaCamara:
             def vai(self):
                 self.pedras = pedras_na_camara = choice(range(1,5))
-                Tesouros(0, acampamento, eu).vai()
-                eu.ganho(pedras_na_camara)
+                camara = Tesouros(pedras_na_camara, acampamento, eu)
+                camara.vai()
+                Texto(camara, 
+                      "Você encontra um tesouro!",
+                      foi=self.pega_tesouro).vai()
+            def pega_tesouro(self):
+                eu.ganho(self.pedras)
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
-        #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
-        self.pedras = [Elemento(
-             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
-             range(self.tesouro)]
+        self.pedras = PedrasPreciosas(quantas_pedras=self.tesouro)
+        self.pedras.representa(self)
+    def esvazia_camara(self):
+        self.tesouro = 0
+        self.pedras.some()
 
 
 class Tumba():
