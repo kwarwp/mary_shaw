@@ -16,11 +16,13 @@
 # e posso chegar a ter que refatorar o meu código, pq podem ter classes que
 # já foram desenvolvidas e vc não precisa mais, ou ainda, posso precisar de 
 # estruturas que não visualizei de tão longe nas abstrações.
-# Nível gaivota (bird eye)
-# Nível peixe (visão superficial inserida no problema)
-# Nível concha do mar ou tatuí (visão de dentro da implementação do código)
+# - Nível gaivota (bird eye)
+# - Nível peixe (visão superficial inserida no problema)
+# - Nível concha do mar ou tatuí (visão de dentro da implementação do código)
 #
-# 
+# Modelagem e programação estão intrínsecamente relacionados de modo que
+# um pode fazer com que eu tenha que alterar o outro durante suas
+# produções.
 
 
 """
