@@ -59,6 +59,9 @@
 # dos elementos, posso ter uma equipe de backend para cuidar do funcionamento e 
 # posso ter uma equipe de banco de dados para modelar os dados e tratá-los. Tudo
 # isso funcionaria com APIs entre as três camadas.
+#
+# API declarativa é aquela que documenta a forma de funcionamento para que as 
+# diferentes equipes possam entender como funciona.
 
 """
     Tesouro Inca
