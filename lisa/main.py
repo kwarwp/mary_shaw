@@ -36,7 +36,9 @@ class PedrasPreciosas:
         # = MODELO Conceitual =
         self.tesouro_contabil=quantas_pedras
         # = VISTA = Modelo visual de como apresentar o tesouro
-        self.pedras_especificas= [Elemento(TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self)
+        self.pedras_especificas= [Elemento(TURQUESA, x=50+50*pedra, y=250, w=40, h=40
+        
+        )
         for range(self.tesouro)]
         
     def representa(self, local)
