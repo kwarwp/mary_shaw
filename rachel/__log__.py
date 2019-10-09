@@ -1005,3 +1005,10 @@ Traceback (most recent call last):
     for pedra in self.pedras_especificas:
 AttributeError: 'PedrasPreciosas' object has no attribute 'pedras_especificas'
 '''},
+{'date': 'Wed Oct 09 2019 18:43:52.846 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 37
+  print(self.tesouro['ouro']))
+                             ^
+SyntaxError: invalid syntax
+'''},
