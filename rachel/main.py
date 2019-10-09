@@ -33,12 +33,6 @@ class Jogador():
             :param valor: valor a acrescentar ao tesouro em número de Turquesas.        
         """   
         self.tesouro += valor
-        self.tesouro += PedrasPreciosas().cambio_de_pedras(self.tesouro)
-        print(self.tesouro['ouro'])
-        print(self.tesouro['obsidiana'])
-        print(self.tesouro['turquesa'])
-        [INVENTARIO.bota("ouro", OURO) for _ in range(self.tesouro['ouro'])]
-        [INVENTARIO.bota("obsidiana", OBSIDIANA) for _ in range(self.tesouro['obsidiana'])]
         [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(self.tesouro['turquesa'])]
 
     def desiste(self):
@@ -56,7 +50,7 @@ class Jogador():
 class PedrasPreciosas:
     """ Pedras que integram o tesouro"""
     def __init__(self, quantas_pedras=4):
-        """ Inicia aa coleção de padras com uma quantidade
+        """ Inicia aa coleção de pedras com uma quantidade
             :param int quantas_pedras: numero de pedras neste tesouro
         """
         # = MODEL = 
