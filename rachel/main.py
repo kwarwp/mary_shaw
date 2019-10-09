@@ -84,10 +84,10 @@ class PedrasPreciosas:
              "turquesa" : 0
         }
         
-        tipos_de_pedras["ouro"] = quantidade / 10
+        tipos_de_pedras["ouro"] = int(quantidade / 10)
         quantidade = quantidade % 10
-        tipos_de_pedras["obsidiana"] = quantidade / 5
-        tipos_de_pedras["turquesa"] = quantidade % 5
+        tipos_de_pedras["obsidiana"] = int(quantidade / 5)
+        tipos_de_pedras["turquesa"] = int(quantidade % 5)
         
         return tipos_de_pedras
     # = MODEL = 
