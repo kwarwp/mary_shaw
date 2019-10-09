@@ -945,3 +945,10 @@ IndentationError: expected an indented block
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Wed Oct 09 2019 12:28:48.17 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 104
+  """  def esvazia_camara(self):
+  ^
+IndentationError: unexpected indent
+'''},
