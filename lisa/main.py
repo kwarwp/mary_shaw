@@ -8,7 +8,6 @@ from _spy.vitollino.main import Cena, INVENTARIO, Elemento
 from elemento.main import Elemento
 from random import choice
 
-__author__ = "Carlo"
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/hYLSAKf.jpg"
 MUMIA = "https://i.imgur.com/YGV3CPB.jpg"
 COBRA = "https://i.imgur.com/IeC0gBj.jpg"
@@ -28,6 +27,21 @@ class Jogador():
     """ Um explorador em busca de tesouros """
     def __init__(self):
         """ Inicia com tesouro """
+
+class PedrasPreciosas:
+    """Pedras que integram o tesouro"""
+    def __init__(self, quantas_pedras=4, acampamento=None, eu=None):
+        """Inicia a coleção de pedras com uma quantidade 
+        :param int quantas_pedras: numero de pedras neste tesouro"""
+        # = MODELO Conceitual =
+        self.tesouro_contabil=quantas_pedras
+        # = VISTA = Modelo visual de como apresentar o tesouro
+        self.pedras_especificas= [Elemento(TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self)
+        for range(self.tesouro)]
+        
+    def representa(self, local)
+    """Apresenta as pedras organizadas em um local"""
+    
 
 class Tesouros(Cena):
     """ Um lugar seguro e quentinho para admirar seus ganhos """
