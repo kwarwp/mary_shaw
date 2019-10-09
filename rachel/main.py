@@ -105,22 +105,32 @@ class Jogador():
 # código quando precisasse modificar as funcionalidades da classe PedrasPreciosas
 # que ainda não existia.
 class PedrasPreciosas:
-    """ Camaras secretas contendo tesouros """
+    """ Pedras que integram o tesouro """
     def __init__(self, quantas_pedras=4, acampamento=None, eu=None):
         """ Inicia a camara contendo umas pedras
             :param int quantas_pedras: numero de pedras nesta camara
         """
-        class ProximaCamara:
-            def vai(self):
-                pedras_na_camara = choice(range(1,5))
-                Tesouros(0, acampamento, eu).vai()
-                eu.ganho(pedras_na_camara)
-        self.tesouro = quantas_pedras
-        super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
-        #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
-        self.pedras = [Elemento(
+        # tesouro_contabil irá me indicar quanto eu tenho de tesouro em unidades 
+        # mínimas que são as turquesas. Observe que essa primeira linha pertence 
+        # ao MODEL, quanto que a seguinte pertence ao VIEW. Está tudo misturado na 
+        # mesma classe
+        
+        # = MODEL = 
+        self.tesouro_contabil = quantas_pedras
+        # = MODEL = 
+        
+        # = VIEW =
+        self.pedras_especificas = [Elemento(
              TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
              range(self.tesouro)]
+        # = VIEW =
+        
+    # = CONTROLLER = 
+    def representa(self, local):
+        """
+            Apresenta as pedras organizadas em um local
+        """
+    # = CONTROLLER = 
 
 
 class Tesouros(Cena):
