@@ -126,6 +126,8 @@ class PedrasPreciosas:
         self.pedras_especificas = [Elemento(
              TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
              range(self.tesouro_contabil)]
+             
+        self.limbo_onde_as_pedras_desaparecem = Cena()
         # = VIEW =
         
     # = CONTROLLER = 
@@ -135,6 +137,13 @@ class PedrasPreciosas:
         """
         for pedra in self.pedras_especificas:
             pedra.entra(local)
+            
+    def some(self):
+        """
+            Desaparece com as pedras organizadas em um local
+        """
+        for pedra in self.pedras_especificas:
+            pedra.entra(self.limbo_onde_as_pedras_desaparecem)
     # = CONTROLLER = 
 
 
@@ -185,7 +194,7 @@ class Tesouros(Cena):
         
     def esvaziar_camara(self):
         self.tesouro = 0
-        self.pedras
+        self.pedras.some()
 
 
 class Tumba():
