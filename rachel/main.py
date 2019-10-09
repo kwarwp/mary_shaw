@@ -149,7 +149,7 @@ class Tesouros(Cena):
                 pedras_na_camara = choice(range(1,5))
                 camara = Tesouros(pedras_na_camara, acampamento, eu)
                 camara.vai()
-                Texto(camara, "Você encontra um tesouro!").vai()
+                Texto(camara, "Você encontra um tesouro!", foi=self.pega_tesouro).vai()
                 eu.ganho(pedras_na_camara)
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
