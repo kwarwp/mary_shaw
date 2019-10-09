@@ -938,3 +938,10 @@ IndentationError: expected an indented block
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Wed Oct 09 2019 11:45:00.663 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 75
+  pedra.entra(local)
+  ^
+IndentationError: expected an indented block
+'''},
