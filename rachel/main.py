@@ -103,6 +103,10 @@ class Jogador():
         """
         # Implementar em casa
         # o jogador precisa ter um acampamento dele
+        # preciso passar a operação de colocar as pedras para PedrasPreciosas e o 
+        # jogador invoca o método de lá para aparecer no inventário
+        # do mesmo modo, preciso chamar o método representa para representar no 
+        # acampamento.
 
 # Foi decidido que PedrasPreciosas é uma classe a parte e não deve ser utilizado
 # ctrl+C e ctrl+V para ficar acertando elas em diversas partes do código. Nesse
