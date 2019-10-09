@@ -34,9 +34,9 @@ class Jogador():
         """   
         self.tesouro += valor
         self.tesouro += PedrasPreciosas().cambio_de_pedras(self.tesouro)
-        [INVENTARIO.bota("ouro", OURO) for _ in range(tesouro['ouro'])]
-        [INVENTARIO.bota("obsidiana", OBSIDIANA) for _ in range(tesouro['obsidiana'])]
-        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(tesouro['turquesa'])]
+        [INVENTARIO.bota("ouro", OURO) for _ in range(self.tesouro['ouro'])]
+        [INVENTARIO.bota("obsidiana", OBSIDIANA) for _ in range(self.tesouro['obsidiana'])]
+        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(self.tesouro['turquesa'])]
 
     def desiste(self):
         """
