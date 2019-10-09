@@ -100,6 +100,10 @@ class PedrasPreciosas:
     # = CONTROLLER = 
     def representa(self, local):
         """ Apresenta as pedras organizadas em um local """
+        for pedra in self.pedras_ouro:
+            pedra.entra(local)
+        for pedra in self.pedras_obsidiana:
+            pedra.entra(local)
         for pedra in self.pedras_turquesa:
             pedra.entra(local)
             
