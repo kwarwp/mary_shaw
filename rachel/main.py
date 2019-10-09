@@ -147,14 +147,31 @@ class Tesouros(Cena):
         class ProximaCamara:
             def vai(self):
                 pedras_na_camara = choice(range(1,5))
-                Tesouros(0, acampamento, eu).vai()
+                Tesouros(pedras_na_camara, acampamento, eu).vai()
                 eu.ganho(pedras_na_camara)
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
-        #self.pedra = Elemento(TURQUESA, x=50, y=250, w=40, h=40, cena=self)
-        self.pedras = [Elemento(
-             TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
-             range(self.tesouro)]
+        
+        # Se eu estivesse em uma IDE com refactor, eu podia selecionar o código abaixo 
+        # e pedir extract class. Ele iria indicar a dependência do self.tesouro que seria
+        # colocado no init da classe nova, assim como perguntaria sobre o nome da nova classe
+        # essa nova classe é a PedrasPreciosas que está criada acima.
+        #self.pedras = [Elemento(
+             #TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
+             #range(self.tesouro)]
+        self.pedras = PredasPreciosas(quantas_pedras=self.tesouro)
+        
+        # A classe Tesouro herda de Cena, ou seja, ela é uma cena também, pq mostra a
+        # carta da câmara com as pedras em cima. Nesse caso, preciso chamar o método
+        # representa da classe PedrasPreciosas para poder representá-las na tela. No 
+        # entanto, tal método precisa receber o local aonde será desenhado. Aqui este
+        # local é o próprio Tesouro, ou seja, self.
+        self.pedras.representa(self)
+        
+        # Poderia ainda trocar as duas linhas anteriores por
+        # PedrasPreciosas(quantas_pedras=self.tesouro).representa(self)
+        # mas isso poderia ficar complicado para entender depois e eu não sei se p
+        # precisarei utilizar a variável self.pedras mais adiante no código.
 
 
 class Tumba():
