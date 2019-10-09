@@ -45,7 +45,9 @@ class PedrasPreciosas():
 class Jogador():
     """ Um explorador em busca de tesouros """
     def __init__(self):
-        """ Inicia com tesouro """
+        """ Inicia com tesouro, com acampamento 
+            :param acampamento: o acampamento do jogador para a hora que ele desiste, ele colocar as pedras
+        """
         self.tesouro = 0
     
     def ganho(self, valor):
@@ -55,6 +57,8 @@ class Jogador():
         self.tesouro += valor
         [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(valor)]
 
+    def desiste(self):
+        """ remove as pedras do inventário e coloca na cabana """
 
 class PedrasPreciosas:
     """ Pedras que integram o tesouro"""
