@@ -119,6 +119,9 @@ class PedrasPreciosas:
         self.tesouro_contabil = quantas_pedras
         # = MODEL = 
         
+        # DOM (Documento Object Model) é um elemento dentro do browser, como estamos 
+        # utilizando aqui o browser para rodar o jogo, iremos representar os objetos 
+        # no DOM. Esse DOM aparece aqui como a classe Elemento.
         # = VIEW =
         self.pedras_especificas = [Elemento(
              TURQUESA, x=50+50*pedra, y=250, w=40, h=40, cena=self) for pedra in
@@ -130,6 +133,8 @@ class PedrasPreciosas:
         """
             Apresenta as pedras organizadas em um local
         """
+        for pedra in self.pedras_especificas:
+            pedra.entra(local)
     # = CONTROLLER = 
 
 
