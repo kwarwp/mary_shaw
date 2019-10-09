@@ -7,7 +7,8 @@
 # a funcionalidade dele não muda. Isso geralmente é feito quando vc 
 # precisa colocar novas funcionalidades no programa e o código atual
 # não comporta tal adição. Nesse momento, tenho que repensar toda a
-# estrutura orientada a objeto do código realizado.
+# estrutura orientada a objeto do código realizado. Há diversos 
+# modelos de refactoring.
 #
 # Níveis de abstração: Quando vc vai desenvolver um sistema, vc deve 
 # analisar o problema em diferentes graus de abstração. Um nível inicial
@@ -34,6 +35,11 @@
 # Observe que tudo é feito automaticamente pela IDE, retirando a classe, 
 # arrumando os parâmetros e retirando os ctrl+C e ctrl+V que vc utilizou 
 # pelo código
+#
+#
+# A orientação objeto com as refatorações perde um pouco de desempenho na 
+# execução, no entanto se ganha tempo no desenvolvimento do código e 
+# manutenção do mesmo.
 
 """
     Tesouro Inca
@@ -67,6 +73,15 @@ class Jogador():
         [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(valor)]
 
 
+# Foi decidido que PedrasPreciosas é uma classe a parte e não deve ser utilizado
+# ctrl+C e ctrl+V para ficar acertando elas em diversas partes do código. Nesse
+# momento, vemos a necessidade de se criar uma classe própria para representar as 
+# PedrasPreciosas. Nesse momento, temos que aplicar o refactor para extrair a 
+# classe PedrasPreciosas de dentro de Tesouros. Do mesmo modo, teremos que modificar
+# todos os pontos que tinham implementações das PedrasPreciosas. 
+# Se eu não fizesse isso, eu teria que realizar alterações em diversas partes do 
+# código quando precisasse modificar as funcionalidades da classe PedrasPreciosas
+# que ainda não existia.
 class PedrasPreciosas:
     """ Camaras secretas contendo tesouros """
     def __init__(self, quantas_pedras=4, acampamento=None, eu=None):
