@@ -20,4 +20,5 @@ div <= titulo1
 div <= span
 div <= strong
 for item in itens_menu:
+    div <= html.BR()
     div <= html.SPAN(item)
