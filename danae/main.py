@@ -1,5 +1,6 @@
 # mary_shaw.danae.main.py
 from browser import document, html
+itens_menu = "faz desfaz refaz".split()
 pagina = html.HEAD()
 title = html.TITLE("Olá mundo HTML")
 corpo = html.BODY()
@@ -18,3 +19,5 @@ corpo <= div
 div <= titulo1
 div <= span
 div <= strong
+for item in itens_menu:
+    div <= html.SPAN(item)
