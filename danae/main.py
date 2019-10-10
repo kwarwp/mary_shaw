@@ -5,7 +5,8 @@ title = html.TITLE("Olá mundo HTML")
 corpo = html.BODY("Olá mundo HTML")
 pagina <= title
 
-document.html = ""
+document.head.innerHTML = ""
+document.body.innerHTML = ""
 
 document <= pagina
 document <= corpo
