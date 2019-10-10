@@ -7,6 +7,6 @@ pagina <= title
 
 document.head.innerHTML = ""
 document.body.innerHTML = ""
-
+document.documentElement.innerHTML = ""
 document <= pagina
 document <= corpo
