@@ -5,6 +5,7 @@ title = html.TITLE("Olá mundo HTML")
 corpo = html.BODY()
 div = html.DIV()
 span = html.SPAN("Olá mundo HTML")
+strong = html.STRONG("Isto é importante")
 pagina <= title
 
 document.head.innerHTML = ""
@@ -14,3 +15,4 @@ document <= pagina
 document <= corpo
 corpo <= div
 div <= span
+div <= strong
