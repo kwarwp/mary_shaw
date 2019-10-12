@@ -83,13 +83,14 @@ class Tesouros(Cena):
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         self.pedras = PedrasPreciosas(quantas_pedras=self.tesouro)
         self.pedras.representa(self)
+        
     def esvazia_camara(self):
         self.tesouro = 0
         self.pedras.some()
         
     def getPedras(self):
         """ Retorna as pedras ordenadas pelo seu valor """
-        return pedra.sort()
+        return pedras.sort()
 
 
 class Tumba():
