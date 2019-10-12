@@ -121,14 +121,14 @@ class Tesouros(Cena):
                 self.pedras.set_pedras(0)
                 self.c.esvazia_camara()
                 
-        self.pedras = pedras
-        self.tesouro = self.pedras.get_pedras()
+        self.controle = pedras
+        self.tesouro = pedras.get_pedras()
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
-        self.pedras.representa(self)
+        pedras.representa(self)
         
     def esvazia_camara(self):
         self.tesouro = 0
-        self.pedras.some()
+        self.controle.some()
 
 
 class Tumba():
