@@ -1012,3 +1012,10 @@ AttributeError: 'PedrasPreciosas' object has no attribute 'pedras_especificas'
                              ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Sat Oct 12 2019 11:37:25.16 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 126
+  def coleta(self, total)
+                          ^
+SyntaxError: invalid syntax
+'''},
