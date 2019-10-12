@@ -33,8 +33,15 @@ class Jogador():
             :param valor: valor a acrescentar ao tesouro em número de Turquesas.        
         """   
         self.tesouro += valor
-        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(self.tesouro)]
-        [INVENTARIO.bota("turquesa", OURO) for _ in range(self.tesouro)]
+        
+        tipos_de_pedras['ouro'] = int(self.tesouro / 10)
+        quantidade = self.tesouro % 10
+        tipos_de_pedras['obsidiana'] = int(quantidade / 5)
+        tipos_de_pedras['turquesa'] = int(quantidade % 5)
+        
+        [INVENTARIO.bota("ouro", OURO) for _ in range(tipos_de_pedras['ouro'])]
+        [INVENTARIO.bota("obsidiana", OBSIDIANA) for _ in range(tipos_de_pedras['obsidiana'])]
+        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(tipos_de_pedras['turquesa'])]
 
     def desiste(self):
         """
