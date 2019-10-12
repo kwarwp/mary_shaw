@@ -148,7 +148,7 @@ class Tesouros(Cena):
                 self.pedras.set_pedras(0)
                 self.c.esvazia_camara()
                 
-        self.tesouro = pedras.get_pedras()
+        self.tesouro = self.pedras.get_pedras()
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         self.pedras.representa(self)
         
