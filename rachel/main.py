@@ -20,16 +20,36 @@ ACAMPAMENTO = "https://i.imgur.com/dmSDeDF.jpg"
 TUMBA = [COBRA, MUMIA] + [TESOURO]*3
 
 
+class Jogador():
+    """ Um explorador em busca de tesouros """
+    def __init__(self):
+        """ Inicia com tesouro , com acampamento
+            :param acampamento: o acampamento do jogador
+        """
+        self.tesouro = 0
+    
+    def ganho(self, valor):
+        """ Aumenta o tesouro com valor equivalente de turquesas 
+            :param valor: valor a acrescentar ao tesouro em número de Turquesas.        
+        """   
+        self.tesouro += valor
+        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(self.tesouro)]
+
+    def desiste(self):
+        """
+            Remove as pedras do inventario e coloca na cabana
+        """
+
+
 class PedrasPreciosas:
     """ Pedras que integram o tesouro"""
-    def __init__(self):
+    def __init__(self, quantas_pedras=4):
         """ Inicia aa coleção de pedras com uma quantidade
             :param int quantas_pedras: numero de pedras neste tesouro
         """
         # = MODEL = 
-        self.quantas_pedras = choice(range(1,20))
-        self.tesouro_contabil = self.quantas_pedras
-        self.tipos_de_pedras = self.cambio_de_pedras(self.quantas_pedras)
+        self.tesouro_contabil = quantas_pedras
+        self.tipos_de_pedras = self.cambio_de_pedras(quantas_pedras)
         # = MODEL = 
 
         # = VIEW =
@@ -72,12 +92,6 @@ class PedrasPreciosas:
     # = MODEL = 
     
     # = CONTROLLER = 
-    def get_pedras(self):
-        return self.quantas_pedras
-        
-    def set_pedras(quantidade):
-        self.quantas_pedras = quantidade
-    
     def representa(self, local):
         """ Apresenta as pedras organizadas em um local """
         for pedra in self.pedras_ouro:
@@ -95,22 +109,19 @@ class PedrasPreciosas:
             pedra.entra(self.limbo_onde_as_pedras_desaparecem)
         for pedra in self.pedras_turquesa:
             pedra.entra(self.limbo_onde_as_pedras_desaparecem)
-            
-    def coleta(self, total):
-        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(total)]
     # = CONTROLLER = 
 
 
 class Tesouros(Cena):
     """ Camaras secretas contendo tesouros """
-    def __init__(self, acampamento=None, eu=None, pedras=None):
+    def __init__(self, quantas_pedras=4, acampamento=None, eu=None):
         """ Inicia a camara contendo umas pedras
             :param int quantas_pedras: numero de pedras nesta camara
         """
         class ProximaCamara:
             def vai(self):
-                self.pedras = PedrasPreciosas()
-                self.c = camara = Tesouros(acampamento, eu, pedras)
+                self.pedras = pedras_na_camara = choice(range(1,20))
+                self.c = camara = Tesouros(pedras_na_camara, acampamento, eu)
                 camara.vai()
                 Texto(camara, 
                       "Você encontra um tesouro!",
@@ -118,12 +129,13 @@ class Tesouros(Cena):
                 
             def pega_tesouro(self):
                 eu.ganho(self.pedras)
-                self.pedras.set_pedras(0)
+                self.pedras = 0
                 self.c.esvazia_camara()
                 
-        self.tesouro = pedras.get_pedras()
+        self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
-        pedras.representa(self)
+        self.pedras = PedrasPreciosas(quantas_pedras=self.tesouro)
+        self.pedras.representa(self)
         
     def esvazia_camara(self):
         self.tesouro = 0
@@ -134,29 +146,8 @@ class Tumba():
     """ Um complexo de camaras secretas sob o templo """
     def __init__(self, acampamento, eu):
         """ Inicia o complexo de camaras """
-        self.tumba = Tesouros(acampamento, eu, PedrasPreciosas())
-        self.inicial = self.tumba
-
-
-class Jogador():
-    """ Um explorador em busca de tesouros """
-    def __init__(self):
-        """ Inicia com tesouro , com acampamento
-            :param acampamento: o acampamento do jogador
-        """
-        self.tesouro = 0
-    
-    def ganho(self, pedras):
-        """ Aumenta o tesouro com valor equivalente de turquesas 
-            :param valor: valor a acrescentar ao tesouro em número de Turquesas.        
-        """   
-        self.tesouro += pedras.get_pedras()
-        pedras.coleta(tesouro)
-
-    def desiste(self):
-        """
-            Remove as pedras do inventario e coloca na cabana
-        """
+        self.tumba = [Tesouros(pedras+1, acampamento, eu) for pedras in range(4)]
+        self.inicial = choice(self.tumba)
 
 
 class Acampamento(Cena):
