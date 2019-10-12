@@ -34,6 +34,7 @@ class Jogador():
         """   
         self.tesouro += valor
         [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(self.tesouro)]
+        [INVENTARIO.bota("turquesa", OURO) for _ in range(self.tesouro)]
 
     def desiste(self):
         """
