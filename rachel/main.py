@@ -34,8 +34,8 @@ class Jogador():
         """   
         self.tesouro += valor
         
-        ouro = int(self.tesouro / 10)
-        quantidade = self.tesouro % 10
+        ouro = int(valor / 10)
+        quantidade = valor % 10
         obsidiana = int(quantidade / 5)
         turquesa = quantidade % 5
         
