@@ -123,7 +123,7 @@ class PedrasPreciosas:
         for pedra in self.pedras_turquesa:
             pedra.entra(self.limbo_onde_as_pedras_desaparecem)
             
-    def coleta(self, total)
+    def coleta(self, total):
         [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(total)]
     # = CONTROLLER = 
 
