@@ -3,4 +3,4 @@
 from _spy.vitollino.main import Cena, INVENTARIO
 
 if __name__ == "__main__":
-    INVENTARIO.help()
+    print(help(INVENTARIO))
