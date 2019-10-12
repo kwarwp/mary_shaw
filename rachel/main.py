@@ -137,7 +137,7 @@ class Tesouros(Cena):
         class ProximaCamara:
             def vai(self):
                 self.pedras = PedrasPreciosas()
-                self.c = camara = Tesouros(acampamento, eu, pedras)
+                self.c = camara = Tesouros(acampamento=acampamento, eu=eu, pedras=pedras)
                 camara.vai()
                 Texto(camara, 
                       "Você encontra um tesouro!",
