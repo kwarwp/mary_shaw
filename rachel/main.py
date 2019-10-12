@@ -110,7 +110,7 @@ class Tesouros(Cena):
         class ProximaCamara:
             def vai(self):
                 self.pedras = PedrasPreciosas()
-                self.c = camara = Tesouros(acampamento=acampamento, eu=eu, pedras=pedras)
+                self.c = camara = Tesouros(acampamento, eu, pedras)
                 camara.vai()
                 Texto(camara, 
                       "Você encontra um tesouro!",
@@ -121,14 +121,13 @@ class Tesouros(Cena):
                 self.pedras.set_pedras(0)
                 self.c.esvazia_camara()
                 
-        self.controle = pedras
         self.tesouro = pedras.get_pedras()
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         pedras.representa(self)
         
     def esvazia_camara(self):
         self.tesouro = 0
-        self.controle.some()
+        self.pedras.some()
 
 
 class Tumba():
