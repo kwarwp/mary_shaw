@@ -165,7 +165,7 @@ class Acampamento(Cena):
         self.tesouro = 0
         super().__init__(cena)        
 
-    def ganha_pedras(self, valor):
+    def deposita(self, valor):
         """ aumenta o tesouro com um valor de pedras """
         self.tesouro += valor
         self.pedras = [Elemento(
