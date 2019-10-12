@@ -86,6 +86,10 @@ class Tesouros(Cena):
     def esvazia_camara(self):
         self.tesouro = 0
         self.pedras.some()
+        
+    def getPedras(self):
+        """ Retorna as pedras ordenadas pelo seu valor """
+        return pedra.sort()
 
 
 class Tumba():
