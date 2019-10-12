@@ -41,7 +41,7 @@ class Jogador():
         
         [INVENTARIO.bota("ouro", OURO) for _ in range(ouro)]
         [INVENTARIO.bota("obsidiana", OBSIDIANA) for _ in range(obsidiana)]
-        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(tuquesa)]
+        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(turquesa)]
 
     def desiste(self):
         """
