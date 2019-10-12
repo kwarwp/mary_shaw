@@ -34,11 +34,10 @@ class Jogador():
         """   
         self.tesouro += valor
         
-        self.tesouro = 16
         ouro = int(self.tesouro / 10)
         quantidade = self.tesouro % 10
         obsidiana = int(quantidade / 5)
-        turquesa = int(quantidade % 5)
+        turquesa = quantidade % 5
         
         [INVENTARIO.bota("ouro", OURO) for _ in range(ouro)]
         [INVENTARIO.bota("obsidiana", OBSIDIANA) for _ in range(obsidiana)]
