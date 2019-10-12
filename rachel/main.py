@@ -34,14 +34,15 @@ class Jogador():
         """   
         self.tesouro += valor
         
-        tipos_de_pedras['ouro'] = int(self.tesouro / 10)
+        self.tesouro = 16
+        ouro = int(self.tesouro / 10)
         quantidade = self.tesouro % 10
-        tipos_de_pedras['obsidiana'] = int(quantidade / 5)
-        tipos_de_pedras['turquesa'] = int(quantidade % 5)
+        obsidiana = int(quantidade / 5)
+        turquesa = int(quantidade % 5)
         
-        [INVENTARIO.bota("ouro", OURO) for _ in range(5)]
-        [INVENTARIO.bota("obsidiana", OBSIDIANA) for _ in range(5)]
-        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(5)]
+        [INVENTARIO.bota("ouro", OURO) for _ in range(ouro)]
+        [INVENTARIO.bota("obsidiana", OBSIDIANA) for _ in range(obsidiana)]
+        [INVENTARIO.bota("turquesa", TURQUESA) for _ in range(tuquesa)]
 
     def desiste(self):
         """
