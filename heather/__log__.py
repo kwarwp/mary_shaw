@@ -37,3 +37,9 @@ Exception: undefined has no properties
   module '$exec_1859' line 9
 LOREM.format(t=TH[0])
 '''},
+{'date': 'Sun Oct 13 2019 11:58:24.312 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+Exception: undefined has no properties
+  module '$exec_1867' line 9
+LOREM%TH[0]
+'''},
