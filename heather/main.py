@@ -15,15 +15,16 @@ THEMES = "nature food animals transport city sports people technics".split()
 THEMES = [theme+f"/{count}/" for count in range(5) for theme in THEMES]
 shuffle(THEMES)
 THEMES = [f"{theme}{name}" for theme, name in zip( THEMES,NAMES)]
-delta = 1350//8
+CN=10
+delta = 1350//CN
 
 #LOREM = "https://loremflickr.com/200/200/{}"
 LOREM = "http://lorempixel.com/150/150/{}/"
 theme = "sky"
 def calc(count):
-    return dict(x=10+(count%8)*delta, y=10+(count//8)*delta) 
+    return dict(x=(count%CN)*delta, y=(count//CN)*delta) 
 #print(LOREM.format(theme))
 cena = Cena("https://lorempixel.com/1350/650/abstract/")
-[Elemento(LOREM.format(theme), w=delta-5, h=delta-5, cena=cena, **calc(count)) for count, theme in enumerate(THEMES)]
+[Elemento(LOREM.format(theme), w=delta, h=delta, cena=cena, **calc(count)) for count, theme in enumerate(THEMES)]
 cena.vai()
 #print(LOREM.format(theme, 2))
