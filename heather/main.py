@@ -10,19 +10,20 @@ NAMES = "Igor Leonardo Diogo Vinicios Benjamim Enzo Rodrigo Tomás Diego Luis Ke
 " Álvaro Muriel Adriano Roberto"
 NAMES=NAMES.split()
 shuffle(NAMES)
-STYLE.update(width=1400, height=650)
+STYLE.update(width=1350, height=650)
 THEMES = "nature food animals transport city sports people technics".split()
 THEMES = [theme+f"/{count}/" for count in range(5) for theme in THEMES]
 shuffle(THEMES)
-THEMES = [f"/{theme}/{name}/" for theme, name in zip( THEMES,NAMES)]
+THEMES = [f"{theme}{name}" for theme, name in zip( THEMES,NAMES)]
+delta = 1350//8
 
 #LOREM = "https://loremflickr.com/200/200/{}"
 LOREM = "http://lorempixel.com/150/150/{}/"
 theme = "sky"
 def calc(count):
-    return dict(x=10+(count%9)*160, y=10+(count//9)*160) 
+    return dict(x=10+(count%8)*delta, y=10+(count//8)*delta) 
 #print(LOREM.format(theme))
-cena = Cena("https://lorempixel.com/1400/650/abstract/")
-[Elemento(LOREM.format(theme), cena=cena, **calc(count)) for count, theme in enumerate(THEMES)]
+cena = Cena("https://lorempixel.com/1350/650/abstract/")
+[Elemento(LOREM.format(theme), w=delta-5, h=delta-5, cena=cena, **calc(count)) for count, theme in enumerate(THEMES)]
 cena.vai()
 #print(LOREM.format(theme, 2))
