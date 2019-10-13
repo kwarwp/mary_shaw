@@ -14,6 +14,8 @@ STYLE.update(width=1400, height=650)
 THEMES = "nature food animals transport city sports people technics".split()
 THEMES = [theme+f"/{count}/" for count in range(5) for theme in THEMES]
 shuffle(THEMES)
+THEMES = [f"/{theme}/{name}/" for theme, name in zip( THEMES,NAMES)]
+
 #LOREM = "https://loremflickr.com/200/200/{}"
 LOREM = "http://lorempixel.com/150/150/{}/"
 theme = "sky"
