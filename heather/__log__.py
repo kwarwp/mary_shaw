@@ -87,3 +87,10 @@ Traceback (most recent call last):
   module <module> line 2
     from _spy.vitollino.main import Cen, Elemento
 '''},
+{'date': 'Sun Oct 13 2019 12:15:04.725 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 11
+  return dict(x=10+(count*200)%1400, y=10+(count*200)//1400 
+                                                                                          ^
+SyntaxError: invalid syntax
+'''},
