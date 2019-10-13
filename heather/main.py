@@ -12,9 +12,9 @@ NAMES=NAMES.split()
 shuffle(NAMES)
 STYLE.update(width=1350, height=650)
 THEMES = "nature food animals transport city sports people technics".split()
-THEMES = [theme+f"/{count}/" for count in range(5) for theme in THEMES]
+THEMES = [theme+f"/{count}/" for count in range(1,6) for theme in THEMES]
 shuffle(THEMES)
-THEMES = [f"{theme}{name}" for theme, name in zip( THEMES,NAMES)]
+#THEMES = [f"{theme}{name}" for theme, name in zip( THEMES,NAMES)]
 CN=10
 delta = 1350//CN
 
