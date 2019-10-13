@@ -1,6 +1,6 @@
 # mary_shaw.heather.main.py
 from _spy.vitollino.main import Cena, Elemento, STYLE
-from random import shuffle
+from random import shuffle, randint
 NAMES = "Igor Leonardo Diogo Vinicios Benjamim Enzo Rodrigo Tomás Diego Luis Kevin Augusto Filipe" +\
 " Pablo André Emanuel Fernando Danilo Renan Levi Alexandre Lorenzo Octávio Ricardo Marcelo Kelvin Leandro"+\
 " Wilian Alan Júlio Jonathan Calebe Paulo Joaquim Fabrício Francisco Douglas António Carlos Vicente Fábio"+\
@@ -15,16 +15,17 @@ THEMES = "nature food animals transport city sports people technics".split()
 THEMES = [theme+f"/{count}/" for count in range(1,6) for theme in THEMES]
 shuffle(THEMES)
 #THEMES = [f"{theme}{name}" for theme, name in zip( THEMES,NAMES)]
-CN=10
+CN=15
 delta = 1350//CN
 
 #LOREM = "https://loremflickr.com/200/200/{}"
 LOREM = "http://lorempixel.com/150/150/{}/"
+LOREM = "https://picsum.photos/id/{}/200/200"
 theme = "sky"
 def calc(count):
     return dict(x=(count%CN)*delta, y=(count//CN)*delta) 
 #print(LOREM.format(theme))
 cena = Cena("https://lorempixel.com/1350/650/abstract/")
-[Elemento(LOREM.format(theme), w=delta, h=delta, cena=cena, **calc(count)) for count, theme in enumerate(THEMES)]
+[Elemento(LOREM.format(count*7+randint(1,7)), w=delta, h=delta, cena=cena, **calc(count)) for count in range(105)]
 cena.vai()
 #print(LOREM.format(theme, 2))
