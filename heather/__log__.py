@@ -56,3 +56,34 @@ Exception: undefined has no properties
   module '$exec_1883' line 11
 [Elemento(LOREM%theme, x=10+(count*200)%1400, y=10+(count*200)//1400, w=190, h=190, cena=cena) for count, theme in enumerate(TH)]
 '''},
+{'date': 'Sun Oct 13 2019 12:03:16.645 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 2
+    from _spy.vitollino.main import Cen, Elemento
+ImportError: cannot import name 'Cen'
+
+ImportError
+Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 264
+    action()
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 2
+    from _spy.vitollino.main import Cen, Elemento
+'''},
