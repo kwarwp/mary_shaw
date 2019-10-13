@@ -31,3 +31,9 @@ Exception: undefined has no properties
   module '$exec_1851' line 9
 [Elemento(LOREM.format(t=theme), x=10+(count*200)%1400, y=10+(count*200)//1400, w=190, h=190, cena=cena) for count, theme in enumerate(TH)]
 '''},
+{'date': 'Sun Oct 13 2019 11:57:14.675 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+Exception: undefined has no properties
+  module '$exec_1859' line 9
+LOREM.format(t=TH[0])
+'''},
