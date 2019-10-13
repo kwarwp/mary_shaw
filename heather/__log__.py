@@ -13,3 +13,9 @@ SyntaxError: trailing comma not allowed without surrounding parentheses
                                                                                          ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Sun Oct 13 2019 11:53:24.623 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+Exception: obj is undefined
+  module '$exec_1835' line 9
+[Elemento(LOREM.format(theme), x=10+(count*200)%1400, y=10+(count*200)//1400, w=190, h=190, cena=cena) 
+'''},
