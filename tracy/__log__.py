@@ -988,3 +988,10 @@ SyntaxError: invalid syntax
     self.pedras.representa(self)
 AttributeError: 'PedrasPreciosas' object has no attribute 'representa'
 '''},
+{'date': 'Tue Oct 15 2019 16:23:25.124 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 81
+  """
+                                                     ^
+SyntaxError: invalid syntax
+'''},
