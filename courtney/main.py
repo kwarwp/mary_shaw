@@ -88,14 +88,14 @@ class Tesouros(Cena):
         self.tesouro = 0
         self.pedras.some()
         
-    def equivalencia(pedras):
-        """ Simplificar a lista de pedras em uma equivalente """    
-    
+    def equivalencia(self):
+        """ Simplificar a lista de pedras em uma equivalente """ 
+        
         TURQUEZA  = 1
         OBSIDIANA = 5
         OURO      = 10
     
-        soma = pedras.sum() 
+        soma = self.pedras.sum() 
         nova = []
         qtdOuro = int(soma/OURO)    
         resto   = soma%OURO  
