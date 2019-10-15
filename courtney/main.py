@@ -88,9 +88,28 @@ class Tesouros(Cena):
         self.tesouro = 0
         self.pedras.some()
         
-    def getPedras(self):
-        """ Retorna as pedras ordenadas pelo seu valor """
-        return pedras.sort()
+    def equivalencia(pedras):
+        """ Simplificar a lista de pedras em uma equivalente """    
+    
+        TURQUEZA  = 1
+        OBSIDIANA = 5
+        OURO      = 10
+    
+        soma = pedras.sum() 
+        nova = []
+        qtdOuro = int(soma/OURO)    
+        resto   = soma%OURO  
+        for i in range(qtdOuro):
+            nova.append(OURO)
+        if resto >= OBSIDIANA:
+            qtdObsidiana = int(resto/OBSIDIANA)
+            for i in range(qtdObsidiana):
+                nova.append(OBSIDIANA)    
+        qtdTurqueza = soma - sum(nova)       
+        for i in range(qtdTurqueza):
+            nova.append(TURQUEZA)
+            nova.sort() #ordenar
+        return np.array(nova)
 
 
 class Tumba():
