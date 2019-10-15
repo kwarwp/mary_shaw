@@ -108,7 +108,7 @@ class Tesouros(Cena):
         qtdTurqueza = soma - sum(nova)       
         for i in range(qtdTurqueza):
             nova.append(TURQUEZA)
-            nova.sort() #ordenar
+        nova.sort() #ordenar
         return np.array(nova)
 
 
