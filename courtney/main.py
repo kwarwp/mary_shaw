@@ -82,6 +82,7 @@ class Tesouros(Cena):
         self.tesouro = quantas_pedras
         super().__init__(TESOURO, esquerda=acampamento, direita=ProximaCamara())
         self.pedras = PedrasPreciosas(quantas_pedras=self.tesouro)
+        print('aqui ',self.pedras)
         self.pedras.representa(self)
         
     def esvazia_camara(self):
