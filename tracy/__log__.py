@@ -995,3 +995,10 @@ AttributeError: 'PedrasPreciosas' object has no attribute 'representa'
                                                      ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Tue Oct 15 2019 16:36:49.303 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 138
+  """ Simplificar a lista de pedras em uma equivalente """    
+  ^
+IndentationError: expected an indented block
+'''},
