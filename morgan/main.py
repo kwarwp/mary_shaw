@@ -9,25 +9,30 @@ Nossa aventura em busca do tesouro inca consiste no descobrimento do tesouro inc
 
 __author__ = "Rafael Ris-Ala (rafaelrisala@ufrj.br)"
 
-
 class TemploInca:
     cabana = 0
     mochila = 0
     camara = 3
     def inicia(self):
-        """inicia a exploração"""
+        """ inicia a exploração """
         print("Uma expedição para coletar os tesouros do Templo Inca")
         self.entra()
         
     def entra(self):
-        """entra em uma câmara"""
+        """ entra em uma câmara"""
         print("Você entra em uma câmara com tesouros!")
-        self.pega(1)
-        #string formatada = f
-        #{} chama a quantidade
+        TemploInca.camara -= 1        
+        if TemploInca.camara:
+            self.pega(1)
+            
     def pega(self, quantidade):
-        """Você coloca o tesouro na mochila"""
-        print(f"Você coloca {quantidade} " %s "tesouro na mochila") %s quantidade
-        
+        """ coloca um tesouro na mochila """
+        print(f"Você coloca {quantidade} tesouro na mochila ")
+        TemploInca.mochila += quantidade
+        print(f"Você fica com {TemploInca.mochila} tesouros na mochila ")
+        print("Você coloca %s tesouro na mochila" % quantidade)
+
+self.entra()
+
 if __name__ == "__main__":
     TemploInca().inicia()
