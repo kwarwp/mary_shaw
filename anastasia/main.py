@@ -9,6 +9,7 @@
 """
 
 __author__ = "Claudia L R Motta <claudiam at nce.ufrj.br>"
+from random import randint
 
 
 class Explorador:
