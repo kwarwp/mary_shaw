@@ -7,6 +7,11 @@
 
 __author__ = "Fernanda Prazeres <fprazeres at dcc ufrj br>"
 
+#class Mochila:
+
+#class Cabana:
+
+
 class Explorador:
     """ explora o templo inca """
     
