@@ -11,11 +11,30 @@
 __author__ = "Claudia L R Motta <claudiam at nce.ufrj.br>"
 
 
+class Explorador:
+    """ Explora o templo  """
+    def __init__(self): #(self, camara)
+        self.mochila = 0
+        self.cabana = 0
+        # self.camara = camara
+        
+    def pega(self, quantidade, camara):
+        """ Coloca um tesouro na mochila """ 
+        print(f"Você coloca {quantidade} tesouro na mochila")
+        self.mochila += quantidade
+        print(f"Você fica com {self.mochila} tesouros na mochila")
+        camara.entra()       
+        
+    def sai(self):
+        """" Sai do Templo """
+        print( "Você sai do templo e guarda os tesouros na cabana!")
+        self.mochila , self.mochila  = self.mochila, 0
+        print(f"Você ficou com {self.cabana} tesouros na cabana!")
+
+
 class TemploInca:
-    cabana = 0
-    mochila = 0
     camara = 3
-    def inicia(self):
+    def __inicia__(self):
         """ inicia a exploração """
         print("Uma expedição para coletar os tesouros do Templo Inca")
         self.entra()
@@ -23,27 +42,16 @@ class TemploInca:
     def entra(self):
         """ entra em uma câmara"""
         print("Você entra em uma câmara com tesouros!")
-        
-        
         if TemploInca.camara:
-            TemploInca.camara -= 1 
-            self.pega(1)
+            TemploInca.camara -= 1
+            self.explorador.pega(1, self) 
         else:
             print("Não havia mais tesouros!")
-            self.sai()
-
-    def sai(self):
-        """" Sai do Templo """
-        print( "Você sai do templo e guarda os tesouros na cabana!")
-        TemploInca.cabana, TemploInca.mochila  = TemploInca.mochila, 0
-        print(f"Você ficou com {TemploInca.cabana} tesouros na cabana!")
+            self.explorador.sai()       
         
-    def pega(self, quantidade):
-        """ Coloca um tesouro na mochila """ 
-        print(f"Você coloca {quantidade} tesouro na mochila")
-        TemploInca.mochila += quantidade
-        print(f"Você fica com {TemploInca.mochila} tesouros na mochila")
-        self.entra()
+    
+        
+
         
         
 if __name__ == "__main__":
