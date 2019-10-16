@@ -20,7 +20,8 @@ class TemploInca:
         
         print("Uma expedição para coletar os tesouros o Templo Inca")
         
-        
+    def entra(self):
+        """ entra em uma camara """
         
         
         
