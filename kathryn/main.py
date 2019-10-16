@@ -20,14 +20,22 @@ class TemploInca:
     #-----------------------------------------------------------------------
     def entra(self):
         TemploInca.camara_atual = TemploInca.camara_atual + 1
-        print("ENTRANDO PARA CAMARA ", TemploInca.camara_atual)
-        print("-----------------------------")
-        print(f"Vocé entra em uma camara {TemploInca.camara_atual} do Templo")
         #if TemploInca.TOTAL_CAMARAS == 0:
-        if TemploInca.camara_atual == TemploInca.TOTAL_CAMARAS:
-            print("Stop")
+        if TemploInca.camara_atual > TemploInca.TOTAL_CAMARAS:
+            print("Ja nao há mais Camaras")
+            self.sai()
         else:
+            print("\nENTRANDO PARA CAMARA ", TemploInca.camara_atual)
+            #print("-----------------------------")
+            #print(f"Vocé entra em uma camara {TemploInca.camara_atual} do Templo")
             self.pega(1)
+    #-----------------------------------------------------------------------
+    def sai(self):
+        print("Vocé sai do Templo e guarda os Tesouros")
+        TemploInca.cabana = TemploInca.mochila
+        TemploInca.mochila = 0
+        print(f"Voce fica com {TemploInca.cabana} tesouros na cabana")
+    #-----------------------------------------------------------------------
     #-----------------------------------------------------------------------
     def pega(self, quantidade):
         print(f"Voce coloca {quantidade} tesouro na mochila")
