@@ -112,3 +112,49 @@ Traceback (most recent call last):
     (Templo.cabana)
 NameError: name 'Templo' is not defined
 '''},
+{'date': 'Wed Oct 16 2019 11:18:15.818 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Uma expedição para coletar os tesouros de um templo Inca
+O que existe nela
+Você coloca 1 tesouro na mochila
+Você fica com 1 tesouros na mochila
+O que existe nela
+Você coloca 1 tesouro na mochila
+Você fica com 2 tesouros na mochila
+O que existe nela
+Você coloca 1 tesouro na mochila
+Você fica com 3 tesouros na mochila
+O que existe nela
+A rodada acabou para você, leve suas 0 para cabana
+Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 42
+    TemploInca().inicia()
+  module <module> line 17
+    self.entra()
+  module <module> line 24
+    self.pega(1)
+  module <module> line 39
+    self.entra()
+  module <module> line 24
+    self.pega(1)
+  module <module> line 39
+    self.entra()
+  module <module> line 24
+    self.pega(1)
+  module <module> line 39
+    self.entra()
+  module <module> line 27
+    self.sai()
+  module <module> line 31
+    Print("Você sai do templo e guarda os tesouros!")
+NameError: name 'Print' is not defined
+'''},
