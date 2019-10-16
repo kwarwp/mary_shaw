@@ -35,7 +35,7 @@ class Explorador:
         self.cabana += self.mochila        
         self.mochila = 0
         print(f"Você ficou com {self.cabana} tesouros na cabana!")
-        if input("Nova Incursão? (s/n").lower() ==
+        if input("Nova Incursão? (s/n").lower() == "s":
         
         
 class Camara:
