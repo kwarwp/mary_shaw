@@ -40,3 +40,10 @@ IndentationError: unexpected indent
     self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
 NameError: name 'IMAGEM_DO_TEMPLO' is not defined
 '''},
+{'date': 'Wed Oct 16 2019 10:43:30.75 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 30
+  print(f"Você coloca {quantidade} " %s "tesouro na mochila") %s quantidade
+                                         ^
+SyntaxError: invalid syntax
+'''},
