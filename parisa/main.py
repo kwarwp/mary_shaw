@@ -29,7 +29,9 @@ class TemploInca:
             self.pega(1)
         else:
             print ("Não há mais tesouros!")
+        if TemploInca.cabana: 
             
+        self.cabana()    
         
     def pega(self, quantidade):
         """ Coloca um tesouro na mochila """
@@ -38,7 +40,9 @@ class TemploInca:
         print (f"Você fica com {TemploInca.mochila} tesouros na mochila.")
         self.entra()
         
-    
+    def cabana(self,quantidade):
+        """ Quantifica o tesouro resulante ao final da aventura """
+        print (f"Você possui {quantidade} tesouros em sua cabana.")
         
 if __name__ == "__main__":
       TemploInca().inicia()
