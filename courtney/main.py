@@ -10,14 +10,13 @@ from random import randint
 class Util:
     """ Contém funcionalidades auxiliadores às demais classes do sistema """
     
-    def equivalencia(qtdPedras):
+    def equivalencia(soma):
     """ Exibir o tesouro capturado """    
     
     TURQUEZA  = 1
     OBSIDIANA = 5
     OURO      = 10
     
-    soma = pedras.sum() 
     msg  = ""
     qtdOuro = int(soma/OURO)    
     resto   = soma%OURO
