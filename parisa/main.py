@@ -15,8 +15,7 @@ class Explorador:
     def __init__(self):
         self.mochila = 0
         self.cabana = 0
-        camara = TemploInca ()
-                
+                        
         def pega(self, quantidade, camara):
         """ Coloca um tesouro na mochila """
         print (f"Você coloca {quantidade} tesouro na mochila.")
@@ -30,8 +29,8 @@ class Explorador:
         self.cabana, self.mochila = self.mochila, 0
         print (f"Você ficou com {TemploInca.cabana} tesouros na sua Cabana.")
     
-
-
+    
+    
 class TemploInca:
     camara = 3
     
