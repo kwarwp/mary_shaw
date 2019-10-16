@@ -33,7 +33,7 @@ class Explorador:
         self.mochila = 0
         print(f"Você ficou com {self.cabana} tesouros na cabana!")
         if input("Inicia nova Incursão? (s/N)").lower() == "s":
-            templo.inicia()
+            self.templo.inicia()
 
 
 class Camara:
