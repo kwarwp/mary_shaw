@@ -131,3 +131,10 @@ SyntaxError: invalid syntax
                 ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 16 2019 11:13:28.908 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 39
+  def sai(self, TemploInca.mochila)
+                           ^
+SyntaxError: invalid syntax
+'''},
