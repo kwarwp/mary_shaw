@@ -180,3 +180,25 @@ Traceback (most recent call last):
     self.camara.entra()
 AttributeError: 'int' object has no attribute 'entra'
 '''},
+{'date': 'Wed Oct 16 2019 12:30:31.462 GMt-0300 (hora estándar de Brasilia) -X- SuPyGirls -X-',
+'error': '''Uma expedição para coletar os tesouros do Templo Inca
+Você entra em uma câmara com tesouros!
+Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 68
+    TemploInca().inicia()
+  module <module> line 60
+    cmr.entra()
+  module <module> line 44
+    self.explorador.pega(1, self)
+AttributeError: 'Camara' object has no attribute 'explorador'
+'''},
