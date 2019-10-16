@@ -166,3 +166,10 @@ IndentationError: expected an indented block
                      ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 16 2019 12:18:47.303 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 32
+  self.camara = 3
+  ^
+IndentationError: expected an indented block
+'''},
