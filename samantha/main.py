@@ -21,12 +21,8 @@ class Explorador:
         print(f"Você coloca {quantidade} tesouro na mochila ")
         self.mochila += quantidade
         print(f"Você fica com {self.mochila} tesouros na mochila ")
-        if input("Continua?").lower() == "s":
-            camara.entra(self)
-        else:
-            self.sai()
-        
-            
+        camara.entra(self)
+                    
     def sai(self):
         """ sai do templo """
         print("Você sai do templo e guarda os tesouros!")
@@ -42,12 +38,16 @@ class Camara:
     def entra(self, explorador):
         """ entra em uma câmara"""
         print("Você entra em uma câmara com tesouros!")
-        if self.quantidade:
-            self.quantidade -= 1        
-            explorador.pega(randint(1, 4), self)
+        if input("Continua?").lower() == "s":
+            if self.quantidade:
+                self.quantidade -= 1        
+                explorador.pega(randint(1, 4), self)
+            else:
+                print("Não havia mais tesouros!")
+                explorador.sai()
         else:
-            print("Não havia mais tesouros!")
-            explorador.sai()
+            self.sai()
+        
 
 
 class TemploInca:
