@@ -76,9 +76,9 @@ class Camara:
 class TemploInca:
         
     def __init__(self):
-        self.explorador = Explorador()
+        self.explorador = Explorador(self)
         self.cabana = Explorador()
-        self.camara = Camara()
+        self.camara = Camara(self.explorador)
     
     def inicia (self):
         """ inicia a aventura """
