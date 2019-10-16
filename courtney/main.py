@@ -9,28 +9,27 @@ from random import randint
 
 class Util:
     """ Contém funcionalidades auxiliadores às demais classes do sistema """
-    def equivalencia(pedras):
-    """ Simplificar a lista de pedras em uma equivalente """    
+    
+    def equivalencia(qtdPedras):
+    """ Exibir o tesouro capturado """    
     
     TURQUEZA  = 1
     OBSIDIANA = 5
     OURO      = 10
     
     soma = pedras.sum() 
-    nova = []
+    msg  = ""
     qtdOuro = int(soma/OURO)    
-    resto   = soma%OURO  
-    for i in range(qtdOuro):
-        nova.append(OURO)
+    resto   = soma%OURO
+    if qtdOuro:
+        msg += "Ouro: " + str(qtdOuro)
     if resto >= OBSIDIANA:
         qtdObsidiana = int(resto/OBSIDIANA)
-        for i in range(qtdObsidiana):
-            nova.append(OBSIDIANA)    
-    qtdTurqueza = soma - sum(nova)       
-    for i in range(qtdTurqueza):
-        nova.append(TURQUEZA)
-    nova.sort() #ordenar
-    return np.array(nova)
+        if qtdObsidiana:
+            msg += " Obsidiana: " + str(qtdObsidiana)
+    qtdTurqueza = soma - (qtdOuro + qtdObsidiana) 
+    msg += " Turqueza: " + str(qtdTurqueza)
+    return msg
 
 class Explorador:
     """ explora o templo inca"""
