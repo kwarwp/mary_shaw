@@ -37,7 +37,7 @@ class TemploInca:
         else:
             TemploInca.cabana += TemploInca.mochila
             TemploInca.mochila = 0
-            print("Você já entrou em todas as câmaras. Agora você tem {TemploInca.cabana} itens na sua cabana")
+            print(f"Você já entrou em todas as câmaras. Agora você tem {TemploInca.cabana} itens na sua cabana")
         
         
 if __name__ == "__main__":
