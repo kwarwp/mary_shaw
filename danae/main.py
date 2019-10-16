@@ -27,10 +27,17 @@ class Explorador:
         self.cabana, self.mochila = self.mochila, 0
         print(f"Você ficou com {self.cabana} tesouros na cabana!")
 
+
+class Camara:
+    def __init__(self):
+        self.qualquercoisa = None
+
+
 class TemploInca:
     camara = 3
     def __init__(self):
-        self.explorador = Explorador()
+        # self.camara = Camara()
+        self.explorador = Explorador()  # (self) (self.camara)
 
     def inicia(self):
         """ inicia a exploração """
