@@ -27,7 +27,7 @@ class TemploInca:
     def pega(self,quantidade):
         """ coloca um tesouro na mochila """
         print(f"Você coloca {quantidade} tesouro na mochila ")
-        TemploInca.mochila + = quantidade
+        TemploInca.mochila += quantidade
         print(f"Você fica {TemploInca.mochila} tesouro na mochila ")
         
 if __name__ == "__main__":
