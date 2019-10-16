@@ -25,13 +25,12 @@ class TemploInca:
         print(f"Você coloca {qtd} tesouro na mochila")
         TemploInca.mochila += qtd
         print(f"Agora você tem {TemploInca.mochila} tesouros na mochila")
-        
-        TemploInca.camara -= 1
         self.entra()
         
     def entra(self):
         """ entra em uma câmara """
         if TemploInca.camara:
+            TemploInca.camara -= 1
             print("Você entrou em uma câmara com tesouros!")
             self.pega(1)
         else:
