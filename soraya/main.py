@@ -5,7 +5,7 @@ Uma expedição para coletar os tesouros do Templo Inca
 Descrição: Uma excursão em busca do tesouro, entrando
 em tumbas e abrindo câmaras para pegar tesouros ou 
 enfrentar riscos, arriscando os prêmios a cada incursão.
-O único local seguro é a cabana fora do templo
+O único local seguro é a cabana fora do templo.
 """
 
 __author__ = "Sávyo V. Morais"
@@ -22,7 +22,7 @@ class TemploInca:
         
     def entra(self):
         """ entra em uma câmara """
-        print("Você entrou em uma câmara")
+        print("Você entrou em uma câmara com tesouros!")
         
         
 if __name__ == "__main__":
