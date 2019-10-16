@@ -102,3 +102,24 @@ Traceback (most recent call last):
     self.pega()
 TypeError: pega() missing 1 positional argument: quantidade
 '''},
+{'date': 'Wed Oct 16 2019 11:09:34.491 GMt-0300 (hora estándar de Brasilia) -X- SuPyGirls -X-',
+'error': '''Uma Expedicao para COletar os Tesouros do Templo Inca
+Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 43
+    TemploInca().inicia()
+  module <module> line 19
+    self.entra()
+  module <module> line 22
+    TemploInca.camara = TemploInca.total_camaras + 1
+AttributeError: 'TemploInca' object has no attribute 'total_camaras'
+'''},
