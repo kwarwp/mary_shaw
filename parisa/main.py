@@ -32,13 +32,13 @@ class Camara:
     """ contém tesouros,artefatos e perigos """
     def __init__(self):
         self.explorador = Explorador()
-        self.camara = 
+        self.camara = 3
         
     def entra (self):
         """ entra na câmara """
         print ("Você encontrou tesouro!")
         if self.Camara:
-            self.camara -= 1
+            self.Camara -= 1
             self.explorador.pega(1, self)
         else:
             print ("Não há mais tesouros!")
@@ -51,6 +51,7 @@ class TemploInca:
     def __init__(self):
         self.explorador = Explorador()
         self.cabana = Explorador()
+        self.camara = Camara()
     
     def inicia (self):
         """ inicia a aventura """
