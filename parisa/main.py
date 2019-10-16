@@ -31,7 +31,7 @@ class TemploInca:
         print (f"Você coloca {quantidade} tesouro na mochila.")
         TemploInca.mochila += quantidade 
         print (f"Você fica com {TemploInca.mochila} tesouros na mochila.")
-        
+        self.entra()
         
         
 if __name__ == "__main__":
