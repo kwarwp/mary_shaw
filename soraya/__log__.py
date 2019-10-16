@@ -197,3 +197,51 @@ Traceback (most recent call last):
     (Explorador.cabana)
 AttributeError: 'Explorador' object has no attribute 'cabana'
 '''},
+{'date': 'Wed Oct 16 2019 11:35:35.407 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Uma expedição para coletar os tesouros o Templo Inca
+Você entrou em uma câmara com tesouros!
+Você coloca 1 tesouro na mochila
+Agora você tem 1 tesouros na mochila
+Você entrou em uma câmara com tesouros!
+Você coloca 1 tesouro na mochila
+Agora você tem 2 tesouros na mochila
+Você entrou em uma câmara com tesouros!
+Você coloca 1 tesouro na mochila
+Agora você tem 3 tesouros na mochila
+Você já entrou em todas as câmaras!
+Você saiu!
+Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 57
+    TemploInca().inicia()
+  module <module> line 53
+    self.entra()
+  module <module> line 45
+    self.explorador.pega(1, self)
+  module <module> line 31
+    camara.entra()
+  module <module> line 45
+    self.explorador.pega(1, self)
+  module <module> line 31
+    camara.entra()
+  module <module> line 45
+    self.explorador.pega(1, self)
+  module <module> line 31
+    camara.entra()
+  module <module> line 48
+    self.explorador.sai()
+  module <module> line 24
+    print(f"Agora você tem {Explorador.cabana} tesouros na sua cabana")
+  module <module> line 1
+    (Explorador.cabana)
+AttributeError: 'Explorador' object has no attribute 'cabana'
+'''},
