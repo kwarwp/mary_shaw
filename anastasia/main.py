@@ -26,8 +26,8 @@ class TemploInca:
         
         
         if TemploInca.camara:
-             TemploInca.camara -= 1 
-             self.pega(1)
+            TemploInca.camara -= 1 
+            self.pega(1)
         else:
             print("Não havia mais tesouros!")
         
