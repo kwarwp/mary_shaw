@@ -27,7 +27,7 @@ class TemploInca:
         print(f"Agora você tem {TemploInca.mochila} tesouros na mochila")
         
         TemploInca.camara -= 1
-        self.entra
+        self.entra()
         
     def entra(self):
         """ entra em uma câmara """
