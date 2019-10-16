@@ -1,4 +1,6 @@
 # mary_shaw.callie.main.py
+#léo
+
 
 '''
 uMA EXPEDIÇÃO PARA COLETAR OS TESOUROS DO TEMPLO INCA
@@ -20,7 +22,7 @@ class TemploInca:
 
     def entra(self):
         # Entra em uma câmara
-        print("Você entra em uma câmara com tesoutos!")
+        print("Você entra em uma câmara com tesouros!")
         if TemploInca.camara:
             TemploInca.camara -= 1
             self.pega(1)
