@@ -58,8 +58,7 @@ class Explorador:
 class Camara:
     """ contém tesouros,artefatos e perigos """
     def __init__(self):
-        self.explorador = Explorador() Image
-
+        self.explorador = Explorador() 
         self.camara = 5
         
     def entra (self):
