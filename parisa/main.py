@@ -20,7 +20,7 @@ class TemploInca:
     def inicia(self):
         """ inicia a aventura """
         print ("Uma aventura para coletar os tesouros do Templo Inca")
-if __name__ == "__main__"
+if __name__ == "__main__":
       TemploInca().inicia()
       
         
