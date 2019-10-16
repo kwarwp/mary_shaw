@@ -73,3 +73,10 @@ AttributeError: 'JogoTesouroInca' object has no attribute 'cena_do_templo'
     jogo = JogoTesouroInca()
 NameError: name 'JogoTesouroInca' is not defined
 '''},
+{'date': 'Wed Oct 16 2019 10:34:59.575 GMt-0300 (hora estándar de Brasilia) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 14
+  //-----------------------------------------------------------------------
+   ^
+SyntaxError: invalid syntax
+'''},
