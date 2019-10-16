@@ -103,3 +103,10 @@ NameError: name 'Tesouro' is not defined
     super().__init__(TESOURO, direita=proxima_camara)
 NameError: name 'proxima_camara' is not defined
 '''},
+{'date': 'Wed Oct 16 2019 10:45:05.371 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 30
+  TemploInca.mochila + = quantidade
+                        ^
+SyntaxError: invalid syntax
+'''},
