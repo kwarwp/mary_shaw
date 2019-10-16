@@ -22,6 +22,12 @@ class TemploInca:
     def entra(self):
         """entra em uma câmara"""
         print("Você entra em uma câmara com tesouros!")
-
+        self.pega(1)
+        #string formatada = f
+        #{} chama a quantidade
+    def pega(self, quantidade):
+        """Você coloca o tesouro na mochila"""
+        print(f"Você coloca {quantidade} " %s "tesouro na mochila") %s quantidade
+        
 if __name__ == "__main__":
     TemploInca().inicia()
