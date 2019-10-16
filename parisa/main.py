@@ -51,9 +51,8 @@ class Explorador:
         self.mochila = 0
         print (f"Você ficou com {self.cabana} tesouros na sua Cabana.")
         if input ("Nova Incursão a vista! Quer participar? (sim/nao)").lower() == "sim":
-            camara.entra()
-        else: 
-            self.sai()
+            inicia
+        
     
 class Camara:
     """ contém tesouros,artefatos e perigos """
@@ -76,9 +75,9 @@ class Camara:
 class TemploInca:
         
     def __init__(self):
-        self.explorador = Explorador()
+        self.explorador = Explorador(self)
         self.cabana = Explorador()
-        self.camara = Camara()
+        self.camara = Camara(self.explorador)
     
     def inicia (self):
         """ inicia a aventura """
