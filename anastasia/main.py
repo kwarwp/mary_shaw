@@ -25,7 +25,7 @@ class TemploInca:
         print("Você entra em uma câmara com tesouros!")
         self.pega(1)
         
-    def pega(self, quantidade)
+    def pega(self, quantidade):
         """ Coloca um tesouro na mochila """ 
         print(f" Você coloca {quantidade} tesouro na mochila")
         
