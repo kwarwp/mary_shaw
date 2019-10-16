@@ -15,3 +15,10 @@
     Templo().inicia()
 NameError: name 'Templo' is not defined
 '''},
+{'date': 'Wed Oct 16 2019 10:45:10.349 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 27
+  TemploInca.mochila + = quantidade
+                        ^
+SyntaxError: invalid syntax
+'''},
