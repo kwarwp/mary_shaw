@@ -80,3 +80,25 @@ NameError: name 'JogoTesouroInca' is not defined
    ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 16 2019 10:40:23.218 GMt-0300 (hora estándar de Brasilia) -X- SuPyGirls -X-',
+'error': '''Uma Expedicao para COletar os Tesouros do Templo Inca
+Vocé entra em uma camara do Templo
+Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 32
+    TemploInca().inicia()
+  module <module> line 18
+    self.entra()
+  module <module> line 22
+    self.pega()
+TypeError: pega() missing 1 positional argument: quantidade
+'''},
