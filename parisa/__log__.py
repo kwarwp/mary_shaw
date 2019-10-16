@@ -22,3 +22,10 @@ NameError: name 'JogoCarlo' is not defined
   ^
 IndentationError: unexpected indent
 '''},
+{'date': 'Wed Oct 16 2019 10:27:04.825 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 23
+  if __name__ == "__main__"
+                            ^
+SyntaxError: invalid syntax
+'''},
