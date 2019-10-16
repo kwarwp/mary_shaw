@@ -38,6 +38,7 @@ class TemploInca:
         """ sair do jogo e acumular na cabana com o que há na mochila """
         print("sair do jogo e acumular na cabana com o que há na mochila")
         self.cabana += self.mochila
+        print("Cabana: ",self.cabana)
 
 
 if __name__ == "__main__":
