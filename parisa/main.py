@@ -31,14 +31,14 @@ class Explorador:
 class Camara:
     """ contém tesouros,artefatos e perigos """
     def __init__(self):
-        
-        
+        self.explorador = Explorador()
+        self.camara = 
         
     def entra (self):
         """ entra na câmara """
         print ("Você encontrou tesouro!")
-        if TemploInca.camara:
-            TemploInca.camara -= 1
+        if self.Camara:
+            self.camara -= 1
             self.explorador.pega(1, self)
         else:
             print ("Não há mais tesouros!")
