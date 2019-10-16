@@ -17,9 +17,15 @@ class TemploInca:
     cabana = 0
     mochila = 0
     camara = 3 
-    def inicia(self):
+    def inicia (self):
         """ inicia a aventura """
         print ("Uma aventura para coletar os tesouros do Templo Inca")
+        
+    def entra (self):
+        """ entra na câmara """
+        print ("Você encontrou tesouro!")
+        
+        
 if __name__ == "__main__":
       TemploInca().inicia()
       
