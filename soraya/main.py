@@ -20,9 +20,15 @@ class TemploInca:
         print("Uma expedição para coletar os tesouros o Templo Inca")
         self.entra()
         
+    def pega(self, qtd):
+        """ coloca o tesouro encontrado na mochila """
+        print(f"Você coloca {qtd} tesouro na mochila")
+        self.mochila++
+        
     def entra(self):
         """ entra em uma câmara """
         print("Você entrou em uma câmara com tesouros!")
+        self.pega(1)
         
         
 if __name__ == "__main__":
