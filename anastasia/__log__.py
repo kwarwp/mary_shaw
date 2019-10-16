@@ -208,3 +208,10 @@ NameError: name '__name' is not defined
                              ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 16 2019 10:41:43.978 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 28
+  def pega(self, quantidade)
+                             ^
+SyntaxError: invalid syntax
+'''},
