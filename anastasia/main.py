@@ -17,7 +17,7 @@ class Explorador:
     def __init__(self, templo_inca): #(self, camara)
         self.mochila = 0
         self.cabana = 0
-        self.templo - templo_inca
+        self.templo = templo_inca
         # self.camara = camara
         
     def pega(self, quantidade, camara):
