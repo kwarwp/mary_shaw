@@ -8,7 +8,7 @@ enfrentar riscos, arriscando os prêmios a cada incursão.
 O único local seguro é a cabana fora do templo.
 """
 
-__author__ = "Sávyo V. Morais"
+__author__ = "Sávyo V Morais <savyo dot morais at labnet dot nce dot ufrj dot br>"
 
 class TemploInca:
     cabana = 0
