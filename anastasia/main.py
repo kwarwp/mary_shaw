@@ -36,7 +36,7 @@ class TemploInca:
         """" Sai do Templo """
         print( "Você sai do templo e guarda os tesouros na cabana!")
         TemploInca.cabana, TemploInca.mochila + TemploInca.mochila, 0
-        print(f"Você ficou com {quantidade} tesouros na cabana!")
+        print(f"Você ficou com {TemploInca.cabana} tesouros na cabana!")
         
     def pega(self, quantidade):
         """ Coloca um tesouro na mochila """ 
