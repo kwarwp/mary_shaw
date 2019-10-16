@@ -7,12 +7,34 @@
 #===========================================================================
 __author__ = "Pablo LV"
 #===========================================================================
+class Explorador:
+    #-----------------------------------------------------------------------
+    def __init__(self):
+        self.mochila = 0
+    #-----------------------------------------------------------------------
+    def pega(self, quantidade, camara):
+        print(f"Voce coloca {quantidade} tesouro na mochila")
+        self.mochila = self.mochila + quantidade
+        print(f"Voce fica com {self.mochila} tesouros na mochila")
+        camara.entra()
+    #-----------------------------------------------------------------------
+    def sai(self):
+        print("\nVocé sai do Templo e guarda os Tesouros")
+        TemploInca.cabana = TemploInca.mochila
+        TemploInca.mochila = 0
+        print(f"Voce fica com {TemploInca.cabana} tesouros na cabana")
+        print(f"\nFim do Jogo")
+    #-----------------------------------------------------------------------
+
 #===========================================================================
 class TemploInca:
     cabana = 0
-    mochila = 0
+    explorador = Explorador()
     TOTAL_CAMARAS = 3
     camara_atual = 0
+    #-----------------------------------------------------------------------
+    def __init__(self):
+        self.explorador = Explorador()
     #-----------------------------------------------------------------------
     def inicia(self):
         print("Uma Expedicao para COletar os Tesouros do Templo Inca")
@@ -28,21 +50,7 @@ class TemploInca:
             print("\nENTRANDO PARA CAMARA ", TemploInca.camara_atual)
             #print("-----------------------------")
             #print(f"Vocé entra em uma camara {TemploInca.camara_atual} do Templo")
-            self.pega(1)
-    #-----------------------------------------------------------------------
-    def sai(self):
-        print("\nVocé sai do Templo e guarda os Tesouros")
-        TemploInca.cabana = TemploInca.mochila
-        TemploInca.mochila = 0
-        print(f"Voce fica com {TemploInca.cabana} tesouros na cabana")
-        print(f"\nFim do Jogo")
-    #-----------------------------------------------------------------------
-    #-----------------------------------------------------------------------
-    def pega(self, quantidade):
-        print(f"Voce coloca {quantidade} tesouro na mochila")
-        TemploInca.mochila = TemploInca.mochila + quantidade
-        print(f"Voce fica com {TemploInca.mochila} tesouros na mochila")
-        self.entra()
+            self.explorador.pega(1)
     #-----------------------------------------------------------------------
 #===========================================================================
 #===========================================================================
