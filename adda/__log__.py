@@ -158,3 +158,10 @@ Traceback (most recent call last):
     Print("Você sai do templo e guarda os tesouros!")
 NameError: name 'Print' is not defined
 '''},
+{'date': 'Wed Oct 16 2019 11:50:04.444 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 30
+  def __init__
+               ^
+SyntaxError: invalid syntax
+'''},
