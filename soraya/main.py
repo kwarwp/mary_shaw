@@ -10,39 +10,45 @@ O único local seguro é a cabana fora do templo.
 
 __author__ = "Sávyo V Morais <savyo dot morais at labnet dot nce dot ufrj dot br>"
 
-class TemploInca:
-    cabana = 0
-    mochila = 0
-    camara = 3
-    
-    def inicia(self):
-        """ inicia a exploração """
-        print("Uma expedição para coletar os tesouros o Templo Inca")
-        self.entra()
+class Explorador:
+    """ explora o templo """    
+    def __init__(self):
+        self.mochila = 0
+        self.cabana = 0
+            
+    def sai(self):
+        """ Sai do templo e volta para a cabana """
+        print("Você saiu!")
+        self.cabana += self.mochila
+        self.mochila = 0
+        print(f"Agora você tem {Explorador.cabana} tesouros na sua cabana")
         
-    def pega(self, qtd):
+    def pega(self, qtd, camara):
         """ coloca o tesouro encontrado na mochila """
         print(f"Você coloca {qtd} tesouro na mochila")
-        TemploInca.mochila += qtd
-        print(f"Agora você tem {TemploInca.mochila} tesouros na mochila")
-        self.entra()
-        
+        self.mochila += qtd
+        print(f"Agora você tem {self.mochila} tesouros na mochila")
+        camara.entra()
+
+
+class TemploInca:
+    camara = 3
+    exploradpr = Explorador()
+    
     def entra(self):
         """ entra em uma câmara """
         if TemploInca.camara:
             TemploInca.camara -= 1
             print("Você entrou em uma câmara com tesouros!")
-            self.pega(1)
+            explorador.pega(1, self)
         else:
             print("Você já entrou em todas as câmaras!")
-            self.sai()
-            
-    def sai(self):
-        """ Sai do templo e volta para a cabana """
-        print("Você saiu!")
-        TemploInca.cabana += TemploInca.mochila
-        TemploInca.mochila = 0
-        print(f"Agora você tem {TemploInca.cabana} tesouros na sua cabana")
+            explorador.sai()
+    
+    def inicia(self):
+        """ inicia a exploração """
+        print("Uma expedição para coletar os tesouros o Templo Inca")
+        self.entra()
         
         
 if __name__ == "__main__":
