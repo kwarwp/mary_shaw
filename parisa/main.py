@@ -9,6 +9,7 @@ __author__ = "Fernanda Prazeres <fprazeres at dcc ufrj br>"
 
 class Explorador:
     """ explora o templo inca """
+    
     def __init__(self):
         self.mochila = 0
         self.cabana = 0
@@ -27,20 +28,12 @@ class Explorador:
         self.mochila = 0
         print (f"Você ficou com {self.cabana} tesouros na sua Cabana.")
     
-    
-    
-class TemploInca:
-    camara = 3
-    
+class Camara:
+    """ contém tesouros,artefatos e perigos """
     def __init__(self):
-        self.explorador = Explorador()
-        self.cabana = Explorador()
-    
-    def inicia (self):
-        """ inicia a aventura """
-        print ("Uma aventura para coletar os tesouros do Templo Inca")
-        self.entra()
-                  
+        
+        
+        
     def entra (self):
         """ entra na câmara """
         print ("Você encontrou tesouro!")
@@ -49,7 +42,21 @@ class TemploInca:
             self.explorador.pega(1, self)
         else:
             print ("Não há mais tesouros!")
-            self.explorador.sai()    
+            self.explorador.sai()  
+
+
+
+class TemploInca:
+        
+    def __init__(self):
+        self.explorador = Explorador()
+        self.cabana = Explorador()
+    
+    def inicia (self):
+        """ inicia a aventura """
+        print ("Uma aventura para coletar os tesouros do Templo Inca")
+        self.entra()
+          
             
 if __name__ == "__main__":
       TemploInca().inicia()
