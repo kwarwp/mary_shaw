@@ -29,9 +29,9 @@ class TemploInca:
             self.pega(1)
         else:
             print ("Não há mais tesouros!")
-        if TemploInca.cabana: 
-            
-        self.cabana()    
+            if TemploInca.cabana: 
+                h += TemploInca.mochila
+                self.cabana()    
         
     def pega(self, quantidade):
         """ Coloca um tesouro na mochila """
