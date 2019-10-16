@@ -99,3 +99,10 @@ AttributeError: 'Tumba' object has no attribute 'inicial'
     self.cena_do_templo = Cena(
 AttributeError: 'Tumba' object has no attribute 'inicial'
 '''},
+{'date': 'Wed Oct 16 2019 10:41:36.389 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 24
+  def pega(self,quantidade)
+                            ^
+SyntaxError: invalid syntax
+'''},
