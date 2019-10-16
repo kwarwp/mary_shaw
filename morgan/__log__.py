@@ -61,3 +61,10 @@ SyntaxError: EOL while scanning string literal
                                              ^
 SyntaxError: EOL while scanning string literal
 '''},
+{'date': 'Wed Oct 16 2019 10:45:43.164 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 31
+  print("Você coloca %s tesouro na mochila),1
+                                             ^
+SyntaxError: EOL while scanning string literal
+'''},
