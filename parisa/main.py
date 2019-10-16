@@ -47,7 +47,7 @@ class Explorador:
     def sai(self):
         """ Sai do Templo """
         print (f"Você saiu do Templo e voltou para sua Cabana")
-        self.cabana = self.mochila
+        self.cabana += self.mochila
         self.mochila = 0
         print (f"Você ficou com {self.cabana} tesouros na sua Cabana.")
     
