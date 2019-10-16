@@ -50,3 +50,10 @@ SyntaxError: invalid syntax
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Wed Oct 16 2019 11:49:09.87 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 27
+  """ Sai do Templo """
+  ^
+IndentationError: expected an indented block
+'''},
