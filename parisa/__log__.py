@@ -446,3 +446,9 @@ TypeError: __init__() takes 1 positional argument but more were given
     self.explorador = Explorador() 
 TypeError: __init__() missing 1 positional argument: templo_inca
 '''},
+{'date': 'Wed Oct 16 2019 13:08:20.163 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+RuntimeError: too much recursion
+  module '$exec_577' line 79
+        self.explorador = Explorador()
+'''},
