@@ -30,11 +30,20 @@ class Explorador:
         print( "Você sai do templo e guarda os tesouros na cabana!")
         self.mochila , self.mochila  = self.mochila, 0
         print(f"Você ficou com {self.cabana} tesouros na cabana!")
-
+        
+        
+class Camara:
+    def __init__ (self):
+        self.qualquercoisa = None
 
 class TemploInca:
     camara = 3
     def __inicia__(self):
+        # self.camara = camara()
+        self.explorador - Explorador() # (self) (self.camara)
+        
+    
+    def inicia(self):
         """ inicia a exploração """
         print("Uma expedição para coletar os tesouros do Templo Inca")
         self.entra()
@@ -49,11 +58,7 @@ class TemploInca:
             print("Não havia mais tesouros!")
             self.explorador.sai()       
         
-    
-        
-
-        
-        
+         
 if __name__ == "__main__":
     TemploInca().inicia()
         
