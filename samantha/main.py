@@ -44,7 +44,7 @@ class Camara:
         print("Você entra em uma câmara com tesouros!")
         if self.quantidade:
             self.quantidade -= 1        
-            explorador.pega(1, self)
+            explorador.pega(randint(1, 4), self)
         else:
             print("Não havia mais tesouros!")
             explorador.sai()
