@@ -4,27 +4,20 @@ from _spy.vitollino.main import Cena
 IMAGEM_DO_TEMPLO = "https://i.imgur.com/rY28mtM.jpg"
 
 """
-    Jogo do Tesouro Inca
-
+Nossa aventura em busca do tesouro inca consiste no descobrimento do tesouro inca 
 """
 
 __author__ = "Rafael Ris-Ala (rafaelrisala@ufrj.br)"
 
-class JogoTesouroInca:
-    """ Representa o Jogo Principal """
-    def __init__(self):
-        """Constroi a cena """
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO)
-        
-    def inicia(self):
-        """ Inicia a construção do jogo"""
-        self.cena_do_templo.vai()
-"""        self.cena_do_templo = "Templo do tesouro Inca"
-        print("Descrição:", self.cena_do_templo)
-"""
 
+class TemploInca:
+    cabana = 0
+    mochila = 0
+    camara = 3
+    def inicia(self):
+        """inicia a exploração"""
+        print("Uma expedição para coletar os tesouros do Templo Inca")
+        
+        
 if __name__ == "__main__":
-    jogo = JogoTesouroInca()
-    jogo.inicia()
-    
-    
+    TemploInca().inicia()
