@@ -24,7 +24,7 @@ class Explorador:
         print(f"Você coloca {quantidade} tesouro na mochila")
         self.mochila += quantidade
         print(f"Você fica com {self.mochila} tesouros na mochila")
-        if input("Continua? (s/n").lower() ++"s":
+        if input("Continua? (s/n").lower() == "s":
             camara.entra()
         else:
             self.sai()       
@@ -32,8 +32,10 @@ class Explorador:
     def sai(self):
         """" Sai do Templo """
         print( "Você sai do templo e guarda os tesouros na cabana!")
-        self.mochila , self.mochila  = self.mochila, 0
+        self.cabana += self.mochila        
+        self.mochila = 0
         print(f"Você ficou com {self.cabana} tesouros na cabana!")
+        if input("Nova Incursão? (s/n").lower() ==
         
         
 class Camara:
