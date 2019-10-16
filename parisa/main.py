@@ -7,13 +7,20 @@
 
 __author__ = "Fernanda Prazeres <fprazeres at dcc ufrj br>"
 
-class Mochila:
-
-class Cabana:
-    """ Contém os tesouros  """
-    def __init__(self):
-        self.explorador = Explorador ()
-        self.camara = Camara()
+#class Mochila:
+ #   """ contém os tesouros coletados nas camaras"""
+  #  def __init__(self):
+   #     self.explorador = Explorador ()
+    #    self.camara = Camara()
+     #   self.cabana = Cabana()
+        
+        
+#class Cabana:
+ #   """ Contém os tesouros salvos """
+  #  def __init__(self):
+   #     self.explorador = Explorador ()
+    #    self.camara = Camara()
+     #   self.cabana = Cabana()
         
         
         
