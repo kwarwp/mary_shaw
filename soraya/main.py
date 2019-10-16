@@ -23,7 +23,7 @@ class TemploInca:
     def pega(self, qtd):
         """ coloca o tesouro encontrado na mochila """
         print(f"Você coloca {qtd} tesouro na mochila")
-        self.mochila += qtd
+        mochila += qtd
         print(f"Agora você tem {mochila} tesouros na mochila")
         
     def entra(self):
