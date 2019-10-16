@@ -16,7 +16,7 @@ class Explorador:
         self.mochila = 0
         self.cabana = 0
                         
-        def pega(self, quantidade, camara):
+    def pega(self, quantidade, camara):
         """ Coloca um tesouro na mochila """
         print (f"Você coloca {quantidade} tesouro na mochila.")
         self.mochila += quantidade 
