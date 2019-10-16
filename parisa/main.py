@@ -1,8 +1,6 @@
 # mary_shaw.parisa.main.py
 #site: http://supygirls.pythonanywhere.com/
 
-#Módulos em python: from roxanne.main import JogoTesouroInca as JogoCarlo
-
 """
      Jogo do Tesouro Inca
      
