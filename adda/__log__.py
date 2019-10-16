@@ -60,3 +60,10 @@ TypeError: __init__() takes 2 positional argument but more were given
     self.tumba = [Tesouros(pedras+1, acampamento, eu) for pedras in range(4)]
 TypeError: __init__() takes 2 positional argument but more were given
 '''},
+{'date': 'Wed Oct 16 2019 11:15:35.552 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 23
+  TemploInca.camara -= 1
+  ^
+IndentationError: expected an indented block
+'''},
