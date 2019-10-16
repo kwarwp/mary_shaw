@@ -18,6 +18,7 @@ class Util:
         OURO      = 10
     
         msg  = ""
+        qtdObsidiana = 0
         qtdOuro = int(soma/OURO)    
         resto   = soma%OURO
         if qtdOuro:
