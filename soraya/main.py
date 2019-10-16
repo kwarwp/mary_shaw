@@ -33,17 +33,19 @@ class Explorador:
 
 class TemploInca:
     camara = 3
-    exploradpr = Explorador()
+    
+    def __init__(self):
+        self.explorador = Explorador()
     
     def entra(self):
         """ entra em uma câmara """
         if TemploInca.camara:
             TemploInca.camara -= 1
             print("Você entrou em uma câmara com tesouros!")
-            explorador.pega(1, self)
+            self.explorador.pega(1, self)
         else:
             print("Você já entrou em todas as câmaras!")
-            explorador.sai()
+            self.explorador.sai()
     
     def inicia(self):
         """ inicia a exploração """
