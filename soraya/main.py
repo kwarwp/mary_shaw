@@ -25,4 +25,4 @@ class TemploInca:
         
         
 if __name__ == "__main__":
-    Templo().inicia()
+    TemploInca().inicia()
