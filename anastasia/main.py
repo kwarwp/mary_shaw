@@ -30,6 +30,13 @@ class TemploInca:
             self.pega(1)
         else:
             print("Não havia mais tesouros!")
+            self.sai()
+
+    def sai(self):
+        """" Sai do Templo """
+        print( "Você sai do templo e guarda os tesouros na cabana!")
+        TemploInca.cabana, TemploInca.mochila + TemploInca.mochila, 0
+        print(f"Você ficou com {quantidade} tesouros na cabana!")
         
     def pega(self, quantidade):
         """ Coloca um tesouro na mochila """ 
