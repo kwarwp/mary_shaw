@@ -5,38 +5,23 @@
 
 """
      Jogo do Tesouro Inca
+     
+     Uma aventura pelas Câmaras do Templo Inca, onde encontramos perigos e tesouros.
 
 """
 
-from _spy.vitollino.main import Cena  #importa módulo da biblioteca gráfica
-IMAGEM_DO_TEMPLO = "https://i.imgur.com/8puEH1k.jpg"   #constante em python é com letra maiúscula 
-
-__author__ = "Fernanda Prazeres (fprazeres@dcc.ufrj.br)"  
-#camelcase (nome com letra maiúscula e minúscula) ("letra de camelo") = só se usa em nome de classe
+__author__ = "Fernanda Prazeres <fprazeres at dcc ufrj br>"
 
 
-class JogoTesouroInca: #define classe
-    """ Representa o Jogo principal """ #documentação = string após 2 pontos, pode ser executado. 
-    
-    def __init__(self):   #classe tem um atributo 
-        "Constroi a cena "
-        self.cena_do_templo = Cena(IMAGEM_DO_TEMPLO) # atributo
-
-    def inicia(self): #define comportamento
-        """ Inicia a construção do Jogo """
-        self.cena_do_templo.vai()
-          
-#self.cena_do_templo = "Templo do Tesouro Inca"
-# print("Descrição:",self.cena_do_templo,__name__)
+class TemploInca:
+    cabana = 0
+    mochila = 0
+    camara = 3 
+    def inicia(self):
+        """ inicia a aventura """
+        print ("Uma aventura para coletar os tesouros do Templo Inca")
+if __name__ == "__main__"
+      TemploInca().inicia()
       
-#PASS = comando que passa e não lê onde não tem comando, logo não dá erro.
         
-if __name__ == "__main__":
-    jogo = JogoTesouroInca() 
-    outro_jogo = JogoTesouroInca()
-    jogo.inicia() #instancia a class
-    
-    
-    
-    
-
+        
