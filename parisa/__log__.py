@@ -306,3 +306,9 @@ RuntimeError: too much recursion
     self.explorador = Explorador(self)
 TypeError: __init__() takes 1 positional argument but more were given
 '''},
+{'date': 'Wed Oct 16 2019 13:03:30.320 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+RuntimeError: too much recursion
+  module '$exec_505' line 79
+        self.explorador = Explorador()
+'''},
