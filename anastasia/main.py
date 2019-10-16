@@ -38,8 +38,7 @@ class Explorador:
         print(f"Você ficou com {self.cabana} tesouros na cabana!")
         if input("Nova Incursão? (s/n").lower() == "s":
             templo.inicia()
-      
-            
+
         
         
 class Camara:
@@ -71,7 +70,7 @@ class TemploInca:
         print("Uma expedição para coletar os tesouros do Templo Inca")
         self.camara.entra()
         
-    def __entra(self):
+    def entra(self):
         """ entra em uma câmara"""
         print("Você entra em uma câmara com tesouros!")
         if TemploInca.camara:
