@@ -1,7 +1,7 @@
 # mary_shaw.anastasia.main.py
 
 """
-    Uma Ewexpediçaõ para coletar os tesouros do Templo Inca
+    Uma expedição para coletar os tesouros do Templo Inca
     --Relato:
     Fomos explorar um tempo Inca onde havia câmaras com tesouros. Acampamos perto do templo onde fomos 
     guardando os tesouros. Fizemos diversas incursões mas tivemos que enfrentar diversos perigos. Voltei com meu tesouro
