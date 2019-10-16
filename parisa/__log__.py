@@ -84,3 +84,30 @@ Traceback (most recent call last):
     (TemploInca.mochila)
 AttributeError: 'TemploInca' object has no attribute 'mochila'
 '''},
+{'date': 'Wed Oct 16 2019 11:49:32.77 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Uma aventura para coletar os tesouros do Templo Inca
+Você encontrou tesouro!
+Você coloca 1 tesouro na mochila.
+Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 57
+    TemploInca().inicia()
+  module <module> line 44
+    self.entra()
+  module <module> line 51
+    self.explorador.pega(1, self)
+  module <module> line 23
+    print (f"Você fica com {TemploInca.mochila} tesouros na mochila.")
+  module <module> line 1
+    (TemploInca.mochila)
+AttributeError: 'TemploInca' object has no attribute 'mochila'
+'''},
