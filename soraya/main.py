@@ -31,8 +31,8 @@ class TemploInca:
         
     def entra(self):
         """ entra em uma câmara """
-        print("Você entrou em uma câmara com tesouros!")
         if TemploInca.camara:
+            print("Você entrou em uma câmara com tesouros!")
             self.pega(1)
         
         
