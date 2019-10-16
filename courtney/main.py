@@ -53,7 +53,8 @@ class Explorador:
         print("Você sai do templo e guarda os tesouros!")
         self.cabana += self.mochila
         self.mochila = 0
-        print(f"Você ficou com {self.cabana} tesouros na cabana!")
+        #print(f"Você ficou com {self.cabana} tesouros na cabana!")
+        print("Você ficou com ",Util.equivalencia(self.cabana)," tesouros na cabana!")
         if input("Inicia nova Incursão? (s/N)").lower() == "s":
             self.templo.inicia()
 
