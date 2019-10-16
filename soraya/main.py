@@ -8,6 +8,8 @@ enfrentar riscos, arriscando os prêmios a cada incursão.
 O único local seguro é a cabana fora do templo.
 """
 
+from random import randint
+
 __author__ = "Sávyo V Morais <savyo morais at labnet nce ufrj br>"
 
 class Explorador:
@@ -43,7 +45,7 @@ class Camara:
         if self.camara:
             self.camara -= 1
             print("Você entrou em uma câmara com tesouros!")
-            self.explorador.pega(1, self)
+            self.explorador.pega(randint(1,4), self)
         else:
             print("Você já entrou em todas as câmaras!")
             self.explorador.sai()
