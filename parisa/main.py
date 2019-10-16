@@ -76,7 +76,7 @@ class Camara:
 class TemploInca:
         
     def __init__(self):
-        self.explorador = Explorador(self)
+        self.explorador = Explorador()
         self.cabana = Explorador()
         self.camara = Camara(self.explorador)
     
