@@ -47,3 +47,10 @@ NameError: name 'IMAGEM_DO_TEMPLO' is not defined
                                          ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 16 2019 10:44:42.1 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 31
+  print("Você coloca %s tesouro na mochila) %s 1
+                                                ^
+SyntaxError: EOL while scanning string literal
+'''},
