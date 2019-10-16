@@ -11,24 +11,24 @@ class Util:
     """ Contém funcionalidades auxiliadores às demais classes do sistema """
     
     def equivalencia(soma):
-    """ Exibir o tesouro capturado """    
+        """ Exibir o tesouro capturado """    
     
-    TURQUEZA  = 1
-    OBSIDIANA = 5
-    OURO      = 10
+        TURQUEZA  = 1
+        OBSIDIANA = 5
+        OURO      = 10
     
-    msg  = ""
-    qtdOuro = int(soma/OURO)    
-    resto   = soma%OURO
-    if qtdOuro:
-        msg += "Ouro: " + str(qtdOuro)
-    if resto >= OBSIDIANA:
-        qtdObsidiana = int(resto/OBSIDIANA)
+        msg  = ""
+        qtdOuro = int(soma/OURO)    
+        resto   = soma%OURO
+        if qtdOuro:
+            msg += "Ouro: " + str(qtdOuro)
+        if resto >= OBSIDIANA:
+            qtdObsidiana = int(resto/OBSIDIANA)
         if qtdObsidiana:
             msg += " Obsidiana: " + str(qtdObsidiana)
-    qtdTurqueza = soma - (qtdOuro + qtdObsidiana) 
-    msg += " Turqueza: " + str(qtdTurqueza)
-    return msg
+        qtdTurqueza = soma - (qtdOuro + qtdObsidiana) 
+        msg += " Turqueza: " + str(qtdTurqueza)
+        return msg
 
 class Explorador:
     """ explora o templo inca"""
