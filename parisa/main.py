@@ -34,6 +34,7 @@ class Explorador:
         self.mochila = 0
         self.cabana = 0
         self.templo = TemploInca() 
+        self.explorador = Explorador()
                         
     def pega(self, quantidade, camara):
         """ Coloca um tesouro na mochila """
