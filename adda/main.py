@@ -19,13 +19,17 @@ class TemploInca:
     def entra(self):
         """ entra em uma câmera"""
         print("O que existe nela")
-        self.pega(1)
+        
+        if TemploInca.camara:
+            self.pega(1)
+        TemploInca.camara -= 1
         
     def pega(self, quantidade):
         """ guarda um tesouro na machila """
         print(f"Você coloca {quantidade} tesouro na mochila" )
         TemploInca.mochila += quantidade
         print(f"Você fica com {TemploInca.mochila} tesouros na mochila")
+        self.entra()
         
 if __name__ == "__main__":
     TemploInca().inicia()
