@@ -23,7 +23,7 @@ class Explorador:
         print (f"Você fica com {TemploInca.mochila} tesouros na mochila.")
         camara.entra()
         
-        def sai(self):
+    def sai(self):
         """ Sai do Templo """
         print (f"Você saiu do Templo e voltou para sua Cabana")
         self.cabana, self.mochila = self.mochila, 0
