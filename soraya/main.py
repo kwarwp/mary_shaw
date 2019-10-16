@@ -21,7 +21,7 @@ class Explorador:
         print("Você saiu!")
         self.cabana += self.mochila
         self.mochila = 0
-        print(f"Agora você tem {Explorador.cabana} tesouros na sua cabana")
+        print(f"Agora você tem {self.cabana} tesouros na sua cabana")
         
     def pega(self, qtd, camara):
         """ coloca o tesouro encontrado na mochila """
