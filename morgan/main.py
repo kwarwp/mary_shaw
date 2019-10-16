@@ -1,7 +1,7 @@
 # mary_shaw.morgan.main.py
 # http://supygirls.python.pythonanywhere.com/
-from _spy.vitollino.main import Cena
-IMAGEM_DO_TEMPLO = "https://i.imgur.com/rY28mtM.jpg"
+#from _spy.vitollino.main import Cena
+#IMAGEM_DO_TEMPLO = "https://i.imgur.com/rY28mtM.jpg"
 
 """
 Nossa aventura em busca do tesouro inca consiste no descobrimento do tesouro inca 
@@ -9,10 +9,14 @@ Nossa aventura em busca do tesouro inca consiste no descobrimento do tesouro inc
 
 __author__ = "Rafael Ris-Ala (rafaelrisala@ufrj.br)"
 
+
+
 class TemploInca:
     cabana = 0
     mochila = 0
     camara = 3
+    cabana = 0
+    
     def inicia(self):
         """ inicia a exploração """
         print("Uma expedição para coletar os tesouros do Templo Inca")
@@ -24,15 +28,24 @@ class TemploInca:
         TemploInca.camara -= 1        
         if TemploInca.camara:
             self.pega(1)
+        else:
+            self.sair()
             
     def pega(self, quantidade):
         """ coloca um tesouro na mochila """
         print(f"Você coloca {quantidade} tesouro na mochila ")
         TemploInca.mochila += quantidade
         print(f"Você fica com {TemploInca.mochila} tesouros na mochila ")
-        print("Você coloca %s tesouro na mochila" % quantidade)
+        self.entra()
+        
+    def sair(self):
+        """ sair do jogo e acumular na cabana com o que há na mochila """
+        print("sair do jogo e acumular na cabana com o que há na mochila")
+        self.cabana += self.mochila
+        print("Cabana: ",self.cabana)
 
-self.entra()
 
 if __name__ == "__main__":
     TemploInca().inicia()
+
+
