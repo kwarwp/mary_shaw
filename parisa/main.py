@@ -59,7 +59,7 @@ class Camara:
         print ("Você encontrou tesouro!")
         if self.camara:
             self.camara -= 1
-            self.explorador.pega(1, self)
+            self.explorador.pega(randint(1, 4), self)
         else:
             print ("Não há mais tesouros!")
             self.explorador.sai()  
