@@ -18,7 +18,7 @@ class TemploInca:
     def inicia(self):
         """ inicia a exploração """
         print("Uma expedição para coletar os tesouros o Templo Inca")
-        
+        self.entra()
         
     def entra(self):
         """ entra em uma câmara """
