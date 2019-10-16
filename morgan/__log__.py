@@ -132,3 +132,10 @@ AttributeError: 'GUI' object has no attribute 'entra'
   ^
 IndentationError: unexpected indent
 '''},
+{'date': 'Wed Oct 16 2019 11:07:45.850 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 43
+  def sair(self):
+  ^
+IndentationError: unexpected indent
+'''},
