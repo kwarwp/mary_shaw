@@ -38,7 +38,7 @@ class TemploInca:
         print (f"Você fica com {TemploInca.mochila} tesouros na mochila.")
         self.entra()
         
-    def   
+    
         
 if __name__ == "__main__":
       TemploInca().inicia()
