@@ -25,7 +25,7 @@ class Explorador:
         print (f"Você saiu do Templo e voltou para sua Cabana")
         self.cabana = self.mochila
         self.mochila = 0
-        print (f"Você ficou com {TemploInca.cabana} tesouros na sua Cabana.")
+        print (f"Você ficou com {self.cabana} tesouros na sua Cabana.")
     
     
     
