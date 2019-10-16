@@ -110,3 +110,10 @@ NameError: name 'proxima_camara' is not defined
                         ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 16 2019 11:08:43.289 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 40
+  def sai(self, TemploInca.mochila)
+                           ^
+SyntaxError: invalid syntax
+'''},
