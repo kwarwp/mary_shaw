@@ -43,7 +43,7 @@ class TemploInca:
         print (f"Você saiu do Templo e voltou para sua Cabana")
         TemploInca.cabana = TemploInca.mochila
         TemploInca.mochila = 0
-        print ("Você ficou com {TemploInca.mochila} tesouros na sua Cabana.")
+        print (f"Você ficou com {TemploInca.cabana} tesouros na sua Cabana.")
     
         
 if __name__ == "__main__":
