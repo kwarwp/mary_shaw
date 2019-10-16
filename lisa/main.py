@@ -8,7 +8,7 @@ Contudo quando encontramos um artefato, item de extremo valor, deixamos na câma
 O problema foi quando encontramos um perigo, ficamos preocupados e um aventureiro saiu, ele ficou com o artefato e tudo que deixamos para trás.
 Continuei e ao sair o segundo perigo todos nós deixamos para trás o que tinhamos catado e ficamos sem nada.
 
-""""
+"""
 
 class TemploInca:
     cabana = 0
@@ -17,6 +17,7 @@ class TemploInca:
     def inicia(self):
         """ inicia a exploração """
         print("Uma expedição para coletar os tesouros do Templo Inca")
+        self.entra()
         
     def entra(self):
         """ entra em uma câmara """
