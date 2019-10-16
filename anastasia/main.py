@@ -51,27 +51,28 @@ class Camara:
 
 class TemploInca:
     camara = 3
-    def __inicia__(self):
-        # self.camara = camara()
-        self.explorador = Explorador() # (self) (self.camara)
-        
-    
+    def __init__(self):
+        # self.camara = Camara()
+        self.explorador = Explorador()  # (self) (self.camara)
+        self.camara = Camara(self.explorador)
+
     def inicia(self):
         """ inicia a exploração """
         print("Uma expedição para coletar os tesouros do Templo Inca")
-        self.entra()
+        self.camara.entra()
         
-    def entra(self):
+    def __entra(self):
         """ entra em uma câmara"""
         print("Você entra em uma câmara com tesouros!")
         if TemploInca.camara:
-            TemploInca.camara -= 1
-            self.explorador.pega(1, self) 
+            TemploInca.camara -= 1        
+            self.explorador.pega(1, self)
         else:
             print("Não havia mais tesouros!")
-            self.explorador.sai()       
-        
-         
+            self.explorador.sai()
+
+
 if __name__ == "__main__":
     TemploInca().inicia()
-        
+
+
