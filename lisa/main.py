@@ -23,12 +23,24 @@ class TemploInca:
         """ entra em uma câmara """
         print("Você entra em uma câmara com tesouros!")
         self.pega(1)
+        TemploInca.camara -= 1
+        if TemploInca.camara:
+            self.pega(1)
+        else:
+            print("Não havia mais tesouros!")
+            self.sai()
+        
         
     def pega(self,quantidade):
         """ coloca um tesouro na mochila """
         print(f"Você coloca {quantidade} tesouro na mochila ")
         TemploInca.mochila += quantidade
-        print(f"Você fica {TemploInca.mochila} tesouro na mochila ")
+        print(f"Você fica {TemploInca.mochila} tesouro(s) na mochila ")
+        
+    def sai(self, TemploInca.mochila)
+        """ coloca os tesouros na cabana """
+        print("Você saiu do templo e salvou os tesouros que estavam na mochila, foram {TemploInca.mochila} prabéns!") 
+        
         
 if __name__ == "__main__":
     TemploInca().inicia()
