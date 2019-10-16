@@ -34,9 +34,13 @@ class TemploInca:
             print("Você entrou em uma câmara com tesouros!")
             self.pega(1)
         else:
-            TemploInca.cabana += TemploInca.mochila
-            TemploInca.mochila = 0
-            print(f"Você já entrou em todas as câmaras. Agora você tem {TemploInca.cabana} itens na sua cabana")
+            print("Você já entrou em todas as câmaras!")
+            self.sai()
+            
+    def sai(self):
+        TemploInca.cabana += TemploInca.mochila
+        TemploInca.mochila = 0
+        print(f"Agora você tem {TemploInca.cabana} itens na sua cabana")
         
         
 if __name__ == "__main__":
