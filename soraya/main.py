@@ -27,7 +27,7 @@ class Explorador:
         
     def pega(self, qtd, camara):
         """ coloca o tesouro encontrado na mochila """
-        print(f"Você coloca {qtd} tesouro na mochila")
+        print(f"Você coloca {qtd} tesouros na mochila")
         self.mochila += qtd
         print(f"Agora você tem {self.mochila} tesouros na mochila")
         camara.entra()
