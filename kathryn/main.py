@@ -40,7 +40,7 @@ class Camara:
         """ entra em uma câmara"""
         print("Você entra em uma câmara com tesouros!")
         EXP = Explorador()
-        if TemploInca.camara>0:
+        if TemploInca.camara:
             TemploInca.camara -= 1
             EXP.pega(1,self)
             #self.explorador.pega(1, self)
@@ -62,9 +62,6 @@ class TemploInca:
         cmr = Camara()
         cmr.entra()
 
-        
-        
-        
 
 
 if __name__ == "__main__":
