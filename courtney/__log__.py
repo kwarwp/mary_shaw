@@ -213,3 +213,52 @@ AttributeError: 'GUI' object has no attribute 'mochila'
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Wed Oct 16 2019 17:51:48.814 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Uma expedição para coletar os tesouros do Templo Inca
+Você entra em uma câmara com tesouros!
+Você coloca 4 tesouro na mochila 
+Você fica com 4 tesouros na mochila 
+Você entra em uma câmara com tesouros!
+Você coloca 4 tesouro na mochila 
+Você fica com 8 tesouros na mochila 
+Você entra em uma câmara com tesouros!
+Você coloca 2 tesouro na mochila 
+Você fica com 10 tesouros na mochila 
+Você entra em uma câmara com tesouros!
+Não havia mais tesouros!
+Você sai do templo e guarda os tesouros!
+Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 103
+    TemploInca().inicia()
+  module <module> line 89
+    self.camara.entra()
+  module <module> line 73
+    self.explorador.pega(randint(1, 4), self)
+  module <module> line 47
+    camara.entra()
+  module <module> line 73
+    self.explorador.pega(randint(1, 4), self)
+  module <module> line 47
+    camara.entra()
+  module <module> line 73
+    self.explorador.pega(randint(1, 4), self)
+  module <module> line 47
+    camara.entra()
+  module <module> line 76
+    self.explorador.sai()
+  module <module> line 57
+    print("Você ficou com ",Util.equivalencia(self.cabana)," tesouros na cabana!")
+  module <module> line 27
+    if qtdObsidiana:
+UnboundLocalError: local variable 'qtdObsidiana' referenced before assignment
+'''},
