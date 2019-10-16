@@ -74,3 +74,28 @@ Traceback (most recent call last):
     mochila += qtd
 UnboundLocalError: local variable 'mochila' referenced before assignment
 '''},
+{'date': 'Wed Oct 16 2019 10:41:54.779 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Uma expedição para coletar os tesouros o Templo Inca
+Você entrou em uma câmara com tesouros!
+Você coloca 1 tesouro na mochila
+Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 36
+    TemploInca().inicia()
+  module <module> line 21
+    self.entra()
+  module <module> line 32
+    self.pega(1)
+  module <module> line 26
+    mochila = mochila + qtd
+UnboundLocalError: local variable 'mochila' referenced before assignment
+'''},
