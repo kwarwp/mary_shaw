@@ -201,3 +201,10 @@ IndentationError: expected an indented block
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Wed Oct 16 2019 12:22:06.833 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 48
+  self.explorador = Explorador() #(self) (self.camara)
+  ^
+IndentationError: expected an indented block
+'''},
