@@ -106,3 +106,10 @@ AttributeError: 'Tumba' object has no attribute 'inicial'
                             ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 16 2019 10:42:05.681 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 24
+  def pega(self,quantidade)
+                            ^
+SyntaxError: invalid syntax
+'''},
