@@ -234,3 +234,10 @@ Traceback (most recent call last):
     self.entra(1)
 TypeError: entra() takes 1 positional argument but more were given
 '''},
+{'date': 'Wed Oct 16 2019 10:43:34.364 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 31
+  TemploInca.mochila + = quantidade
+                        ^
+SyntaxError: invalid syntax
+'''},
