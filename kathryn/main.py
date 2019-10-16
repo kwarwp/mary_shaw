@@ -7,8 +7,10 @@
 #===========================================================================
 __author__ = "Pablo LV"
 #===========================================================================
-
-
+#===========================================================================
+#===========================================================================
+#===========================================================================
+#===========================================================================
 class Explorador:
     """ explora o templo inca"""
     def __init__(self):  # (self, camara)
@@ -29,12 +31,25 @@ class Explorador:
         self.cabana, self.mochila = self.mochila, 0
         print(f"Você ficou com {self.cabana} tesouros na cabana!")
 
-
+#===========================================================================
 class Camara:
-    def __init__(self):
+    '''def __init__(self):
         self.qualquercoisa = None
+'''
+    def entra(self):
+        """ entra em uma câmara"""
+        print("Você entra em uma câmara com tesouros!")
+        EXP = Explorador()
+        if TemploInca.camara>0:
+            TemploInca.camara -= 1
+            EXP.pega(1,self)
+            #self.explorador.pega(1, self)
+        else:
+            print("Não havia mais tesouros!")
+            EXP.sai()
+            #self.explorador.sai()
 
-
+#===========================================================================
 class TemploInca:
     camara = 3
     def __init__(self):
@@ -44,18 +59,12 @@ class TemploInca:
     def inicia(self):
         """ inicia a exploração """
         print("Uma expedição para coletar os tesouros do Templo Inca")
-        self.entra()
+        cmr = Camara()
+        cmr.entra()
+
         
         
-    def entra(self):
-        """ entra em uma câmara"""
-        print("Você entra em uma câmara com tesouros!")
-        if TemploInca.camara:
-            TemploInca.camara -= 1        
-            self.explorador.pega(1, self)
-        else:
-            print("Não havia mais tesouros!")
-            self.explorador.sai()
+        
 
 
 if __name__ == "__main__":
