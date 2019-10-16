@@ -15,6 +15,7 @@ class Explorador:
     def __init__(self):
         self.mochila = 0
         self.cabana = 0
+        camara = TemploInca ()
                 
         def pega(self, quantidade, camara):
         """ Coloca um tesouro na mochila """
@@ -32,8 +33,7 @@ class Explorador:
 
 
 class TemploInca:
-    cabana = 0
-    camara = 3 
+    camara = 3
     
     def __init__(self):
         self.explorador = Explorador()
@@ -49,7 +49,7 @@ class TemploInca:
         print ("Você encontrou tesouro!")
         if TemploInca.camara:
             TemploInca.camara -= 1
-            self.explorador.pega(1)
+            self.explorador.pega(1, self)
         else:
             print ("Não há mais tesouros!")
             self.explorador.sai()    
