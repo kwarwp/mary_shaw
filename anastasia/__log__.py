@@ -345,3 +345,10 @@ Traceback (most recent call last):
     self.explorador.pega(randint(1, 4), self)
 NameError: name 'randint' is not defined
 '''},
+{'date': 'Wed Oct 16 2019 12:51:30.726 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 41
+  class Camara:
+  ^
+IndentationError: expected an indented block
+'''},
