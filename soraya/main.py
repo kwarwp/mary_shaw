@@ -39,6 +39,7 @@ class TemploInca:
             
     def sai(self):
         """ Sai do templo e volta para a cabana """
+        print("Você saiu!")
         TemploInca.cabana += TemploInca.mochila
         TemploInca.mochila = 0
         print(f"Agora você tem {TemploInca.cabana} itens na sua cabana")
