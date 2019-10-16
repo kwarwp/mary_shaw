@@ -41,7 +41,7 @@ class TemploInca:
     def sai(self):
         """ Sai do Templo """
         print (f"Você saiu do Templo e volta para a sua Cabana")
-        TemploInca.cabana, TemploInca.mochila = TemploIn
+        TemploInca.cabana, TemploInca.mochila = TemploInca.mochila, 0
     
         
 if __name__ == "__main__":
