@@ -19,11 +19,10 @@ class TemploInca:
     def entra(self):
         """ entra em uma câmara"""
         print("Você entra em uma câmara com tesouros!")
-        
+        TemploInca.camara -= 1        
         if TemploInca.camara:
             self.pega(1)
-        TemploInca.camara -= 1
-        
+            
     def pega(self, quantidade):
         """ coloca um tesouro na mochila """
         print(f"Você coloca {quantidade} tesouro na mochila ")
