@@ -138,3 +138,10 @@ SyntaxError: invalid syntax
                            ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 16 2019 11:13:47.674 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 39
+  def sai(self, mochila)
+                         ^
+SyntaxError: invalid syntax
+'''},
