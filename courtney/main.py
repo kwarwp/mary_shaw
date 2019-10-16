@@ -9,28 +9,40 @@ __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
 
 class Explorador:
     """ explora o templo inca"""
-    def __init__(self):  # (self, camara)
+    def __init__(self, camara):
         self.mochila = 0
         self.cabana = 0
-        # self.camara = camara
+        self.camara = camara
             
     def pega(self, quantidade, camara):
         """ coloca um tesouro na mochila """
         print(f"Você coloca {quantidade} tesouro na mochila ")
-        self.mochila += quantidade
+        self.mochila += self.camera.quantidade
+        
+class TemploInca:
         print(f"Você fica com {self.mochila} tesouros na mochila ")
         camara.entra()
             
-    def sai(self):
-        """ sai do templo """
-        print("Você sai do templo e guarda os tesouros!")
-        self.cabana, self.mochila = self.mochila, 0
-        print(f"Você ficou com {self.cabana} tesouros na cabana!")
+        def sai(self):
+            """ sai do templo """
+            print("Você sai do templo e guarda os tesouros!")
+            self.cabana, self.mochila = self.mochila, 0
+            print(f"Você ficou com {self.cabana} tesouros na cabana!")
+
+
+class Camara:
+    def __init__(self):        
+        self.quantidade = 3
+    
+    def decair(self):
+        self.quantidade -= 1
+
 
 class TemploInca:
-    camara = 3
+    
     def __init__(self):
-        self.explorador = Explorador()
+        self.camara = Camara()
+        self.explorador = Explorador()  # (self) (self.camara)
 
     def inicia(self):
         """ inicia a exploração """
@@ -41,8 +53,8 @@ class TemploInca:
     def entra(self):
         """ entra em uma câmara"""
         print("Você entra em uma câmara com tesouros!")
-        if TemploInca.camara:
-            TemploInca.camara -= 1        
+        if self.camara:
+            self.camara.decair()        
             self.explorador.pega(1, self)
         else:
             print("Não havia mais tesouros!")
