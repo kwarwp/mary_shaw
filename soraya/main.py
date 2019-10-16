@@ -30,7 +30,11 @@ class Explorador:
         print(f"Você coloca {qtd} tesouros na mochila")
         self.mochila += qtd
         print(f"Agora você tem {self.mochila} tesouros na mochila")
-        camara.entra()
+        
+        if input("Continua?").lower() == "s":
+            camara.entra()
+        else:
+            self.sai()
 
 class Camara:
     """ camara a ser explorada """
