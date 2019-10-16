@@ -30,10 +30,10 @@ from random import randint
 class Explorador:
     """ explora o templo inca """
     
-    def __init__(self,templo_inca):
+    def __init__(self):
         self.mochila = 0
         self.cabana = 0
-        self.templo = templo_inca 
+        self.templo = TemploInca() 
                         
     def pega(self, quantidade, camara):
         """ Coloca um tesouro na mochila """
@@ -77,7 +77,7 @@ class TemploInca:
         
     def __init__(self):
         self.explorador = Explorador(self)
-        self.cabana = Explorador(templo_inca = self)
+        self.cabana = Explorador()
         self.camara = Camara()
     
     def inicia (self):
