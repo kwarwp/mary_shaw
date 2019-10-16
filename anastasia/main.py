@@ -14,9 +14,10 @@ from random import randint
 
 class Explorador:
     """ Explora o templo  """
-    def __init__(self): #(self, camara)
+    def __init__(self, templo_inca): #(self, camara)
         self.mochila = 0
         self.cabana = 0
+        self.templo - templo_inca
         # self.camara = camara
         
     def pega(self, quantidade, camara):
@@ -36,6 +37,9 @@ class Explorador:
         self.mochila = 0
         print(f"Você ficou com {self.cabana} tesouros na cabana!")
         if input("Nova Incursão? (s/n").lower() == "s":
+            templo.inicia()
+      
+            
         
         
 class Camara:
@@ -59,7 +63,7 @@ class TemploInca:
     camara = 3
     def __init__(self):
         # self.camara = Camara()
-        self.explorador = Explorador()  # (self) (self.camara)
+        self.explorador = Explorador(templo_inca=self)  # (self) (self.camara)
         self.camara = Camara(self.explorador)
 
     def inicia(self):
