@@ -139,3 +139,29 @@ IndentationError: unexpected indent
   ^
 IndentationError: unexpected indent
 '''},
+{'date': 'Sun Nov 03 2019 19:10:50.541 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Uma expedição para coletar os tesouros do Templo Inca
+Você entra em uma câmara com tesouros!
+Você coloca 2 tesouro na mochila 
+Você fica com 2 tesouros na mochila 
+Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 80
+    TemploInca().inicia()
+  module <module> line 66
+    self.camara.entra()
+  module <module> line 50
+    self.explorador.pega(randint(1, 4), self)
+  module <module> line 27
+    if input("Continua?" (s/n)).lower() == "s":
+TypeError: 'str' object is not callable
+'''},
