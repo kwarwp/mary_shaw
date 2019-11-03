@@ -252,3 +252,10 @@ Traceback (most recent call last):
     self.explorador.sai()
 AttributeError: 'Explorador' object has no attribute 'sai'
 '''},
+{'date': 'Sun Nov 03 2019 19:14:44.752 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 33
+  if input("Nova Incursão?")
+                             ^
+SyntaxError: invalid syntax
+'''},
