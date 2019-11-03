@@ -259,3 +259,10 @@ AttributeError: 'Explorador' object has no attribute 'sai'
                              ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Sun Nov 03 2019 19:14:51.549 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 33
+  if input("Nova Incursão?")
+                             ^
+SyntaxError: invalid syntax
+'''},
