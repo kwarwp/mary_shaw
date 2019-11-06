@@ -246,3 +246,10 @@ Traceback (most recent call last):
     self.explorador.sai()
 AttributeError: 'Camara' object has no attribute 'explorador'
 '''},
+{'date': 'Wed Nov 06 2019 09:57:48.948 GMt-0300 (hora estándar de Brasilia) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 57
+  from Tkinter import *
+                      ^
+SyntaxError: import * only allowed at module level
+'''},
