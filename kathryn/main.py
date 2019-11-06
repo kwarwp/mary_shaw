@@ -4,17 +4,17 @@ Uma expedição para coletar os tesouros do Templo Inca
  --Relato:
  fui e voltei rico
  
+ 19.11.06b - usa defaultdict na Camara também
  19.11.06a - usa defaultdict como uma forma de switch
  19.11.06 - troca print por input
 """
 
 __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
-__version__ = "19.11.06a"
+__version__ = "19.11.06b"
 from random import randint
-from collection import defaultdict
+from collections import defaultdict
 
 
-#===========================================================================
 class Explorador:
     """ explora o templo inca"""
     def __init__(self):  # (self, camara)
@@ -32,7 +32,8 @@ class Explorador:
         """ sai do templo """
         self.cabana, self.mochila = self.mochila, 0
         input(f"Você sai do templo e guarda {self.cabana} tesouros na cabana!")
-#===========================================================================
+
+
 class Camara:
     """ Uma câmara do templo.
     o explorador usa o método entra para ter acesso aos tesouros
@@ -53,7 +54,9 @@ class Camara:
                 explorador.sai()
         else:
             explorador.sai()
-#===========================================================================
+        
+
+
 class TemploInca:
     """ O jogo do Tesouro Inca
     
@@ -64,26 +67,28 @@ class TemploInca:
         self.camara = Camara()
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
+        '''
+        self.decide = defaultdict(lambda: input("Sábia mimimi.. macabro!"))
+        self.decide["s"] = lambda: self.camara.entra(self.explorador)
+        '''
         
     def inicia(self):
         """ inicia a exploração """
-        o_que_decidiu = input("Uma expedição para coletar os tesouros do Templo Inca. Vai encarar (S/N)?")
+        o_que_decidiu = input("Uma expedição para saquear o Templo Inca. Vai encarar (s/N)?")
         self.decide[o_que_decidiu]()
-        '''
-        if encara == "S":
-            self.camara.entra(self.explorador)
-        else:
-            input("Sábia Decisao. Vamos evitar este Templo macabro")
-        '''
+        
     def encara(self):
+        """ decide iniciar a exploração """
         self.camara.entra(self.explorador)
-
+        
     def desiste(self):
-        input("Sábia Decisao. Vamos evitar este Templo macabro")
+        """ desiste da exploração """
+        input("Sábia decisão, vamos evitar este templo macabro!")
+        
+        
+    
 
-#===========================================================================
-#===========================================================================
-#===========================================================================
+
 if __name__ == "__main__":
     TemploInca().inicia()
 
