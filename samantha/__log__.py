@@ -326,3 +326,10 @@ Traceback (most recent call last):
     self.sai()
 AttributeError: 'Camara' object has no attribute 'sai'
 '''},
+{'date': 'Wed Nov 06 2019 10:44:18.954 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 50
+  dec = input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
+                                                                                 ^
+SyntaxError: invalid syntax
+'''},
