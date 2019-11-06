@@ -40,21 +40,27 @@ class Camara:
     """
     def __init__(self):
         self.quantidade = 3
-        #self.explorador = explorador
+        self.decide = defaultdict(lambda: self.desiste)
+        self.decide["s"] = self.encara
         
     def entra(self, explorador):
         """ entra em uma câmara"""
-        #input("Você entra em uma câmara com tesouros!")
-        if input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
-            if self.quantidade:
-                self.quantidade -= 1        
-                explorador.pega(randint(1, 4), self)
-            else:
-                input("Não havia mais tesouros!")
-                explorador.sai()
+        o_que_decidiu = input("Você entra em uma câmara com tesouros! Continua?")
+        self.decide[o_que_decidiu.lower()](explorador)
+        
+        
+    def encara(self, explorador):
+        """ decide continuar a exploração """
+        if self.quantidade:
+            self.quantidade -= 1        
+            explorador.pega(randint(1, 4), self)
         else:
+            #input("Não havia mais tesouros!")
             explorador.sai()
         
+    def desiste(self, explorador):
+        """ desiste da exploração """
+        explorador.sai()
 
 
 class TemploInca:
@@ -67,10 +73,6 @@ class TemploInca:
         self.camara = Camara()
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
-        '''
-        self.decide = defaultdict(lambda: input("Sábia mimimi.. macabro!"))
-        self.decide["s"] = lambda: self.camara.entra(self.explorador)
-        '''
         
     def inicia(self):
         """ inicia a exploração """
