@@ -71,23 +71,20 @@ class Camara:
         
     def entra(self, explorador):
         """ entra em uma câmara"""
-        #input("Você entra em uma câmara com tesouros!")
-        vai_decidir = input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
-        self.decide[vai_decidir]()
-            if self.quantidade:
-                self.quantidade -= 1        
-                explorador.pega(randint(1, 4), self)
-            else:
-                input("Não havia mais tesouros!")
-                explorador.sai()
-            
-        def encara (self):
+        o_que_decidiu = input("Você entra em uma câmara com tesouros! Continua?")
+        self.decide[o_que_decidiu.lower()](explorador)
+                 
+        def encara (self, explorador):
             """ decide iniciar a exploração """
-            self.entra(self.explorador)
+             if self.quantidade:
+                    self.quantidade -= 1        
+                    explorador.pega(randint(1, 4), self)
+        else:
+            explorador.sai()
             
-        def desiste (self):
+        def desiste (self,explorador):
             """ desiste da exploração """
-            input ("Sábia decisão")
+            explorador.sai()
 
 
 
