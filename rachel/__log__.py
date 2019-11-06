@@ -1107,3 +1107,10 @@ AttributeError: 'Tesouros' object has no attribute 'pedras'
     self.tesouro = pedras.get_pedras()
 AttributeError: 'Jogador' object has no attribute 'get_pedras'
 '''},
+{'date': 'Wed Nov 06 2019 10:29:00.843 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 68
+  else:
+  ^
+IndentationError: unexpected indent
+'''},
