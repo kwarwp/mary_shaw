@@ -3,6 +3,7 @@ Uma expedição para coletar os tesouros do Templo Inca
  --Relato:
  fui e voltei rico
  
+ 19.11.06g - Cria um baralho para uma melhor distribuição das cartas
  19.11.06f - troca aleatoriamente entre perigos e tesouros
  19.11.06e - introduz camara com perigos que espantam o explorador
  19.11.06d - introduz camara com perigos
@@ -14,7 +15,7 @@ Uma expedição para coletar os tesouros do Templo Inca
 
 __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
 __version__ = "19.11.06f"
-from random import randint
+from random import randint, shuffle
 from collections import defaultdict
 
 
@@ -54,7 +55,8 @@ class Camara:
     """ Uma câmara do templo.
     o explorador usa o método entra para ter acesso aos tesouros
     """
-    def __init__(self):
+    def __init__(self, tipo):
+        self.tipo = tipo
         self.quantidade = 8
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
@@ -98,8 +100,8 @@ class CamaraPerigosa(Camara):
     """ Uma câmara do templo.
     o explorador usa o método entra para ter acesso aos tesouros
     """
-    def __init__(self):
-        super().__init__()
+    def __init__(self, tipo):
+        super().__init__(tipo)
         self.perigos = {perigo: 0 for perigo in range(5)}
         pass
         
@@ -122,6 +124,17 @@ class CamaraPerigosa(Camara):
             explorador.assusta(tipo_perigo, self)
 
 
+class Baralho:
+    """ Gerencia a distribuição aleatória das câmaras
+    """
+    def __init__(self):
+        self.baralho = [Camara(i, self) for i in range(1,18)]*2
+        self.baralho += [CamaraPerigosa(i, self) for i in range(1,6)]*5
+    def embaralha(self):
+        shuffle(self.baralho)
+        return self.baralho[:]
+
+
 class TemploInca:
     """ O jogo do Tesouro Inca
     
@@ -129,7 +142,9 @@ class TemploInca:
     """
     def __init__(self):
         self.explorador = Explorador()
-        self.camara = CamaraPerigosa().adentra(Camara())
+        self.baralho = Baralho().embaralha()
+        #self.camara = CamaraPerigosa().adentra(Camara())
+        self.camara = self.baralho.pop()
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
         
