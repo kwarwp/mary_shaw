@@ -65,20 +65,30 @@ class Camara:
     """
     def __init__(self):
         self.quantidade = 3
+        self.decide = defaultdict (lambda: self.desiste)
+        self.decide ["si"] = self.encara
         #self.explorador = explorador
         
     def entra(self, explorador):
         """ entra em uma câmara"""
         #input("Você entra em uma câmara com tesouros!")
-        if input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
-            if self.quantidade:
-                self.quantidade -= 1        
-                explorador.pega(randint(1, 4), self)
-            else:
-                input("Não havia mais tesouros!")
-                explorador.sai()
-        else:
-            explorador.sai()
+        vai_decidir = input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
+            #if self.quantidade:
+            #    self.quantidade -= 1        
+            #    explorador.pega(randint(1, 4), self)
+            #else:
+            #    input("Não havia mais tesouros!")
+            #    explorador.sai()
+        #else:
+        #    explorador.sai()
+            
+        def encara (self):
+            """ decide iniciar a exploração """
+            self.qunatidade.entra(self.explorador)
+            
+        def desiste (self):
+            """ desiste da exploração """
+            input ("Sábia decisão")
 
 
 
@@ -93,22 +103,21 @@ class TemploInca:
         self.decide = defaultdict (lambda: self.desiste)
         self.decide ["si"] = self.encara
         
-        '''
-        self.decide = defaultdict(lambda: input("Sábia mimimi.. macabro!"))
-        self.decide["s"] = lambda: self.camara.entra(self.explorador)
-        '''
+        
+        # self.decide = defaultdict(lambda: input("Sábia mimimi.. macabro!"))
+        #self.decide["s"] = lambda: self.camara.entra(self.explorador)
+        
         
     def inicia (self):
         """ inicia a aventura """
         p_que_decidiu = input ("Uma aventura para coletar os tesouros do Templo Inca, vai encarar? (si/no)")
         self.decide[p_que_decidiu]()
-        """
-        if encara == "si":
-            self.camara.entra(self.explorador)
-        else:
-            input("Então, volte para a sua cabana.")
-        """
         
+        #if encara == "si":
+        #    self.camara.entra(self.explorador)
+        #else:
+        #    input("Então, volte para a sua cabana.")
+                
         def encara (self):
             """ decide iniciar a exploração """
             self.camara.entra(self.explorador)
