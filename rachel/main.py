@@ -4,12 +4,14 @@ Uma expedição para coletar os tesouros do Templo Inca
  --Relato:
  fui e voltei rico
  
+ 19.11.06c - usa defaultdict na Camara no caso de if quantidade: também
+ 19.11.06b - usa defaultdict na Camara também
  19.11.06a - usa defaultdict como uma forma de switch
  19.11.06 - troca print por input
 """
 
 __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
-__version__ = "19.11.06a"
+__version__ = "19.11.06b"
 from random import randint
 from collections import defaultdict
 
@@ -27,7 +29,7 @@ class Explorador:
         input(f"Você coloca {quantidade} pedras na mochila e fica com {self.mochila} tesouros")
         camara.entra(self)
                     
-    def sai(self, explorador):
+    def sai(self):
         """ sai do templo """
         self.cabana, self.mochila = self.mochila, 0
         input(f"Você sai do templo e guarda {self.cabana} tesouros na cabana!")
@@ -39,37 +41,37 @@ class Camara:
     """
     def __init__(self):
         self.quantidade = 3
-        #self.explorador = explorador
-        self.camara_decide = defaultdict(lambda: explorador.sai)
-        self.camara_decide["s"] = self.continua
+        self.decide = defaultdict(lambda: self.desiste)
+        self.decide["s"] = self.encara
+        for counter in range(self.quantidade):
+            self.decide[counter+1] = self.encara
         
     def entra(self, explorador):
         """ entra em uma câmara"""
-        #input("Você entra em uma câmara com tesouros!")
-        o_que_decidiu_camara = input("Você entra em uma câmara com tesouros! Continua?").lower()
-        self.camara_decide[o_que_decidiu_camara](explorador)
+        o_que_decidiu = input("Você entra em uma câmara com tesouros! Continua?")
+        self.decide[o_que_decidiu.lower()](explorador)
         
+        
+    def encara(self, explorador):
+        """ decide continuar a exploração """
         '''
-        if input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
-            if self.quantidade:
-                self.quantidade -= 1        
-                explorador.pega(randint(1, 4), self)
-            else:
-                input("Não havia mais tesouros!")
-                explorador.sai()
-        else:
-            explorador.sai() 
+        self.decide[self.quantidade](explorador)
         '''
-            
-    def continua(self, explorador):
         if self.quantidade:
-                self.quantidade -= 1        
-                explorador.pega(randint(1, 4), self)
+            self.quantidade -= 1        
+            explorador.pega(randint(1, 4), self)
         else:
-            input("Não havia mais tesouros!")
+            #input("Não havia mais tesouros!")
             explorador.sai()
         
+    def continua(self, explorador):
+        """ desiste da exploração """
+        self.quantidade -= 1        
+        explorador.pega(randint(1, 4), self)
         
+    def desiste(self, explorador):
+        """ desiste da exploração """
+        explorador.sai()
 
 
 class TemploInca:
@@ -82,21 +84,11 @@ class TemploInca:
         self.camara = Camara()
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
-        '''
-        self.decide = defaultdict(lambda: input("Sábia mimimi.. macabro!"))
-        self.decide["s"] = lambda: self.camara.entra(self.explorador)
-        '''
         
     def inicia(self):
         """ inicia a exploração """
         o_que_decidiu = input("Uma expedição para saquear o Templo Inca. Vai encarar (s/N)?")
         self.decide[o_que_decidiu]()
-        '''
-        if encara == "s":
-            self.camara.entra(self.explorador)
-        else:
-            input("Sábia decisão, vamos evitar este templo macabro!")
-        '''
         
     def encara(self):
         """ decide iniciar a exploração """
@@ -112,6 +104,10 @@ class TemploInca:
 
 if __name__ == "__main__":
     TemploInca().inicia()
+
+
+
+
 
 
 
