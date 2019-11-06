@@ -1,12 +1,15 @@
 # mary_shaw.samantha.main.py
-from random import randint
 """
 Uma expedição para coletar os tesouros do Templo Inca
  --Relato:
  fui e voltei rico
+ 
+ 19.11.06 - troca print por input
 """
 
 __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
+__version__ = "19.11.06"
+from random import randint
 
 
 class Explorador:
@@ -18,16 +21,16 @@ class Explorador:
             
     def pega(self, quantidade, camara):
         """ coloca um tesouro na mochila """
-        print(f"Você coloca {quantidade} tesouro na mochila ")
+        input(f"Você coloca {quantidade} tesouro na mochila ")
         self.mochila += quantidade
-        print(f"Você fica com {self.mochila} tesouros na mochila ")
+        input(f"Você fica com {self.mochila} tesouros na mochila ")
         camara.entra(self)
                     
     def sai(self):
         """ sai do templo """
-        print("Você sai do templo e guarda os tesouros!")
+        input("Você sai do templo e guarda os tesouros!")
         self.cabana, self.mochila = self.mochila, 0
-        print(f"Você ficou com {self.cabana} tesouros na cabana!")
+        input(f"Você ficou com {self.cabana} tesouros na cabana!")
 
 
 class Camara:
@@ -37,16 +40,16 @@ class Camara:
         
     def entra(self, explorador):
         """ entra em uma câmara"""
-        print("Você entra em uma câmara com tesouros!")
+        input("Você entra em uma câmara com tesouros!")
         if input("Continua?").lower() == "s":
             if self.quantidade:
                 self.quantidade -= 1        
                 explorador.pega(randint(1, 4), self)
             else:
-                print("Não havia mais tesouros!")
+                input("Não havia mais tesouros!")
                 explorador.sai()
         else:
-            self.sai()
+            return
         
 
 
@@ -57,7 +60,7 @@ class TemploInca:
         
     def inicia(self):
         """ inicia a exploração """
-        print("Uma expedição para coletar os tesouros do Templo Inca")
+        input("Uma expedição para coletar os tesouros do Templo Inca")
         self.camara.entra(self.explorador)
         
         
