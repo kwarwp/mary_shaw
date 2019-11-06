@@ -340,3 +340,10 @@ SyntaxError: invalid syntax
                                                                           ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Nov 06 2019 10:45:46.330 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 50
+  dec = input("Você entra em uma câmara com tesouros! Continua?"):
+                                                                  ^
+SyntaxError: invalid syntax
+'''},
