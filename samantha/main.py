@@ -66,7 +66,7 @@ class Camara:
         """ entra em uma câmara, com a opção de entrar na outra"""
         self.outra_camara = camara_outra
         if not camara_outra.outra_camara:
-            camera_outra.adentra(self)
+            camara_outra.adentra(self)
         
     def entra(self, explorador):
         """ entra em uma câmara"""
