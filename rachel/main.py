@@ -27,7 +27,7 @@ class Explorador:
         input(f"Você coloca {quantidade} pedras na mochila e fica com {self.mochila} tesouros")
         camara.entra(self)
                     
-    def sai(self):
+    def sai(self, explorador):
         """ sai do templo """
         self.cabana, self.mochila = self.mochila, 0
         input(f"Você sai do templo e guarda {self.cabana} tesouros na cabana!")
@@ -40,10 +40,16 @@ class Camara:
     def __init__(self):
         self.quantidade = 3
         #self.explorador = explorador
+        self.camara_decide = defaultdict(lambda: explorador.sai)
+        self.camara_decide["s"] = self.continua
         
     def entra(self, explorador):
         """ entra em uma câmara"""
         #input("Você entra em uma câmara com tesouros!")
+        o_que_decidiu_camara = input("Você entra em uma câmara com tesouros! Continua?").lower()
+        self.camara_decide[o_que_decidiu_camara](explorador)
+        
+        '''
         if input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
             if self.quantidade:
                 self.quantidade -= 1        
@@ -52,7 +58,17 @@ class Camara:
                 input("Não havia mais tesouros!")
                 explorador.sai()
         else:
-            explorador.sai()
+            explorador.sai() 
+        '''
+            
+    def continua(self, explorador):
+        if self.quantidade:
+                self.quantidade -= 1        
+                explorador.pega(randint(1, 4), self)
+            else:
+                input("Não havia mais tesouros!")
+                explorador.sai()
+        
         
 
 
