@@ -3,6 +3,7 @@ Uma expedição para coletar os tesouros do Templo Inca
  --Relato:
  fui e voltei rico
  
+ 19.11.06d - introduz camara com perigos
  19.11.06c - usa defaultdict na Camara no caso de if quantidade: também
  19.11.06b - usa defaultdict na Camara também
  19.11.06a - usa defaultdict como uma forma de switch
@@ -10,7 +11,7 @@ Uma expedição para coletar os tesouros do Templo Inca
 """
 
 __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
-__version__ = "19.11.06b"
+__version__ = "19.11.06d"
 from random import randint
 from collections import defaultdict
 
