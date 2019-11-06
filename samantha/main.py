@@ -67,8 +67,8 @@ class TemploInca:
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
         '''
-        self.decide = defaultdict(lambda: input("Sábia mimimi.. macabro!"))
-        self.decide["s"] = lambda: self.camara.entra(self.explorador)
+        self.decide = defaultdict(lambda: self.desiste)
+        self.decide["s"] = self.encara
         '''
         
     def inicia(self):
