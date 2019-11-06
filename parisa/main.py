@@ -83,7 +83,7 @@ class TemploInca:
     def inicia (self):
         """ inicia a aventura """
         print ("Uma aventura para coletar os tesouros do Templo Inca")
-        self.camara.entra()
+        self.camara.entra(self.explorador)
           
             
 if __name__ == "__main__":
