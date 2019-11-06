@@ -49,7 +49,7 @@ class Camara:
         """ entra em uma câmara"""
         #input("Você entra em uma câmara com tesouros!")
         respostaCamara = input("Você entra em uma câmara com tesouros! Continua (s/N)?")
-        self.decide[respostaCamara]()
+        self.decide[respostaCamara, lower()](explorador)
          if self.quantidade:
                 self.quantidade -= 1        
                 explorador.pega(randint(1, 4), self)
@@ -89,7 +89,7 @@ class TemploInca:
         o_que_decidiu = input("Uma expedição para saquear o Templo Inca. Vai encarar (s/N)?")
         self.decide[o_que_decidiu]()
         
-    def encara(self):
+    def encara(self, explorador):
         """ decide iniciar a exploração """
         self.camara.entra(self.explorador)
         
