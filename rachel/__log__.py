@@ -1114,3 +1114,7 @@ AttributeError: 'Jogador' object has no attribute 'get_pedras'
   ^
 IndentationError: unexpected indent
 '''},
+{'date': 'Wed Nov 06 2019 11:07:36.327 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+Exception: <RangeError: Maximum call stack size exceeded>
+'''},
