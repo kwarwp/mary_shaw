@@ -88,15 +88,20 @@ class TemploInca:
     def __init__(self):
         self.explorador = Explorador()
         self.camara = Camara()
+        self.decide = defaultdict (lambda: self.desiste)
+        self.decide ["si"] = self.encara
     
     def inicia (self):
         """ inicia a aventura """
-        encara = input ("Uma aventura para coletar os tesouros do Templo Inca, vai encarar? (si/no)")
+        p_que_decidiu = input ("Uma aventura para coletar os tesouros do Templo Inca, vai encarar? (si/no)")
+        self.decide[p_que_decidiu]()
+        """
         if encara == "si":
             self.camara.entra(self.explorador)
         else:
             input("Então, volte para a sua cabana.")
-            
+        """
+        
         def encara (self):
             """ decide iniciar a exploração """
             self.camara.entra(self.explorador)
