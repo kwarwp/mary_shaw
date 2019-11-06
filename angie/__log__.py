@@ -42,3 +42,10 @@ AttributeError: 'TemploInca' object has no attribute 'o_que_decidiu'
                                                                                                   ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Nov 06 2019 10:35:59.264 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 51
+  o_que_decidiu2 = input("Você entra em uma câmara com tesouros! Continua? (s/n)").lower() == "s":
+                                                                                                  ^
+SyntaxError: invalid syntax
+'''},
