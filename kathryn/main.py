@@ -80,25 +80,30 @@ class TemploInca:
     def __init__(self):
         self.explorador = Explorador()
         self.camara = CamaraPerigosa()
-        self.decide = defaultdict(lambda: self.desiste)
-        self.decide["s"] = self.encara
-        print(2)
+        self.Seleccion = defaultdict(lambda: self.desiste)
+        self.Seleccion["s"] = self.encara
         
     def inicia(self):
-        o_que_decidiu = input("Uma expedição para saquear o Templo Inca. Vai encarar (s/N)?")
-        self.decide[o_que_decidiu]()
-        print(3)
+        OPT = input("Uma expedição para saquear o Templo Inca. Vai encarar (s/N)?")
+        self.Seleccion[OPT.lower()]()
+        '''
+        if OPT=="s":
+            self.camara.entra(self.explorador)
+        else:
+            print("Sábia decisão, vamos evitar este templo macabro!")
+        '''
         
     def encara(self):
-        self.camara.entra(self.explorador)
+       #self.camara.entra(self.explorador)
+        camara.entra(self.explorador)
         
     def desiste(self):
-        input("Sábia decisão, vamos evitar este templo macabro!")
+        print("Sábia decisão, vamos evitar este templo macabro!")
 #================================================================================================
 #================================================================================================
 #================================================================================================
-print(0)
 if __name__ == "__main__":
-    print(1)
-    TemploInca().inicia()
+    OBJ = TemploInca()
+    OBJ.inicia()
+   #TemploInca().inicia()
 #================================================================================================
