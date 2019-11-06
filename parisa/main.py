@@ -8,7 +8,7 @@
 __author__ = "Fernanda Prazeres <fprazeres at dcc ufrj br>"
 
 from random import randint
-
+from 
 
 #class Mochila:
  #   """ contém os tesouros coletados nas camaras"""
@@ -91,12 +91,19 @@ class TemploInca:
     
     def inicia (self):
         """ inicia a aventura """
-        input ("Uma aventura para coletar os tesouros do Templo Inca, vai encarar? (si/no)")
+        encara = input ("Uma aventura para coletar os tesouros do Templo Inca, vai encarar? (si/no)")
         if encara == "si":
             self.camara.entra(self.explorador)
         else:
             input("Então, volte para a sua cabana.")
-                      
+            
+        def encara (self):
+            """ decide iniciar a exploração """
+            self.camara.entra(self.explorador)
+            
+        def desiste (self):
+            """ desiste da exploração """
+            input ("Sábia decisão")
             
 if __name__ == "__main__":
       TemploInca().inicia()
