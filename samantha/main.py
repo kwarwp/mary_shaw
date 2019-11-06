@@ -55,8 +55,8 @@ class Camara:
     """ Uma câmara do templo.
     o explorador usa o método entra para ter acesso aos tesouros
     """
-    def __init__(self, tipo):
-        self.tipo = tipo
+    def __init__(self, tipo, baralho):
+        self.tipo , self.baralho= tipo, baralho
         self.quantidade = 8
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
@@ -74,12 +74,12 @@ class Camara:
         return self
         
     def entra(self, explorador):
-        """ entra em uma câmara"""
+        """ entra em uma câmara
         if randint(0, 9) > 6 :
             self.outra_camara.entra(explorador)
-        else:
-            o_que_decidiu = input("Você entra em uma câmara com tesouros! Continua?")
-            self.decide[o_que_decidiu.lower()](explorador)
+        else:"""
+        o_que_decidiu = input("Você entra em uma câmara com tesouros! Continua?")
+        self.decide[o_que_decidiu.lower()](explorador)
         
         
     def encara(self, explorador):
@@ -89,7 +89,7 @@ class Camara:
     def continua(self, explorador):
         """ desiste da exploração """
         self.quantidade -= 1        
-        explorador.pega(randint(1, 4), self)
+        explorador.pega(randint(1, 4), self.baralho.proximo())
         
     def desiste(self, explorador):
         """ desiste da exploração """
@@ -99,29 +99,31 @@ class Camara:
 class CamaraPerigosa(Camara):
     """ Uma câmara do templo.
     o explorador usa o método entra para ter acesso aos tesouros
-    """
-    def __init__(self, tipo):
+    def __init__(self, tipo, baralho):
         super().__init__(tipo)
         self.perigos = {perigo: 0 for perigo in range(5)}
         pass
+    """
+    perigos = {perigo: 0 for perigo in range(5)}
         
     def entra(self, explorador):
-        """ entra em uma câmara"""
+        """ entra em uma câmara
         if randint(0, 9) > 4 :
             self.outra_camara.entra(explorador)
-        else:
-            o_que_decidiu = input("Você entra em uma câmara com perigos! Continua?")
-            self.decide[o_que_decidiu.lower()](explorador)
+        else:"""
+        o_que_decidiu = input("Você entra em uma câmara com perigos! Continua?")
+        self.decide[o_que_decidiu.lower()](explorador)
         
     def continua(self, explorador):
-        """ desiste da exploração """
+        """ desiste da exploração 
         self.quantidade -= 1
-        tipo_perigo = randint(0, 4)
-        perigos = self.perigos[tipo_perigo] = self.perigos[tipo_perigo] + 1
+        tipo_perigo = randint(0, 4)"""
+        proximo = self.baralho.proximo()
+        perigos = self.perigos[self.tipo] = self.perigos[self.tipo] + 1
         if perigos > 1:
-            explorador.espanta(tipo_perigo, self)
+            explorador.espanta(self.tipo, proximo)
         else:
-            explorador.assusta(tipo_perigo, self)
+            explorador.assusta(self.tipo, proximo)
 
 
 class Baralho:
@@ -129,10 +131,13 @@ class Baralho:
     """
     def __init__(self):
         self.baralho = [Camara(i, self) for i in range(1,18)]*2
-        self.baralho += [CamaraPerigosa(i, self) for i in range(1,6)]*5
+        self.baralho += [CamaraPerigosa(i, self) for i in range(0,5)]*5
     def embaralha(self):
         shuffle(self.baralho)
-        return self.baralho[:]
+        self.baralho_novo = self.baralho[:]
+        return self.baralho_novo
+    def proximo(self):
+        return self.baralho_novo.pop()
 
 
 class TemploInca:
