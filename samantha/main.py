@@ -4,6 +4,7 @@ Uma expedição para coletar os tesouros do Templo Inca
  --Relato:
  fui e voltei rico
  
+ 19.11.06c - usa defaultdict na Camara no caso de if quantidade: também
  19.11.06b - usa defaultdict na Camara também
  19.11.06a - usa defaultdict como uma forma de switch
  19.11.06 - troca print por input
@@ -51,12 +52,20 @@ class Camara:
         
     def encara(self, explorador):
         """ decide continuar a exploração """
+        '''
+        self.decide[self.quantidade](explorador)
+        '''
         if self.quantidade:
             self.quantidade -= 1        
             explorador.pega(randint(1, 4), self)
         else:
             #input("Não havia mais tesouros!")
             explorador.sai()
+        
+    def continua(self, explorador):
+        """ desiste da exploração """
+        self.quantidade -= 1        
+        explorador.pega(randint(1, 4), self)
         
     def desiste(self, explorador):
         """ desiste da exploração """
