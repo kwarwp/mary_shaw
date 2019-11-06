@@ -3,6 +3,7 @@ Uma expedição para coletar os tesouros do Templo Inca
  --Relato:
  fui e voltei rico
  
+ 19.11.06e - introduz camara com perigos que espantam o explorador
  19.11.06d - introduz camara com perigos
  19.11.06c - usa defaultdict na Camara no caso de if quantidade: também
  19.11.06b - usa defaultdict na Camara também
@@ -11,7 +12,7 @@ Uma expedição para coletar os tesouros do Templo Inca
 """
 
 __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
-__version__ = "19.11.06d"
+__version__ = "19.11.06e"
 from random import randint
 from collections import defaultdict
 
@@ -23,6 +24,12 @@ class Explorador:
         self.cabana = 0
         self.perigos = "aranha cobra mumia desabamento fogo".split()
         # self.camara = camara?
+            
+    def espanta(self, tipo_perigo, camara):
+        """ se espanta com um perigo e foge do templo """
+        perigo = self.perigos[tipo_perigo]
+        input(f"Você se espanta por ver de novo o perigo: {perigo}")
+        self.sai()
             
     def assusta(self, tipo_perigo, camara):
         """ se assusta com um perigo """
@@ -74,36 +81,29 @@ class Camara:
         explorador.sai()
 
 
-class CamaraPerigosa:
+class CamaraPerigosa(Camara):
     """ Uma câmara do templo.
     o explorador usa o método entra para ter acesso aos tesouros
     """
     def __init__(self):
-        self.quantidade = 3
-        self.decide = defaultdict(lambda: self.desiste)
-        self.decide["s"] = self.encara
-        #self.decide[1] = self.decide[2] = self.decide[3] = self.continua
-        self.decide.update({chave: self.continua
-            for chave in range(1, self.quantidade+1)})
+        super().__init__()
+        self.perigos = {perigo: 0 for perigo in range(5)}
+        pass
         
     def entra(self, explorador):
         """ entra em uma câmara"""
         o_que_decidiu = input("Você entra em uma câmara com perigos! Continua?")
         self.decide[o_que_decidiu.lower()](explorador)
         
-        
-    def encara(self, explorador):
-        """ decide continuar a exploração """
-        self.decide[self.quantidade](explorador)
-        
     def continua(self, explorador):
         """ desiste da exploração """
-        self.quantidade -= 1        
-        explorador.assusta(randint(0, 4), self)
-        
-    def desiste(self, explorador):
-        """ desiste da exploração """
-        explorador.sai()
+        self.quantidade -= 1
+        tipo_perigo = randint(0, 4)
+        perigos = self.perigos[tipo_perigo] = self.perigos[tipo_perigo] + 1
+        if perigos > 1:
+            explorador.espanta(tipo_perigo, self)
+        else:
+            explorador.assusta(tipo_perigo, self)
 
 
 class TemploInca:
