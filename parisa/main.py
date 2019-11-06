@@ -83,7 +83,7 @@ class Camara:
             
         def encara (self):
             """ decide iniciar a exploração """
-            self.qunatidade.entra(self.explorador)
+            self.entra(self.explorador)
             
         def desiste (self):
             """ desiste da exploração """
