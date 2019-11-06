@@ -9,6 +9,7 @@ __author__ = "Fernanda Prazeres <fprazeres at dcc ufrj br>"
 
 from random import randint
 
+
 #class Mochila:
  #   """ contém os tesouros coletados nas camaras"""
   #  def __init__(self):
