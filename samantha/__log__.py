@@ -453,3 +453,10 @@ NameError: name 'camera_outra' is not defined
     self.camara.entra(self.explorador)
 AttributeError: 'NoneType' object has no attribute 'entra'
 '''},
+{'date': 'Wed Nov 06 2019 18:35:20.596 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 80
+  else:
+   ^
+SyntaxError: invalid syntax
+'''},
