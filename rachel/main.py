@@ -54,7 +54,6 @@ class Camara:
         
     def encara(self, explorador):
         """ decide continuar a exploração """
-        '''
         self.decide[self.quantidade](explorador)
         '''
         if self.quantidade:
@@ -63,6 +62,7 @@ class Camara:
         else:
             #input("Não havia mais tesouros!")
             explorador.sai()
+        '''
         
     def continua(self, explorador):
         """ desiste da exploração """
