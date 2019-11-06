@@ -21,27 +21,28 @@ class Explorador:
             
     def pega(self, quantidade, camara):
         """ coloca um tesouro na mochila """
-        input(f"Você coloca {quantidade} tesouro na mochila ")
         self.mochila += quantidade
-        input(f"Você fica com {self.mochila} tesouros na mochila ")
+        input(f"Você coloca {quantidade} pedras na mochila e fica com {self.mochila} tesouros")
         camara.entra(self)
                     
     def sai(self):
         """ sai do templo """
-        input("Você sai do templo e guarda os tesouros!")
         self.cabana, self.mochila = self.mochila, 0
-        input(f"Você ficou com {self.cabana} tesouros na cabana!")
+        input(f"Você sai do templo e guarda {self.cabana} tesouros na cabana!")
 
 
 class Camara:
+    """ Uma câmara do templo.
+    o explorador usa o método entra para ter acesso aos tesouros
+    """
     def __init__(self):
         self.quantidade = 3
         #self.explorador = explorador
         
     def entra(self, explorador):
         """ entra em uma câmara"""
-        input("Você entra em uma câmara com tesouros!")
-        if input("Continua?").lower() == "s":
+        #input("Você entra em uma câmara com tesouros!")
+        if input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
             if self.quantidade:
                 self.quantidade -= 1        
                 explorador.pega(randint(1, 4), self)
@@ -54,6 +55,10 @@ class Camara:
 
 
 class TemploInca:
+    """ O jogo do Tesouro Inca
+    
+    o jogo inicia quando se chama o método inicia
+    """
     def __init__(self):
         self.explorador = Explorador()
         self.camara = Camara()
