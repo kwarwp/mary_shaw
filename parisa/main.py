@@ -8,7 +8,7 @@
 __author__ = "Fernanda Prazeres <fprazeres at dcc ufrj br>"
 
 from random import randint
-from 
+from collections import defaultdict
 
 #class Mochila:
  #   """ contém os tesouros coletados nas camaras"""
@@ -109,6 +109,8 @@ class TemploInca:
         def desiste (self):
             """ desiste da exploração """
             input ("Sábia decisão")
+            
+            
             
 if __name__ == "__main__":
       TemploInca().inicia()
