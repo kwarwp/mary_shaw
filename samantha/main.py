@@ -45,6 +45,15 @@ class Camara:
     def entra(self, explorador):
         """ entra em uma câmara"""
         #input("Você entra em uma câmara com tesouros!")
+        decisao = input("Você entra em uma câmara com tesouros! Continua (s/N)?")
+        self.decide[decisao]()
+         if self.quantidade:
+                self.quantidade -= 1        
+                explorador.pega(randint(1, 4), self)
+            else:
+                input("Não havia mais tesouros!")
+                explorador.sai()
+        '''
         if input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
             if self.quantidade:
                 self.quantidade -= 1        
@@ -54,7 +63,7 @@ class Camara:
                 explorador.sai()
         else:
             explorador.sai()
-        
+        '''
 
 
 class TemploInca:
