@@ -1,15 +1,3 @@
-#===========================================================================
-# TESOURO INCA
-#===========================================================================
-#===========================================================================
-#===========================================================================
-#===========================================================================
-#__author__ = "Pablo LV"
-#===========================================================================
-#===========================================================================
-#===========================================================================
-#===========================================================================
-#===========================================================================
 # mary_shaw.samantha.main.py
 """
 Uma expedição para coletar os tesouros do Templo Inca
@@ -23,6 +11,9 @@ Uma expedição para coletar os tesouros do Templo Inca
 __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
 __version__ = "19.11.06a"
 from random import randint
+from collection import defaultdict
+
+
 #===========================================================================
 class Explorador:
     """ explora o templo inca"""
@@ -71,14 +62,25 @@ class TemploInca:
     def __init__(self):
         self.explorador = Explorador()
         self.camara = Camara()
+        self.decide = defaultdict(lambda: self.desiste)
+        self.decide["s"] = self.encara
         
     def inicia(self):
         """ inicia a exploração """
-        encara = input("Uma expedição para coletar os tesouros do Templo Inca. Vai encarar (S/N)?")
+        o_que_decidiu = input("Uma expedição para coletar os tesouros do Templo Inca. Vai encarar (S/N)?")
+        self.decide[o_que_decidiu]()
+        '''
         if encara == "S":
             self.camara.entra(self.explorador)
         else:
             input("Sábia Decisao. Vamos evitar este Templo macabro")
+        '''
+    def encara(self):
+        self.camara.entra(self.explorador)
+
+    def desiste(self):
+        input("Sábia Decisao. Vamos evitar este Templo macabro")
+
 #===========================================================================
 #===========================================================================
 #===========================================================================
