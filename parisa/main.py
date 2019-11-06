@@ -58,8 +58,10 @@ class Explorador:
         
     
 class Camara:
-    """ Uma câmara do templo.
+    """ 
+    Uma câmara do templo.
     o explorador usa o método entra para ter acesso aos tesouros
+    
     """
     def __init__(self):
         self.quantidade = 3
@@ -90,7 +92,12 @@ class TemploInca:
         self.camara = Camara()
         self.decide = defaultdict (lambda: self.desiste)
         self.decide ["si"] = self.encara
-    
+        
+        '''
+        self.decide = defaultdict(lambda: input("Sábia mimimi.. macabro!"))
+        self.decide["s"] = lambda: self.camara.entra(self.explorador)
+        '''
+        
     def inicia (self):
         """ inicia a aventura """
         p_que_decidiu = input ("Uma aventura para coletar os tesouros do Templo Inca, vai encarar? (si/no)")
