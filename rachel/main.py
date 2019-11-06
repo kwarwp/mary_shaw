@@ -339,4 +339,6 @@ if __name__ == "__main__":
 #    jogo = JogoTesouroInca()
 #    jogo.inicia()
     #print(JogoTesouroInca,JogoTesouroInca())
+    
+# https://www.magazineluiza.com.br/ar-condicionado-split-dual-inverter-lg-12-000-btus-frio-127v-/p/kd0gg0gg40/ar/aciv/?&utm_source=google&utm_medium=pla&utm_campaign=PLA_marketplace&partner_id=15696&seller_id=climario&gclid=EAIaIQobChMIz-HDr9nV5QIVFoCRCh1xYA9yEAQYAiABEgLxQvD_BwE
 
