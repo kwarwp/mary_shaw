@@ -49,7 +49,7 @@ class Camara:
                 input("Não havia mais tesouros!")
                 explorador.sai()
         else:
-            return
+            explorador.sai()
         
 
 
