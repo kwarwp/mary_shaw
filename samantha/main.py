@@ -66,13 +66,14 @@ class Camara:
     def adentra(self, camara_outra):
         """ entra em uma câmara, com a opção de entrar na outra"""
         self.outra_camara = camara_outra
+        print(camara_outra)
         if not camara_outra.outra_camara:
             camara_outra.adentra(self)
         return self
         
     def entra(self, explorador):
         """ entra em uma câmara"""
-        if randint(0, 9) > 3 :
+        if randint(0, 9) > 6 :
             self.outra_camara.entra(explorador)
         else:
             o_que_decidiu = input("Você entra em uma câmara com tesouros! Continua?")
@@ -104,7 +105,7 @@ class CamaraPerigosa(Camara):
         
     def entra(self, explorador):
         """ entra em uma câmara"""
-        if randint(0, 9) > 3 :
+        if randint(0, 9) > 4 :
             self.outra_camara.entra(explorador)
         else:
             o_que_decidiu = input("Você entra em uma câmara com perigos! Continua?")
