@@ -333,3 +333,10 @@ AttributeError: 'Camara' object has no attribute 'sai'
                                                                                  ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Nov 06 2019 10:45:17.980 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 50
+  dec = input("Você entra em uma câmara com tesouros! Continua?").lower():
+                                                                          ^
+SyntaxError: invalid syntax
+'''},
