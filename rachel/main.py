@@ -44,7 +44,7 @@ class Camara:
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
         for counter in range(self.quantidade):
-            self.decide[counter+1] = self.encara
+            self.decide[counter+1] = self.continua
         
     def entra(self, explorador):
         """ entra em uma câmara"""
