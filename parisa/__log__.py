@@ -458,3 +458,9 @@ RuntimeError: too much recursion
   module '$exec_589' line 80
         self.explorador = Explorador()
 '''},
+{'date': 'Wed Nov 06 2019 10:08:07.152 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+RuntimeError: too much recursion
+  module '$exec_445' line 85
+        self.explorador = Explorador()
+'''},
