@@ -1,74 +1,94 @@
-# mary_shaw.roxanne.main.py
+# mary_shaw.samantha.main.py
 """
 Uma expedição para coletar os tesouros do Templo Inca
-
-Descrição: Uma excursão em busca do tesouro, entrando
-em tumbas e abrindo câmaras para pegar tesouros ou 
-enfrentar riscos, arriscando os prêmios a cada incursão.
-O único local seguro é a cabana fora do templo.
+ --Relato:
+ fui e voltei rico
+ 
+ 19.11.06b - usa defaultdict na Camara também
+ 19.11.06a - usa defaultdict como uma forma de switch
+ 19.11.06 - troca print por input
 """
 
+__author__ = "Savyo V Morais <savyo dot morais at labnet at nce at ufrj at br>"
+__version__ = "19.11.06b"
 from random import randint
+from collections import defaultdict
 
-__author__ = "Sávyo V Morais <savyo morais at labnet nce ufrj br>"
 
 class Explorador:
-    """ explora o templo """    
-    def __init__(self):
+    """ explora o templo inca"""
+    def __init__(self):  # (self, camara)
         self.mochila = 0
         self.cabana = 0
+        # self.camara = camara?
             
+    def pega(self, quantidade, camara):
+        """ coloca um tesouro na mochila """
+        self.mochila += quantidade
+        input(f"Você coloca {quantidade} pedras na mochila e fica com {self.mochila} tesouros")
+        camara.entra(self)
+                    
     def sai(self):
-        """ Sai do templo e volta para a cabana """
-        print("Você saiu!")
-        self.cabana += self.mochila
-        self.mochila = 0
-        print(f"Agora você tem {self.cabana} tesouros na sua cabana")
-        
-    def pega(self, qtd, camara):
-        """ coloca o tesouro encontrado na mochila """
-        print(f"Você coloca {qtd} tesouros na mochila")
-        self.mochila += qtd
-        print(f"Agora você tem {self.mochila} tesouros na mochila")
-        
-        if input("Continua?").lower() == "s":
-            camara.entra()
-        else:
-            self.sai()
+        """ sai do templo """
+        self.cabana, self.mochila = self.mochila, 0
+        input(f"Você sai do templo e guarda {self.cabana} tesouros na cabana!")
+
 
 class Camara:
-    """ camara a ser explorada """
-    
-    def __init__(self, explorador):
-        self.camara = 3
-        self.explorador = explorador
+    """ Uma câmara do templo.
+    o explorador usa o método entra para ter acesso aos tesouros
+    """
+    def __init__(self):
+        self.quantidade = 3
+        #self.explorador = explorador
         
-    
-    def entra(self):
-        """ entra em uma câmara """
-        if self.camara:
-            self.camara -= 1
-            print("Você entrou em uma câmara com tesouros!")
-            self.explorador.pega(randint(1,4), self)
+    def entra(self, explorador):
+        """ entra em uma câmara"""
+        #input("Você entra em uma câmara com tesouros!")
+        if input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
+            if self.quantidade:
+                self.quantidade -= 1        
+                explorador.pega(randint(1, 4), self)
+            else:
+                input("Não havia mais tesouros!")
+                explorador.sai()
         else:
-            print("Você já entrou em todas as câmaras!")
-            self.explorador.sai()
+            explorador.sai()
+        
+
 
 class TemploInca:
-    camara = 3
+    """ O jogo do Tesouro Inca
     
+    o jogo inicia quando se chama o método inicia
+    """
     def __init__(self):
         self.explorador = Explorador()
-        self.camara = Camara(self.explorador)
-    
+        self.camara = Camara()
+        self.decide = defaultdict(lambda: self.desiste)
+        self.decide["s"] = self.encara
+        '''
+        self.decide = defaultdict(lambda: input("Sábia mimimi.. macabro!"))
+        self.decide["s"] = lambda: self.camara.entra(self.explorador)
+        '''
+        
     def inicia(self):
         """ inicia a exploração """
-        print("Uma expedição para coletar os tesouros o Templo Inca")
-        self.camara.entra()
+        o_que_decidiu = input("Uma expedição para saquear o Templo Inca. Vai encarar (s/N)?")
+        self.decide[o_que_decidiu]()
         
-        self.camara = Camara(self.explorador)
-        self.camara.entra()
+    def encara(self):
+        """ decide iniciar a exploração """
+        self.camara.entra(self.explorador)
+        
+    def desiste(self):
+        """ desiste da exploração """
+        input("Sábia decisão, vamos evitar este templo macabro!")
         
         
+    
+
+
 if __name__ == "__main__":
     TemploInca().inicia()
+
