@@ -62,7 +62,7 @@ class Camara:
     def continua(self, explorador):
         """ desiste da exploração """
         self.quantidade -= 1        
-        explorador.assusta(randint(1, 4), self)
+        explorador.assusta(randint(1, 5), self)
         
     def desiste(self, explorador):
         """ desiste da exploração """
