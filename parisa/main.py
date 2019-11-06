@@ -80,7 +80,10 @@ class Camara:
 
 
 class TemploInca:
-        
+    """ O jogo do Tesouro Inca
+    
+    o jogo inicia quando se chama o método inicia
+    """
     def __init__(self):
         self.explorador = Explorador()
         self.camara = Camara()
