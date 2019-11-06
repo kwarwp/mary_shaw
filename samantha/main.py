@@ -3,6 +3,7 @@ Uma expedição para coletar os tesouros do Templo Inca
  --Relato:
  fui e voltei rico
  
+ 19.11.06f - troca aleatoriamente entre perigos e tesouros
  19.11.06e - introduz camara com perigos que espantam o explorador
  19.11.06d - introduz camara com perigos
  19.11.06c - usa defaultdict na Camara no caso de if quantidade: também
@@ -12,7 +13,7 @@ Uma expedição para coletar os tesouros do Templo Inca
 """
 
 __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
-__version__ = "19.11.06e"
+__version__ = "19.11.06f"
 from random import randint
 from collections import defaultdict
 
@@ -67,6 +68,7 @@ class Camara:
         self.outra_camara = camara_outra
         if not camara_outra.outra_camara:
             camara_outra.adentra(self)
+        return self
         
     def entra(self, explorador):
         """ entra em uma câmara"""
