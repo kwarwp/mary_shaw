@@ -271,3 +271,10 @@ SyntaxError: import * only allowed at module level
     self.decide = defaultdict(lambda: self.desiste)
 TypeError: 'module' object is not callable
 '''},
+{'date': 'Wed Nov 06 2019 11:55:36.133 GMt-0300 (hora estándar de Brasilia) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 104
+  OBJ.2inicia()
+   ^
+SyntaxError: invalid syntax
+'''},
