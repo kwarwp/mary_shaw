@@ -133,6 +133,7 @@ class Baralho:
         self.baralho = [Camara(i, self) for i in range(1,18)]*2
         self.baralho += [CamaraPerigosa(i, self) for i in range(0,5)]*5
     def embaralha(self):
+        Camara.perigos = {perigo: 0 for perigo in range(5)}
         shuffle(self.baralho)
         self.baralho_novo = self.baralho[:]
         return self.baralho_novo
