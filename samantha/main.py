@@ -29,7 +29,6 @@ class Explorador:
         """ se espanta com um perigo e foge do templo """
         perigo = self.perigos[tipo_perigo]
         input(f"Você se espanta por ver de novo o perigo: {perigo}")
-        print(f"Você se espanta por ver de novo o perigo: {perigo}")
         self.sai()
             
     def assusta(self, tipo_perigo, camara):
@@ -61,6 +60,13 @@ class Camara:
         #self.decide[1] = self.decide[2] = self.decide[3] = self.continua
         self.decide.update({chave: self.continua
             for chave in range(1, self.quantidade+1)})
+        self.outra_camara = None
+        
+    def adentra(self, camara_outra):
+        """ entra em uma câmara, com a opção de entrar na outra"""
+        self.outra_camara = camara_outra
+        if not camara_outra.outra_camara:
+            camera_outra.adentra(self)
         
     def entra(self, explorador):
         """ entra em uma câmara"""
@@ -93,6 +99,7 @@ class CamaraPerigosa(Camara):
         
     def entra(self, explorador):
         """ entra em uma câmara"""
+        
         o_que_decidiu = input("Você entra em uma câmara com perigos! Continua?")
         self.decide[o_que_decidiu.lower()](explorador)
         
@@ -114,7 +121,7 @@ class TemploInca:
     """
     def __init__(self):
         self.explorador = Explorador()
-        self.camara = CamaraPerigosa()
+        self.camara = CamaraPerigosa().adentra(Camara())
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
         
