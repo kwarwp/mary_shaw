@@ -41,7 +41,7 @@ class Explorador:
         print (f"Você coloca {quantidade} tesouro na mochila.")
         self.mochila += quantidade 
         print (f"Você fica com {self.mochila} tesouros na mochila.")
-        if input (" Você continua ? (sim/nao)").lower() == "sim":
+        if input (" Você continua ? (sim/nao)").lower() == "si":
             camara.entra()
         else: 
             self.sai()
@@ -52,25 +52,30 @@ class Explorador:
         self.cabana += self.mochila
         self.mochila = 0
         print (f"Você ficou com {self.cabana} tesouros na sua Cabana.")
-        if input ("Nova Incursão a vista! Quer participar? (sim/nao)").lower() == "sim":
+        if input ("Nova Incursão a vista! Quer participar? (sim/nao)").lower() == "si":
             self.templo.inicia()
         
     
 class Camara:
-    """ contém tesouros,artefatos e perigos """
+    """ Uma câmara do templo.
+    o explorador usa o método entra para ter acesso aos tesouros
+    """
     def __init__(self):
-        self.explorador = Explorador() 
-        self.camara = 5
+        self.quantidade = 3
+        #self.explorador = explorador
         
-    def entra (self):
-        """ entra na câmara """
-        print ("Você encontrou tesouro!")
-        if self.camara:
-            self.camara -= 1
-            self.explorador.pega(randint(1, 17), self)
+    def entra(self, explorador):
+        """ entra em uma câmara"""
+        #input("Você entra em uma câmara com tesouros!")
+        if input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
+            if self.quantidade:
+                self.quantidade -= 1        
+                explorador.pega(randint(1, 4), self)
+            else:
+                input("Não havia mais tesouros!")
+                explorador.sai()
         else:
-            print ("Não há mais tesouros!")
-            self.explorador.sai()  
+            explorador.sai()
 
 
 
@@ -82,9 +87,12 @@ class TemploInca:
     
     def inicia (self):
         """ inicia a aventura """
-        print ("Uma aventura para coletar os tesouros do Templo Inca")
-        self.camara.entra(self.explorador)
-          
+        input ("Uma aventura para coletar os tesouros do Templo Inca, vai encarar? (si/no)")
+        if encara == "si":
+            self.camara.entra(self.explorador)
+        else:
+            input("Então, volte para a sua cabana.")
+                      
             
 if __name__ == "__main__":
       TemploInca().inicia()
