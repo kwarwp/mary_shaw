@@ -29,6 +29,7 @@ class Explorador:
         """ se espanta com um perigo e foge do templo """
         perigo = self.perigos[tipo_perigo]
         input(f"Você se espanta por ver de novo o perigo: {perigo}")
+        print(f"Você se espanta por ver de novo o perigo: {perigo}")
         self.sai()
             
     def assusta(self, tipo_perigo, camara):
@@ -54,7 +55,7 @@ class Camara:
     o explorador usa o método entra para ter acesso aos tesouros
     """
     def __init__(self):
-        self.quantidade = 3
+        self.quantidade = 8
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
         #self.decide[1] = self.decide[2] = self.decide[3] = self.continua
