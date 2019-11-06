@@ -4,12 +4,13 @@ Uma expedição para coletar os tesouros do Templo Inca
  --Relato:
  fui e voltei rico
  
+ 19.11.06b - usa defaultdict na Camara também
  19.11.06a - usa defaultdict como uma forma de switch
  19.11.06 - troca print por input
 """
 
 __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
-__version__ = "19.11.06a"
+__version__ = "19.11.06b"
 from random import randint
 from collections import defaultdict
 
@@ -67,20 +68,14 @@ class TemploInca:
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
         '''
-        self.decide = defaultdict(lambda: self.desiste)
-        self.decide["s"] = self.encara
+        self.decide = defaultdict(lambda: input("Sábia mimimi.. macabro!"))
+        self.decide["s"] = lambda: self.camara.entra(self.explorador)
         '''
         
     def inicia(self):
         """ inicia a exploração """
         o_que_decidiu = input("Uma expedição para saquear o Templo Inca. Vai encarar (s/N)?")
         self.decide[o_que_decidiu]()
-        '''
-        if encara == "s":
-            self.camara.entra(self.explorador)
-        else:
-            input("Sábia decisão, vamos evitar este templo macabro!")
-        '''
         
     def encara(self):
         """ decide iniciar a exploração """
