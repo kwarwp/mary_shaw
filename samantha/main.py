@@ -72,8 +72,11 @@ class Camara:
         
     def entra(self, explorador):
         """ entra em uma câmara"""
-        o_que_decidiu = input("Você entra em uma câmara com tesouros! Continua?")
-        self.decide[o_que_decidiu.lower()](explorador)
+        if randint(0, 9) > 3 :
+            self.outra_camara.entra(explorador)
+        else:
+            o_que_decidiu = input("Você entra em uma câmara com tesouros! Continua?")
+            self.decide[o_que_decidiu.lower()](explorador)
         
         
     def encara(self, explorador):
@@ -101,9 +104,11 @@ class CamaraPerigosa(Camara):
         
     def entra(self, explorador):
         """ entra em uma câmara"""
-        
-        o_que_decidiu = input("Você entra em uma câmara com perigos! Continua?")
-        self.decide[o_que_decidiu.lower()](explorador)
+        if randint(0, 9) > 3 :
+            self.outra_camara.entra(explorador)
+        else:
+            o_que_decidiu = input("Você entra em uma câmara com perigos! Continua?")
+            self.decide[o_que_decidiu.lower()](explorador)
         
     def continua(self, explorador):
         """ desiste da exploração """
