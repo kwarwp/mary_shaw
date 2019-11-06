@@ -66,8 +66,11 @@ class TemploInca:
         
     def inicia(self):
         """ inicia a exploração """
-        input("Uma expedição para coletar os tesouros do Templo Inca")
-        self.camara.entra(self.explorador)
+        encara = input("Uma expedição para saquear o Templo Inca. Vai encarar (s/N)?")
+        if encara == "s":
+            self.camara.entra(self.explorador)
+        else:
+            input("Sábia decisão, vamos evitar este templo macabro!")
         
         
     
