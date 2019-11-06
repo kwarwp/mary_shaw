@@ -13,8 +13,7 @@ __author__ = "Carlo E T Oliveira <carlo at nce ufrj br>"
 __version__ = "19.11.06b"
 from random import randint
 from collections import defaultdict
-
-
+#================================================================================================
 class Explorador:
     """ explora o templo inca"""
     def __init__(self):  # (self, camara)
@@ -32,8 +31,7 @@ class Explorador:
         """ sai do templo """
         self.cabana, self.mochila = self.mochila, 0
         input(f"Você sai do templo e guarda {self.cabana} tesouros na cabana!")
-
-
+#================================================================================================
 class Camara:
     """ Uma câmara do templo.
     o explorador usa o método entra para ter acesso aos tesouros
@@ -41,22 +39,30 @@ class Camara:
     def __init__(self):
         self.quantidade = 3
         #self.explorador = explorador
+        self.decide = defaultdict(lambda: self.desiste)
+        self.decide["s"] = self.encara
         
     def entra(self, explorador):
         """ entra em uma câmara"""
         #input("Você entra em uma câmara com tesouros!")
-        if input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
-            if self.quantidade:
-                self.quantidade -= 1        
-                explorador.pega(randint(1, 4), self)
-            else:
-                input("Não havia mais tesouros!")
-                explorador.sai()
+        #if input("Você entra em uma câmara com tesouros! Continua?").lower() == "s":
+        o_que_decidiu = input("Você entra em uma câmara com tesouros! Continua?") 
+        self.decide[o_que_decidiu.lower()](explorador)
+
+    def encara(self, explorador):
+        '''Decide Continuar exploracao'''
+        if self.quantidade:
+            self.quantidade -= 1        
+            explorador.pega(randint(1, 4), self)
         else:
             explorador.sai()
-        
 
 
+    def desiste(self):
+        '''Desiste Continuar exploracao'''
+        explorador.sai()
+            
+#================================================================================================
 class TemploInca:
     """ O jogo do Tesouro Inca
     
@@ -84,11 +90,12 @@ class TemploInca:
     def desiste(self):
         """ desiste da exploração """
         input("Sábia decisão, vamos evitar este templo macabro!")
-        
-        
-    
-
-
+#================================================================================================
+#================================================================================================
+#================================================================================================
 if __name__ == "__main__":
     TemploInca().inicia()
+#================================================================================================
+#================================================================================================
+#================================================================================================
 
