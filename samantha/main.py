@@ -1,4 +1,3 @@
-# mary_shaw.samantha.main.py
 """
 Uma expedição para coletar os tesouros do Templo Inca
  --Relato:
@@ -43,6 +42,9 @@ class Camara:
         self.quantidade = 3
         self.decide = defaultdict(lambda: self.desiste)
         self.decide["s"] = self.encara
+        #self.decide[1] = self.decide[2] = self.decide[3] = self.continua
+        self.decide.update({chave: self.continua
+            for chave in range(1, self.quantidade+1)})
         
     def entra(self, explorador):
         """ entra em uma câmara"""
@@ -52,15 +54,7 @@ class Camara:
         
     def encara(self, explorador):
         """ decide continuar a exploração """
-        '''
         self.decide[self.quantidade](explorador)
-        '''
-        if self.quantidade:
-            self.quantidade -= 1        
-            explorador.pega(randint(1, 4), self)
-        else:
-            #input("Não havia mais tesouros!")
-            explorador.sai()
         
     def continua(self, explorador):
         """ desiste da exploração """
@@ -101,5 +95,7 @@ class TemploInca:
 
 
 if __name__ == "__main__":
-    TemploInca().inicia()
+    #TemploInca().inicia()
+    import mary_shaw.samantha.main as mn
+    print(help(mn))
 
