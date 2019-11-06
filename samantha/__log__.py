@@ -460,3 +460,10 @@ AttributeError: 'NoneType' object has no attribute 'entra'
    ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Nov 06 2019 18:37:40.678 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 113
+  else:
+   ^
+SyntaxError: invalid syntax
+'''},
