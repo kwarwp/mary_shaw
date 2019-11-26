@@ -14,13 +14,13 @@ class Elevador:
         self._doggie_sobe_desce = lambda *_:None
         self._doggie_desce = lambda *_:None
         self._doggie_sobe = lambda *_:None
+        self.na_cesta = "nada"
         self.cesta = Elemento(CESTA, x=300, y=100,w=180,h=180, cena=predio, vai=self.sobe_desce)
         self.doggie = Elemento(Doggie, x=350, y=80, cena=predio, vai=self.entra_sai)
         
     def sobe_desce(self, *_):
         self.cesta.y = 400
         self._sobe_desce()
-        INVENTARIO.send(data=dict(elevador=))
         
     def _desce(self, *_):
         self._sobe_desce = self._sobe
@@ -32,6 +32,7 @@ class Elevador:
         self._sobe_desce = self._desce
         self._doggie_sobe()
         self.cesta.elt.style.top = 100
+        INVENTARIO.send(data=dict(elevador="sobe", cesta=self.na_cesta))
         
     def entra_sai(self, *_):
         self._entra_sai()
@@ -43,12 +44,14 @@ class Elevador:
         self._entra_sai= self._sai
         self._doggie_sobe = lambda:self._move_doggie(100)
         self._doggie_desce = lambda:self._move_doggie(400)
+        self.na_cesta="doggie"
         self.doggie.elt.style.left = 300
         
     def _sai(self, *_):
         self._entra_sai= self._entra
         self._doggie_sobe = lambda:None
         self._doggie_desce = lambda:None
+        self.na_cesta="nada"
         self.doggie.elt.style.left = 350
         
 Elevador()
