@@ -26,13 +26,13 @@ class Elevador:
         self._sobe_desce = self._sobe
         self._doggie_desce()
         self.cesta.elt.style.top = 400
-        INVENTARIO.send(data=dict(elevador="desce", cesta=self.na_cesta))
+        INVENTARIO.score(self, casa="elevador", carta=self.na_cesta, move="desce", ponto=0, valor=0, _level=1):
         
     def _sobe(self, *_):
         self._sobe_desce = self._desce
         self._doggie_sobe()
         self.cesta.elt.style.top = 100
-        INVENTARIO.send(data=dict(elevador="sobe", cesta=self.na_cesta))
+        INVENTARIO.score(self, casa="elevador", carta=self.na_cesta, move="sobe", ponto=0, valor=0, _level=1):
         
     def entra_sai(self, *_):
         self._entra_sai()
@@ -46,6 +46,7 @@ class Elevador:
         self._doggie_desce = lambda:self._move_doggie(400)
         self.na_cesta="doggie"
         self.doggie.elt.style.left = 300
+        INVENTARIO.score(self, casa="doggie", carta=self.na_cesta, move="entra", ponto=0, valor=0, _level=1):
         
     def _sai(self, *_):
         self._entra_sai= self._entra
@@ -53,5 +54,6 @@ class Elevador:
         self._doggie_desce = lambda:None
         self.na_cesta="nada"
         self.doggie.elt.style.left = 350
+        INVENTARIO.score(self, casa="doggie", carta=self.na_cesta, move="sai", ponto=0, valor=0, _level=1):
         
 Elevador()
