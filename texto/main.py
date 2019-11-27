@@ -141,3 +141,14 @@ class Texto(Popup):
         self.cena.elt <= Popup.POP.popup
         self.mostra(self.tit, self.txt, act=self.esconde)
         return False
+        
+if __name__ == "__main__":
+    from _spy.vitollino.main import Cena
+    def mostra(op="YY"):
+        Texto(predio, f"escolheu {op}").vai()
+    PREDIO= "https://i.imgur.com/K7xS3Oa.jpg"
+    predio = Cena(PREDIO)
+    predio.vai()
+    a = Texto(predio, "oi", foi=mostra , A="ee", B="uu")
+    a.vai()
+    
