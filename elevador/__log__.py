@@ -87,3 +87,29 @@ TypeError: 'module' object is not callable
     def __init__(self, cena=NADA, tit="", txt="", foi=None, **kwargs):
 NameError: name 'NADA' is not defined
 '''},
+{'date': 'Wed Nov 27 2019 18:23:51.513 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 65
+    Elevador()
+  module <module> line 23
+    a = Texto(predio, "oi", A="ee", B="uu")
+  module texto.main line 107
+    super().__init__(None, tit=tit, txt=txt, vai=None, **kwargs)
+  module texto.main line 12
+    Popup.__setup__()
+  module texto.main line 89
+    Popup.POP = Pop()
+  module texto.main line 34
+    self.popup = html.DIV(Id="__popup__", Class="overlay")
+NameError: name 'html' is not defined
+'''},
