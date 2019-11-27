@@ -33,21 +33,22 @@ class Popup:
                 self.optou = ""
                 self.foi = None
                 self.popup = html.DIV(Id="__popup__", Class="overlay")
-                self.inicia()
-            def inicia(self):
-                self.foi = lambda *_: None
                 self.div = div = html.DIV(Class="popup")
                 self.tit = html.H2()
-                a = html.A("&times;", Class="close", href="#")
+                self.a = html.A("&times;", Class="close", href="#")
                 self.go = html.A(Id="txt_button", Class="button", href="#__popup__")
                 self.go.onclick = self._open
-                a.onclick = self._close
+                self.a.onclick = self._close
                 self.alt = html.DIV(Class="content")
                 self.popup <= div
                 self.popup.style = {"visibility": "hidden", "opacity": 0}
-                div <= self.tit
-                div <= a
-                div <= self.alt
+                self.inicia()
+            def inicia(self):
+                self.foi = lambda *_: None
+                self.div.html = ""
+                self.div <= self.tit
+                self.div <= self.a
+                self.div <= self.alt
 
             def __repr__(self):
                 return "<Popup>"
