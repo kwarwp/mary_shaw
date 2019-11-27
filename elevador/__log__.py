@@ -141,3 +141,10 @@ NameError: name 'html' is not defined
     optou = html.A(chr(ABOXED + ord(letra) - ord("A")), Class="option", href="#")
 NameError: name 'ABOXED' is not defined
 '''},
+{'date': 'Wed Nov 27 2019 18:35:44.662 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 23
+  def _foi(l="ZZ")
+                   ^
+SyntaxError: invalid syntax
+'''},
