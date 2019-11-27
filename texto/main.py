@@ -1,6 +1,6 @@
 # mary_shaw.texto.main.py
 from _spy.vitollino.main import NADA, DOC_PYDIV, NoEv, ABOXED
-from browser import document, html, timer
+from browser import document, html, timer, alert
 
 class Popup:
     POP = None
@@ -65,6 +65,7 @@ class Popup:
 
             def monta_optar(self, **kwargs):
                 def opcao(letra):
+                    alert(self.foi)
                     self.foi(letra)
 
                 def opta(letra, texto):
