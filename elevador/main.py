@@ -10,7 +10,7 @@ class Elevador:
     def __init__(self):
         predio = Cena(PREDIO)
         predio.vai()
-        # Musica("http://soundbible.com/grab.php?id=2192&type=mp3")
+        # Musica("https://raw.githubusercontent.com/kwarwp/anita/master/bensound-creativeminds.mp3")
         self._sobe_desce = self._desce
         self._entra_sai = self._entra
         self._doggie_sobe_desce = lambda *_:None
