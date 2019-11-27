@@ -44,3 +44,4 @@
 {'doc_id': '74df3bb4', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574892561045},
 {'doc_id': '3bf55ad2', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574893934530},
 {'doc_id': 'f057839a', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574894110148},
+{'doc_id': 'f057839a', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574894455786},
