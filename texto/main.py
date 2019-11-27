@@ -1,5 +1,6 @@
 # mary_shaw.texto.main.py
 from _spy.vitollino.main import NADA, DOC_PYDIV, NoEv
+from browser import document, html, timer
 
 class Popup:
     POP = None
