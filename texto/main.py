@@ -74,7 +74,7 @@ class Popup:
                 def opta(letra, texto):
                     div = html.DIV(Class="content")
                     optou = html.A(chr(ABOXED + ord(letra) - ord("A")), Class="option", href="#")
-                    optou.onclick = lambda *_: opcao(letra) or _close()
+                    optou.onclick = lambda *_: _close() or opcao(letra)
                     texto_opcao = html.SPAN(texto)
                     div <= optou
                     div <= texto_opcao
@@ -149,6 +149,7 @@ if __name__ == "__main__":
     from _spy.vitollino.main import Cena, Elemento
     def mostra(op="YY"):
         cao.elt.title =op
+        Texto(predio, f"escolheu {op}").vai()
     PREDIO= "https://i.imgur.com/K7xS3Oa.jpg"
     Doggie = "https://i.imgur.com/1YbsNfD.png"
 
