@@ -1,7 +1,7 @@
 # mary_shaw.elevador.main.py
 # mary_shaw.amanda.main.py
 from _spy.vitollino.main import Cena, Elemento, INVENTARIO, STYLE, Musica
-from mary_shaw.texto.main import Texto
+from texto.main import Texto
 STYLE.update(width=900, height=650)
 PREDIO= "https://i.imgur.com/K7xS3Oa.jpg"
 CESTA = "https://i.imgur.com/ouziL1K.png"
