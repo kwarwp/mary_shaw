@@ -138,5 +138,5 @@ class Texto(Popup):
         # self.elt = Popup.POP.popup
         ev.stopPropagation()
         self.cena.elt <= Popup.POP.popup
-        self.mostra(self.tit, self.txt, act=self.foi)
+        self.mostra(self.tit, self.txt, act=self.esconde)
         return False
