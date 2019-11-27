@@ -26,3 +26,4 @@
 {'doc_id': '46f342be', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574885112933},
 {'doc_id': '46f342be', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574885309319},
 {'doc_id': '46f342be', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574886120394},
+{'doc_id': 'f9ab7bca', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574889539928},
