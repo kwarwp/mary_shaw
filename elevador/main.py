@@ -20,7 +20,7 @@ class Elevador:
         self.cesta = Elemento(CESTA, x=300, y=100,w=180,h=180, cena=predio, vai=self.sobe_desce)
         self.doggie = Elemento(Doggie, x=350, y=80, cena=predio, vai=self.entra_sai)
         INVENTARIO.score(casa="elevador", carta=self.na_cesta, move="desce", ponto=0, valor=0, _level=0)
-        a = Texto(predio, "oi", A="ee", B="uu", foi=lambda op="YY": Texto(predio, f"escolheu {op}").vai())
+        a = Texto(predio, "oi", foi=lambda op="YY": Texto(predio, f"escolheu {op}").vai(), A="ee", B="uu")
         a.vai()
         #b = 
         
