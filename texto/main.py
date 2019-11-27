@@ -1,5 +1,5 @@
 # mary_shaw.texto.main.py
-
+from _spy.vitollino.main import NADA, DOC_PYDIV, NoEv
 
 class Popup:
     POP = None
