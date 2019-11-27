@@ -65,7 +65,7 @@ class Popup:
 
             def monta_optar(self, **kwargs):
                 def opcao(letra):
-                    alert(self.foi)
+                    #alert(self.foi)
                     self.foi(letra)
 
                 def opta(letra, texto):
@@ -83,6 +83,7 @@ class Popup:
 
             def mostra(self, act, tit="", txt="", **kwargs):
                 self.foi = act if act else self.foi
+                alert(f"Mostra : {self.foi}")
                 if tit or txt:
                     self.tit.text, self.alt.text = tit, txt
                 self.monta_optar(**kwargs)
