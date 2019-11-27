@@ -68,10 +68,13 @@ class Popup:
                     #alert(self.foi)
                     self.foi(letra)
 
+                def _close():
+                    self.popup.style = {"visibility": "hidden", "opacity": 0}
+
                 def opta(letra, texto):
                     div = html.DIV(Class="content")
                     optou = html.A(chr(ABOXED + ord(letra) - ord("A")), Class="option", href="#")
-                    optou.onclick = lambda *_: opcao(letra) or self._close()
+                    optou.onclick = lambda *_: opcao(letra) or _close()
                     texto_opcao = html.SPAN(texto)
                     div <= optou
                     div <= texto_opcao
@@ -83,7 +86,7 @@ class Popup:
 
             def mostra(self, act, tit="", txt="", **kwargs):
                 self.foi = act if act else self.foi
-                alert(f"Mostra : {self.foi}")
+                #alert(f"Mostra : {self.foi}")
                 if tit or txt:
                     self.tit.text, self.alt.text = tit, txt
                 self.monta_optar(**kwargs)
@@ -143,11 +146,14 @@ class Texto(Popup):
         return False
         
 if __name__ == "__main__":
-    from _spy.vitollino.main import Cena
+    from _spy.vitollino.main import Cena, Elemento
     def mostra(op="YY"):
-        Texto(predio, f"escolheu {op}").vai()
+        cao.elt.title =op
     PREDIO= "https://i.imgur.com/K7xS3Oa.jpg"
+    Doggie = "https://i.imgur.com/1YbsNfD.png"
+
     predio = Cena(PREDIO)
+    cao = Elemento(Doggie, cena=predio)
     predio.vai()
     a = Texto(predio, "oi", foi=mostra , A="ee", B="uu")
     a.vai()
