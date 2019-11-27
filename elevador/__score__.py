@@ -29,3 +29,4 @@
 {'doc_id': 'f9ab7bca', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574889539928},
 {'doc_id': '87dc65d3', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574889831346},
 {'doc_id': 'dff0349e', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574889927952},
+{'doc_id': '21384848', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1574889983287},
