@@ -1,6 +1,6 @@
 # mary_shaw.elevador.main.py
 # mary_shaw.amanda.main.py
-from _spy.vitollino.main import Cena, Elemento, INVENTARIO, STYLE
+from _spy.vitollino.main import Cena, Elemento, INVENTARIO, STYLE, Musica
 STYLE.update(width=900, height=650)
 PREDIO= "https://i.imgur.com/K7xS3Oa.jpg"
 CESTA = "https://i.imgur.com/ouziL1K.png"
@@ -9,6 +9,7 @@ class Elevador:
     def __init__(self):
         predio = Cena(PREDIO)
         predio.vai()
+        # Musica("http://soundbible.com/grab.php?id=2192&type=mp3")
         self._sobe_desce = self._desce
         self._entra_sai = self._entra
         self._doggie_sobe_desce = lambda *_:None
