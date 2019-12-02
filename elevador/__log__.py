@@ -170,3 +170,25 @@ SyntaxError: invalid syntax
     if isinstance(cena, Cena):
 NameError: name 'Cena' is not defined
 '''},
+{'date': 'Mon Dec 02 2019 20:45:31.599 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 65
+    Elevador()
+  module <module> line 23
+    a = Texto(predio, "oi", foi=lambda op="YY": Texto(predio, f"escolheu {op}").vai(), A="ee", B="uu")
+  module texto.main line 114
+    super().__init__(None, tit=tit, txt=txt, vai=None, **kwargs)
+  module texto.main line 15
+    if isinstance(cena, Cena):
+NameError: name 'Cena' is not defined
+'''},
