@@ -537,3 +537,10 @@ TypeError: __init__() takes 1 positional argument but more were given
     self.camara = Camara(self.explorador)
 TypeError: __init__() takes 1 positional argument but more were given
 '''},
+{'date': 'Wed Dec 04 2019 12:11:55.436 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 20
+  pass
+  ^
+IndentationError: expected an indented block
+'''},
