@@ -12,29 +12,57 @@ STYLE["height"]= "600px"
 IGR = "https://i.imgur.com/"
 CART, CAT, BASE, CENA = f"{IGR}m2k5sv6.png", f"{IGR}ek8oINR.png", f"{IGR}DAUyvBP.jpg", f"{IGR}nkwZCrR.jpg"
 
+M0 = "margin0"
+M1 = "margin1"
+MONSTER = "monster"
+DWARF = "dwarf"
+APPLE = "apple"
+
 
 class Plataforma(Elemento):
-    def __init__(self, imagem, cena):
-        pass
-
+    self.id = ""
+    place[MONSTER] = ""
+    place[DWARF] = ""
+    place[APPLE] = ""
+    
+    #def __init__(self, imagem, cena, id):
+    def __init__(self, id):
+        self.id = id
+        
+    
 
 class Personagem(Elemento):
-    def __init__(self, imagem, cena):
-        pass
+    self.name = ""
+    self.status = ""
+    
+    #def __init__(self, imagem, cena, name):
+    def __init__(self, name, margin):
+        self.name = name
+        self.status = margin
+
 
 
 class Veiculo(Elemento):
-    def __init__(self, imagem, cena):
-        pass
+    self.status = ""
+
+    #def __init__(self, imagem, cena, margin):
+    def __init__(self, margin):
+        self.status = margin
 
 
 class Basico:
     def __init__(self):
-        self.cena = cena = Cena(CENA)
-        self.base0 = Elemento(BASE, cena=cena)
-        self.gato = Elemento(CAT, cena=cena)
-        self.cart = Elemento(CART, cena=cena)
-        cena.vai()
+        self.m0 = Plataforma(M0)
+        self.m1 = Plataforma(M1)
+        self.boat = Veiculo(self.m0)
+        self.monster = Personagem(MONSTER, self.m0)
+        self.dwarf = Personagem(DWARF, self.m0)
+        self.apple = Personagem(APPLE, self.m0)
+        #self.cena = cena = Cena(CENA)
+        #self.base0 = Elemento(BASE, cena=cena)
+        #self.gato = Elemento(CAT, cena=cena)
+        #self.cart = Elemento(CART, cena=cena)
+        #cena.vai()
         
         
 if __name__ == "__main__":
