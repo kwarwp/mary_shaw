@@ -23,8 +23,8 @@ class Personagem(Elemento):
         pass
 
 class Veiculo(Elemento):
-    def __init__(self,imagem, cena):
-        pass
+    def __init__(self,imagem, cena, x=0, y=400):
+        super().__init__(imagem,cena=cena, x=x, y=y)
 
 
 class Basico:
