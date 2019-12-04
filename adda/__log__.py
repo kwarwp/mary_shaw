@@ -544,3 +544,10 @@ TypeError: __init__() takes 1 positional argument but more were given
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Wed Dec 04 2019 12:23:57.330 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 36
+  self.base1 = Elemento(BASE, y=500 cena=cena)
+                                     ^
+SyntaxError: invalid syntax
+'''},
