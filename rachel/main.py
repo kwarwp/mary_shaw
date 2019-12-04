@@ -21,10 +21,11 @@ APPLE = "apple"
 
 class Plataforma(Elemento):
     self.id = ""
-    self.place = []
-    self.place[MONSTER] = ""
-    self.place[DWARF] = ""
-    self.place[APPLE] = ""
+    self.place = {
+        MONSTER:"",
+        DWARF:"",
+        APPLE:""
+    }
     
     #def __init__(self, imagem, cena, id):
     def __init__(self, id):
