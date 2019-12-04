@@ -89,9 +89,9 @@ class Basico:
         self.dwarf = Personagem(DWARF, self.m0)
         self.apple = Personagem(APPLE, self.m0)
         
-        self.m0.put(monster)
-        self.m0.put(dwarf)
-        self.m0.put(apple)
+        self.m0.put(self.monster)
+        self.m0.put(self.dwarf)
+        self.m0.put(self.apple)
         
         print("Teste ", "Uhuuu")
         #self.cena = cena = Cena(CENA)
