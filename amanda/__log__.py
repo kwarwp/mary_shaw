@@ -6,3 +6,10 @@
                                                        ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Dec 04 2019 12:26:51.458 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 18
+  pass
+  ^
+IndentationError: expected an indented block
+'''},
