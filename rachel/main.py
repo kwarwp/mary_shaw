@@ -35,7 +35,7 @@ class Plataforma(Elemento):
         return self.id
         
     def put(self, person):
-        self.place[person] = true
+        self.place[person.getId()] = true
         
     def remove(self, person):
         if (self.place[person] == true):
