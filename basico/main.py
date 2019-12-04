@@ -21,8 +21,13 @@ class Plataforma(Elemento):
 
 
 class Personagem(Elemento):
-    def __init__(self, imagem, cena, x=0, y=400):
+    def __init__(self, imagem, veiculo, cena, x=0, y=400):
         super().__init__(imagem, cena=cena, x=x, y=y)
+        self.veiculo = veiculo
+        self.vai = self.move
+        
+    def move(self, evento=None):
+        self.entra(self.veiculo)
 
 
 class Veiculo(Elemento):
@@ -35,8 +40,8 @@ class Basico:
         self.cena = cena = Cena(CENA)
         self.base0 = Plataforma(BASE, x=100, cena=cena)
         self.base1 = Plataforma(BASE, x=500, cena=cena)
-        self.gato = Personagem(CAT, cena=cena)
-        self.cart = Veiculo(CART, cena=cena)
+        self.cart = Veiculo(CART, x=100, cena=cena)
+        self.gato = Personagem(CAT, veiculo=self.cart, cena=cena)
         cena.vai()
         
         
