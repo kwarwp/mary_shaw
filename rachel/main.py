@@ -36,6 +36,7 @@ class Plataforma(Elemento):
         
     def put(self, person):
         print(person.getId())
+        print(self.place[MONSTER])
         #self.place[person.getId()] = true
         
     def remove(self, person):
