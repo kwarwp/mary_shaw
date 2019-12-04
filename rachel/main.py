@@ -8,12 +8,21 @@ __version__ = "19.12.04"
 
 
 
+STYLE["width"] = 900
+STYLE["height"] = "600px"
+IGR = "https://i.imgur.com/"
+IMG_MONSTER =  f"{IGR}DWFOnKO.png"
+IMG_DWARF =  f"{IGR}ZJcqxr8.png"
+IMG_APPLE =  f"{IGR}a9qsM6a.png"
+IMG_BOAT_TO_RIGHT = f"{IGR}vH35dWf.png"
+IMG_BOAT_TO_LEFT = f"{IGR}QsryhIQ.png"
+CENA = f"{IGR}IugWsGp.jpg"
+
 LEFT_MARGIN = "left_margin"
 RIGHT_MARGIN = "right_margin"
 MONSTER = "monster"
 DWARF = "dwarf"
 APPLE = "apple"
-
 
 
 
