@@ -13,9 +13,27 @@ IGR = "https://i.imgur.com/"
 CART, CAT, BASE, CENA = f"{IGR}m2k5sv6.png", f"{IGR}ek8oINR.png", f"{IGR}DAUyvBP.jpg", f"{IGR}nkwZCrR.jpg"
 
 
+class Plataforma(Elemento):
+    def __init__(self, imagem, cena):
+        pass
+
+
+class Personagem(Elemento):
+    def __init__(self, imagem, cena):
+        pass
+
+
+class Veiculo(Elemento):
+    def __init__(self, imagem, cena):
+        pass
+
+
 class Basico:
     def __init__(self):
         self.cena = cena = Cena(CENA)
+        self.base0 = Elemento(BASE, cena=cena)
+        self.gato = Elemento(CAT, cena=cena)
+        self.cart = Elemento(CART, cena=cena)
         cena.vai()
         
         
