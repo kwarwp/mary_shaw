@@ -17,22 +17,28 @@ class Plataforma(Elemento):
     def __init__(self, imagem, cena, x=0, y=400):
         super().__init__(imagem, cena=cena, x=x, y=y)
         #self.elt.style.transition = "all 1s"
-        pass
+        self.nome = "base"
 
 
 class Personagem(Elemento):
-    def __init__(self, imagem, veiculo, cena, x=0, y=400):
-        super().__init__(imagem, cena=cena, x=x, y=y)
-        self.veiculo = veiculo
+    def __init__(self, imagem, destino, cena, x=0, y=0):
+        super().__init__(imagem, cena=cena, x=x, y=y, w=60, h=60)
+        self.destino = destino
         self.vai = self.move
         
     def move(self, evento=None):
-        self.entra(self.veiculo)
+        self.entra(self.destino)
 
 
 class Veiculo(Elemento):
-    def __init__(self, imagem, cena, x=0, y=400):
+    def __init__(self, imagem, destino, cena, x=0, y=0):
         super().__init__(imagem, cena=cena, x=x, y=y)
+        self.nome = "veiculo"
+        self.destino = destino
+        self.vai = self.move
+        
+    def move(self, evento=None):
+        self.entra(self.destino)
 
 
 class Basico:
@@ -40,8 +46,9 @@ class Basico:
         self.cena = cena = Cena(CENA)
         self.base0 = Plataforma(BASE, x=100, cena=cena)
         self.base1 = Plataforma(BASE, x=500, cena=cena)
-        self.cart = Veiculo(CART, x=100, cena=cena)
-        self.gato = Personagem(CAT, veiculo=self.cart, cena=cena)
+        self.cart = Veiculo(CART, destino=self.base1, cena=cena)
+        self.cart.entra(self.base0)
+        self.gato = Personagem(CAT, destino=self.cart, cena=cena)
         cena.vai()
         
         
