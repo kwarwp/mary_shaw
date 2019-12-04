@@ -16,7 +16,7 @@ CART, CAT, BASE, CENA = f"{IGR}m2k5sv6.png", f"{IGR}ek8oINR.png", f"{IGR}DAUyvBP
 class Plataforma(Elemento):
     def __init__(self,imagem, cena):
         super().__init__(self, imagem, cena)
-        pass
+        self.nome = "base"
     
 class Personagem(Elemento):
     def __init__(self,imagem, cena):
@@ -31,6 +31,8 @@ class Veiculo(Elemento):
     def __init__(self,imagem, cena, x=0, y=400):
         super().__init__(imagem,cena=cena, x=x, y=y)
         self.nome = 'veiculo'
+        self.destino = destino
+        self.vai = self.move
 
 
 class Basico:
