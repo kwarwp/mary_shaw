@@ -111,9 +111,11 @@ class Platform(Elemento):
         
 class Game():
     def __init__(self):
-        self.cena = Cena(CENA)
-        self.cena.vai()
-        
+        #self.cena = Cena(CENA)
+        # Colocar aqui toda a parte que o professor ensinou na aula que está em
+        # http://supygirls.pythonanywhere.com/supygirls/gamer/mary_shaw/basico
+        #self.cena.vai()
+    
         self.left_margin = Platform(LEFT_MARGIN)
         self.right_margin = Platform(RIGHT_MARGIN)
         self.boat = Boat(self.left_margin, self.right_margin)
