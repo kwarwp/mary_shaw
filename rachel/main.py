@@ -21,6 +21,7 @@ APPLE = "apple"
 
 class Plataforma(Elemento):
     self.id = ""
+    self.place = []
     self.place[MONSTER] = ""
     self.place[DWARF] = ""
     self.place[APPLE] = ""
