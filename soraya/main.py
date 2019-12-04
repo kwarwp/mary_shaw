@@ -38,10 +38,10 @@ class Veiculo(Elemento):
 class Basico:
     def __init__(self):
         self.cena = cena = Cena(CENA)
-        self.base0 = Elemento(BASE, x=100,cena=cena)
-        self.base1 = Elemento(BASE, x=400,cena=cena)
+        self.base0 = plataforna(BASE, x=100,cena=cena)
+        self.base1 = plataforma(BASE, x=400,cena=cena)
         self.gato = Elemento(CAT, cena=cena)
-        self.cart = Elemento(CART, cena=cena)
+        self.cart = personagem(CART, cena=cena)
         cena.vai()
         
         
