@@ -16,12 +16,17 @@ IGR = "https://i.imgur.com/"
 CART, CAT, BASE, CENA = f"{IGR}m2k5sv6.png", f"{IGR}ek8oINR.png", f"{IGR}DAUyvBP.jpg", f"{IGR}nkwZCrR.jpg"
 
 class Personagen(Elemento):
-    def __init__(self,imagem, cena):
-        pass
+    def __init__(self,imagem, cena, x=0, y=400):
+        super().__init__(imagem, cena=cena, x=x, y=y)
+        self.veiculo = destino
+        self.vai = self.move
+    
 
 class Veiculo(Elemento):
-    def __init__(self,imagem, cena):
-        pass
+    def __init__(self,imagem, destino, cena, x=0, y=400):
+        super().__init__(imagem, cena=cena, x=x, y=y)
+        self.nome = "veiculo"
+
 
 class Plataforma(Elemento):
     def __init__(self,imagem, cena):
@@ -32,9 +37,13 @@ class Plataforma(Elemento):
 class Basico:
     def __init__(self):
         self.cena = cena = Cena(CENA)
-        self.base0 = Elemento(BASE, cena=cena)
-        self.gato = Elemento(CAT, cena=cena)
-        self.cart = Elemento(CART, cena=cena)
+        self.base0 = Elemento(BASE, y=100, x=400, cena=cena)
+        self.base1 = Elemento(BASE, y=500, x=400, cena=cena)
+        self.gato = Elemento(CAT, x=400, cena=cena)
+        self.gato1 = Elemento(CAT, x=350, cena=cena)
+        self.gato2 = Elemento(CAT, x=450, cena=cena)
+        self.cart = Elemento(CART, y=100, x=300, cena=cena)
+        self.cart1 = Elemento(CART, y=500, x=500, cena=cena)
         cena.vai()
         
         
