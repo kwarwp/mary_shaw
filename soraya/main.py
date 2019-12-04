@@ -13,17 +13,17 @@ STYLE["height"]= "600px"
 IGR = "https://i.imgur.com/"
 CART, CAT, BASE, CENA = f"{IGR}m2k5sv6.png", f"{IGR}ek8oINR.png", f"{IGR}DAUyvBP.jpg", f"{IGR}nkwZCrR.jpg"
 
-class Personagen(Elemento):
+class Plataforma(Elemento):
+    def __init__(self,imagem, cena):
+    super().__init__(self,imagem, cena):
+    pass
+    
+class Personagem(Elemento):
     def __init__(self,imagem, cena):
     pass
 
 class Veiculo(Elemento):
     def __init__(self,imagem, cena):
-    pass
-
-class Plataforma(Elemento):
-    def __init__(self,imagem, cena):
-    #super().__init__(???/)
     pass
 
 
