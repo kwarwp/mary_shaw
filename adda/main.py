@@ -38,14 +38,18 @@ class Basico:
     def __init__(self):
         self.cena = cena = Cena(CENA)
         self.base0 = Elemento(BASE, y=100, x=400, cena=cena)
-        self.base1 = Elemento(BASE, y=500, x=400, cena=cena)
+        self.base1 = Elemento(BASE, y=100, x=300, cena=cena)
+        self.base2 = Elemento(BASE, y=100, x=500, cena=cena)
+        self.base3 = Elemento(BASE, y=500, x=300, cena=cena)
+        self.base4 = Elemento(BASE, y=500, x=500, cena=cena)
+
         self.gato = Elemento(CAT, x=400, cena=cena)
         self.gato1 = Elemento(CAT, x=350, cena=cena)
         self.gato2 = Elemento(CAT, x=450, cena=cena)
         self.cart = Elemento(CART, y=100, x=300, cena=cena)
         self.cart1 = Elemento(CART, y=500, x=500, cena=cena)
         cena.vai()
-        
+        #self.elt.style.transiton = "all 1px"
         
 if __name__ == "__main__":
     Basico()
