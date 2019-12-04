@@ -245,3 +245,10 @@ Traceback (most recent call last):
     (Explorador.cabana)
 AttributeError: 'Explorador' object has no attribute 'cabana'
 '''},
+{'date': 'Wed Dec 04 2019 12:12:50.932 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 18
+  pass
+  ^
+IndentationError: expected an indented block
+'''},
