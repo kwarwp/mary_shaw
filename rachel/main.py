@@ -31,25 +31,52 @@ class Plataforma(Elemento):
     def __init__(self, id):
         self.id = id
         
+    def getId(self):
+        return self.id
+        
+    def put(self, person):
+        self.place[person] = true
+        
+    def remove(self, person):
+        if (self.place[person] == true):
+            self.place[person] = false
+        
     
 
 class Personagem(Elemento):
-    self.name = ""
-    self.status = ""
+    self.id = ""
+    self.state = ""
     
     #def __init__(self, imagem, cena, name):
     def __init__(self, name, margin):
-        self.name = name
-        self.status = margin
+        self.id = name
+        self.state = margin
+        
+    def getId(self):
+        return self.id
+        
+    def click(self):
+        pass
 
 
 
 class Veiculo(Elemento):
-    self.status = ""
+    self.id
+    self.state = ""
 
     #def __init__(self, imagem, cena, margin):
     def __init__(self, margin):
-        self.status = margin
+        self.state = margin
+        
+    def getId(self):
+        return self.id
+        
+    def getState(self):
+        return self.state
+        
+    def moveTo(self, margin):
+        state = margin
+
 
 
 class Basico:
@@ -57,9 +84,16 @@ class Basico:
         self.m0 = Plataforma(M0)
         self.m1 = Plataforma(M1)
         self.boat = Veiculo(self.m0)
+        
         self.monster = Personagem(MONSTER, self.m0)
         self.dwarf = Personagem(DWARF, self.m0)
         self.apple = Personagem(APPLE, self.m0)
+        
+        self.m0.put(monster)
+        self.m0.put(dwarf)
+        self.m0.put(apple)
+        
+        print("Teste ", "Uhuuu")
         #self.cena = cena = Cena(CENA)
         #self.base0 = Elemento(BASE, cena=cena)
         #self.gato = Elemento(CAT, cena=cena)
