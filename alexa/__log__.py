@@ -31,3 +31,10 @@ SyntaxError: invalid syntax
     self.gato = Elemento(CAT, cena=cena, x=700, y=200,w=60,h=60, vai = cart)
 NameError: name 'cart' is not defined
 '''},
+{'date': 'Wed Dec 04 2019 12:46:51.622 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 41
+  self.gato = Elemento(CAT, cena=cena, x=700, y=200,w=60,h=60, self.vai = cart)
+                                                                        ^
+SyntaxError: keyword can't be an expression
+'''},
