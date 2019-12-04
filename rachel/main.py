@@ -49,9 +49,8 @@ class Personagem(Elemento):
     self.state = ""
     
     #def __init__(self, imagem, cena, name):
-    def __init__(self, name, margin):
+    def __init__(self, name):
         self.id = name
-        self.state = margin
         
     def getId(self):
         return self.id
@@ -86,9 +85,9 @@ class Basico:
         self.m1 = Plataforma(M1)
         self.boat = Veiculo(self.m0)
         
-        self.monster = Personagem(MONSTER, self.m0)
-        self.dwarf = Personagem(DWARF, self.m0)
-        self.apple = Personagem(APPLE, self.m0)
+        self.monster = Personagem(MONSTER)
+        self.dwarf = Personagem(DWARF)
+        self.apple = Personagem(APPLE)
         
         self.m0.put(self.monster)
         self.m0.put(self.dwarf)
