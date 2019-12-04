@@ -21,6 +21,9 @@ class Plataforma(Elemento):
 class Personagem(Elemento):
     def __init__(self,imagem, cena):
         super().__init__(imagem,cena=cena, x=x, y=y)
+    
+    def move(self,evento=None):
+        self.entra(self.veiculo)
 
 class Veiculo(Elemento):
     def __init__(self,imagem, cena, x=0, y=400):
