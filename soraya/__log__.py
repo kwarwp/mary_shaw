@@ -252,3 +252,10 @@ AttributeError: 'Explorador' object has no attribute 'cabana'
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Wed Dec 04 2019 12:28:35.805 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 18
+  pass
+  ^
+IndentationError: expected an indented block
+'''},
