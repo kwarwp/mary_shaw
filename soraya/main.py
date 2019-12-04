@@ -30,6 +30,7 @@ class Personagem(Elemento):
 class Veiculo(Elemento):
     def __init__(self,imagem, cena, x=0, y=400):
         super().__init__(imagem,cena=cena, x=x, y=y)
+        self.nome = 'veiculo'
 
 
 class Basico:
