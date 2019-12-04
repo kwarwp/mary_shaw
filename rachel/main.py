@@ -21,22 +21,23 @@ APPLE = "apple"
 
 class Plataforma(Elemento):
     self.id = ""
-    self.place = {
-        MONSTER:"",
-        DWARF:"",
-        APPLE:""
-    }
+    self.place  = ""
     
     #def __init__(self, imagem, cena, id):
     def __init__(self, id):
         self.id = id
+        self.place = {
+            MONSTER:"",
+            DWARF:"",
+            APPLE:""
+        }
         
     def getId(self):
         return self.id
         
     def put(self, person):
         print(person.getId())
-        print(place)
+        print(self.place)
         #self.place[person.getId()] = true
         
     def remove(self, person):
