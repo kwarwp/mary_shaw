@@ -6,7 +6,7 @@ Jogo de Missionários e Canibais
 __author__ = "André Vieira"
 __version__ = "19.12.04"
 
-
+from _spy.vitollino.main import Cena, Elemento, Texto, STYLE, INVENTARIO
 
 STYLE["width"] = 900
 STYLE["height"] = "600px"
@@ -26,7 +26,7 @@ APPLE = "apple"
 
 
 
-class Character():
+class Character(Elemento):
     def __init__(self, name, margin):
         self.id = name
         self.state = margin
@@ -44,7 +44,7 @@ class Character():
             boat.getIn(self)
             
 
-class Boat():
+class Boat(Elemento):
     def __init__(self, left_margin, right_margin):
         self.state = 0
         self.margins = [left_margin, right_margin]
@@ -77,7 +77,7 @@ class Boat():
             
             
 
-class Platform():
+class Platform(Elemento):
 
     def __init__(self, id):
         self.id = id
@@ -111,6 +111,9 @@ class Platform():
         
 class Game():
     def __init__(self):
+        self.cena = Cena(CENA)
+        self.cena.vai()
+        
         self.left_margin = Platform(LEFT_MARGIN)
         self.right_margin = Platform(RIGHT_MARGIN)
         self.boat = Boat(self.left_margin, self.right_margin)
