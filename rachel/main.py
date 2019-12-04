@@ -1,105 +1,152 @@
-# mary_shaw.basico.main.py
+# mary_shaw.rachel.main.py
 # Este jogo é um software livre com licensa GPL3 `GPL <http://is.gd/3Udt>`__.
 """
-Demonstração de elementos para jogo de transporte
+Jogo de Missionários e Canibais
 """
-__author__ = "Carlo Oliveira"
-__version__ = "19.12.03"
-from _spy.vitollino.main import Cena,Elemento,Texto, STYLE, INVENTARIO
+__author__ = "André Vieira"
+__version__ = "19.12.04"
 
-STYLE["width"]=900
-STYLE["height"]= "600px"
-IGR = "https://i.imgur.com/"
-CART, CAT, BASE, CENA = f"{IGR}m2k5sv6.png", f"{IGR}ek8oINR.png", f"{IGR}DAUyvBP.jpg", f"{IGR}nkwZCrR.jpg"
 
-M0 = "margin0"
-M1 = "margin1"
+
+LEFT_MARGIN = "left_margin"
+RIGHT_MARGIN = "right_margin"
 MONSTER = "monster"
 DWARF = "dwarf"
 APPLE = "apple"
 
 
-class Plataforma(Elemento):
-    self.id = ""
-    self.place  = ""
-    
-    #def __init__(self, imagem, cena, id):
+
+
+class Character():
+    def __init__(self, name, margin):
+        self.id = name
+        self.state = margin
+
+    def getId(self):
+        return self.id
+
+    def getState(self):
+        return self.state
+
+    def click(self, boat):
+        if (self.state == boat):
+            boat.getOut(self)
+        else:
+            boat.getIn(self)
+            
+
+class Boat():
+    def __init__(self, left_margin, right_margin):
+        self.state = 0
+        self.margins = [left_margin, right_margin]
+        self.passenger = None
+
+    def getState(self):
+        return self.margins[self.state]
+
+    def getIn(self, character):
+        if (self.margins[self.state] == character.getState() and self.passenger == None):
+            character.state.remove(character)
+            self.passenger = character
+            character.state = self
+
+    def getOut(self, character):
+        character.state = self.margins[self.state]
+        character.state.put(character)
+        self.passenger = None
+
+    def click(self):
+        self.margins[self.state].verify()
+        self.state = (self.state + 1) % 2
+
+
+    def printStatus(self):
+        if (self.passenger != None):
+            print("Posição = ", self.margins[self.state].getId(), ", Passageiro = ", self.passenger.getId())
+        else:
+            print("Posição = ", self.margins[self.state].getId(), ", Passageiro = ", self.passenger)
+            
+            
+
+class Platform():
+
     def __init__(self, id):
         self.id = id
         self.place = {
-            MONSTER:"",
-            DWARF:"",
-            APPLE:""
+            MONSTER : False,
+            DWARF : False,
+            APPLE : False
         }
-        
+
     def getId(self):
         return self.id
-        
-    def put(self, person):
-        self.place[person.getId()] = True
-        
-    def remove(self, person):
-        if (self.place[person] == true):
-            self.place[person] = false
-        
-    
 
-class Personagem(Elemento):
-    self.id = ""
-    self.state = ""
-    
-    #def __init__(self, imagem, cena, name):
-    def __init__(self, name):
-        self.id = name
+    def put(self, character):
+        self.place[character.getId()] = True
+
+    def remove(self, character):
+        if (self.place[character.getId()] == True):
+            self.place[character.getId()] = False
+
+    def verify(self):
+        print("VERIFY")
+        if (self.place[MONSTER] == True and self.place[DWARF] == True):
+            print("Fim de jogo: O monstro comeu o anão!")
+        if (self.place[DWARF] == True and self.place[APPLE] == True):
+            print("Fim de jogo: O anão comeu a maçã!")
+
+    def printStatus(self):
+        print("Margem ", self.id, ": ", self.place)
         
-    def getId(self):
-        return self.id
         
-    def click(self):
-        pass
-
-
-
-class Veiculo(Elemento):
-    self.id
-    self.state = ""
-
-    #def __init__(self, imagem, cena, margin):
-    def __init__(self, margin):
-        self.state = margin
         
-    def getId(self):
-        return self.id
-        
-    def getState(self):
-        return self.state
-        
-    def moveTo(self, margin):
-        state = margin
-
-
-
-class Basico:
+class Game():
     def __init__(self):
-        self.m0 = Plataforma(M0)
-        self.m1 = Plataforma(M1)
-        self.boat = Veiculo(self.m0)
+        self.left_margin = Platform(LEFT_MARGIN)
+        self.right_margin = Platform(RIGHT_MARGIN)
+        self.boat = Boat(self.left_margin, self.right_margin)
+
+        self.monster = Character(MONSTER, self.left_margin)
+        self.dwarf = Character(DWARF, self.left_margin)
+        self.apple = Character(APPLE, self.left_margin)
+
+        self.left_margin.put(self.monster)
+        self.left_margin.put(self.dwarf)
+        self.left_margin.put(self.apple)
+        self.gameStatus()
+
+
+        self.monster.click(self.boat)
+        self.gameStatus()
+        self.boat.click()
+        self.gameStatus()
+        self.monster.click(self.boat)
+        self.gameStatus()
+        self.boat.click()
+        self.gameStatus()
+        self.dwarf.click(self.boat)
+        self.gameStatus()
+        self.boat.click()
+        self.gameStatus()
+        self.dwarf.click(self.boat)
+        self.gameStatus()
+        self.boat.click()
+        self.gameStatus()
+        self.apple.click(self.boat)
+        self.gameStatus()
+        self.boat.click()
+        self.gameStatus()
+        self.apple.click(self.boat)
+        self.gameStatus()
+
+
+    def gameStatus(self):
+        self.left_margin.printStatus()
+        self.right_margin.printStatus()
+        self.boat.printStatus()
+        print("\n")
         
-        self.monster = Personagem(MONSTER)
-        self.dwarf = Personagem(DWARF)
-        self.apple = Personagem(APPLE)
-        
-        self.m0.put(self.monster)
-        self.m0.put(self.dwarf)
-        self.m0.put(self.apple)
-        
-        print("Teste ", "Uhuuu")
-        #self.cena = cena = Cena(CENA)
-        #self.base0 = Elemento(BASE, cena=cena)
-        #self.gato = Elemento(CAT, cena=cena)
-        #self.cart = Elemento(CART, cena=cena)
-        #cena.vai()
         
         
 if __name__ == "__main__":
-    Basico()
+    Game()
