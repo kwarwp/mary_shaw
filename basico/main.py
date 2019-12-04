@@ -14,26 +14,29 @@ CART, CAT, BASE, CENA = f"{IGR}m2k5sv6.png", f"{IGR}ek8oINR.png", f"{IGR}DAUyvBP
 
 
 class Plataforma(Elemento):
-    def __init__(self, imagem, cena):
+    def __init__(self, imagem, cena, x=0, y=400):
+        super().__init__(imagem, cena=cena, x=x, y=y)
+        #self.elt.style.transition = "all 1s"
         pass
 
 
 class Personagem(Elemento):
-    def __init__(self, imagem, cena):
-        pass
+    def __init__(self, imagem, cena, x=0, y=400):
+        super().__init__(imagem, cena=cena, x=x, y=y)
 
 
 class Veiculo(Elemento):
-    def __init__(self, imagem, cena):
-        pass
+    def __init__(self, imagem, cena, x=0, y=400):
+        super().__init__(imagem, cena=cena, x=x, y=y)
 
 
 class Basico:
     def __init__(self):
         self.cena = cena = Cena(CENA)
-        self.base0 = Elemento(BASE, cena=cena)
-        self.gato = Elemento(CAT, cena=cena)
-        self.cart = Elemento(CART, cena=cena)
+        self.base0 = Plataforma(BASE, x=100, cena=cena)
+        self.base1 = Plataforma(BASE, x=500, cena=cena)
+        self.gato = Personagem(CAT, cena=cena)
+        self.cart = Veiculo(CART, cena=cena)
         cena.vai()
         
         
