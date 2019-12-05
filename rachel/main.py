@@ -180,7 +180,7 @@ class Platform(Elemento):
             print("Fim de jogo: O anão comeu a maçã!")
 
     def printStatus(self):
-        input(f"Margem {self.id}, : Monstro={self.place[MONSTER]}, Anão={self.place[DWARF]}, Maçã={self.place[APPLE]}")
+        input(f"Margem {self.id}: Monstro={self.place[MONSTER]}, Anão={self.place[DWARF]}, Maçã={self.place[APPLE]}")
         
         
         
@@ -246,6 +246,7 @@ class Game():
         self.left_margin.put(self.apple)
         
         self.cena.vai()
+        self.boat.click()
 
 
     def gameStatus(self):
