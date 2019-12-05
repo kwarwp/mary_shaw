@@ -62,7 +62,7 @@ class Character(Elemento):
         return self.state
 
     def click(self, evento=None):
-        input(self.state.printStatus())
+        self.state.printStatus()
         
         if (self.state == self.boat):
             self.boat.getOut(self)
@@ -71,7 +71,7 @@ class Character(Elemento):
             self.boat.getIn(self)
             self.entra(self.boat)
             
-        input(self.state.printStatus())
+        self.state.printStatus()
             
 
 class Boat(Elemento):
@@ -103,9 +103,9 @@ class Boat(Elemento):
 
     def printStatus(self):
         if (self.passenger != None):
-            print("Posição = ", self.margins[self.state].getId(), ", Passageiro = ", self.passenger.getId())
+            input("Posição = ", self.margins[self.state].getId(), ", Passageiro = ", self.passenger.getId())
         else:
-            print("Posição = ", self.margins[self.state].getId(), ", Passageiro = ", self.passenger)
+            input("Posição = ", self.margins[self.state].getId(), ", Passageiro = ", self.passenger)
             
             
 
@@ -147,7 +147,7 @@ class Platform(Elemento):
             print("Fim de jogo: O anão comeu a maçã!")
 
     def printStatus(self):
-        print("Margem ", self.id, ": ", self.place)
+        input("Margem ", self.id, ": ", self.place)
         
         
         
