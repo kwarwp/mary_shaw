@@ -56,3 +56,10 @@ SyntaxError: keyword can't be an expression
     self.gato = Elemento(CAT, cena=cena, x=700, y=200,w=60,h=60, vai = self.cart)
 AttributeError: 'Basico' object has no attribute 'cart'
 '''},
+{'date': 'Thu Dec 05 2019 12:40:08.369 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 20
+  self.destino = self
+  ^
+IndentationError: unexpected indent
+'''},
