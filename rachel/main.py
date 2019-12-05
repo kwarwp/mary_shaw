@@ -36,7 +36,7 @@ IMG_BOAT_TO_LEFT = f"{IGR}uGo3Btw.png"
 BOAT_W = 286
 BOAT_H = 106
 BOAT_X = 230
-BOAT_Y = 400
+BOAT_Y = 420
 
 
 
