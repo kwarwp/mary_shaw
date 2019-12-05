@@ -44,8 +44,8 @@ IMG_BOAT_TO_RIGHT = f"{IGR}9eVfl1k.png"
 IMG_BOAT_TO_LEFT = f"{IGR}uGo3Btw.png"
 BOAT_W = 286
 BOAT_H = 106
-BOAT_X = 230
-BOAT_Y = 410
+BOAT_LEFT_SLOT_X = 230
+BOAT_LEFT_SLOT_Y = 410
 
 
 
@@ -165,10 +165,12 @@ class Game():
         self.monster_left_slot = Elemento(None, cena=self.cena, x=MONSTER_LEFT_SLOT_X, y=MONSTER_LEFT_SLOT_Y, w=MONSTER_W, h=MONSTER_H)
         self.dwarf_left_slot = Elemento(None, cena=self.cena, x=DWARF_LEFT_SLOT_X, y=DWARF_LEFT_SLOT_Y, w=DWARF_W, h=DWARF_H)
         self.apple_left_slot = Elemento(None, cena=self.cena, x=APPLE_LEFT_SLOT_X, y=APPLE_LEFT_SLOT_Y, w=APPLE_W, h=APPLE_H)
+        self.boat_left_slot = Elemento(None, cena=self.cena, x=BOAT_LEFT_SLOT_X, y=BOAT_LEFT_SLOT_Y, w=BOAT_W, h=BOAT_H)
         self.left_margin = Platform(None, self.cena, 0, 0, 300, 800, LEFT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot)
         self.monster_left_slot.entra(self.left_margin)
         self.dwarf_left_slot.entra(self.left_margin)
         self.apple_left_slot.entra(self.left_margin)
+        self.apple_boat_slot.entra(self.left_margin)
         self.left_margin.entra(self.cena)
         
         self.right_margin = Platform(None, self.cena, 600, 0, 300, 800, RIGHT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot)
@@ -176,8 +178,8 @@ class Game():
         # Repetir o que for feito para a left margin aqui
         #self.right_margin.entra(self.cena)
         
-        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_X, BOAT_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
-        self.boat.entra(self.cena)
+        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 0, 0, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
+        self.boat.entra(self.boat_left_slot)
         
         self.monster = Character(
             IMG_MONSTER, 
