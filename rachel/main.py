@@ -147,7 +147,7 @@ class Platform(Elemento):
             print("Fim de jogo: O anão comeu a maçã!")
 
     def printStatus(self):
-        input(f"Margem {self.id}, : {self.place}")
+        input(f"Margem {self.id}, : Monstro={self.place[MONSTER]}, Anão={self.place[DWARF]}, Maçã={self.place[APPLE]}")
         
         
         
