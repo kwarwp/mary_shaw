@@ -27,10 +27,11 @@ APPLE = "apple"
 
 
 class Character(Elemento):
-    def __init__(self, image, cena, x=0, y=0, w=60, h=60, name, margin):
+    def __init__(self, image, cena, x=0, y=0, w=60, h=60, name, margin, boat):
         super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
         self.id = name
         self.state = margin
+        self.boat
         self.vai = self.click
 
     def getId(self):
@@ -39,11 +40,11 @@ class Character(Elemento):
     def getState(self):
         return self.state
 
-    def click(self, boat, evento=None):
-        if (self.state == boat):
-            boat.getOut(self)
+    def click(self, evento=None):
+        if (self.state == self.boat):
+            self.boat.getOut(self)
         else:
-            boat.getIn(self)
+            self.boat.getIn(self)
         self.entra(self.state)
             
 
@@ -117,22 +118,22 @@ class Platform(Elemento):
 class Game():
     def __init__(self):
         self.cena = Cena(CENA)
-        # Colocar aqui toda a parte que o professor ensinou na aula que está em
-        # http://supygirls.pythonanywhere.com/supygirls/gamer/mary_shaw/basico
+        
         self.left_margin = Platform(IMG_BOAT_TO_LEFT, self.cena, 0, 0, 400, 800, LEFT_MARGIN)
-        self.right_margin = Platform(IMG_BOAT_TO_LEFT, self.cena, 600, 0, 400, 800, RIGHT_MARGIN)
-        
-        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 230, 350, 300, 198, self.left_margin, self.right_margin)
-        #self.boat.entra(self.cena)
-        
-        self.monster = Character(IMG_MONSTER, self.cena, 0, 20, 268, 370, MONSTER, self.left_margin)
-        self.dwarf = Character(IMG_DWARF, self.cena, 0, 310, 188, 290, DWARF, self.left_margin)
-        self.apple = Character(IMG_APPLE, self.cena, 100, 220, 208, 310, APPLE, self.left_margin)
-        
         self.left_margin.put(self.monster)
         self.left_margin.put(self.dwarf)
         self.left_margin.put(self.apple)
+        self.left_margin.entra(self.cena)
         
+        self.right_margin = Platform(IMG_BOAT_TO_LEFT, self.cena, 600, 0, 400, 800, RIGHT_MARGIN)
+        self.right_margin.entra(self.cena)
+        
+        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 230, 350, 300, 198, self.left_margin, self.right_margin)
+        self.boat.entra(self.cena)
+        
+        self.monster = Character(IMG_MONSTER, self.cena, 0, 20, 268, 370, MONSTER, self.left_margin, self.boat)
+        self.dwarf = Character(IMG_DWARF, self.cena, 0, 310, 188, 290, DWARF, self.left_margin, self.boat)
+        self.apple = Character(IMG_APPLE, self.cena, 100, 220, 208, 310, APPLE, self.left_margin, self.boat)
         self.monster.entra(self.cena)
         self.dwarf.entra(self.cena)
         self.apple.entra(self.cena)
