@@ -27,8 +27,8 @@ APPLE = "apple"
 
 
 class Character(Elemento):
-    def __init__(self, image, cena, x=0, y=0, name, margin):
-        super().__init__(image, cena=cena, x=x, y=y)
+    def __init__(self, image, cena, x=0, y=0, w=60, h=60, name, margin):
+        super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
         self.id = name
         self.state = margin
 
@@ -122,7 +122,7 @@ class Game():
         self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 100, 0, self.left_margin, self.right_margin)
         self.boat.entra(self.cena)
         
-        self.monster = Character(IMG_MONSTER, self.cena, 0, 0, MONSTER, self.left_margin)
+        self.monster = Character(IMG_MONSTER, self.cena, 0, 0, 248, 350, MONSTER, self.left_margin)
         self.dwarf = Character(IMG_DWARF, self.cena, 0, 0, DWARF, self.left_margin)
         self.apple = Character(IMG_APPLE, self.cena, 0, 0, APPLE, self.left_margin)
         
