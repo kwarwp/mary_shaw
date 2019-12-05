@@ -170,7 +170,7 @@ class Game():
         self.monster_left_slot.entra(self.left_margin)
         self.dwarf_left_slot.entra(self.left_margin)
         self.apple_left_slot.entra(self.left_margin)
-        self.apple_boat_slot.entra(self.left_margin)
+        self.boat_left_slot.entra(self.left_margin)
         self.left_margin.entra(self.cena)
         
         self.right_margin = Platform(None, self.cena, 600, 0, 300, 800, RIGHT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot)
