@@ -123,12 +123,12 @@ class Boat(Elemento):
 
     def click(self, evento=None):
         if(DEBUG):
-            printStatus()
+            self.printStatus()
         self.margins[self.state].verify()
         self.state = (self.state + 1) % 2
         self.entra(self.margins[self.state].getBoatSlot())
         if(DEBUG):
-            printStatus()
+            self.printStatus()
 
     def printStatus(self):
         if (self.passenger != None):
