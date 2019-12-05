@@ -45,8 +45,6 @@ class Character(Elemento):
             self.boat.getOut(self)
         else:
             self.boat.getIn(self)
-        self.x = 0
-        self.y = 0
         self.entra(self.state)
             
 
@@ -56,6 +54,7 @@ class Boat(Elemento):
         self.state = 0
         self.margins = [left_margin, right_margin]
         self.passenger = None
+        self.vai = self.click
 
     def getState(self):
         return self.margins[self.state]
@@ -74,6 +73,7 @@ class Boat(Elemento):
     def click(self):
         self.margins[self.state].verify()
         self.state = (self.state + 1) % 2
+        self.entra(self.margins[self.state])
 
 
     def printStatus(self):
