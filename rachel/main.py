@@ -121,14 +121,14 @@ class Game():
     def __init__(self):
         self.cena = Cena(CENA)
         
-        self.left_margin = Platform(None, self.cena, 0, 0, 800, 800, LEFT_MARGIN)
+        self.left_margin = Platform(None, self.cena, 0, 0, 300, 800, LEFT_MARGIN)
         self.left_margin.entra(self.cena)
         
-        self.right_margin = Platform(None, self.cena, 600, 0, 800, 800, RIGHT_MARGIN)
+        self.right_margin = Platform(None, self.cena, 600, 0, 300, 800, RIGHT_MARGIN)
         self.right_margin.entra(self.cena)
         
         self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 230, 350, 300, 198, self.left_margin, self.right_margin)
-        self.boat.entra(self.left_margin)
+        self.boat.entra(self.cena)
         
         self.monster = Character(IMG_MONSTER, self.cena, 0, 20, 268, 370, MONSTER, self.left_margin, self.boat)
         self.dwarf = Character(IMG_DWARF, self.cena, 0, 310, 188, 290, DWARF, self.left_margin, self.boat)
