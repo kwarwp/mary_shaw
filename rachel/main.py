@@ -11,18 +11,30 @@ from _spy.vitollino.main import Cena, Elemento, Texto, STYLE, INVENTARIO
 STYLE["width"] = 900
 STYLE["height"] = "600px"
 IGR = "https://i.imgur.com/"
-IMG_MONSTER =  f"{IGR}eQOoUiz.png"
-IMG_DWARF =  f"{IGR}sLfY1So.png"
-IMG_APPLE =  f"{IGR}XKaUgKW.png"
-IMG_BOAT_TO_RIGHT = f"{IGR}9eVfl1k.png"
-IMG_BOAT_TO_LEFT = f"{IGR}uGo3Btw.png"
-CENA = f"{IGR}IugWsGp.jpg"
 
+CENA = f"{IGR}IugWsGp.jpg"
 LEFT_MARGIN = "left_margin"
 RIGHT_MARGIN = "right_margin"
+
+IMG_MONSTER =  f"{IGR}eQOoUiz.png"
 MONSTER = "monster"
+MONSTER_W = 240
+MONSTER_H = 227
+
+IMG_DWARF =  f"{IGR}sLfY1So.png"
 DWARF = "dwarf"
+DWARF_W = 143
+DWARF_H = 271
+
+IMG_APPLE =  f"{IGR}XKaUgKW.png"
 APPLE = "apple"
+APPLE_W = 141
+APPLE_H = 143
+
+IMG_BOAT_TO_RIGHT = f"{IGR}9eVfl1k.png"
+IMG_BOAT_TO_LEFT = f"{IGR}uGo3Btw.png"
+BOAT_W = 346
+BOAT_H = 136
 
 
 
@@ -127,12 +139,12 @@ class Game():
         self.right_margin = Platform(None, self.cena, 600, 0, 300, 800, RIGHT_MARGIN)
         self.right_margin.entra(self.cena)
         
-        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 230, 350, 316, 106, self.left_margin, self.right_margin)
+        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 230, 350, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
         self.boat.entra(self.cena)
         
-        self.monster = Character(IMG_MONSTER, self.cena, 0, 20, 290, 277, MONSTER, self.left_margin, self.boat)
-        self.dwarf = Character(IMG_DWARF, self.cena, 0, 310, 113, 191, DWARF, self.left_margin, self.boat)
-        self.apple = Character(IMG_APPLE, self.cena, 100, 220, 121, 123, APPLE, self.left_margin, self.boat)
+        self.monster = Character(IMG_MONSTER, self.cena, 0, 20, MONSTER_W, MONSTER_H, MONSTER, self.left_margin, self.boat)
+        self.dwarf = Character(IMG_DWARF, self.cena, 0, 310, DWARF_W, DWARF_H, DWARF, self.left_margin, self.boat)
+        self.apple = Character(IMG_APPLE, self.cena, 100, 220, APPLE_W, APPLE_H, APPLE, self.left_margin, self.boat)
         
         self.left_margin.put(self.monster)
         self.left_margin.put(self.dwarf)
@@ -142,43 +154,6 @@ class Game():
         self.apple.entra(self.left_margin)
         
         self.cena.vai()
-    
-        #self.left_margin = Platform(LEFT_MARGIN)
-        #self.right_margin = Platform(RIGHT_MARGIN)
-        #self.boat = Boat(self.left_margin, self.right_margin)
-
-        #self.monster = Character(MONSTER, self.left_margin)
-        #self.dwarf = Character(DWARF, self.left_margin)
-        #self.apple = Character(APPLE, self.left_margin)
-
-        #self.left_margin.put(self.monster)
-        #self.left_margin.put(self.dwarf)
-        #self.left_margin.put(self.apple)
-        #self.gameStatus()
-
-
-        #self.monster.click(self.boat)
-        #self.gameStatus()
-        #self.boat.click()
-        #self.gameStatus()
-        #self.monster.click(self.boat)
-        #self.gameStatus()
-        #self.boat.click()
-        #self.gameStatus()
-        #self.dwarf.click(self.boat)
-        #self.gameStatus()
-        #self.boat.click()
-        #self.gameStatus()
-        #self.dwarf.click(self.boat)
-        #self.gameStatus()
-        #self.boat.click()
-        #self.gameStatus()
-        #self.apple.click(self.boat)
-        #self.gameStatus()
-        #self.boat.click()
-        #self.gameStatus()
-        #self.apple.click(self.boat)
-        #self.gameStatus()
 
 
     def gameStatus(self):
