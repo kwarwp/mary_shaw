@@ -1616,3 +1616,21 @@ TypeError: __init__ missing 3 positional arguments: 'monster_slot' and 'dwarf_sl
     self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_X, BOAT_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
 AttributeError: 'Game' object has no attribute 'right_margin'
 '''},
+{'date': 'Thu Dec 05 2019 10:29:20.690 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 228
+    Game()
+  module <module> line 173
+    self.apple_boat_slot.entra(self.left_margin)
+AttributeError: 'Game' object has no attribute 'apple_boat_slot'
+'''},
