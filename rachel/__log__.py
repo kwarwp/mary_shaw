@@ -1526,3 +1526,10 @@ NameError: name 'slot' is not defined
     self.dwarf = Character(IMG_DWARF, self.cena, DWARF_LEFT_SLOT_X, DWARF_LEFT_SLOT_Y, DWARF_W, DWARF_H, DWARF, self.left_margin, self.boat)
 TypeError: __init__ missing 1 positional argument: 'boat'
 '''},
+{'date': 'Thu Dec 05 2019 09:30:04.34 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 168
+  self.dwarf = Character(
+                                                                                                                        ^
+SyntaxError: invalid syntax
+'''},
