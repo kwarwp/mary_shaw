@@ -119,7 +119,7 @@ class Game():
         self.left_margin = Platform(LEFT_MARGIN)
         self.right_margin = Platform(RIGHT_MARGIN)
         
-        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 200, 300, 320, 218, self.left_margin, self.right_margin)
+        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 230, 300, 300, 198, self.left_margin, self.right_margin)
         self.boat.entra(self.cena)
         
         self.monster = Character(IMG_MONSTER, self.cena, 0, 20, 268, 370, MONSTER, self.left_margin)
