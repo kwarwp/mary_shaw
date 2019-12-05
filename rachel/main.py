@@ -18,8 +18,8 @@ RIGHT_MARGIN = "right_margin"
 
 IMG_MONSTER =  f"{IGR}eQOoUiz.png"
 MONSTER = "monster"
-MONSTER_W = 240
-MONSTER_H = 227
+MONSTER_W = 260
+MONSTER_H = 247
 
 IMG_DWARF =  f"{IGR}sLfY1So.png"
 DWARF = "dwarf"
