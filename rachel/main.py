@@ -124,7 +124,7 @@ class Game():
         
         self.monster = Character(IMG_MONSTER, self.cena, 0, 0, 248, 350, MONSTER, self.left_margin)
         self.dwarf = Character(IMG_DWARF, self.cena, 0, 200, 188, 290, DWARF, self.left_margin)
-        self.apple = Character(IMG_APPLE, self.cena, 0, 300, 248, 350, APPLE, self.left_margin)
+        self.apple = Character(IMG_APPLE, self.cena, 0, 300, 208, 310, APPLE, self.left_margin)
         
         self.left_margin.put(self.monster)
         self.left_margin.put(self.dwarf)
