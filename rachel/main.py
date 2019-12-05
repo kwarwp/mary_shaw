@@ -124,7 +124,7 @@ class Boat(Elemento):
     def click(self):
         self.margins[self.state].verify()
         self.state = (self.state + 1) % 2
-        self.entra(self.margins[self.state])
+        self.entra(self.margins[self.state].getBoatSlot())
 
     def printStatus(self):
         if (self.passenger != None):
@@ -136,7 +136,7 @@ class Boat(Elemento):
 
 class Platform(Elemento):
 
-    def __init__(self, image, cena, x=0, y=0, w=400, h=800, id, monster_slot, dwarf_slot, apple_slot):
+    def __init__(self, image, cena, x=0, y=0, w=400, h=800, id, monster_slot, dwarf_slot, apple_slot, boat_slot):
         super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
         self.id = id
         self.place = {
@@ -147,9 +147,13 @@ class Platform(Elemento):
         self.monster_slot = monster_slot
         self.dwarf_slot = dwarf_slot
         self.apple_slot = apple_slot
+        self.boat_slot = boat_slot
 
     def getId(self):
         return self.id
+        
+    def getBoatSlot(self):
+        return self.boat_slot
 
     def put(self, character):
         self.place[character.getId()] = True
@@ -184,7 +188,7 @@ class Game():
         self.dwarf_left_slot = Elemento(None, cena=self.cena, x=DWARF_LEFT_SLOT_X, y=DWARF_LEFT_SLOT_Y, w=DWARF_W, h=DWARF_H)
         self.apple_left_slot = Elemento(None, cena=self.cena, x=APPLE_LEFT_SLOT_X, y=APPLE_LEFT_SLOT_Y, w=APPLE_W, h=APPLE_H)
         self.boat_left_slot = Elemento(None, cena=self.cena, x=BOAT_LEFT_SLOT_X, y=BOAT_LEFT_SLOT_Y, w=BOAT_W, h=BOAT_H)
-        self.left_margin = Platform(None, self.cena, LEFT_MARGIN_X, LEFT_MARGIN_Y, LEFT_MARGIN_W, LEFT_MARGIN_H, LEFT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot)
+        self.left_margin = Platform(None, self.cena, LEFT_MARGIN_X, LEFT_MARGIN_Y, LEFT_MARGIN_W, LEFT_MARGIN_H, LEFT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot, self.boat_left_slot)
         self.monster_left_slot.entra(self.left_margin)
         self.dwarf_left_slot.entra(self.left_margin)
         self.apple_left_slot.entra(self.left_margin)
@@ -195,7 +199,7 @@ class Game():
         self.dwarf_right_slot = Elemento(None, cena=self.cena, x=DWARF_RIGHT_SLOT_X, y=DWARF_RIGHT_SLOT_Y, w=DWARF_W, h=DWARF_H)
         self.apple_right_slot = Elemento(None, cena=self.cena, x=APPLE_RIGHT_SLOT_X, y=APPLE_RIGHT_SLOT_Y, w=APPLE_W, h=APPLE_H)
         self.boat_right_slot = Elemento(None, cena=self.cena, x=BOAT_RIGHT_SLOT_X, y=BOAT_RIGHT_SLOT_Y, w=BOAT_W, h=BOAT_H)
-        self.right_margin = Platform(None, self.cena, RIGHT_MARGIN_X, RIGHT_MARGIN_Y, RIGHT_MARGIN_W, RIGHT_MARGIN_H, RIGHT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot)
+        self.right_margin = Platform(None, self.cena, RIGHT_MARGIN_X, RIGHT_MARGIN_Y, RIGHT_MARGIN_W, RIGHT_MARGIN_H, RIGHT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot, self.boat_right_slot)
         self.monster_right_slot.entra(self.right_margin)
         self.dwarf_right_slot.entra(self.right_margin)
         self.apple_right_slot.entra(self.right_margin)
