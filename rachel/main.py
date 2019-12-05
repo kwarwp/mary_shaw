@@ -168,7 +168,7 @@ class Game():
         self.dwarf = Character(
             IMG_DWARF, 
             self.cena, 
-            self.dwarf_left_slot
+            self.dwarf_left_slot,
             DWARF_LEFT_SLOT_X, DWARF_LEFT_SLOT_Y, 
             DWARF_W, DWARF_H, 
             DWARF, 
