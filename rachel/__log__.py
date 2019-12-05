@@ -1652,3 +1652,23 @@ AttributeError: 'Game' object has no attribute 'apple_boat_slot'
     self.left_margin = Platform(None, self.cena, LEFT_MARGIN_X, LEFT_MARGIN_y, LEFT_MARGIN_w, LEFT_MARGIN_H, LEFT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot)
 NameError: name 'LEFT_MARGIN_y' is not defined
 '''},
+{'date': 'Thu Dec 05 2019 11:07:06.491 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 261
+    Game()
+  module <module> line 249
+    self.boat.click()
+  module <module> line 126
+    printStatus()
+NameError: name 'printStatus' is not defined
+'''},
