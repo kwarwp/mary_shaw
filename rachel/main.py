@@ -167,6 +167,7 @@ class Game():
         self.apple_left_slot.entra(self.left_margin)
         self.left_margin.entra(self.cena)
         
+        self.right_margin = Platform(None, self.cena, 600, 0, 300, 800, RIGHT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot)
         #self.right_margin = Platform(None, self.cena, 600, 0, 300, 800, RIGHT_MARGIN, self.monster_right_slot, self.dwarf_right_slot, self.apple_right_slot)
         # Repetir o que for feito para a left margin aqui
         #self.right_margin.entra(self.cena)
