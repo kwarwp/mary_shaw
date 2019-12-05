@@ -154,6 +154,8 @@ class Game():
         self.boat.entra(self.cena)
         
         self.monster_left_slot = Platform(None, self.cena, MONSTER_LEFT_SLOT_X, MONSTER_LEFT_SLOT_Y, MONSTER_W, MONSTER_H,"left")
+        self.dwarf_left_slot = Platform(None, self.cena,DWARF_LEFT_SLOT_X, DWARF_LEFT_SLOT_Y, DWARF_W, DWARF_H,"left")
+        self.apple_left_slot = Platform(None, self.cena, APPLE_LEFT_SLOT_X, APPLE_LEFT_SLOT_Y, APPLE_W, APPLE_H,"left")
         self.monster = Character(
             IMG_MONSTER, 
             self.cena, 
@@ -163,8 +165,24 @@ class Game():
             MONSTER, 
             self.left_margin, 
             self.boat)
-        self.dwarf = Character(IMG_DWARF, self.cena, DWARF_LEFT_SLOT_X, DWARF_LEFT_SLOT_Y, DWARF_W, DWARF_H, DWARF, self.left_margin, self.boat)
-        self.apple = Character(IMG_APPLE, self.cena, APPLE_LEFT_SLOT_X, APPLE_LEFT_SLOT_Y, APPLE_W, APPLE_H, APPLE, self.left_margin, self.boat)
+        self.dwarf = Character(
+            IMG_DWARF, 
+            self.cena, 
+            self.dwarf_left_slot
+            DWARF_LEFT_SLOT_X, DWARF_LEFT_SLOT_Y, 
+            DWARF_W, DWARF_H, 
+            DWARF, 
+            self.left_margin, 
+            self.boat)
+        self.apple = Character(
+            IMG_APPLE, 
+            self.cena, 
+            self.apple_left_slot,
+            APPLE_LEFT_SLOT_X, APPLE_LEFT_SLOT_Y, 
+            APPLE_W, APPLE_H, 
+            APPLE, 
+            self.left_margin, 
+            self.boat)
         
         self.left_margin.put(self.monster)
         self.left_margin.put(self.dwarf)
