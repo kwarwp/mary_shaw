@@ -20,7 +20,7 @@ CENA = f"{IGR}IugWsGp.jpg"
 LEFT_MARGIN = "left_margin"
 LEFT_MARGIN_X = 0
 LEFT_MARGIN_Y = 0
-LEFT_MARGIN_W = 110
+LEFT_MARGIN_W = 510
 LEFT_MARGIN_H = 800
 
 RIGHT_MARGIN = "right_margin"
