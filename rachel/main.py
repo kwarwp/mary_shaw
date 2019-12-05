@@ -28,8 +28,8 @@ DWARF_H = 271
 
 IMG_APPLE =  f"{IGR}XKaUgKW.png"
 APPLE = "apple"
-APPLE_W = 101
-APPLE_H = 103
+APPLE_W = 111
+APPLE_H = 113
 
 IMG_BOAT_TO_RIGHT = f"{IGR}9eVfl1k.png"
 IMG_BOAT_TO_LEFT = f"{IGR}uGo3Btw.png"
