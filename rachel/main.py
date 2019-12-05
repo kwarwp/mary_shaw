@@ -123,7 +123,7 @@ class Game():
         self.right_margin = Platform(IMG_BOAT_TO_LEFT, self.cena, 600, 0, 400, 800, RIGHT_MARGIN)
         
         self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 230, 350, 300, 198, self.left_margin, self.right_margin)
-        self.boat.entra(self.cena)
+        #self.boat.entra(self.cena)
         
         self.monster = Character(IMG_MONSTER, self.cena, 0, 20, 268, 370, MONSTER, self.left_margin)
         self.dwarf = Character(IMG_DWARF, self.cena, 0, 310, 188, 290, DWARF, self.left_margin)
