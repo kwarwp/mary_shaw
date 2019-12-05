@@ -1598,3 +1598,21 @@ TypeError: 'int' object is not iterable
     self.right_margin = Platform(None, self.cena, 600, 0, 300, 800, RIGHT_MARGIN)
 TypeError: __init__ missing 3 positional arguments: 'monster_slot' and 'dwarf_slot' and 'apple_slot'
 '''},
+{'date': 'Thu Dec 05 2019 09:45:48.630 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 221
+    Game()
+  module <module> line 174
+    self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_X, BOAT_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
+AttributeError: 'Game' object has no attribute 'right_margin'
+'''},
