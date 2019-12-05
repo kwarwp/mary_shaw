@@ -45,6 +45,7 @@ class Character(Elemento):
             self.boat.getOut(self)
         else:
             self.boat.getIn(self)
+        character.entra(self)
             
 
 class Boat(Elemento):
@@ -62,7 +63,6 @@ class Boat(Elemento):
             character.state.remove(character)
             self.passenger = character
             character.state = self
-            character.entra(self)
 
     def getOut(self, character):
         character.state = self.margins[self.state]
