@@ -62,6 +62,7 @@ class Character(Elemento):
         return self.state
 
     def click(self, evento=None):
+        temp_state = self.state
         self.state.printStatus()
         
         if (self.state == self.boat):
@@ -71,6 +72,7 @@ class Character(Elemento):
             self.boat.getIn(self)
             self.entra(self.boat)
             
+        temp_state.printStatus()
         self.state.printStatus()
             
 
