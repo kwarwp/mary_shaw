@@ -131,11 +131,11 @@ class Platform(Elemento):
 
     def put(self, character):
         self.place[character.getId()] = True
-        if (character.getId() == MONSTER)
+        if (character.getId() == MONSTER):
             character.entra(self.monster_slot)
-        if (character.getId() == DWARF)
+        if (character.getId() == DWARF):
             character.entra(self.dwarf_slot)
-        if (character.getId() == APPLE)
+        if (character.getId() == APPLE):
             character.entra(self.apple_slot)
 
     def remove(self, character):
