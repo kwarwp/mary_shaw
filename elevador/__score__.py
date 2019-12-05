@@ -51,3 +51,4 @@
   {'doc_id': '2260b519', 'carta': 'doggie', 'casa': 'doggie', 'move': 'entra', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1575330701541},
   {'doc_id': '2260b519', 'carta': 'doggie', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1575330703510},
 {'doc_id': '2260b519', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1575330968442},
+{'doc_id': 'b07c9cf8', 'carta': 'nada', 'casa': 'elevador', 'move': 'desce', 'ponto': 0, 'valor': 0, '_level': 0, 'tempo': 1575560656534},
