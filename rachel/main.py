@@ -174,9 +174,9 @@ class Platform(Elemento):
             self.place[character.getId()] = False
 
     def verify(self):
-        if (self.place[MONSTER] == True and self.place[DWARF] == True):
+        if (self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False):
             input("Fim de jogo: O monstro comeu o anão!")
-        if (self.place[DWARF] == True and self.place[APPLE] == True):
+        if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False):
             input("Fim de jogo: O anão comeu a maçã!")
 
     def printStatus(self):
