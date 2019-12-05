@@ -28,7 +28,7 @@ APPLE = "apple"
 
 class Character(Elemento):
     def __init__(self, image, cena, x=0, y=0, name, margin):
-        super().__init__(image, cena=cena, x=x, y=y, w=60, h=60)
+        super().__init__(image, cena=cena, x=x, y=y)
         self.id = name
         self.state = margin
 
