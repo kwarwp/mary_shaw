@@ -39,7 +39,7 @@ class Character(Elemento):
     def getState(self):
         return self.state
 
-    def click(self, boat):
+    def click(self, boat, evento=None):
         if (self.state == boat):
             boat.getOut(self)
         else:
