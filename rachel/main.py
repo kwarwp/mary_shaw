@@ -122,9 +122,13 @@ class Boat(Elemento):
         self.passenger = None
 
     def click(self):
+        if(DEBUG):
+            printStatus()
         self.margins[self.state].verify()
         self.state = (self.state + 1) % 2
         self.entra(self.margins[self.state].getBoatSlot())
+        if(DEBUG):
+            printStatus()
 
     def printStatus(self):
         if (self.passenger != None):
