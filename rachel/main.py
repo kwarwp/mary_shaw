@@ -159,8 +159,8 @@ class Game():
         self.cena = Cena(CENA)
         
         self.monster_left_slot = Elemento(None, cena=self.cena, x=MONSTER_LEFT_SLOT_X, y=MONSTER_LEFT_SLOT_Y, w=MONSTER_W, h=MONSTER_H)
-        self.dwarf_left_slot = Elemento(None, self.cena,DWARF_LEFT_SLOT_X, DWARF_LEFT_SLOT_Y, DWARF_W, DWARF_H)
-        self.apple_left_slot = Elemento(None, self.cena, APPLE_LEFT_SLOT_X, APPLE_LEFT_SLOT_Y, APPLE_W, APPLE_H)
+        self.dwarf_left_slot = Elemento(None, cena=self.cena, x=DWARF_LEFT_SLOT_X, y=DWARF_LEFT_SLOT_Y, w=DWARF_W, h=DWARF_H)
+        self.apple_left_slot = Elemento(None, cena=self.cena, x=APPLE_LEFT_SLOT_X, y=APPLE_LEFT_SLOT_Y, w=APPLE_W, h=APPLE_H)
         self.left_margin = Platform(None, self.cena, 0, 0, 300, 800, LEFT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot)
         self.monster_left_slot.entra(self.left_margin)
         self.dwarf_left_slot.entra(self.left_margin)
