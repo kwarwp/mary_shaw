@@ -8,6 +8,8 @@ __version__ = "19.12.04"
 
 from _spy.vitollino.main import Cena, Elemento, Texto, STYLE, INVENTARIO
 
+DEBUG = True
+
 STYLE["width"] = 900
 STYLE["height"] = "600px"
 IGR = "https://i.imgur.com/"
@@ -62,8 +64,9 @@ class Character(Elemento):
         return self.state
 
     def click(self, evento=None):
-        temp_state = self.state
-        self.state.printStatus()
+        if(DEBUG):
+            temp_state = self.state
+            self.state.printStatus()
         
         if (self.state == self.boat):
             self.boat.getOut(self)
@@ -71,8 +74,9 @@ class Character(Elemento):
         else:
             self.boat.getIn(self)            
             
-        temp_state.printStatus()
-        self.state.printStatus()
+        if(DEBUG):
+            temp_state.printStatus()
+            self.state.printStatus()
             
 
 class Boat(Elemento):
