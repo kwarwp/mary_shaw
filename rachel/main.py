@@ -81,9 +81,10 @@ class Boat(Elemento):
             
             
 
-class Platform():
+class Platform(Elemento):
 
-    def __init__(self, id):
+    def __init__(self, image, cena, x=0, y=0, w=400, h=800, id):
+        super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
         self.id = id
         self.place = {
             MONSTER : False,
@@ -118,8 +119,8 @@ class Game():
         self.cena = Cena(CENA)
         # Colocar aqui toda a parte que o professor ensinou na aula que está em
         # http://supygirls.pythonanywhere.com/supygirls/gamer/mary_shaw/basico
-        self.left_margin = Platform(LEFT_MARGIN)
-        self.right_margin = Platform(RIGHT_MARGIN)
+        self.left_margin = Platform(IMG_BOAT_TO_LEFT, self.cena, 0, 0, 400, 800, LEFT_MARGIN)
+        self.right_margin = Platform(IMG_BOAT_TO_LEFT, self.cena, 600, 0, 400, 800, RIGHT_MARGIN)
         
         self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 230, 350, 300, 198, self.left_margin, self.right_margin)
         self.boat.entra(self.cena)
