@@ -211,7 +211,7 @@ class Game():
         self.right_margin.entra(self.cena)
         
         self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 0, 0, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
-        self.boat.entra(self.boat_left_slot)
+        self.boat.entra(self.boat_right_slot)
         
         self.monster = Character(
             IMG_MONSTER, 
@@ -241,9 +241,9 @@ class Game():
             self.left_margin, 
             self.boat)
         
-        self.left_margin.put(self.monster)
-        self.left_margin.put(self.dwarf)
-        self.left_margin.put(self.apple)
+        self.right_margin.put(self.monster)
+        self.right_margin.put(self.dwarf)
+        self.right_margin.put(self.apple)
         
         self.cena.vai()
 
