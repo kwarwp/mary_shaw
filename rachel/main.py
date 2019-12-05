@@ -121,7 +121,7 @@ class Boat(Elemento):
         character.state.put(character)
         self.passenger = None
 
-    def click(self):
+    def click(self, evento=None):
         if(DEBUG):
             printStatus()
         self.margins[self.state].verify()
