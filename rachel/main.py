@@ -35,6 +35,8 @@ IMG_BOAT_TO_RIGHT = f"{IGR}9eVfl1k.png"
 IMG_BOAT_TO_LEFT = f"{IGR}uGo3Btw.png"
 BOAT_W = 286
 BOAT_H = 106
+BOAT_X = 230
+BOAT_Y = 400
 
 
 
@@ -139,7 +141,7 @@ class Game():
         self.right_margin = Platform(None, self.cena, 600, 0, 300, 800, RIGHT_MARGIN)
         self.right_margin.entra(self.cena)
         
-        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 230, 350, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
+        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_X, BOAT_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
         self.boat.entra(self.cena)
         
         self.monster = Character(IMG_MONSTER, self.cena, 0, 20, MONSTER_W, MONSTER_H, MONSTER, self.left_margin, self.boat)
