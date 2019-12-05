@@ -89,7 +89,6 @@ class Character(Elemento):
         
         if (self.state == self.boat):
             self.boat.getOut(self)
-            self.entra(self.left_slot)
         else:
             self.boat.getIn(self)            
             
