@@ -11,11 +11,11 @@ from _spy.vitollino.main import Cena, Elemento, Texto, STYLE, INVENTARIO
 STYLE["width"] = 900
 STYLE["height"] = "600px"
 IGR = "https://i.imgur.com/"
-IMG_MONSTER =  f"{IGR}DWFOnKO.png"
-IMG_DWARF =  f"{IGR}ZJcqxr8.png"
-IMG_APPLE =  f"{IGR}a9qsM6a.png"
-IMG_BOAT_TO_RIGHT = f"{IGR}vH35dWf.png"
-IMG_BOAT_TO_LEFT = f"{IGR}QsryhIQ.png"
+IMG_MONSTER =  f"{IGR}eQOoUiz.png"
+IMG_DWARF =  f"{IGR}sLfY1So.png"
+IMG_APPLE =  f"{IGR}XKaUgKW.png"
+IMG_BOAT_TO_RIGHT = f"{IGR}9eVfl1k.png"
+IMG_BOAT_TO_LEFT = f"{IGR}uGo3Btw.png"
 CENA = f"{IGR}IugWsGp.jpg"
 
 LEFT_MARGIN = "left_margin"
