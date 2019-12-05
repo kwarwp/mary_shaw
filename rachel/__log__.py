@@ -1331,3 +1331,10 @@ NameError: name 'true' is not defined
     self.boat = Boat(IMG_BOAT_TO_RIGHT, self.left_margin, self.right_margin)
 TypeError: __init__ missing 2 positional arguments: 'left_margin' and 'right_margin'
 '''},
+{'date': 'Wed Dec 04 2019 21:19:25.342 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 122
+  self.boat = Boat(IMG_BOAT_TO_RIGHT, x=100, y=0, self.left_margin, self.right_margin)
+                                                                  ^
+SyntaxError: non-keyword arg after keyword arg
+'''},
