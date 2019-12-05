@@ -23,8 +23,8 @@ MONSTER_H = 227
 
 IMG_DWARF =  f"{IGR}sLfY1So.png"
 DWARF = "dwarf"
-DWARF_W = 123
-DWARF_H = 251
+DWARF_W = 103
+DWARF_H = 231
 
 IMG_APPLE =  f"{IGR}XKaUgKW.png"
 APPLE = "apple"
