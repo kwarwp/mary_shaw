@@ -114,6 +114,7 @@ class Platform(Elemento):
 
     def put(self, character):
         self.place[character.getId()] = True
+        character.entra(self)
 
     def remove(self, character):
         if (self.place[character.getId()] == True):
@@ -151,9 +152,6 @@ class Game():
         self.left_margin.put(self.monster)
         self.left_margin.put(self.dwarf)
         self.left_margin.put(self.apple)
-        self.monster.entra(self.left_margin)
-        self.dwarf.entra(self.left_margin)
-        self.apple.entra(self.left_margin)
         
         self.cena.vai()
 
