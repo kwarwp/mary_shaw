@@ -123,9 +123,11 @@ class Boat(Elemento):
     def click(self, evento=None):
         if(DEBUG):
             self.printStatus()
+            
         self.margins[self.state].verify()
         self.state = (self.state + 1) % 2
         self.entra(self.margins[self.state].getBoatSlot())
+        
         if(DEBUG):
             self.printStatus()
 
@@ -172,11 +174,10 @@ class Platform(Elemento):
             self.place[character.getId()] = False
 
     def verify(self):
-        print("VERIFY")
         if (self.place[MONSTER] == True and self.place[DWARF] == True):
-            print("Fim de jogo: O monstro comeu o anão!")
+            input("Fim de jogo: O monstro comeu o anão!")
         if (self.place[DWARF] == True and self.place[APPLE] == True):
-            print("Fim de jogo: O anão comeu a maçã!")
+            input("Fim de jogo: O anão comeu a maçã!")
 
     def printStatus(self):
         input(f"Margem {self.id}: Monstro={self.place[MONSTER]}, Anão={self.place[DWARF]}, Maçã={self.place[APPLE]}")
