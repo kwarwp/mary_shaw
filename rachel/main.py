@@ -47,12 +47,13 @@ BOAT_Y = 410
 
 
 class Character(Elemento):
-    def __init__(self, image, cena, x=0, y=0, w=60, h=60, name, margin, boat):
+    def __init__(self, image, cena, left_slot, x=0, y=0, w=60, h=60, name, margin, boat):
         super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
         self.id = name
         self.state = margin
         self.boat = boat
         self.vai = self.click
+        self.left_slot = slot
 
     def getId(self):
         return self.id
@@ -63,9 +64,10 @@ class Character(Elemento):
     def click(self, evento=None):
         if (self.state == self.boat):
             self.boat.getOut(self)
+            self.entra(self.left_slot)
         else:
             self.boat.getIn(self)
-        self.entra(self.state)
+            self.entra(self.boat)
             
 
 class Boat(Elemento):
@@ -151,7 +153,16 @@ class Game():
         self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_X, BOAT_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
         self.boat.entra(self.cena)
         
-        self.monster = Character(IMG_MONSTER, self.cena, MONSTER_LEFT_SLOT_X, MONSTER_LEFT_SLOT_Y, MONSTER_W, MONSTER_H, MONSTER, self.left_margin, self.boat)
+        self.monster_left_slot = Elemento(None, self.cena, MONSTER_LEFT_SLOT_X, MONSTER_LEFT_SLOT_Y, MONSTER_W, MONSTER_H,)
+        self.monster = Character(
+            IMG_MONSTER, 
+            self.cena, 
+            self.monster_left_slot, 
+            0, 0, 
+            MONSTER_W, MONSTER_H, 
+            MONSTER, 
+            self.left_margin, 
+            self.boat)
         self.dwarf = Character(IMG_DWARF, self.cena, DWARF_LEFT_SLOT_X, DWARF_LEFT_SLOT_Y, DWARF_W, DWARF_H, DWARF, self.left_margin, self.boat)
         self.apple = Character(IMG_APPLE, self.cena, APPLE_LEFT_SLOT_X, APPLE_LEFT_SLOT_Y, APPLE_W, APPLE_H, APPLE, self.left_margin, self.boat)
         
