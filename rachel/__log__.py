@@ -1488,3 +1488,23 @@ TypeError: 'int' object is not iterable
     self.style.update(**style)
 TypeError: 'int' object is not iterable
 '''},
+{'date': 'Thu Dec 05 2019 09:27:01.857 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 185
+    Game()
+  module <module> line 157
+    self.monster = Character(
+  module <module> line 56
+    self.left_slot = slot
+NameError: name 'slot' is not defined
+'''},
