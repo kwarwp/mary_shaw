@@ -151,9 +151,9 @@ class Game():
         self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_X, BOAT_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
         self.boat.entra(self.cena)
         
-        self.monster = Character(IMG_MONSTER, self.cena, 0, 20, MONSTER_W, MONSTER_H, MONSTER, self.left_margin, self.boat)
-        self.dwarf = Character(IMG_DWARF, self.cena, 0, 310, DWARF_W, DWARF_H, DWARF, self.left_margin, self.boat)
-        self.apple = Character(IMG_APPLE, self.cena, 100, 220, APPLE_W, APPLE_H, APPLE, self.left_margin, self.boat)
+        self.monster = Character(IMG_MONSTER, self.cena, MONSTER_LEFT_SLOT_X, MONSTER_LEFT_SLOT_Y, MONSTER_W, MONSTER_H, MONSTER, self.left_margin, self.boat)
+        self.dwarf = Character(IMG_DWARF, self.cena, DWARF_LEFT_SLOT_X, DWARF_LEFT_SLOT_Y, DWARF_W, DWARF_H, DWARF, self.left_margin, self.boat)
+        self.apple = Character(IMG_APPLE, self.cena, APPLE_LEFT_SLOT_X, APPLE_LEFT_SLOT_Y, APPLE_W, APPLE_H, APPLE, self.left_margin, self.boat)
         
         self.left_margin.put(self.monster)
         self.left_margin.put(self.dwarf)
