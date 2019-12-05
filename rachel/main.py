@@ -178,6 +178,8 @@ class Platform(Elemento):
             input("Fim de jogo: O monstro comeu o anão!")
         if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False):
             input("Fim de jogo: O anão comeu a maçã!")
+        if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN):
+            input("Ahhh mlk! Você conseguiu!!!")
 
     def printStatus(self):
         input(f"Margem {self.id}: Monstro={self.place[MONSTER]}, Anão={self.place[DWARF]}, Maçã={self.place[APPLE]}")
