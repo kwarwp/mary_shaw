@@ -33,8 +33,8 @@ APPLE_H = 143
 
 IMG_BOAT_TO_RIGHT = f"{IGR}9eVfl1k.png"
 IMG_BOAT_TO_LEFT = f"{IGR}uGo3Btw.png"
-BOAT_W = 346
-BOAT_H = 136
+BOAT_W = 306
+BOAT_H = 96
 
 
 
