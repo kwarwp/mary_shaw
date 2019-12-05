@@ -153,7 +153,7 @@ class Game():
         self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_X, BOAT_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
         self.boat.entra(self.cena)
         
-        self.monster_left_slot = Elemento(None, self.cena, MONSTER_LEFT_SLOT_X, MONSTER_LEFT_SLOT_Y, MONSTER_W, MONSTER_H,)
+        self.monster_left_slot = Elemento(None, self.cena, MONSTER_LEFT_SLOT_X, MONSTER_LEFT_SLOT_Y, MONSTER_W, MONSTER_H)
         self.monster = Character(
             IMG_MONSTER, 
             self.cena, 
