@@ -18,8 +18,6 @@ RIGHT_MARGIN = "right_margin"
 
 IMG_MONSTER =  f"{IGR}eQOoUiz.png"
 MONSTER = "monster"
-MONSTER_LEFT_PLAT = "monster_left_plat"
-MONSTER_RIGHT_PLAT = "monster_right_plat"
 MONSTER_W = 260
 MONSTER_H = 247
 MONSTER_LEFT_SLOT_X = 0
@@ -27,8 +25,6 @@ MONSTER_LEFT_SLOT_Y = 20
 
 IMG_DWARF =  f"{IGR}sLfY1So.png"
 DWARF = "dwarf"
-DWARF_LEFT_PLAT = "dwarf_left_plat"
-DWARF_RIGHT_PLAT = "dwarf_right_plat"
 DWARF_W = 123
 DWARF_H = 221
 DWARF_LEFT_SLOT_X = 0
@@ -36,8 +32,6 @@ DWARF_LEFT_SLOT_Y = 310
 
 IMG_APPLE =  f"{IGR}XKaUgKW.png"
 APPLE = "apple"
-APPLE_LEFT_PLAT = "apple_left_plat"
-APPLE_RIGHT_PLAT = "apple_right_plat"
 APPLE_W = 111
 APPLE_H = 113
 APPLE_LEFT_SLOT_X = 100
@@ -188,7 +182,7 @@ class Game():
             IMG_DWARF, 
             self.cena, 
             self.dwarf_left_slot,
-            DWARF_LEFT_SLOT_X, DWARF_LEFT_SLOT_Y, 
+            0, 0, 
             DWARF_W, DWARF_H, 
             DWARF, 
             self.left_margin, 
@@ -197,7 +191,7 @@ class Game():
             IMG_APPLE, 
             self.cena, 
             self.apple_left_slot,
-            APPLE_LEFT_SLOT_X, APPLE_LEFT_SLOT_Y, 
+            0, 0, 
             APPLE_W, APPLE_H, 
             APPLE, 
             self.left_margin, 
