@@ -53,7 +53,7 @@ class Character(Elemento):
         self.state = margin
         self.boat = boat
         self.vai = self.click
-        self.left_slot = slot
+        self.left_slot = left_slot
 
     def getId(self):
         return self.id
