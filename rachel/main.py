@@ -62,12 +62,16 @@ class Character(Elemento):
         return self.state
 
     def click(self, evento=None):
+        input(self.state.printStatus())
+        
         if (self.state == self.boat):
             self.boat.getOut(self)
             self.entra(self.left_slot)
         else:
             self.boat.getIn(self)
             self.entra(self.boat)
+            
+        input(self.state.printStatus())
             
 
 class Boat(Elemento):
@@ -96,7 +100,6 @@ class Boat(Elemento):
         self.margins[self.state].verify()
         self.state = (self.state + 1) % 2
         self.entra(self.margins[self.state])
-
 
     def printStatus(self):
         if (self.passenger != None):
