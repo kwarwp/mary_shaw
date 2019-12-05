@@ -69,8 +69,7 @@ class Character(Elemento):
             self.boat.getOut(self)
             self.entra(self.left_slot)
         else:
-            self.boat.getIn(self)
-            self.entra(self.boat)
+            self.boat.getIn(self)            
             
         temp_state.printStatus()
         self.state.printStatus()
@@ -92,6 +91,7 @@ class Boat(Elemento):
             character.state.remove(character)
             self.passenger = character
             character.state = self
+            character.entra(self)
 
     def getOut(self, character):
         character.state = self.margins[self.state]
