@@ -8,7 +8,8 @@ __version__ = "19.12.04"
 
 from _spy.vitollino.main import Cena, Elemento, Texto, STYLE, INVENTARIO
 
-DEBUG = True
+DEBUG = False
+#DEBUG = True
 
 STYLE["width"] = 900
 STYLE["height"] = "600px"
