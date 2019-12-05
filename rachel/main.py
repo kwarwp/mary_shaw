@@ -123,8 +123,8 @@ class Game():
         self.boat.entra(self.cena)
         
         self.monster = Character(IMG_MONSTER, self.cena, 0, 0, 248, 350, MONSTER, self.left_margin)
-        self.dwarf = Character(IMG_DWARF, self.cena, 0, 0, 248, 350, DWARF, self.left_margin)
-        self.apple = Character(IMG_APPLE, self.cena, 0, 0, 248, 350, APPLE, self.left_margin)
+        self.dwarf = Character(IMG_DWARF, self.cena, 0, 100, 248, 350, DWARF, self.left_margin)
+        self.apple = Character(IMG_APPLE, self.cena, 0, 200, 248, 350, APPLE, self.left_margin)
         
         self.left_margin.put(self.monster)
         self.left_margin.put(self.dwarf)
