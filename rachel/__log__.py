@@ -1533,3 +1533,10 @@ TypeError: __init__ missing 1 positional argument: 'boat'
                                                                                                                         ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Thu Dec 05 2019 09:41:24.164 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 134
+  if (character.getId() == MONSTER)
+                                    ^
+SyntaxError: invalid syntax
+'''},
