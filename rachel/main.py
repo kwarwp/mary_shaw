@@ -27,7 +27,8 @@ APPLE = "apple"
 
 
 class Character(Elemento):
-    def __init__(self, name, margin):
+    def __init__(self, image, cena, x=0, y=0, name, margin):
+        super().__init__(image, cena=cena, x=x, y=y, w=60, h=60)
         self.id = name
         self.state = margin
 
@@ -45,7 +46,8 @@ class Character(Elemento):
             
 
 class Boat(Elemento):
-    def __init__(self, left_margin, right_margin):
+    def __init__(self, image, cena, x=100, y=0, left_margin, right_margin):
+        super().__init__(image, cena=cena, x=x, y=y)
         self.state = 0
         self.margins = [left_margin, right_margin]
         self.passenger = None
@@ -77,7 +79,7 @@ class Boat(Elemento):
             
             
 
-class Platform(Elemento):
+class Platform():
 
     def __init__(self, id):
         self.id = id
@@ -111,47 +113,65 @@ class Platform(Elemento):
         
 class Game():
     def __init__(self):
-        #self.cena = Cena(CENA)
+        self.cena = Cena(CENA)
         # Colocar aqui toda a parte que o professor ensinou na aula que está em
         # http://supygirls.pythonanywhere.com/supygirls/gamer/mary_shaw/basico
-        #self.cena.vai()
-    
         self.left_margin = Platform(LEFT_MARGIN)
         self.right_margin = Platform(RIGHT_MARGIN)
-        self.boat = Boat(self.left_margin, self.right_margin)
-
-        self.monster = Character(MONSTER, self.left_margin)
-        self.dwarf = Character(DWARF, self.left_margin)
-        self.apple = Character(APPLE, self.left_margin)
-
+        
+        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.left_margin, self.right_margin)
+        self.boat.entra(self.cena)
+        
+        self.monster = Character(IMG_MONSTER, cena, MONSTER, self.left_margin)
+        self.dwarf = Character(IMG_DWARF, cena, DWARF, self.left_margin)
+        self.apple = Character(IMG_APPLE, cena, APPLE, self.left_margin)
+        
         self.left_margin.put(self.monster)
         self.left_margin.put(self.dwarf)
         self.left_margin.put(self.apple)
-        self.gameStatus()
+        
+        self.monster.entra(cena)
+        self.dwarf.entra(cena)
+        self.apple.entra(cena)
+        
+        self.cena.vai()
+    
+        #self.left_margin = Platform(LEFT_MARGIN)
+        #self.right_margin = Platform(RIGHT_MARGIN)
+        #self.boat = Boat(self.left_margin, self.right_margin)
+
+        #self.monster = Character(MONSTER, self.left_margin)
+        #self.dwarf = Character(DWARF, self.left_margin)
+        #self.apple = Character(APPLE, self.left_margin)
+
+        #self.left_margin.put(self.monster)
+        #self.left_margin.put(self.dwarf)
+        #self.left_margin.put(self.apple)
+        #self.gameStatus()
 
 
-        self.monster.click(self.boat)
-        self.gameStatus()
-        self.boat.click()
-        self.gameStatus()
-        self.monster.click(self.boat)
-        self.gameStatus()
-        self.boat.click()
-        self.gameStatus()
-        self.dwarf.click(self.boat)
-        self.gameStatus()
-        self.boat.click()
-        self.gameStatus()
-        self.dwarf.click(self.boat)
-        self.gameStatus()
-        self.boat.click()
-        self.gameStatus()
-        self.apple.click(self.boat)
-        self.gameStatus()
-        self.boat.click()
-        self.gameStatus()
-        self.apple.click(self.boat)
-        self.gameStatus()
+        #self.monster.click(self.boat)
+        #self.gameStatus()
+        #self.boat.click()
+        #self.gameStatus()
+        #self.monster.click(self.boat)
+        #self.gameStatus()
+        #self.boat.click()
+        #self.gameStatus()
+        #self.dwarf.click(self.boat)
+        #self.gameStatus()
+        #self.boat.click()
+        #self.gameStatus()
+        #self.dwarf.click(self.boat)
+        #self.gameStatus()
+        #self.boat.click()
+        #self.gameStatus()
+        #self.apple.click(self.boat)
+        #self.gameStatus()
+        #self.boat.click()
+        #self.gameStatus()
+        #self.apple.click(self.boat)
+        #self.gameStatus()
 
 
     def gameStatus(self):
