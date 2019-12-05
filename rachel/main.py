@@ -31,7 +31,7 @@ class Character(Elemento):
         super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
         self.id = name
         self.state = margin
-        self.boat
+        self.boat = boat
         self.vai = self.click
 
     def getId(self):
