@@ -45,6 +45,8 @@ class Character(Elemento):
             self.boat.getOut(self)
         else:
             self.boat.getIn(self)
+        self.x = 0
+        self.y = 0
         self.entra(self.state)
             
 
