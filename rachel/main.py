@@ -103,9 +103,9 @@ class Boat(Elemento):
 
     def printStatus(self):
         if (self.passenger != None):
-            input("Posição = ", self.margins[self.state].getId(), ", Passageiro = ", self.passenger.getId())
+            input(f"Posição = ", self.margins[self.state].getId(), ", Passageiro = ", self.passenger.getId())
         else:
-            input("Posição = ", self.margins[self.state].getId(), ", Passageiro = ", self.passenger)
+            input(f"Posição = ", self.margins[self.state].getId(), ", Passageiro = ", self.passenger)
             
             
 
@@ -147,7 +147,7 @@ class Platform(Elemento):
             print("Fim de jogo: O anão comeu a maçã!")
 
     def printStatus(self):
-        input("Margem ", self.id, ": ", self.place)
+        input(f"Margem ", self.id, ": ", self.place)
         
         
         
