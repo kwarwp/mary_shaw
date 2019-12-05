@@ -172,7 +172,7 @@ class Game():
         self.dwarf_left_slot = Elemento(None, cena=self.cena, x=DWARF_LEFT_SLOT_X, y=DWARF_LEFT_SLOT_Y, w=DWARF_W, h=DWARF_H)
         self.apple_left_slot = Elemento(None, cena=self.cena, x=APPLE_LEFT_SLOT_X, y=APPLE_LEFT_SLOT_Y, w=APPLE_W, h=APPLE_H)
         self.boat_left_slot = Elemento(None, cena=self.cena, x=BOAT_LEFT_SLOT_X, y=BOAT_LEFT_SLOT_Y, w=BOAT_W, h=BOAT_H)
-        self.left_margin = Platform(None, self.cena, LEFT_MARGIN_X, LEFT_MARGIN_y, LEFT_MARGIN_w, LEFT_MARGIN_H, LEFT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot)
+        self.left_margin = Platform(None, self.cena, LEFT_MARGIN_X, LEFT_MARGIN_Y, LEFT_MARGIN_W, LEFT_MARGIN_H, LEFT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot)
         self.monster_left_slot.entra(self.left_margin)
         self.dwarf_left_slot.entra(self.left_margin)
         self.apple_left_slot.entra(self.left_margin)
