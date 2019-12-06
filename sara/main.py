@@ -168,16 +168,8 @@ class Platform(Elemento):
         for ch in self.ator:
             a , b = ch
             if id == a:
-                character.entra(b)           
-
-        "
-        if (character.getId() == MONSTER):
-            character.entra(self.monster_slot)
-        if (character.getId() == DWARF):
-            character.entra(self.dwarf_slot)
-        if (character.getId() == APPLE):
-            character.entra(self.apple_slot)
-        "
+                character.entra(b) 
+        
 
     def remove(self, character):
         if (self.place[character.getId()] == True):
