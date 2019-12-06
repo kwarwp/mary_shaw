@@ -164,9 +164,10 @@ class Platform(Elemento):
 
     def put(self, character):
         self.place[character.getId()] = True
+        id = character.getId()
         for ch in self.ator:
             a , b = ch
-            if character.getId() == a:
+            if id == a:
                 character.entra(b)           
 
         "" antes
