@@ -181,7 +181,7 @@ class Platform(Elemento):
         cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,"Fim de jogo: O monstro comeu o anão!")
                 (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,"Fim de jogo: O anão comeu a maçã!")
                 (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN,"Ahhh! Você conseguiu!")]
-        
+        input(cond[0])
         #for cd in cond:
         #    a , b = cd 
         #    if a:
