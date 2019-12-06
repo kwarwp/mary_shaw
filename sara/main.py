@@ -153,8 +153,7 @@ class Platform(Elemento):
         self.dwarf_slot = dwarf_slot
         self.apple_slot = apple_slot
         self.boat_slot = boat_slot
-        self.ator = [(MONSTER,self.monster_slot),(DWARF,self.dwarf_slot),(APPLE,self.apple_slot)]
-        
+        self.ator = [(MONSTER,self.monster_slot),(DWARF,self.dwarf_slot),(APPLE,self.apple_slot)]        
         
 
     def getId(self):
@@ -170,7 +169,7 @@ class Platform(Elemento):
             if character.getId() == a:
                 character.entra(b)           
 
-        ""
+        "" antes
         if (character.getId() == MONSTER):
             character.entra(self.monster_slot)
         if (character.getId() == DWARF):
