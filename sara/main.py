@@ -182,10 +182,8 @@ class Platform(Elemento):
                 (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,"Fim de jogo: O anão comeu a maçã!")
                 (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN,"Ahhh! Você conseguiu!")]
         
-        for cd in cond:
-            a , b = cd
-            imput(b)
-            
+        #for cd in cond:
+        #    a , b = cd 
         #    if a:
         #        input(b)
         #        break
