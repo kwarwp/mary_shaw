@@ -176,8 +176,7 @@ class Platform(Elemento):
         if (self.place[character.getId()] == True):
             self.place[character.getId()] = False
 
-    def verify(self):
-    
+    def verify(self):    
         cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,"Fim de jogo: O monstro comeu o anão!"),
                 (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,"Fim de jogo: O anão comeu a maçã!"),
                 (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN,"Ahhh! Você conseguiu!")]
@@ -187,13 +186,6 @@ class Platform(Elemento):
             if a:
                 input(b)
                 break
-                 
-        #if (self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False):
-        #    input("Fim de jogo: O monstro comeu o anão!")
-        #if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False):
-        #    input("Fim de jogo: O anão comeu a maçã!")
-        #if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN):
-        #    input("Ahhh! Você conseguiu!")
         
 
     def printStatus(self):
