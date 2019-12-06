@@ -170,14 +170,14 @@ class Platform(Elemento):
             if id == a:
                 character.entra(b)           
 
-        "" antes
+        "
         if (character.getId() == MONSTER):
             character.entra(self.monster_slot)
         if (character.getId() == DWARF):
             character.entra(self.dwarf_slot)
         if (character.getId() == APPLE):
             character.entra(self.apple_slot)
-        ""
+        "
 
     def remove(self, character):
         if (self.place[character.getId()] == True):
