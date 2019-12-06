@@ -168,7 +168,8 @@ class Platform(Elemento):
         for ch in self.ator:
             a , b = ch
             if id == a:
-                character.entra(b) 
+                character.entra(b)
+                break
         
 
     def remove(self, character):
