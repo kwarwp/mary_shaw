@@ -178,22 +178,22 @@ class Platform(Elemento):
 
     def verify(self):
     
-        cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,"Fim de jogo: O monstro comeu o anão!")
-                (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,"Fim de jogo: O anão comeu a maçã!")
+        cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,"Fim de jogo: O monstro comeu o anão!"),
+                (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,"Fim de jogo: O anão comeu a maçã!"),
                 (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN,"Ahhh! Você conseguiu!")]
-        input(cond[0])
-        #for cd in cond:
-        #    a , b = cd 
-        #    if a:
-        #        input(b)
-        #        break
+        
+        for cd in cond:
+            a , b = cd 
+            if a:
+                input(b)
+                break
                  
-        if (self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False):
-            input("Fim de jogo: O monstro comeu o anão!")
-        if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False):
-            input("Fim de jogo: O anão comeu a maçã!")
-        if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN):
-            input("Ahhh! Você conseguiu!")
+        #if (self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False):
+        #    input("Fim de jogo: O monstro comeu o anão!")
+        #if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False):
+        #    input("Fim de jogo: O anão comeu a maçã!")
+        #if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN):
+        #    input("Ahhh! Você conseguiu!")
         
 
     def printStatus(self):
