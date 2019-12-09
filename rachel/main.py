@@ -33,6 +33,8 @@ IMG_MONSTER =  f"{IGR}eQOoUiz.png"
 MONSTER = "monster"
 MONSTER_W = 260
 MONSTER_H = 247
+MONSTER_OFFSET_X = 0
+MONSTER_OFFSET_Y = 0
 MONSTER_LEFT_SLOT_X = 0
 MONSTER_LEFT_SLOT_Y = 50
 MONSTER_RIGHT_SLOT_X = 15
@@ -42,6 +44,8 @@ IMG_DWARF =  f"{IGR}sLfY1So.png"
 DWARF = "dwarf"
 DWARF_W = 123
 DWARF_H = 221
+DWARF_OFFSET_X = 0
+DWARF_OFFSET_Y = 0
 DWARF_LEFT_SLOT_X = 20
 DWARF_LEFT_SLOT_Y = 330
 DWARF_RIGHT_SLOT_X = 250
@@ -51,6 +55,8 @@ IMG_APPLE =  f"{IGR}XKaUgKW.png"
 APPLE = "apple"
 APPLE_W = 111
 APPLE_H = 113
+APPLE_OFFSET_X = 0
+APPLE_OFFSET_Y = 0
 APPLE_LEFT_SLOT_X = 150
 APPLE_LEFT_SLOT_Y = 310
 APPLE_RIGHT_SLOT_X = 150
@@ -223,7 +229,7 @@ class Game():
             IMG_MONSTER, 
             self.cena, 
             self.monster_left_slot, 
-            0, 0, 
+            MONSTER_OFFSET_X, MONSTER_OFFSET_Y, 
             MONSTER_W, MONSTER_H, 
             MONSTER, 
             self.left_margin, 
@@ -232,7 +238,7 @@ class Game():
             IMG_DWARF, 
             self.cena, 
             self.dwarf_left_slot,
-            0, 0, 
+            DWARF_OFFSET_X, DWARF_OFFSET_Y, 
             DWARF_W, DWARF_H, 
             DWARF, 
             self.left_margin, 
@@ -241,7 +247,7 @@ class Game():
             IMG_APPLE, 
             self.cena, 
             self.apple_left_slot,
-            0, 0, 
+            APPLE_OFFSET_X, APPLE_OFFSET_Y, 
             APPLE_W, APPLE_H, 
             APPLE, 
             self.left_margin, 
