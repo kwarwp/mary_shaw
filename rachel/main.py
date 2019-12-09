@@ -80,6 +80,8 @@ BOAT_LEFT_SLOT_Y = 410
 BOAT_RIGHT_SLOT_X = 0
 BOAT_RIGHT_SLOT_Y = 410
 #BOAT_RIGHT_SLOT_Y = 163
+BOAT_PLAT_W = 286
+BOAT_PLAT_H = 353
 
 
 
@@ -209,7 +211,7 @@ class Game():
         self.monster_left_slot = Elemento(None, cena=self.cena, x=MONSTER_LEFT_SLOT_X, y=MONSTER_LEFT_SLOT_Y, w=MONSTER_PLAT_W, h=MONSTER_PLAT_H)
         self.dwarf_left_slot = Elemento(None, cena=self.cena, x=DWARF_LEFT_SLOT_X, y=DWARF_LEFT_SLOT_Y, w=DWARF_PLAT_W, h=DWARF_PLAT_H)
         self.apple_left_slot = Elemento(None, cena=self.cena, x=APPLE_LEFT_SLOT_X, y=APPLE_LEFT_SLOT_Y, w=APPLE_PLAT_W, h=APPLE_PLAT_H)
-        self.boat_left_slot = Elemento(None, cena=self.cena, x=BOAT_LEFT_SLOT_X, y=BOAT_LEFT_SLOT_Y, w=BOAT_W, h=BOAT_H)
+        self.boat_left_slot = Elemento(None, cena=self.cena, x=BOAT_LEFT_SLOT_X, y=BOAT_LEFT_SLOT_Y, w=BOAT_PLAT_W, h=BOAT_PLAT_H)
         self.left_margin = Platform(None, self.cena, LEFT_MARGIN_X, LEFT_MARGIN_Y, LEFT_MARGIN_W, LEFT_MARGIN_H, LEFT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot, self.boat_left_slot)
         self.monster_left_slot.entra(self.left_margin)
         self.dwarf_left_slot.entra(self.left_margin)
@@ -220,7 +222,7 @@ class Game():
         self.monster_right_slot = Elemento(None, cena=self.cena, x=MONSTER_RIGHT_SLOT_X, y=MONSTER_RIGHT_SLOT_Y, w=MONSTER_PLAT_W, h=MONSTER_PLAT_H)
         self.dwarf_right_slot = Elemento(None, cena=self.cena, x=DWARF_RIGHT_SLOT_X, y=DWARF_RIGHT_SLOT_Y, w=DWARF_PLAT_W, h=DWARF_PLAT_H)
         self.apple_right_slot = Elemento(None, cena=self.cena, x=APPLE_RIGHT_SLOT_X, y=APPLE_RIGHT_SLOT_Y, w=APPLE_PLAT_W, h=APPLE_PLAT_H)
-        self.boat_right_slot = Elemento(None, cena=self.cena, x=BOAT_RIGHT_SLOT_X, y=BOAT_RIGHT_SLOT_Y, w=BOAT_W, h=BOAT_H)
+        self.boat_right_slot = Elemento(None, cena=self.cena, x=BOAT_RIGHT_SLOT_X, y=BOAT_RIGHT_SLOT_Y, w=BOAT_PLAT_W, h=BOAT_PLAT_H)
         self.right_margin = Platform(None, self.cena, RIGHT_MARGIN_X, RIGHT_MARGIN_Y, RIGHT_MARGIN_W, RIGHT_MARGIN_H, RIGHT_MARGIN, self.monster_right_slot, self.dwarf_right_slot, self.apple_right_slot, self.boat_right_slot)
         self.monster_right_slot.entra(self.right_margin)
         self.dwarf_right_slot.entra(self.right_margin)
