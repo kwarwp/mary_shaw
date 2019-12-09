@@ -85,7 +85,16 @@ BOAT_RIGHT_SLOT_Y = 236
 BOAT_PLAT_W = 286
 BOAT_PLAT_H = 280
 
+""" CONSTANTES PARA A TELA DE INÍCIO DO JOGO """
 
+CENA_START = f"{IGR}kUvuPCr.png"
+
+IMG_BOTAO_START = f"{IGR}7qUxEM9.png"
+BOTAO_START = "start"
+BOTAO_START_W = 128
+BOTAO_START_H = 128
+BOTAO_START_X = 150
+BOTAO_START_Y = 410
 
 class Character(Elemento):
     def __init__(self, image, cena, left_slot, x=0, y=0, w=60, h=60, name, margin, boat):
@@ -207,7 +216,21 @@ class Platform(Elemento):
     def printStatus(self):
         input(f"Margem {self.id}: Monstro={self.place[MONSTER]}, Anão={self.place[DWARF]}, Maçã={self.place[APPLE]}")
         
-        
+
+class Botao(Elemento):
+    def __init__(self, image, cena, x=0, y=0, w=128, h=128, name, game):
+        super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
+        self.id = name
+        self.vai = self.click
+        self.game = game
+
+    def getId(self):
+        return self.id
+
+    def click(self, evento=None):
+        self.game.showGameScreen()
+
+
         
 class Game():
     def __init__(self):
@@ -276,6 +299,14 @@ class Game():
         
         self.cena.vai()
 
+
+    def showStartScreen(self):
+        self.cena = Cena(CENA_START)
+
+        self.start_button_slot = Botao(image=IMG_BOTAO_START, cena=self.cena, x=BOTAO_START_X, y=BOTAO_START_Y, w=BOTAO_START_W, h=BOTAO_START_H, name=BOTAO_START, game=self)
+        self.start_button_slot.entra(self.cena)
+
+        self.cena.vai()
 
     def gameStatus(self):
         self.left_margin.printStatus()
