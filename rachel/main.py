@@ -68,18 +68,20 @@ APPLE_RIGHT_SLOT_Y = 310
 APPLE_PLAT_W = 111
 APPLE_PLAT_H = 113
 
-IMG_BOAT_TO_RIGHT = f"{IGR}9eVfl1k.png"
 #IMG_BOAT_TO_RIGHT = f"{IGR}fsOXdlN.png"
+#BOAT_H = 353
+#BOAT_LEFT_SLOT_Y = 163
+#BOAT_RIGHT_SLOT_Y = 163
+IMG_BOAT_TO_RIGHT = f"{IGR}9eVfl1k.png"
 IMG_BOAT_TO_LEFT = f"{IGR}uGo3Btw.png"
 BOAT_W = 286
 BOAT_H = 106
-#BOAT_H = 353
+BOAT_OFFSET_X = 0
+BOAT_OFFSET_Y = 247
 BOAT_LEFT_SLOT_X = 230
-BOAT_LEFT_SLOT_Y = 410
-#BOAT_LEFT_SLOT_Y = 163
+BOAT_LEFT_SLOT_Y = 163
 BOAT_RIGHT_SLOT_X = 0
-BOAT_RIGHT_SLOT_Y = 410
-#BOAT_RIGHT_SLOT_Y = 163
+BOAT_RIGHT_SLOT_Y = 163
 BOAT_PLAT_W = 286
 BOAT_PLAT_H = 353
 
@@ -230,7 +232,7 @@ class Game():
         self.boat_right_slot.entra(self.right_margin)
         self.right_margin.entra(self.cena)
         
-        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, 0, 0, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
+        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_OFFSET_X, BOAT_OFFSET_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
         self.boat.entra(self.boat_left_slot)
         
         self.monster = Character(
