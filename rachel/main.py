@@ -118,10 +118,11 @@ class Character(Elemento):
             
 
 class Boat(Elemento):
-    def __init__(self, image, cena, x=100, y=0, w=60, h=60, left_margin, right_margin):
+    def __init__(self, image, cena, x=100, y=0, w=60, h=60, left_margin, right_margin, left_slot, right_slot):
         super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
         self.state = 0
         self.margins = [left_margin, right_margin]
+        self.slots = [left_slot, right_slot]
         self.passenger = None
         self.vai = self.click
 
@@ -133,7 +134,7 @@ class Boat(Elemento):
             character.state.remove(character)
             self.passenger = character
             character.state = self
-            character.entra(self)
+            character.entra(self.slots[self.state])
 
     def getOut(self, character):
         character.state = self.margins[self.state]
@@ -232,7 +233,7 @@ class Game():
         self.boat_right_slot.entra(self.right_margin)
         self.right_margin.entra(self.cena)
         
-        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_OFFSET_X, BOAT_OFFSET_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin)
+        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_OFFSET_X, BOAT_OFFSET_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin, self.boat_left_slot, self.boat_right_slot)
         self.boat.entra(self.boat_left_slot)
         
         self.monster = Character(
