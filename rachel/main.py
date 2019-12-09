@@ -211,6 +211,10 @@ class Platform(Elemento):
         
 class Game():
     def __init__(self):
+        self.showGameScreen()
+        
+        
+    def showGameScreen(self):
         self.cena = Cena(CENA)
         
         self.monster_left_slot = Elemento(None, cena=self.cena, x=MONSTER_LEFT_SLOT_X, y=MONSTER_LEFT_SLOT_Y, w=MONSTER_PLAT_W, h=MONSTER_PLAT_H)
