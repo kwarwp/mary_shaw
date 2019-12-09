@@ -147,7 +147,9 @@ class Boat(Elemento):
             
         self.margins[self.state].verify()
         self.state = (self.state + 1) % 2
-        self.entra(self.margins[self.state].getBoatSlot())
+        slot = self.margins[self.state].getBoatSlot()
+        self.entra(slot)
+        self.passenger.entra(slot)
         
         if(DEBUG):
             self.printStatus()
