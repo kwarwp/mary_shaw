@@ -54,9 +54,6 @@ class Veiculo(Elemento):
     def do_move(self, evento=None):
         self.destino.movimenta(self)
         
-    def _entra(self, passageiro):
-        self.fundo.entra(passageiro)
-        
     def move(self, destino):
         self.entra(destino)
         self.destino = destino
