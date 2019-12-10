@@ -37,11 +37,15 @@ class Personagem(Elemento):
 
 class Veiculo(Elemento):
     def __init__(self, imagem, destino, cena, x=100, y=0):
-        super().__init__(imagem, cena=cena, x=x, y=y)
         self.nome = "veiculo"
+        super().__init__(imagem, cena=cena, x=x, y=y)
+        # self.fundo.entra(self)
+        self.fundo = Elemento(imagem, cena=self, x=0, y=0)
+        frente = Elemento(imagem, cena=self, x=0, y=0)
         self.destino = destino
         self.outro = self
-        self.vai = self.mover
+        frente.vai = self.mover
+        #self.entra = self._entra
         
     def mover(self, evento=None):
         self.do_move()
@@ -49,6 +53,9 @@ class Veiculo(Elemento):
         
     def do_move(self, evento=None):
         self.destino.movimenta(self)
+        
+    def _entra(self, passageiro):
+        self.fundo.entra(passageiro)
         
     def move(self, destino):
         self.entra(destino)
@@ -68,7 +75,7 @@ class Basico:
         self.cart1 = Veiculo(CART, destino=self.base0, cena=self.base1, y=200)
         self.cart0.outro, self.cart1.outro = self.cart1.outro, self.cart0.outro
         #self.cart.entra(self.base0)
-        self.gato = Personagem(CAT, destino=self.cart0, cena=cena, x= 100)
+        self.gato = Personagem(CAT, destino=self.cart0.fundo, cena=cena, x= 100)
         cena.vai()
         
         
