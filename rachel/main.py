@@ -235,6 +235,7 @@ class Botao(Elemento):
 class Game():
     def __init__(self):
         self.showGameScreen()
+        #self.showStartScreen()
         
         
     def showGameScreen(self):
