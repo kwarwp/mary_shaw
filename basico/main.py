@@ -10,7 +10,7 @@ from _spy.vitollino.main import Cena,Elemento,Texto, STYLE, INVENTARIO
 STYLE["width"]=900
 STYLE["height"]= "600px"
 IGR = "https://i.imgur.com/"
-CART, CAT, BASE, CENA = f"{IGR}m2k5sv6.png", f"{IGR}ek8oINR.png", f"{IGR}DAUyvBP.jpg", f"{IGR}nkwZCrR.jpg"
+CART, CAT, BASE, CENA, RECT = f"{IGR}m2k5sv6.png", f"{IGR}ek8oINR.png", f"{IGR}DAUyvBP.jpg", f"{IGR}nkwZCrR.jpg", f"{IGR}92GKogg.png"
 
 
 class Plataforma(Elemento):
@@ -26,7 +26,7 @@ class Plataforma(Elemento):
 
 class Personagem(Elemento):
     def __init__(self, imagem, destino, cena, x=0, y=0):
-        super().__init__(imagem, cena=cena, x=x, y=y, w=60, h=60)
+        super().__init__(imagem, cena=cena, x=x, y=y, w=80, h=80)
         self.destino = destino
         self.vai = self.move
         
@@ -38,10 +38,10 @@ class Personagem(Elemento):
 class Veiculo(Elemento):
     def __init__(self, imagem, destino, cena, x=100, y=0):
         self.nome = "veiculo"
-        super().__init__(imagem, cena=cena, x=x, y=y)
+        super().__init__(RECT, cena=cena, x=x, y=y, w=100, h=130)
         # self.fundo.entra(self)
-        self.fundo = Elemento(imagem, cena=self, x=0, y=0)
-        frente = Elemento(imagem, cena=self, x=0, y=0)
+        self.fundo = Elemento(RECT, cena=self, x=0, y=0, w=100, h=130)
+        frente = Elemento(imagem, cena=self, x=0, y=30)
         self.destino = destino
         self.outro = self
         frente.vai = self.mover
