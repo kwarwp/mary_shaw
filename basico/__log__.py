@@ -161,3 +161,10 @@ TypeError: __init__() got an unexpected keyword argument 'destino'
     self.cart0 = Veiculo(CART, destino=self.base1, cena=self.base0)
 AttributeError: 'Basico' object has no attribute 'base1'
 '''},
+{'date': 'Thu Dec 12 2019 14:36:12.784 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 25
+  self.veiculo = 
+                  ^
+SyntaxError: invalid syntax
+'''},
