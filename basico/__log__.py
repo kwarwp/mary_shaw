@@ -186,3 +186,33 @@ SyntaxError: invalid syntax
     self.base0 = Plataforma(BASE, x=100, cena=cena)
 UnboundLocalError: local variable 'cena' referenced before assignment
 '''},
+{'date': 'Thu Dec 12 2019 14:52:36.702 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''Traceback (most recent call last):
+  module _spy.vitollino.main line 465
+    return self.vai(ev)
+  module <module> line 42
+    self.destino = self.destino.embarca(self)
+  module <module> line 28
+    self.veiculo.embarca(passageiro)
+  module _spy.vitollino.main line 465
+    return self.vai(ev)
+  module <module> line 43
+    self.destino = self.destino.embarca(self)
+  module <module> line 29
+    return self.veiculo.embarca(passageiro)
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 95
+    Basico()
+  module <module> line 86
+    self.cart0 = Veiculo(CART, destino=self.base1, cena=self.base0)
+TypeError: __init__() got an unexpected keyword argument 'cena'
+'''},
