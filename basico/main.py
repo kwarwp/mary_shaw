@@ -16,36 +16,61 @@ CART, CAT, BASE, CENA, RECT = f"{IGR}m2k5sv6.png", f"{IGR}ek8oINR.png", f"{IGR}D
 class Plataforma(Elemento):
     def __init__(self, imagem, cena, x=0, y=200):
         super().__init__(imagem, cena=cena, w=200, h=400, x=x, y=y)
+        self.veiculo = None
         #self.elt.style.transition = "all 1s"
         self.destino = self
         self.nome = "base"
         
-    def movimenta(self, destino):
-        destino.move(self.destino)
+    def aporta(self, veiculo):
+        self.veiculo = veiculo
+        return self.destino
+        
+    def recebe(self, passageiro):
+        passageiro.move(self)
+        return self
+        
+    def embarca(self, passageiro):
+        return self.veiculo.recebe(passageiro)
+        
+    def movimenta(self, veiculo):
+        veiculo.move(self.destino)
+        self.destino.aporta(veiculo)
 
 
 class Personagem(Elemento):
     def __init__(self, imagem, destino, cena, x=0, y=0):
         super().__init__(imagem, cena=cena, x=x, y=y, w=80, h=80)
         self.destino = destino
-        self.vai = self.move
+        self.vai = self._move
         
-    def move(self, evento=None):
-        self.entra(self.destino)
+    def move(self, destino):
+        self.entra(destino)
+        
+    def _move(self, evento=None):
+        self.destino = self.destino.embarca(self)
+        #self.entra(self.destino)
         self.x = 0
 
 
 class Veiculo(Elemento):
-    def __init__(self, imagem, destino, cena, x=100, y=0):
+    def __init__(self, imagem, destino, base, x=100, y=0):
         self.nome = "veiculo"
-        super().__init__(RECT, cena=cena, x=x, y=y, w=100, h=130)
+        super().__init__(RECT, cena=base, x=x, y=y, w=100, h=130)
         # self.fundo.entra(self)
         self.fundo = Elemento(RECT, cena=self, x=0, y=0, w=100, h=130)
         frente = Elemento(imagem, cena=self, x=0, y=30)
-        self.destino = destino
+        self.destino = base.aporta(self)
+        
         self.outro = self
         frente.vai = self.mover
         #self.entra = self._entra
+        
+    def recebe(self, passageiro):
+        passageiro.move(self.fundo)
+        return self
+        
+    def embarca(self, passageiro):
+        return self.destino.recebe(passageiro)
         
     def mover(self, evento=None):
         self.do_move()
@@ -68,11 +93,11 @@ class Basico:
         self.base0 = Plataforma(BASE, x=100, cena=cena)
         self.base1 = Plataforma(BASE, x=500, cena=cena)
         self.base0.destino, self.base1.destino = self.base1, self.base0 
-        self.cart0 = Veiculo(CART, destino=self.base1, cena=self.base0)
-        self.cart1 = Veiculo(CART, destino=self.base0, cena=self.base1, y=200)
+        self.cart0 = Veiculo(CART, destino=self.base1, base=self.base0)
+        self.cart1 = Veiculo(CART, destino=self.base0, base=self.base1, y=200)
         self.cart0.outro, self.cart1.outro = self.cart1.outro, self.cart0.outro
         #self.cart.entra(self.base0)
-        self.gato = Personagem(CAT, destino=self.cart0.fundo, cena=cena, x= 100)
+        self.gato = Personagem(CAT, destino=self.base0, cena=cena, x= 100)
         cena.vai()
         
         
