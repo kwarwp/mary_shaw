@@ -109,7 +109,7 @@ class Boat(Elemento):
         return self.margins[self.state]
 
     def getIn(self, character):
-        if (self.margins[self.state] == character.getState() and self.passenger == None):
+        if (self.margins[self.state] == character.getState() ):
             character.state.remove(character)
             self.passenger = character
             character.state = self
