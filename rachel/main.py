@@ -194,17 +194,18 @@ class Platform(Elemento):
 
     def put(self, character):
         self.place[character.getId()] = True
-        if (character.getId() == MONSTER):
-            character.entra(self.monster_slot)
-        if (character.getId() == DWARF):
-            character.entra(self.dwarf_slot)
-        if (character.getId() == APPLE):
-            character.entra(self.apple_slot)
+        id = character.getId()
+        for ch in self.ator:
+            a , b = ch
+            if id == a:
+                character.entra(b)
+                break
 
     def remove(self, character):
         if (self.place[character.getId()] == True):
             self.place[character.getId()] = False
-
+            
+    
     def verify(self):
         if (self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False):
             input("Fim de jogo: O monstro comeu o anão!")
