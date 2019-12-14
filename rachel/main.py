@@ -185,7 +185,8 @@ class Platform(Elemento):
         self.dwarf_slot = dwarf_slot
         self.apple_slot = apple_slot
         self.boat_slot = boat_slot
-
+        self.ator = [(MONSTER,self.monster_slot),(DWARF,self.dwarf_slot),(APPLE,self.apple_slot)]
+        
     def getId(self):
         return self.id
         
@@ -206,13 +207,16 @@ class Platform(Elemento):
             self.place[character.getId()] = False
             
     
-    def verify(self):
-        if (self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False):
-            input("Fim de jogo: O monstro comeu o anão!")
-        if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False):
-            input("Fim de jogo: O anão comeu a maçã!")
-        if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN):
-            input("Ahhh mlk! Você conseguiu!!!")
+    def verify(self):    
+        cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,"Fim de jogo: O monstro comeu o anão!"),
+                (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,"Fim de jogo: O anão comeu a maçã!"),
+                (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN,"Ahhh! Você conseguiu!")]
+        
+        for cd in cond:
+            a , b = cd 
+            if a:
+                input(b)
+                break
 
     def printStatus(self):
         input(f"Margem {self.id}: Monstro={self.place[MONSTER]}, Anão={self.place[DWARF]}, Maçã={self.place[APPLE]}")
