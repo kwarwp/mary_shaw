@@ -179,18 +179,19 @@ class Boat(Elemento):
             
     def verify(self):
         input("Verificando...")
+        crew = []
         if (self.passengers[0] != None):
-            self.list_of_crew[0] = self.passengers[0].getId()
+            crew[0] = self.passengers[0].getId()
         else:
-            self.list_of_crew[0] = None
+            crew[0] = None
         if (self.passengers[1] != None):
-            self.list_pf_crew[1] = self.passengers[1].getId()
+            crew[1] = self.passengers[1].getId()
         else:
-            self.list_of_crew[1] = None
+            crew[1] = None
             
-        if (MONSTER in self.list_of_crew and DWARF in self.list_of_crew):
+        if (MONSTER in crew and DWARF in crew):
             input("Fim de jogo: O monstro comeu o anão!")
-        if (DWARF in self.list_of_crew and APPLE in self.list_of_crew):
+        if (DWARF in crew and APPLE in crew):
             input("Fim de jogo: O anão comeu a maçã!")
         
 #        if (self.passengers[0] != None):
