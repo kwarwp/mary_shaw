@@ -155,7 +155,7 @@ class Boat(Elemento):
     def getOut(self, character):
         character.state = self.margins[self.state]
         character.state.put(character)
-        if (self.passengers[0] == character)
+        if (self.passengers[0] == character):
             self.passengers[0] = None
         else:
             self.passengers[1] = None
