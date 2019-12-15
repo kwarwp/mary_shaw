@@ -180,20 +180,34 @@ class Boat(Elemento):
     def verify(self):
         input("Verificando...")
         if (self.passengers[0] != None):
-            if (self.passengers[0].getId() == MONSTER):
-                if (self.passengers[1] != None):
-                    if (self.passengers[1] == DWARF):
-                        input("Fim de jogo: O monstro comeu o anão!")
-            if (self.passengers[0].getId() == DWARF):
-                if (self.passengers[1] != None):
-                    if (self.passengers[1] == APPLE):
-                        input("Fim de jogo: O anão comeu a maçã!")
-                    if (self.passengers[1] == MONSTER):
-                        input("Fim de jogo: O monstro comeu o anão!")
-            if (self.passengers[0].getId() == APPLE):
-                if (self.passengers[1] != None):
-                    if (self.passengers[1] == DWARF):
-                        input("Fim de jogo: O anão comeu a maçã!")
+            self.list_of_crew[0] = self.passengers[0].getId()
+        else:
+            self.list_of_crew[0] = None
+        if (self.passengers[1] != None):
+            self.list_pf_crew[1] = self.passengers[1].getId()
+        else:
+            self.list_of_crew[1] = None
+            
+        if (MONSTER in self.list_of_crew and DWARF in self.list_of_crew):
+            input("Fim de jogo: O monstro comeu o anão!")
+        if (DWARF in self.list_of_crew and APPLE in self.list_of_crew):
+            input("Fim de jogo: O anão comeu a maçã!")
+        
+#        if (self.passengers[0] != None):
+#            if (self.passengers[0].getId() == MONSTER):
+#                if (self.passengers[1] != None):
+#                    if (self.passengers[1] == DWARF):
+#                        input("Fim de jogo: O monstro comeu o anão!")
+#            if (self.passengers[0].getId() == DWARF):
+#                if (self.passengers[1] != None):
+#                    if (self.passengers[1] == APPLE):
+#                        input("Fim de jogo: O anão comeu a maçã!")
+#                    if (self.passengers[1] == MONSTER):
+#                        input("Fim de jogo: O monstro comeu o anão!")
+#            if (self.passengers[0].getId() == APPLE):
+#                if (self.passengers[1] != None):
+#                    if (self.passengers[1] == DWARF):
+#                        input("Fim de jogo: O anão comeu a maçã!")
                         
 
     def printStatus(self):
