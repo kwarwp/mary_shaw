@@ -171,12 +171,12 @@ class Boat(Elemento):
             self.printStatus()
 
     def printStatus(self):
-        if (self.passenger[0] != None):
+        if (self.passengers[0] != None):
             pas_zero = None
         else:
             pas_zero = self.passengers[0].getId()
             
-        if (self.passenger[1] != None):
+        if (self.passengers[1] != None):
             pas_um = None
         else:
             pas_um = self.passengers[1].getId()
