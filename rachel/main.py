@@ -181,13 +181,9 @@ class Boat(Elemento):
         input("Verificando...")
         crew = []
         if (self.passengers[0] != None):
-            crew[0] = self.passengers[0].getId()
-        else:
-            crew[0] = None
+            crew.append(self.passengers[0].getId())
         if (self.passengers[1] != None):
-            crew[1] = self.passengers[1].getId()
-        else:
-            crew[1] = None
+            crew.append(self.passengers[1].getId())
             
         if (MONSTER in crew and DWARF in crew):
             input("Fim de jogo: O monstro comeu o anão!")
