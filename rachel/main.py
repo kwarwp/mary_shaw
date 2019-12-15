@@ -179,7 +179,6 @@ class Boat(Elemento):
             self.printStatus()
             
     def verify(self):
-        input("Verificando...")
         crew = []
         if (self.passengers[0] != None):
             crew.append(self.passengers[0].getId())
