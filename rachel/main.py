@@ -165,6 +165,7 @@ class Boat(Elemento):
             self.printStatus()
             
         self.margins[self.state].verify()
+        self.verify()
         self.state = (self.state + 1) % 2
         slot = self.margins[self.state].getBoatSlot()
         self.entra(slot)
@@ -175,6 +176,24 @@ class Boat(Elemento):
         
         if(DEBUG):
             self.printStatus()
+            
+    def verify():
+        if (self.passengers[0] != None):
+            if (self.passengers[0].getId() == MONSTER):
+                if (self.passengers[1] != None):
+                    if (self.passengers[1] == DWARF):
+                        "Fim de jogo: O monstro comeu o anão!"
+            if (self.passengers[0].getId() == DWARF):
+                if (self.passengers[1] != None):
+                    if (self.passengers[1] == APPLE):
+                        "Fim de jogo: O anão comeu a maçã!"
+                    if (self.passengers[1] == MONSTER):
+                        "Fim de jogo: O monstro comeu o anão!"
+            if (self.passengers[0].getId() == APPLE):
+                if (self.passengers[1] != None):
+                    if (self.passengers[1] == DWARF):
+                        "Fim de jogo: O monstro comeu o anão!"
+                        
 
     def printStatus(self):
         if (self.passengers[0] == None):
