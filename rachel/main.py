@@ -177,7 +177,7 @@ class Boat(Elemento):
         if(DEBUG):
             self.printStatus()
             
-    def verify():
+    def verify(self):
         if (self.passengers[0] != None):
             if (self.passengers[0].getId() == MONSTER):
                 if (self.passengers[1] != None):
