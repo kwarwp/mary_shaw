@@ -182,17 +182,17 @@ class Boat(Elemento):
             if (self.passengers[0].getId() == MONSTER):
                 if (self.passengers[1] != None):
                     if (self.passengers[1] == DWARF):
-                        "Fim de jogo: O monstro comeu o anão!"
+                        input("Fim de jogo: O monstro comeu o anão!")
             if (self.passengers[0].getId() == DWARF):
                 if (self.passengers[1] != None):
                     if (self.passengers[1] == APPLE):
-                        "Fim de jogo: O anão comeu a maçã!"
+                        input("Fim de jogo: O anão comeu a maçã!")
                     if (self.passengers[1] == MONSTER):
-                        "Fim de jogo: O monstro comeu o anão!"
+                        input("Fim de jogo: O monstro comeu o anão!")
             if (self.passengers[0].getId() == APPLE):
                 if (self.passengers[1] != None):
                     if (self.passengers[1] == DWARF):
-                        "Fim de jogo: O anão comeu a maçã!"
+                        input("Fim de jogo: O anão comeu a maçã!")
                         
 
     def printStatus(self):
