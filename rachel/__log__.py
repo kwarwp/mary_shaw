@@ -1712,3 +1712,10 @@ NameError: name 'printStatus' is not defined
     self.cena = Cena(CENA_START)
 NameError: name 'CENA_START' is not defined
 '''},
+{'date': 'Sat Dec 14 2019 22:00:48.901 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 158
+  if (self.passengers[0] == character)
+                                       ^
+SyntaxError: invalid syntax
+'''},
