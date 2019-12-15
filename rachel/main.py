@@ -132,7 +132,7 @@ class Boat(Elemento):
         self.state = 0
         self.margins = [left_margin, right_margin]
         self.slots = [left_slot, right_slot]
-        self.passenger = None
+        self.passengers = [None, None]
         self.vai = self.click
 
     def getState(self):
@@ -140,10 +140,17 @@ class Boat(Elemento):
 
     def getIn(self, character):
         if (self.margins[self.state] == character.getState()):
-            character.state.remove(character)
-            self.passenger = character
-            character.state = self
-            character.entra(self.slots[self.state])
+            if (passengers[0] == None):
+                characterCommit(0, character)
+            else:
+                if (self.passengers[1] == None):
+                    characterCommit(1, character)
+            
+    def characterCommit(self, position, character):
+        character.state.remove(character)
+        self.passengers[position] = character
+        character.state = self
+        character.entra(self.slots[self.state])
 
     def getOut(self, character):
         character.state = self.margins[self.state]
