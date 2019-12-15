@@ -8,8 +8,8 @@ __version__ = "19.12.04"
 
 from _spy.vitollino.main import Cena, Elemento, Texto, STYLE, INVENTARIO
 
-#DEBUG = False
-DEBUG = True
+DEBUG = False
+#DEBUG = True
 
 STYLE["width"] = 900
 STYLE["height"] = "600px"
@@ -178,6 +178,7 @@ class Boat(Elemento):
             self.printStatus()
             
     def verify(self):
+        input("Verificando...")
         if (self.passengers[0] != None):
             if (self.passengers[0].getId() == MONSTER):
                 if (self.passengers[1] != None):
