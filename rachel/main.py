@@ -140,7 +140,7 @@ class Boat(Elemento):
 
     def getIn(self, character):
         if (self.margins[self.state] == character.getState()):
-            if (passengers[0] == None):
+            if (self.passengers[0] == None):
                 characterCommit(0, character)
             else:
                 if (self.passengers[1] == None):
