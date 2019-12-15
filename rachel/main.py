@@ -171,10 +171,18 @@ class Boat(Elemento):
             self.printStatus()
 
     def printStatus(self):
-        if (self.passenger != None):
-            input(f"Posição = {self.margins[self.state].getId()}, Passageiro = {self.passenger.getId()}")
+        if (self.passenger[0] != None):
+            pas_zero = None
         else:
-            input(f"Posição = {self.margins[self.state].getId()}, Passageiro = {self.passenger}")
+            pas_zero = self.passengers[0].getId()
+            
+        if (self.passenger[1] != None):
+            pas_um = None
+        else:
+            pas_um = self.passengers[1].getId()
+        
+        input(f"Posição = {self.margins[self.state].getId()}, Passageiro[0] = {pas_zero}, Passageiro[1] = {pas_um}")
+
             
             
 
