@@ -164,15 +164,16 @@ class Boat(Elemento):
         if(DEBUG):
             self.printStatus()
             
-        self.margins[self.state].verify()
-        self.verify()
-        self.state = (self.state + 1) % 2
-        slot = self.margins[self.state].getBoatSlot()
-        self.entra(slot)
-        if (self.passengers[0] != None):
-            self.passengers[0].entra(slot)
-        if (self.passengers[1] != None):
-            self.passengers[1].entra(slot)
+        if (self.passengers[0] != None or self.passengers[1] != None):
+            self.margins[self.state].verify()
+            self.verify()
+            self.state = (self.state + 1) % 2
+            slot = self.margins[self.state].getBoatSlot()
+            self.entra(slot)
+            if (self.passengers[0] != None):
+                self.passengers[0].entra(slot)
+            if (self.passengers[1] != None):
+                self.passengers[1].entra(slot)
         
         if(DEBUG):
             self.printStatus()
