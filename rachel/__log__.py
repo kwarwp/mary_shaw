@@ -1747,3 +1747,10 @@ SyntaxError: invalid syntax
                               ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Dec 18 2019 10:32:29.949 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 305
+  self.game.showGameScreen()
+  ^
+IndentationError: expected an indented block
+'''},
