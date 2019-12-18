@@ -87,9 +87,9 @@ BOAT_PLAT_H = 280
 
 """ CONSTANTES PARA A TELA DE INÍCIO DO JOGO """
 
-CENA_START = f"{IGR}kUvuPCr.png"
+CENA_START = f"{IGR}NyC1rxr.jpg"
 
-IMG_BOTAO_START = f"{IGR}7qUxEM9.png"
+IMG_BOTAO_START = f"{IGR}1bmM4Vk.png"
 BOTAO_START = "start"
 BOTAO_START_W = 128
 BOTAO_START_H = 128
@@ -278,8 +278,8 @@ class Botao(Elemento):
         
 class Game():
     def __init__(self):
-        self.showGameScreen()
-        #self.showStartScreen()
+        #self.showGameScreen()
+        self.showStartScreen()
         
         
     def showGameScreen(self):
