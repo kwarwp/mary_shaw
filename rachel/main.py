@@ -96,6 +96,25 @@ BOTAO_START_H = 256
 BOTAO_START_X = 300
 BOTAO_START_Y = 280
 
+""" CONSTANTES PARA A TELA DE INÍCIO DO JOGO """
+
+CENA_END = f"{IGR}sipMMNk.jpg"
+
+IGM_BOTAO_HOME = f"{IGR}pN7aJYM.png"
+BOTAO_HOME = "home"
+BOTAO_HOME_W = 256
+BOTAO_HOME_H = 326
+BOTAO_HOME_X = 100
+BOTAO_HOME_Y = 200
+
+
+IMG_BOTAO_RESTART = f"{IGR}HowIM6S.png"
+BOTAO_RESTART = "restart"
+BOTAO_RESTART_W = 256
+BOTAO_RESTART_H = 383
+BOTAO_RESTART_X = 400
+BOTAO_RESTART_Y = 500
+
 class Character(Elemento):
     def __init__(self, image, cena, left_slot, x=0, y=0, w=60, h=60, name, margin, boat):
         super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
@@ -352,6 +371,18 @@ class Game():
         self.start_button_slot.entra(self.cena)
 
         self.cena.vai()
+        
+    def showEndScreen(self):
+        self.cena = Cena(CENA_END)
+
+        self.home_button_slot = Botao(image=IMG_BOTAO_HOME, cena=self.cena, x=BOTAO_HOME_X, y=BOTAO_HOME_Y, w=BOTAO_HOME_W, h=BOTAO_HOME_H, name=BOTAO_HOME, game=self)
+        self.home_button_slot.entra(self.cena)
+        
+        self.restart_button_slot = Botao(image=IMG_BOTAO_RESTART, cena=self.cena, x=BOTAO_RESTART_X, y=BOTAO_RESTART_Y, w=BOTAO_RESTART_W, h=BOTAO_RESTART_H, name=BOTAO_RESTART, game=self)
+        self.restart_button_slot.entra(self.cena)
+
+        self.cena.vai()
+
 
     def gameStatus(self):
         self.left_margin.printStatus()
