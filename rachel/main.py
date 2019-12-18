@@ -93,8 +93,8 @@ IMG_BOTAO_START = f"{IGR}1bmM4Vk.png"
 BOTAO_START = "start"
 BOTAO_START_W = 128
 BOTAO_START_H = 128
-BOTAO_START_X = 150
-BOTAO_START_Y = 410
+BOTAO_START_X = 360
+BOTAO_START_Y = 210
 
 class Character(Elemento):
     def __init__(self, image, cena, left_slot, x=0, y=0, w=60, h=60, name, margin, boat):
