@@ -267,15 +267,16 @@ class Platform(Elemento):
             
     
     def verify(self):    
-        #cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,"Fim de jogo: O monstro comeu o anão!"),
-        #        (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,"Fim de jogo: O anão comeu a maçã!")]
-        cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,self.game.showEndScreen()),
-                (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,self.game.showEndScreen())]
+        cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,"Fim de jogo: O monstro comeu o anão!"),
+                (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,"Fim de jogo: O anão comeu a maçã!")]
+        #cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,self.game.showEndScreen()),
+        #        (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,self.game.showEndScreen())]
         
         for cd in cond:
             a , b = cd 
             if a:
                 #input(b)
+                self.game.showEndScreen()
                 break
                 
     def checkFinal(self):
