@@ -100,20 +100,20 @@ BOTAO_START_Y = 280
 
 CENA_END = f"{IGR}sipMMNk.jpg"
 
-IGM_BOTAO_HOME = f"{IGR}pN7aJYM.png"
+IMG_BOTAO_HOME = f"{IGR}pN7aJYM.png"
 BOTAO_HOME = "home"
-BOTAO_HOME_W = 256
-BOTAO_HOME_H = 326
-BOTAO_HOME_X = 100
-BOTAO_HOME_Y = 200
+BOTAO_HOME_W = 128
+BOTAO_HOME_H = 163
+BOTAO_HOME_X = 500
+BOTAO_HOME_Y = 390
 
 
 IMG_BOTAO_RESTART = f"{IGR}HowIM6S.png"
 BOTAO_RESTART = "restart"
-BOTAO_RESTART_W = 256
-BOTAO_RESTART_H = 383
-BOTAO_RESTART_X = 400
-BOTAO_RESTART_Y = 500
+BOTAO_RESTART_W = 128
+BOTAO_RESTART_H = 192
+BOTAO_RESTART_X = 650
+BOTAO_RESTART_Y = 360
 
 class Character(Elemento):
     def __init__(self, image, cena, left_slot, x=0, y=0, w=60, h=60, name, margin, boat):
@@ -146,13 +146,14 @@ class Character(Elemento):
             
 
 class Boat(Elemento):
-    def __init__(self, image, cena, x=100, y=0, w=60, h=60, left_margin, right_margin, left_slot, right_slot):
+    def __init__(self, image, cena, x=100, y=0, w=60, h=60, left_margin, right_margin, left_slot, right_slot, game):
         super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
         self.state = 0
         self.margins = [left_margin, right_margin]
         self.slots = [left_slot, right_slot]
         self.passengers = [None, None]
         self.vai = self.click
+        self.game = game
 
     def getState(self):
         return self.margins[self.state]
@@ -206,9 +207,11 @@ class Boat(Elemento):
             crew.append(self.passengers[1].getId())
             
         if (MONSTER in crew and DWARF in crew):
-            input("Fim de jogo: O monstro comeu o anão!")
+            #input("Fim de jogo: O monstro comeu o anão!")
+            self.game.showEndScreen()
         if (DWARF in crew and APPLE in crew):
-            input("Fim de jogo: O anão comeu a maçã!")
+            #input("Fim de jogo: O anão comeu a maçã!")
+            self.game.showEndScreen()
                         
     def printStatus(self):
         if (self.passengers[0] == None):
@@ -228,7 +231,7 @@ class Boat(Elemento):
 
 class Platform(Elemento):
 
-    def __init__(self, image, cena, x=0, y=0, w=400, h=800, id, monster_slot, dwarf_slot, apple_slot, boat_slot):
+    def __init__(self, image, cena, x=0, y=0, w=400, h=800, id, monster_slot, dwarf_slot, apple_slot, boat_slot, game):
         super().__init__(image, cena=cena, x=x, y=y, w=w, h=h)
         self.id = id
         self.place = {
@@ -241,6 +244,7 @@ class Platform(Elemento):
         self.apple_slot = apple_slot
         self.boat_slot = boat_slot
         self.ator = [(MONSTER,self.monster_slot),(DWARF,self.dwarf_slot),(APPLE,self.apple_slot)]
+        self.game = game
         
     def getId(self):
         return self.id
@@ -263,18 +267,21 @@ class Platform(Elemento):
             
     
     def verify(self):    
-        cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,"Fim de jogo: O monstro comeu o anão!"),
-                (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,"Fim de jogo: O anão comeu a maçã!")]
+        #cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,"Fim de jogo: O monstro comeu o anão!"),
+        #        (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,"Fim de jogo: O anão comeu a maçã!")]
+        cond = [(self.place[MONSTER] == True and self.place[DWARF] == True and self.place[APPLE] == False,self.game.showEndScreen()),
+                (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == False,self.game.showEndScreen())]
         
         for cd in cond:
             a , b = cd 
             if a:
-                input(b)
+                #input(b)
                 break
                 
     def checkFinal(self):
         if (self.place[DWARF] == True and self.place[APPLE] == True and self.place[MONSTER] == True and self.id == RIGHT_MARGIN):
-            input("Ahhh! Você conseguiu!")
+            #input("Ahhh! Você conseguiu!")
+            self.game.showEndScreen()
 
     def printStatus(self):
         input(f"Margem {self.id}: Monstro={self.place[MONSTER]}, Anão={self.place[DWARF]}, Maçã={self.place[APPLE]}")
@@ -291,7 +298,11 @@ class Botao(Elemento):
         return self.id
 
     def click(self, evento=None):
+        #if(self.name == 'home'):
+        #	self.game.showEndScreen()
+        #else:
         self.game.showGameScreen()
+
 
 
         
@@ -308,7 +319,7 @@ class Game():
         self.dwarf_left_slot = Elemento(None, cena=self.cena, x=DWARF_LEFT_SLOT_X, y=DWARF_LEFT_SLOT_Y, w=DWARF_PLAT_W, h=DWARF_PLAT_H)
         self.apple_left_slot = Elemento(None, cena=self.cena, x=APPLE_LEFT_SLOT_X, y=APPLE_LEFT_SLOT_Y, w=APPLE_PLAT_W, h=APPLE_PLAT_H)
         self.boat_left_slot = Elemento(None, cena=self.cena, x=BOAT_LEFT_SLOT_X, y=BOAT_LEFT_SLOT_Y, w=BOAT_PLAT_W, h=BOAT_PLAT_H)
-        self.left_margin = Platform(None, self.cena, LEFT_MARGIN_X, LEFT_MARGIN_Y, LEFT_MARGIN_W, LEFT_MARGIN_H, LEFT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot, self.boat_left_slot)
+        self.left_margin = Platform(None, self.cena, LEFT_MARGIN_X, LEFT_MARGIN_Y, LEFT_MARGIN_W, LEFT_MARGIN_H, LEFT_MARGIN, self.monster_left_slot, self.dwarf_left_slot, self.apple_left_slot, self.boat_left_slot, self)
         self.monster_left_slot.entra(self.left_margin)
         self.dwarf_left_slot.entra(self.left_margin)
         self.apple_left_slot.entra(self.left_margin)
@@ -319,14 +330,14 @@ class Game():
         self.dwarf_right_slot = Elemento(None, cena=self.cena, x=DWARF_RIGHT_SLOT_X, y=DWARF_RIGHT_SLOT_Y, w=DWARF_PLAT_W, h=DWARF_PLAT_H)
         self.apple_right_slot = Elemento(None, cena=self.cena, x=APPLE_RIGHT_SLOT_X, y=APPLE_RIGHT_SLOT_Y, w=APPLE_PLAT_W, h=APPLE_PLAT_H)
         self.boat_right_slot = Elemento(None, cena=self.cena, x=BOAT_RIGHT_SLOT_X, y=BOAT_RIGHT_SLOT_Y, w=BOAT_PLAT_W, h=BOAT_PLAT_H)
-        self.right_margin = Platform(None, self.cena, RIGHT_MARGIN_X, RIGHT_MARGIN_Y, RIGHT_MARGIN_W, RIGHT_MARGIN_H, RIGHT_MARGIN, self.monster_right_slot, self.dwarf_right_slot, self.apple_right_slot, self.boat_right_slot)
+        self.right_margin = Platform(None, self.cena, RIGHT_MARGIN_X, RIGHT_MARGIN_Y, RIGHT_MARGIN_W, RIGHT_MARGIN_H, RIGHT_MARGIN, self.monster_right_slot, self.dwarf_right_slot, self.apple_right_slot, self.boat_right_slot, self)
         self.monster_right_slot.entra(self.right_margin)
         self.dwarf_right_slot.entra(self.right_margin)
         self.apple_right_slot.entra(self.right_margin)
         self.boat_right_slot.entra(self.right_margin)
         self.right_margin.entra(self.cena)
         
-        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_OFFSET_X, BOAT_OFFSET_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin, self.boat_left_slot, self.boat_right_slot)
+        self.boat = Boat(IMG_BOAT_TO_RIGHT, self.cena, BOAT_OFFSET_X, BOAT_OFFSET_Y, BOAT_W, BOAT_H, self.left_margin, self.right_margin, self.boat_left_slot, self.boat_right_slot, self)
         self.boat.entra(self.boat_left_slot)
         
         self.monster = Character(
