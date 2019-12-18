@@ -298,10 +298,10 @@ class Botao(Elemento):
         return self.id
 
     def click(self, evento=None):
-        #if(self.name == 'home'):
-        #    self.game.showStartScreen()
-        #else:
-        self.game.showGameScreen()
+        if(self.id == "home"):
+            self.game.showStartScreen()
+        else:
+            self.game.showGameScreen()
 
 
 
