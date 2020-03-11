@@ -464,3 +464,10 @@ RuntimeError: too much recursion
   module '$exec_445' line 85
         self.explorador = Explorador()
 '''},
+{'date': 'Wed Mar 11 2020 16:59:22.367 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 79
+  if self.quantidade:
+  ^
+IndentationError: unexpected indent
+'''},
