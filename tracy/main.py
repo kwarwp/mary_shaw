@@ -3,8 +3,8 @@
 """
     Tesouro Inca
 """
-from _spy.vitollino.main import Cena, INVENTARIO
-from elemento.main import Elemento
+from _spy.vitollino.main import Cena, INVENTARIO, Elemento
+# from elemento.main import Elemento
 from random import choice
 
 __author__ = "Lorena"
